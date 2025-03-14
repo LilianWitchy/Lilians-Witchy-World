@@ -1,0 +1,64 @@
+---
+layout: page
+title: Über mich
+permalink: /about/
+---
+
+# Über mich
+
+Willkommen auf meiner Seite! Mein Name ist Lilian.
+Das ist die Kurzform von Elisabeth-Ann.
+
+
+Mit dieser Homepage teile ich meine Gedanken und Projekte. 
+
+Ich bin staatlich anerkannte Erzieherin mit Bachelor und gelernte Erlebnispädagogin.
+Lange Zeit habe ich in verschiedenen Kindergärten in verschiedenen Bundesländern gearbeitet.
+Aufgrund der Zustände konnte ich es nie lange für mich vereinbaren, bei einem Kindergarten zu bleiben.
+Ein Erzieher auf 20 Kinder oder bei Krankenstand der anderen Erzieher sogar noch mehr Kinder.
+Was das mit einem macht, muss ich nicht ausführen.
+
+Es gab jedoch einen Kindergarten, in dem so gut wie alles Stimmte und passte.
+Dort fing ich dann an, mit dem Geschichten schreiben.
+Ja, ich habe auch früher schon sehr viele Geschichten oder ganze Bücher geschrieben, doch diese waren mehr ein Hobby und eher für mich.
+
+So fing ich an, eine Traumreise nach der Anderen für die Kinder zu schreiben und wenn es hieß, ich lese diese vor,
+wurde mein Raum voller und voller.
+All den Kindern dieses Leuchten in die Augen zu zaubern, war für mich das größte Geschenk.
+
+Vor ein paar Jahren wurde ich dann richtig krank und es wurde klar, dass ich nicht mehr als Erzieherin arbeiten kann und werde.
+Doch es machte mich traurig, dass meine Geschichten nun einstauben.
+Ich hatte sie damals noch per Hand geschrieben, auf jedes Stück Papier, dass ich finden konnte.
+
+Deshalb setzte ich mich dran und fing an, alles abzutippen. Und der Flow begann.
+Es wurden mehr und mehr und mehr Geschichten.
+Heute sind schon Band 1 und Band 2 von meinen "Traumreisen mit Baldur" erhältlich.
+Und ich fing an, auch ein Buch für Erwachsene zu schreiben. Auch dies ist seit Kurzem kaufbar.
+
+All meine Bücher soll es mit der Zeit sowohl hier, als auch bei Youtube als Audio geben.
+
+Da ich leider keinen Verlag habe, der mich bei meiner Arbeit unterstützt, habe ich bisher all meine Bücher mit der Hilfe und dem Technick Now How
+von meinem Mann über Amazon veröffentlicht.
+
+Und das ist noch laaaange nicht Alles. <3
+Schon seit vielen vielen Jahren interessiere ich mich und liebe Kräuter und all ihre Vielfalt.
+Ich nutze Kräuter und Gewürze, um meine Kosmetikprodukte selbst herzustellen, da ich früher auch mal sehr starke Probleme mit meiner Haut hatte.
+Auch in diesem Bereich habe ich schon anderen geholfen und möchte auch weiter helfen und werde deshalb meine Rezepte online stellen.
+Ich mache mit den Kräutern eigene Teemischungen, Salben und stelle auch Medikamente, wie pflanzliches Antibiotika, Apfelsaft mit Kräutern bei Erkältungen,
+Hustensaft, Limonade, etc. her.
+
+
+Ich interessiere mich kurzgefasst für Alles, das den Horizont erweitert.
+Sowohl meinen eigenen, als auch bei anderen.
+Ich möchte sowohl mit meinen Büchern, als auch mit meinen Rezepten und Produkten anderen Menschen helfen
+und ihnen vorallem auch dabei helfen, in die Selbstverantwortung zu kommen.
+
+Wichtig sind mir:
+- Yoga
+- Natur, vorallem ein bewusster und achtsamer Umgang mit dieser
+- chemiefreie Alternativen für Kosmetik- oder Hygieneprodukte, Nahrungsmittel, Medizin
+- Alles, was mit entspannen und zu sich selbst finden, zu tun hat
+
+Aktuell arbeite ich noch an weiteren Projekten, wie den Audioaufnahmen, und weiteren Büchern, zu anderen Themen.
+
+Danke, dass du hier bist und meine Seite besuchst.
