@@ -4,7 +4,7 @@
      <link rel="icon" type="image/x-icon" href="favicon.ico">
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Über mich | Lilian´s Witchy World</title>
+    
      <style>
          body {
              font-family: Garamond, serif;
@@ -126,4 +126,4 @@
          }
      </script>
  </body>
- </html>
+
