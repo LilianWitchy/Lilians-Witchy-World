@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>
-        <img src="witchylogo.png" alt="Witchy Logo">
+        <img src="witchylogo.png" alt="Witchy Logo"> 
         Lilian’s Witchy World
     </h1>
 
@@ -20,4 +20,21 @@
         <button onclick="toggleMenu()">Menü anzeigen</button>
     </div>
     
-    <div class=
+    <div class="menu" id="menu">
+        <a href="#">Startseite</a>
+        <a href="/Lilians-Witchy-World/about/">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="#">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="#">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none"
