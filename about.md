@@ -84,9 +84,9 @@
          <p>Mit dieser Homepage teile ich meine Gedanken und Projekte.</p>
          <p>Ich bin staatlich anerkannte Erzieherin mit Bachelor und gelernte Erlebnispädagogin. Lange Zeit habe ich in verschiedenen Kindergärten in verschiedenen Bundesländern gearbeitet.</p>
  
-         <p>Die Umstände in den Kindergärten machten mich immer kränker. Heute bin ich an dem Punkt, dass ich diesen Beruf nicht mehr ausüben kann und werde. Dennoch möchte ich noch immer Gutes tun und den Menschen helfen.</p>
+         <p>Die Umstände in den Kindergärten machten mich immer kränker. Heute bin ich an dem Punkt, dass ich diesen Beruf nicht mehr ausüben kann und werde. Dennoch möchte ich noch immer den Menschen helfen.</p>
  
-         <p>Es gab jedoch einen Kindergarten, in dem so gut wie alles stimmte und passte. Dort fing ich dann an, mit dem Geschichten schreiben. Ich habe auch früher schon sehr viele Geschichten oder ganze Bücher geschrieben, doch diese waren mehr ein Hobby und eher für mich.</p>
+         <p>Es gab einen Kindergarten, in dem so gut wie alles stimmte und passte. Dort fing ich dann an, mit dem Geschichten schreiben. Ich habe auch früher schon sehr viele Geschichten oder ganze Bücher geschrieben, doch diese waren mehr ein Hobby und eher für mich.</p>
  
          <p>So fing ich an, eine Traumreise nach der anderen für die Kinder zu schreiben und wenn es hieß, ich lese diese vor, wurde mein Raum voller und voller. All den Kindern dieses Leuchten in die Augen zu zaubern, war für mich das größte Geschenk.</p>
  
@@ -94,13 +94,14 @@
  
          <p>Deshalb setzte ich mich dran und fing an, alles abzutippen. Und der Flow begann. Es wurden mehr und mehr und mehr Geschichten. Heute sind schon Band 1 und Band 2 von meinen "Traumreisen mit Baldur" erhältlich. Und ich fing an, auch ein Buch für Erwachsene zu schreiben. Auch dies ist seit Kurzem kaufbar.</p>
  
-         <p>All meine Bücher soll es mit der Zeit sowohl hier als auch bei YouTube als Audio geben.</p>
+         <p>All meine Bücher soll es mit der Zeit sowohl hier und auch bei YouTube als Audio geben.</p>
  
-         <p>Da ich leider keinen Verlag habe, der mich bei meiner Arbeit unterstützt, habe ich bisher all meine Bücher mit der Hilfe und dem Technik-Know-How von meinem Mann über Amazon veröffentlicht.</p>
+         <p>Ich habe keinen Verlag, der mich bei meiner Arbeit unterstützt, deshalb habe ich bisher all meine Bücher mit der Hilfe und dem Technik-Know-How von meinem Mann über Amazon veröffentlicht.</p>
  
-         <p>Und das ist noch lange nicht alles. Schon seit vielen Jahren interessiere ich mich für Kräuter und all ihre Vielfalt. Ich nutze Kräuter und Gewürze, um meine Kosmetikprodukte selbst herzustellen, da ich früher auch mal sehr starke Probleme mit meiner Haut hatte. Auch in diesem Bereich habe ich schon anderen geholfen und möchte das weiter tun, deshalb werde ich meine Rezepte online stellen.</p>
+         <p>Und das ist noch lange nicht alles. Schon seit vielen Jahren interessiere ich mich für Kräuter und all ihre Vielfalt. Ich nutze Kräuter und Gewürze, um meine Kosmetikprodukte selbst herzustellen. Somit hatte ich keine Probleme mehr mit meiner Haut, die viel zu sehr überreizt, durch all die Chemie in den Kosmetikprodukten war. Auch in diesem Bereich habe ich schon anderen geholfen und möchte das weiter tun, deshalb werde ich meine Rezepte online stellen.</p>
  
-         <p>Ich mache mit den Kräutern eigene Teemischungen, Salben und stelle auch natürliche Medikamente wie pflanzliches Antibiotikum, Apfelsaft mit Kräutern bei Erkältungen, Hustensaft, Limonade, etc. her.</p>
+         <p>Ich mache mit den Kräutern eigene Teemischungen, Salben und stelle auch natürliche Medikamente wie pflanzliches Antibiotikum, Apfelsaft mit Kräutern bei Erkältungen, Hustensaft, Limonade, etc. her.
+         Und vorallem haben die Kräuter mir und Freunden und Bekannten schon bei verschiedensten Beschwerden geholfen.</p>
  
          <h3>Was mir wichtig ist:</h3>
          <ul>
@@ -112,7 +113,9 @@
  
          <p>Aktuell arbeite ich noch an weiteren Projekten, wie den Audioaufnahmen und weiteren Büchern zu anderen Themen.</p>
  
-         <p>Danke, dass du hier bist und meine Seite besuchst.</p>
+         <p>Danke, dass du hier bist und meine Seite besuchst. Ich hoffe, ich kann auch dir, bei verschiedenen Beschwerden helfen.
+         Und dir die Mittel an die Hand geben, sie selbst zu lindern.
+         Gerne kannst du mich auch übers Kontaktformular anschreiben und ich gucke, ob ich dir ein individuelles Rezept für Haut und Haar schreiben kann, mit Kräutern und allem, was die Natur uns zur Verfügung stellt.</p>
      </div>
  
      <script>
