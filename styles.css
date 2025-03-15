@@ -1,19 +1,9 @@
-body {
+header {
+    background-color: 
+    color: white; 
+}
+
+footer {
     background-color: #4e0261; 
-    color: white 
-}
-
-header, footer {
-    background-color: #8e44ad;
-    color: white
-}
-
-
-body {
-    background-color:  #4e0261; 
-    color: white;
-}
-
-h1 {
-    color: white:
+    color: white; 
 }
