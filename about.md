@@ -13,7 +13,7 @@ permalink: /about/
        body {
              font-family: Garamond, serif;
              color: white; /* Textfarbe für den gesamten Body */
-             background-color: #4e0261; /* Hintergrundfarbe für den gesamten Body */
+             background-color: #297523; /* Hintergrundfarbe für den gesamten Body */
              margin: 0;
              padding: 0;
              text-align: center;
