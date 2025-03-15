@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="styles.css">  <!-- Der Pfad zur CSS-Datei -->
+</head>
+
 ---
 layout: default
 title: Kontakt
