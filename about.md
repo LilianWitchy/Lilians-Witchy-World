@@ -1,8 +1,4 @@
----
- title: Über mich
- permalink: /about/
- ---
- <!DOCTYPE html>
+
  <html lang="de">
  <head>
      <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -12,7 +8,7 @@
      <style>
          body {
              font-family: Garamond, serif;
-             color: white;
+             color: #050505;
              background-color: #4e0261;
              margin: 0;
              padding: 0;
@@ -20,7 +16,7 @@
          }
         body {
               font-family: Garamond, serif;
-              color: white;
+              color: #050505;
               background-color: #4e0261;
               margin: 0;
               padding: 0;
@@ -73,13 +69,13 @@
  
      <div class="menu" id="menu">
          <a href="/">Startseite</a>
-         <a href="/about/">Über mich</a>
+         <a href="/about">Über mich</a>
          <a href="#">Weiterbildungen</a>
          <a href="#">Meine Bücher</a>
          <a href="#">Meine Rezepte</a>
          <a href="#">Social Media</a>
          <a href="#">Bücher, die ich empfehle</a>
-         <a href="/kontakt/">Kontakt</a>
+         <a href="/kontakt">Kontakt</a>
      </div>
  
      <div class="about-section">
