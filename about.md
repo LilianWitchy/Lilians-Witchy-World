@@ -68,6 +68,7 @@
      </div>
  
      <div class="menu" id="menu">
+     
          <a href="index.html">Startseite</a>
          <a href="/Lilians-Witchy-World/about">Über mich</a>
          <a href="#">Weiterbildungen</a>
