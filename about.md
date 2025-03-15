@@ -10,14 +10,14 @@ permalink: /about/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über mich | Lilian´s Witchy World</title>
     <style>
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #4e0261;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+       body {
+             font-family: Garamond, serif;
+             color: white;
+             background-color: #4e0261;
+             margin: 0;
+             padding: 0;
+             text-align: center;
+         }
 
         .navbar {
             background-color: #0aa667;
