@@ -2,7 +2,7 @@
 title: Über mich
 permalink: /about/
 ---
-<!DOCTYPE html>
+
 <html lang="de">
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
