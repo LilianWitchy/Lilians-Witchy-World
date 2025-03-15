@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Über mich
 permalink: /about/
 ---
