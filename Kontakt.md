@@ -14,3 +14,6 @@ permalink: /contact/
         </form>
 </div>
 
+<head>
+    <link rel="stylesheet" href="styles.css">  <!-- Der Pfad zur CSS-Datei -->
+</head>
