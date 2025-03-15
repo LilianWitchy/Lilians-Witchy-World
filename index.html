@@ -1,117 +1,112 @@
 <!DOCTYPE html>
- <html lang="de">
- <head> <link rel="icon" type="image/x-icon" href="favicon.ico">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Lilian´s Witchy World</title> 
-     <style>
-   body {
-             font-family: Garamond, serif;
-             color: white;
-             background-color: #4e0261;
-             margin: 0;
-             padding: 0;
-             text-align: center;
-         }
-         .navbar {
-             background-color: #0aa667;
-             padding: 15px;
-         }
-         .navbar button {
-             background-color: white;
-             color: #660082;
-             border: none;
-             padding: 10px 20px;
-             font-size: 18px;
-             cursor: pointer;
-         }
-         .menu {
-             display: none;
-             margin-top: 20px;
-         }
-         .menu a {
-             display: block;
-             color: white;
-             text-decoration: none;
-             font-size: 20px;
-             padding: 10px;
-         }
-         .contact-form {
-             margin-top: 30px;
-         }
-         input, textarea {
-             width: 80%;
-             padding: 10px;
-             margin-top: 10px;
-             border: none;
-         }
-         button {
-             background-color: ;
-             color: white;
-             padding: 10px 15px;
-             border: none;
-             cursor: pointer;
-             margin-top: 10px;
-         }
-     </style>
- </head>
- <body>
-     <h1>
-     <img src="witchylogo.png">
-     Lilian’s Witchy World
- </h1>
- 
-     <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
- 
-     <div class="navbar">
-         <button onclick="toggleMenu()">Menü anzeigen</button>
-     </div>
- 
-     <div class="menu" id="menu">
-         <a href="index.html">Startseite</a>
-         <a href="/Lilians-Witchy-World/about">Über mich</a>
-         <a href="#">Weiterbildungen</a>
-         <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
-         <a href="#">Meine Rezepte</a>
-         <a href="#">Social Media</a>
-         <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
-         <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden; /* Verhindert Scrollen wegen Sternen */
+        }
 
-     
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
 
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
 
-     </div>
- 
-     <script>
-         function toggleMenu() {
-             var menu = document.getElementById("menu");
-             if (menu.style.display === "none" || menu.style.display === "") {
-                 menu.style.display = "block";
-             } else {
-                 menu.style.display = "none";
-             }
-         }
-     </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    for (let i = 0; i < 50; i++) { // Anzahl der Sterne
-        let star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh"; // Zufällige Position in der Höhe
-        star.style.left = Math.random() * 100 + "vw"; // Zufällige Position in der Breite
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
-        document.body.appendChild(star);
-    }
-});
-</script>
-  
- </body>
- </html>
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        /* Sterne-Animation */
+        .star {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            animation: twinkle 1.5s infinite ease-in-out alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.3); }
+        }
+    </style>
+</head>
 <body>
- 
-<p>Diese Seite ist noch mitten im Aufbau. Deshalb bitte nicht wundern, dass noch nicht alle Punkte im Menü funktionieren, bzw ausgefüllt sind.
-      Ich werde nach und nach alles hinzufügen.</p>
+    <h1>
+        <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
 
-  <img src="relax.png" alt="Relaxbild">
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
+    </div>
 
- </body>
+    <div class="menu" id="menu">
+        <a href="index.html">Startseite</a>
+        <a href="/Lilians-Witchy-World/about">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+        // Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Breite
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Blinkdauer
+                document.body.appendChild(star);
+            }
+        });
+    </script>
+
+    <p>Diese Seite ist noch mitten im Aufbau. Deshalb bitte nicht wundern, dass noch nicht alle Punkte im Menü funktionieren.</p>
+    <img src="relax.png" alt="Relaxbild">
+</body>
+</html>
+
