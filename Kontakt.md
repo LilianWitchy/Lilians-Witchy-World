@@ -13,3 +13,6 @@ permalink: /contact/
             <button type="submit">Senden</button>
         </form>
 </div>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
