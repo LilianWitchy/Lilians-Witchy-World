@@ -12,8 +12,8 @@ permalink: /about/
     <style>
        body {
              font-family: Garamond, serif;
-             color: white;
-             background-color: #4e0261;
+             color: white; /* Textfarbe für den gesamten Body */
+             background-color: #4e0261; /* Hintergrundfarbe für den gesamten Body */
              margin: 0;
              padding: 0;
              text-align: center;
@@ -51,10 +51,16 @@ permalink: /about/
             text-align: left;
             max-width: 800px;
             margin: 0 auto;
+            color: black; /* Textfarbe geändert auf schwarz */
+            background-color: #f4f4f4; /* Hellgrauer Hintergrund für den Abschnitt */
         }
 
         h2 {
-            color: #f4c542;
+            color: #f4c542; /* Gelbe Farbe für Überschrift */
+        }
+
+        h3 {
+            color: #f4c542; /* Gelbe Farbe für Unterüberschrift */
         }
     </style>
 </head>
@@ -130,4 +136,3 @@ permalink: /about/
     </script>
 </body>
 </html>
-
