@@ -65,16 +65,9 @@
              color: #f4c542;
          }
      </style>
- </head>
- <body>
-     <h1>
-         <img src="/witchylogo.png" alt="Witchy Logo">
-         Lilian’s Witchy World
-     </h1>
+
  
-     <p>Willkommen auf meiner Seite! Mein Name ist Lilian. Das ist die Kurzform von Elisabeth-Ann.</p>
- 
-     <div class="navbar">
+       <div class="navbar">
          <button onclick="toggleMenu()">Menü anzeigen</button>
      </div>
  
