@@ -16,25 +16,12 @@
     <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
     <p>Meine Seite ist noch mitten im Aufbau. Deshalb kann es noch etwas dauern, bis alles fertig ist. Ich gebe mein Bestes und werde nach und nach alles einfügen... </p>
     
+    <!-- Menü-Button -->
     <div class="navbar">
         <button onclick="toggleMenu()">Menü anzeigen</button>
     </div>
     
-    <div class="menu" id="menu">
+    <!-- Menü (standardmäßig versteckt) -->
+    <div class="menu" id="menu" style="display:none;">
         <a href="#">Startseite</a>
-        <a href="/Lilians-Witchy-World/about/">Über mich</a>
-        <a href="#">Weiterbildungen</a>
-        <a href="#">Meine Bücher</a>
-        <a href="#">Meine Rezepte</a>
-        <a href="#">Social Media</a>
-        <a href="#">Bücher, die ich empfehle</a>
-        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none" || menu.style.display === "") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none"
+        <a href="/Lilians-Witchy-World/about/">Über mich
