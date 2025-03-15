@@ -2,3 +2,7 @@ theme: jekyll-theme-minimal
 permalink: pretty
 baseurl: "/Lilians-Witchy-World"  # WICHTIG für GitHub Pages
 url: "https://lilianwitchy.github.io"  # Deine GitHub Pages URL
+theme: jekyll-theme-slate
+stylesheets:
+<link rel="stylesheet" href="styles.css">
+
