@@ -44,7 +44,7 @@
  
          .menu a {
              display: block;
-             color: white;
+             color: black;
              text-decoration: none;
              font-size: 20px;
              padding: 10px;
