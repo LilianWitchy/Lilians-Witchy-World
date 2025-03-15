@@ -21,34 +21,31 @@
         <button id="menuButton">Menü anzeigen</button>
     </div>
     
-    <div class="menu" id="menu">
-        <a href="#">Startseite</a>
-        <a href="/Lilians-Witchy-World/about/">Über mich</a>
-        <a href="#">Weiterbildungen</a>
-        <a href="#">Meine Bücher</a>
-        <a href="#">Meine Rezepte</a>
-        <a href="#">Social Media</a>
-        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
-    </div>
-
-    <!-- JavaScript für das Menü -->
-    <script>
-        // Warten bis die Seite geladen ist, um JavaScript auszuführen
-        document.addEventListener('DOMContentLoaded', function() {
-            var menuButton = document.getElementById('menuButton'); // Menü-Button
-            var menu = document.getElementById('menu'); // Menü-Container
-
-            // Wenn der Button geklickt wird, Menü anzeigen/ausblenden
-            menuButton.addEventListener('click', function() {
-                if (menu.style.display === "none" || menu.style.display === "") {
-                    menu.style.display = "block";  // Menü anzeigen
-                } else {
-                    menu.style.display = "none";  // Menü verstecken
-                }
-            });
-        });
-    </script>
-
+   <div class="navbar">
+         <button onclick="toggleMenu()">Menü anzeigen</button>
+     </div>
+ 
+     <div class="menu" id="menu">
+         <a href="#">Startseite</a>
+         <a href="/Lilians-Witchy-World/about/">Über mich</a>
+         <a href="#">Weiterbildungen</a>
+         <a href="#">Meine Bücher</a>
+         <a href="#">Meine Rezepte</a>
+         <a href="#">Social Media</a>
+         <a href="#">Bücher, die ich empfehle</a>
+         <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
+     </div>
+ 
+     <script>
+         function toggleMenu() {
+             var menu = document.getElementById("menu");
+             if (menu.style.display === "none" || menu.style.display === "") {
+                 menu.style.display = "block";
+             } else {
+                 menu.style.display = "none";
+             }
+         }
+     </script>
 </body>
 </html>
 
