@@ -20,12 +20,12 @@ permalink: /about/
          }
 
         .navbar {
-            background-color: #0aa667;
+            background-color: #4e0261;
             padding: 15px;
         }
 
         .navbar button {
-            background-color: white;
+            background-color:#4e0261;
             color: #660082;
             border: none;
             padding: 10px 20px;
