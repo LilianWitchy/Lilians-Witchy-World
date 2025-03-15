@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 permalink: pretty
-baseurl: "/Lilians-Witchy-World"
+baseurl: "/Lilians-Witchy-World"  # WICHTIG für GitHub Pages
+url: "https://lilianwitchy.github.io"  # Deine GitHub Pages URL
