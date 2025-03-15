@@ -29,7 +29,7 @@
          }
  
          .navbar button {
-             background-color: white;
+             background-color: #4e0261;
              color: #660082;
              border: none;
              padding: 10px 20px;
