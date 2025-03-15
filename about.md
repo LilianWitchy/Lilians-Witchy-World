@@ -14,9 +14,9 @@ Mit dieser Homepage teile ich meine Gedanken und Projekte.
 
 Ich bin staatlich anerkannte Erzieherin mit Bachelor und gelernte Erlebnispädagogin.
 Lange Zeit habe ich in verschiedenen Kindergärten in verschiedenen Bundesländern gearbeitet.
-Aufgrund der Zustände konnte ich es nie lange für mich vereinbaren, bei einem Kindergarten zu bleiben.
-Ein Erzieher auf 20 Kinder oder bei Krankenstand der anderen Erzieher sogar noch mehr Kinder.
-Was das mit einem macht, muss ich nicht ausführen.
+Die Umstände in den Kindergärten machten mich immer kränker.
+Heute bin ich an dem Punkt, dass ich diesen Beruf nicht mehr ausüben kann und werde.
+Dennoch möchte ich noch immer gutes tun und den Menschen helfen.
 
 Es gab jedoch einen Kindergarten, in dem so gut wie alles Stimmte und passte.
 Dort fing ich dann an, mit dem Geschichten schreiben.
