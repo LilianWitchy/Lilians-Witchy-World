@@ -3,10 +3,6 @@ layout: default
 title: Kontakt
 permalink: /contact/
 ---
-body {
-    background-color: #5b086e 
-    color: #f7f7f7;
-}
 
 <div class="contact-form" id="kontakt">
         <h2>Kontakt</h2>
