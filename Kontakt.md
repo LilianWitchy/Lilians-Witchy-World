@@ -17,3 +17,14 @@ permalink: /contact/
 <head>
     <link rel="stylesheet" href="styles.css">  <!-- Der Pfad zur CSS-Datei -->
 </head>
+body {
+    background-color: #4e0261;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, serif;
+}
+
+header, footer {
+    background-color: #0aa667;
+}
