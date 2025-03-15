@@ -1,73 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian´s Witchy World</title> 
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261; 
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-body {
-    font-family: Garamond, serif;
-    color: white;
-    background-color: #4e0261; 
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+        header, footer {
+            background-color: #0aa667;
+            color: white;
+        }
 
-header, footer {
-    background-color: #0aa667;
-    color: white;
-}
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start; /* Menü-Button nach links */
+        }
 
-.navbar {
-    background-color: #0aa667;  
-    padding: 15px;
-}
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-left: 10px; /* Abstand zum linken Rand */
+        }
 
-.navbar button {
-    background-color: white;
-    color: #660082;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-}
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
 
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
 
-.menu {
-    display: none;
-    margin-top: 20px;
-}
+        .contact-form {
+            background-color: #4e0261; 
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
 
-.menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-}
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd; 
+            border-radius: 4px;
+        }
 
+        button {
+            background-color: #0aa667; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
 
-.contact-form {
-    background-color: #4e0261; 
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
+        button:hover {
+            background-color: #0a8540;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <img src="witchylogo.png" alt="Witchy Logo">
+        Lilian’s Witchy World
+    </h1>
 
-input, textarea {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ddd; 
-    border-radius: 4px;
-}
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
 
-button {
-    background-color: #0aa667; 
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-}
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
+    </div>
 
-button:hover {
-    background-color: #0a8540;
-}
+    <div class="menu" id="menu">
+        <a href="#">Startseite</a>
+        <a href="/Lilians-Witchy-World/about/">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="#">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="#">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
