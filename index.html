@@ -5,23 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lilian’s Witchy World</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico"> 
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css"> <!-- Externe CSS-Datei -->
 </head>
 <body>
+   
     <h1>
         <img src="witchylogo.png" alt="Witchy Logo"> 
         Lilian’s Witchy World
     </h1>
-
+    
     <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
     <p>Meine Seite ist noch mitten im Aufbau. Deshalb kann es noch etwas dauern, bis alles fertig ist. Ich gebe mein Bestes und werde nach und nach alles einfügen... </p>
-    
-    <!-- Menü-Button -->
+
     <div class="navbar">
-        <button onclick="toggleMenu()">Menü anzeigen</button>
+        <button id="menuButton">Menü anzeigen</button>
     </div>
     
-    <!-- Menü (standardmäßig versteckt) -->
-    <div class="menu" id="menu" style="display:none;">
+    <div class="menu" id="menu">
         <a href="#">Startseite</a>
-        <a href="/Lilians-Witchy-World/about/">Über mich
+        <a href="/Lilians-Witchy-World/about/">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="#">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
+    </div>
+
+    <!-- JavaScript für das Menü -->
+    <script>
+        // Warten bis die Seite geladen ist, um JavaScript auszuführen
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menuButton'); // Menü-Button
+            var menu = document.getElementById('menu'); // Menü-Container
+
+            // Wenn der Button geklickt wird, Menü anzeigen/ausblenden
+            menuButton.addEventListener('click', function() {
+                if (menu.style.display === "none" || menu.style.display === "") {
+                    menu.style.display = "block";  // Menü anzeigen
+                } else {
+                    menu.style.display = "none";  // Menü verstecken
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
