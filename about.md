@@ -24,7 +24,7 @@
           }
  
          .navbar {
-             background-color: #0aa667;
+             background-color: white;
              padding: 15px;
          }
  
