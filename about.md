@@ -75,7 +75,7 @@
          <a href="#">Meine Rezepte</a>
          <a href="#">Social Media</a>
          <a href="#">Bücher, die ich empfehle</a>
-         <a href="/kontakt">Kontakt</a>
+        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
      </div>
  
      <div class="about-section">
