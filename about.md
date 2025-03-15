@@ -30,7 +30,7 @@
  
          .navbar button {
              background-color: #4e0261;
-             color: #660082;
+             color: white;
              border: none;
              padding: 10px 20px;
              font-size: 18px;
