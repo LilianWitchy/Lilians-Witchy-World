@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .content-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <img src="witchylogo.png">
+        Lilian’s Witchy World
+    </h1>
+
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
+
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="index.html">Startseite</a>
+        <a href="/Lilians-Witchy-World/about">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+        <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
+    </div>
+
+    <div class="content-container">
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+        <p>
+            **Lilian Lübke** (Künstlername: Elisabeth-Ann Wolf)<br>
+            **Landsberger Str. 81, 04157 Leipzig**<br>
+        </p>
+
+        <p><strong>Kontakt:</strong></p>
+        <p>
+            E-Mail: **[Elisabeth-Ann_Wolf88@proton.me]** <br>
+           
+        </p>
+
+        <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong></p>
+        <p>
+            **Lilian Lübke** (Künstlername: Elisabeth-Ann)<br>
+            **[Deine Adresse oder Postfach-Adresse]**
+        </p>
+
+        <p><strong>Umsatzsteuer-ID (falls vorhanden):</strong></p>
+        <p>
+            **[Falls du eine hast, hier einfügen]**
+        </p>
+
+        <p><strong>Haftung für Inhalte:</strong></p>
+        <p>
+            Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+        </p>
+
+        <p><strong>Haftung für Links:</strong></p>
+        <p>
+            Unsere Seite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+        </p>
+
+        <p><strong>Urheberrecht:</strong></p>
+        <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        </p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
