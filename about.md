@@ -77,6 +77,7 @@
          <a href="#">Social Media</a>
          <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
          <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+         <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
      </div>
  
      <div class="about-section">
