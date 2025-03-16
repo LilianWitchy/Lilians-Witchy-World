@@ -80,43 +80,35 @@
      </div>
  
      <div class="about-section">
-         <h2>Über mich</h2>
-         <p>Willkommen auf meiner Seite! Mein Name ist Lilian. Das ist die Kurzform von Elisabeth-Ann.</p>
-         <p>Mit dieser Homepage teile ich meine Gedanken und Projekte.</p>
-         <p>Ich bin staatlich anerkannte Erzieherin mit Bachelor und gelernte Erlebnispädagogin. Lange Zeit habe ich in verschiedenen Kindergärten in verschiedenen Bundesländern gearbeitet.</p>
- 
-         <p>Die Umstände in den Kindergärten machten mich immer kränker. Heute bin ich an dem Punkt, dass ich diesen Beruf nicht mehr ausüben kann und werde. Dennoch möchte ich noch immer den Menschen helfen.</p>
- 
-         <p>Es gab einen Kindergarten, in dem so gut wie alles stimmte und passte. Dort fing ich dann an, mit dem Geschichten schreiben. Ich habe auch früher schon sehr viele Geschichten oder ganze Bücher geschrieben, doch diese waren mehr ein Hobby und eher für mich.</p>
- 
-         <p>So fing ich an, eine Traumreise nach der anderen für die Kinder zu schreiben und wenn es hieß, ich lese diese vor, wurde mein Raum voller und voller. All den Kindern dieses Leuchten in die Augen zu zaubern, war für mich das größte Geschenk.</p>
- 
-         <p>Vor ein paar Jahren wurde ich dann richtig krank und es wurde klar, dass ich nicht mehr als Erzieherin arbeiten kann und werde. Doch es machte mich traurig, dass meine Geschichten nun einstauben. Ich hatte sie damals noch per Hand geschrieben, auf jedes Stück Papier, das ich finden konnte.</p>
- 
-         <p>Deshalb setzte ich mich dran und fing an, alles abzutippen. Und der Flow begann. Es wurden mehr und mehr und mehr Geschichten. Heute sind schon Band 1 und Band 2 von meinen "Traumreisen mit Baldur" erhältlich. Und ich fing an, auch ein Buch für Erwachsene zu schreiben. Auch dies ist seit Kurzem kaufbar.</p>
- 
-         <p>All meine Bücher soll es mit der Zeit sowohl hier und auch bei YouTube als Audio geben.</p>
- 
-         <p>Ich habe keinen Verlag, der mich bei meiner Arbeit unterstützt, deshalb habe ich bisher all meine Bücher mit der Hilfe und dem Technik-Know-How von meinem Mann über Amazon veröffentlicht.</p>
- 
-         <p>Und das ist noch lange nicht alles. Schon seit vielen Jahren interessiere ich mich für Kräuter und all ihre Vielfalt. Ich nutze Kräuter und Gewürze, um meine Kosmetikprodukte selbst herzustellen. Somit hatte ich keine Probleme mehr mit meiner Haut, die viel zu sehr überreizt, durch all die Chemie in den Kosmetikprodukten war. Auch in diesem Bereich habe ich schon anderen geholfen und möchte das weiter tun, deshalb werde ich meine Rezepte online stellen.</p>
- 
-         <p>Ich mache mit den Kräutern eigene Teemischungen, Salben und stelle auch natürliche Medikamente wie pflanzliches Antibiotikum, Apfelsaft mit Kräutern bei Erkältungen, Hustensaft, Limonade, etc. her.
-         Und vorallem haben die Kräuter mir und Freunden und Bekannten schon bei verschiedensten Beschwerden geholfen.</p>
- 
-         <h3>Was mir wichtig ist:</h3>
-         <ul>
-             <li>Yoga</li>
-             <li>Die Natur – ein bewusster und achtsamer Umgang mit ihr</li>
-             <li>Chemiefreie Alternativen für Kosmetik-, Hygieneprodukte, Nahrungsmittel und Medizin</li>
-             <li>Alles, was mit Entspannung und zu sich selbst finden zu tun hat</li>
-         </ul>
- 
-         <p>Aktuell arbeite ich noch an weiteren Projekten, wie den Audioaufnahmen und weiteren Büchern zu anderen Themen.</p>
- 
-         <p>Danke, dass du hier bist und meine Seite besuchst. Ich hoffe, ich kann auch dir, bei verschiedenen Beschwerden helfen.
-         Und dir die Mittel an die Hand geben, sie selbst zu lindern.
-         Gerne kannst du mich auch übers Kontaktformular anschreiben und ich gucke, ob ich dir ein individuelles Rezept für Haut und Haar schreiben kann, mit Kräutern und allem, was die Natur uns zur Verfügung stellt.</p>
+      <h2>Über mich</h2>
+<p>Willkommen auf meiner Seite! Mein Name ist Lilian, die Kurzform von Elisabeth-Ann.</p>
+<p>Mit dieser Homepage teile ich meine Gedanken, Projekte und meine Leidenschaft für Kreativität und Natur.</p>
+<p>Ich bin staatlich anerkannte Erzieherin mit Bachelor-Abschluss und ausgebildete Erlebnispädagogin. Viele Jahre lang habe ich mit Herzblut in verschiedenen Kindergärten gearbeitet und wertvolle Erfahrungen gesammelt.</p>
+
+<p>Besonders inspiriert hat mich eine Einrichtung, in der alles harmonierte. Dort begann ich, Geschichten für Kinder zu schreiben – kleine Traumreisen, die die Fantasie anregen und Freude schenken. Es war unbeschreiblich schön zu sehen, wie die Kinderaugen leuchteten, wenn ich meine Geschichten vorlas. Dieser Moment hat mir gezeigt, dass meine Worte eine besondere Wirkung haben.</p>
+
+<p>Schon früher habe ich leidenschaftlich geschrieben, doch erst jetzt habe ich den Mut gefunden, meine Geschichten mit der Welt zu teilen. So entstanden die ersten Bände meiner "Traumreisen mit Baldur". Mittlerweile sind Band 1 und Band 2 erhältlich, und ich habe mich auch an ein Buch für Erwachsene gewagt, das nun ebenfalls veröffentlicht ist.</p>
+
+<p>Damit meine Geschichten noch mehr Menschen erreichen, werde ich sie auch als Audio-Versionen hier und auf YouTube verfügbar machen.</p>
+
+<p>Ich verlege meine Bücher im Selbstverlag, unterstützt durch das technische Know-how meines Mannes. Es ist eine spannende Reise, und ich freue mich darauf, noch viele weitere Werke zu erschaffen.</p>
+
+<p>Doch nicht nur das Schreiben begeistert mich – seit Jahren fasziniert mich die Welt der Kräuter. Ich stelle meine eigene natürliche Kosmetik her und habe für mich entdeckt, wie wertvoll und wirkungsvoll chemiefreie Alternativen sind. Diese Erfahrungen teile ich gerne, indem ich meine Rezepte für Hautpflege, Teemischungen, Salben und pflanzliche Heilmittel hier veröffentliche.</p>
+
+<p>Ob Tees zur Entspannung, natürliche Pflegeprodukte oder selbstgemachte Heilmittel – ich liebe es, die Kraft der Natur zu nutzen und anderen damit zu helfen.</p>
+
+<h3>Was mir wichtig ist:</h3>
+<ul>
+    <li>Yoga</li>
+    <li>Ein bewusster und achtsamer Umgang mit der Natur</li>
+    <li>Chemiefreie Alternativen für Kosmetik, Hygieneprodukte, Nahrungsmittel und Medizin</li>
+    <li>Alles, was mit Entspannung und innerer Balance zu tun hat</li>
+</ul>
+
+<p>Aktuell arbeite ich an weiteren Projekten, darunter neue Bücher und Audioaufnahmen. Ich freue mich, wenn du mich auf dieser Reise begleitest!</p>
+
+<p>Schön, dass du hier bist! Ich hoffe, meine Inhalte inspirieren dich und helfen dir weiter. Falls du Fragen hast oder ein individuelles Rezept für Haut und Haar möchtest, schreibe mir gerne über das Kontaktformular – ich freue mich, mein Wissen zu teilen!</p>
+
      </div>
  
      <script>
