@@ -1,109 +1,130 @@
  <!DOCTYPE html>
- <html lang="de">
-  <head> <link rel="icon" type="image/x-icon" href="favicon.ico">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Kontakt | Lilian´s Witchy World</title>
-     <style>
-         body {
-             font-family: Garamond, serif;
-             color: white;
-             background-color: #4e0261;
-             margin: 0;
-             padding: 0;
-             text-align: center;
-         }
-         .navbar {
-             background-color: #0aa667;
-             padding: 15px;
-         }
-         .navbar button {
-             background-color: white;
-             color: #660082;
-             border: none;
-             padding: 10px 20px;
-             font-size: 18px;
-             cursor: pointer;
-         }
-         .menu {
-             display: none;
-             margin-top: 20px;
-         }
-         .menu a {
-             display: block;
-             color: white;
-             text-decoration: none;
-             font-size: 20px;
-             padding: 10px;
-         }
-         .contact-form {
-             margin-top: 30px;
-             padding: 20px;
-             background-color: #660082;
-             border-radius: 10px;
-             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-         }
-         input, textarea {
-             width: 80%;
-             padding: 10px;
-             margin-top: 10px;
-             border: none;
-             border-radius: 5px;
-             box-sizing: border-box;
-         }
-         button {
-             background-color: #0aa667;
-             color: white;
-             padding: 10px 15px;
-             border: none;
-             cursor: pointer;
-             margin-top: 10px;
-             border-radius: 5px;
-         }
-     </style>
- </head>
- <body>
-     <h1>
-     <img src="witchylogo.png">
-     Lilian’s Witchy World
- </h1>
- 
-     <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
- 
-     <div class="navbar">
-         <button onclick="toggleMenu()">Menü anzeigen</button>
-     </div>
- 
-     <div class="menu" id="menu">
-         <a href="index.html">Startseite</a>
-         <a href="/Lilians-Witchy-World/about">Über mich</a>
-         <a href="#">Weiterbildungen</a>
-         <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
-         <a href="#">Meine Rezepte</a>
-         <a href="#">Social Media</a>
-         <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
-         <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
-     </div>
- 
-     <div class="contact-form" id="kontakt">
-         <h2>Kontakt</h2>
-         <form>
-             <input type="text" placeholder="Name" required><br>
-             <input type="email" placeholder="E-Mail" required><br>
-             <textarea placeholder="Nachricht" rows="5" required></textarea><br>
-             <button type="submit">Senden</button>
-         </form>
-     </div>
- 
-     <script>
-         function toggleMenu() {
-             var menu = document.getElementById("menu");
-             if (menu.style.display === "none" || menu.style.display === "") {
-                 menu.style.display = "block";
-             } else {
-                 menu.style.display = "none";
-             }
-         }
-     </script>
- </body>
- </html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .contact-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0aa667;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #088e59;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <img src="witchylogo.png">
+        Lilian’s Witchy World
+    </h1>
+
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
+
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="index.html">Startseite</a>
+        <a href="/Lilians-Witchy-World/about">Über mich</a>
+        <a href="#">Weiterbildungen</a>
+        <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+        <a href="#">Meine Rezepte</a>
+        <a href="#">Social Media</a>
+        <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+    </div>
+
+    <div class="contact-container" id="kontakt">
+        <h2>Kontakt</h2>
+        <p class="contact-text">
+            Schön, dass du hier bist! 💜  
+            Ich freue mich, dass du den Weg zu meiner Seite gefunden hast.  
+            Falls du Fragen zu meiner Arbeit, meinen Projekten oder einfach etwas auf dem Herzen hast,  
+            kannst du mir hier eine Nachricht senden. Ich werde mich so bald wie möglich bei dir melden! ✨
+        </p>
+
+        <form>
+            <input type="text" placeholder="Name" required><br>
+            <input type="email" placeholder="E-Mail" required><br>
+            <textarea placeholder="Nachricht" rows="5" required></textarea><br>
+            <button type="submit">Senden</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
