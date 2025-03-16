@@ -72,6 +72,7 @@
          <a href="index.html">Startseite</a>
          <a href="/Lilians-Witchy-World/about">Über mich</a>
          <a href="#">Weiterbildungen</a>
+         <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
          <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
          <a href="#">Meine Rezepte</a>
          <a href="#">Social Media</a>
