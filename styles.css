@@ -156,3 +156,47 @@
     50% { opacity: 1; transform: scale(1.2); }
 }
 
+/* Menü-Styling */
+.menu {
+    list-style: none;
+    padding: 0;
+    background: #444;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+}
+
+/* Dropdown-Menü */
+.submenu {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #555;
+    display: none;
+    min-width: 200px;
+}
+
+.submenu li {
+    border-top: 1px solid #666;
+}
+
+.submenu a {
+    padding: 10px;
+}
+
+/* Dropdown beim Hover anzeigen */
+.dropdown:hover .submenu {
+    display: block;
+}
+
