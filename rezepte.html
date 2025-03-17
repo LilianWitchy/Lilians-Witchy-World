@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rezepte</title>
+    <title>Rezepte | Lilian´s Witchy World</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .contact-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-<h1>Willkommen bei meinen Rezepten!</h1>
-<p>Hier findest du verschiedene natürliche Rezepte für deine Gesundheit, Pflege und dein Wohlbefinden.</p>
-<p>Klicke auf eine Kategorie, um direkt zu den Rezepten zu gelangen:</p>
+    <h1>
+        <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+    
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
 
-<p>Diese Rezepte sind aus meinem Wissen über Kräuter und Gewürze sowie meiner Freude am Experimentieren entstanden.</p>
-<p>Mir ist immer mehr aufgefallen, wie schädlich viele Produkte aus dem Supermarkt und der Drogerie sind – voller Chemie und unnötiger Zusatzstoffe.</p>
-<p>Oft steht zwar „grün“ oder „natürlich“ auf der Verpackung, doch leider bedeutet das nicht immer, dass tatsächlich hochwertige, wirksame Inhaltsstoffe enthalten sind. Wenn doch, dann oft nur in so minimalen Mengen, dass man kaum etwas von der Heilwirkung merkt.</p>
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
+    </div>
+    
+    <div class="menu" id="menu">
+        <a href="index.html">Startseite</a>
+        <a href="/Lilians-Witchy-World/about">Über mich</a>
+        <a href="/Lilians-Witchy-World/weiterbildungen.html">Weiterbildungen</a>
+        <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
+        <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+        <li class="dropdown">
+            <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
+            <ul class="submenu">
+                <li><a href="seifen-haarprodukte.html">Seifen & Haarprodukte</a></li>
+                <li><a href="teemischungen.html">Teemischungen für mehr Wohlbefinden</a></li>
+                <li><a href="raeuchermischungen.html">Räuchermischungen</a></li>
+                <li><a href="naturheilkunde.html">Naturheilkunde</a></li>
+                <li><a href="salben-balsam.html">Salben & Balsam</a></li>
+            </ul>
+        </li>
+        <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
+        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+        <a href="/Lilians-Witchy-World/agb.html">AGB</a>
+        <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
+    </div>
 
-<p>Meine Haut war irgendwann so empfindlich, dass ich auf fast alles allergisch reagierte und schlimmen Ausschlag bekam.</p>
-<p>Deshalb begann ich, meinen Körper zu entgiften und intensiv zu recherchieren, wie man Pflegeprodukte und Heilmittel selbst herstellen kann.</p>
-<p>Meine Zutaten sollten dabei leicht erhältlich, günstig und für jeden einfach zusammenzustellen sein.</p>
+    <h1>Willkommen bei meinen Rezepten!</h1>
+    <p>Hier findest du verschiedene natürliche Rezepte für deine Gesundheit, Pflege und dein Wohlbefinden.</p>
+    <p>Klicke auf eine Kategorie, um direkt zu den Rezepten zu gelangen:</p>
 
-<p>Bevor du meine Rezepte ausprobierst, möchte ich dich auf Folgendes hinweisen:</p>
-<p>Jeder Mensch ist einzigartig – ebenso wie jede Haut und jedes Haar.</p>
-<p>Viele Menschen haben Allergien, z. B. gegen Korbblütler oder bestimmte ätherische Öle. Bitte stelle sicher, dass du gegen keine der Zutaten allergisch bist, bevor du ein Rezept ausprobierst.</p>
-<p>Was für 100 Menschen perfekt funktioniert, kann bei einer Person möglicherweise nicht die gewünschte Wirkung erzielen oder sogar das Gegenteil bewirken.</p>
+    <p>Diese Rezepte sind aus meinem Wissen über Kräuter und Gewürze sowie meiner Freude am Experimentieren entstanden.</p>
+    <p>Mir ist immer mehr aufgefallen, wie schädlich viele Produkte aus dem Supermarkt und der Drogerie sind – voller Chemie und unnötiger Zusatzstoffe.</p>
+    <p>Oft steht zwar „grün“ oder „natürlich“ auf der Verpackung, doch leider bedeutet das nicht immer, dass tatsächlich hochwertige, wirksame Inhaltsstoffe enthalten sind. Wenn doch, dann oft nur in so minimalen Mengen, dass man kaum etwas von der Heilwirkung merkt.</p>
 
-<p>Ja, ich habe bereits vielen Menschen mit meinen Rezepten geholfen – selbst bei Neurodermitis, Rosacea und kraftlosem Haar.</p>
-<p>Aber achte beim Testen immer darauf, wie dein Körper reagiert! Probiere neue Produkte zunächst an einer kleinen Hautstelle aus und stelle nur eine kleine Menge her, um sicherzugehen, dass du sie verträgst.</p>
+    <p>Meine Haut war irgendwann so empfindlich, dass ich auf fast alles allergisch reagierte und schlimmen Ausschlag bekam.</p>
+    <p>Deshalb begann ich, meinen Körper zu entgiften und intensiv zu recherchieren, wie man Pflegeprodukte und Heilmittel selbst herstellen kann.</p>
+    <p>Meine Zutaten sollten dabei leicht erhältlich, günstig und für jeden einfach zusammenzustellen sein.</p>
 
-<ul>
+    <p>Bevor du meine Rezepte ausprobierst, möchte ich dich auf Folgendes hinweisen:</p>
+    <p>Jeder Mensch ist einzigartig – ebenso wie jede Haut und jedes Haar.</p>
+    <p>Viele Menschen haben Allergien, z. B. gegen Korbblütler oder bestimmte ätherische Öle. Bitte stelle sicher, dass du gegen keine der Zutaten allergisch bist, bevor du ein Rezept ausprobierst.</p>
+    <p>Was für 100 Menschen perfekt funktioniert, kann bei einer Person möglicherweise nicht die gewünschte Wirkung erzielen oder sogar das Gegenteil bewirken.</p>
 
+    <p>Ja, ich habe bereits vielen Menschen mit meinen Rezepten geholfen – selbst bei Neurodermitis, Rosacea und kraftlosem Haar.</p>
+    <p>Aber achte beim Testen immer darauf, wie dein Körper reagiert! Probiere neue Produkte zunächst an einer kleinen Hautstelle aus und stelle nur eine kleine Menge her, um sicherzugehen, dass du sie verträgst.</p>
 
+    <ul>
         <li><a href="seifen-haarprodukte.html">Seifen & Haarprodukte</a></li>
         <li><a href="teemischungen.html">Teemischungen für mehr Wohlbefinden</a></li>
         <li><a href="raeuchermischungen.html">Räuchermischungen</a></li>
@@ -38,3 +113,4 @@
     </ul>
 </body>
 </html>
+
