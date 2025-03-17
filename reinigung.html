@@ -1,12 +1,98 @@
-<button onclick="toggleMenu()">Menü anzeigen</button>
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .contact-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0aa667;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #088e59;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <img src="witchylogo.png">
+        Lilian’s Witchy World
+    </h1>
+
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
+
+    <div class="navbar">
+        <button onclick="toggleMenu()">Menü anzeigen</button>
     </div>
-    
+
     <div class="menu" id="menu">
         <a href="index.html">Startseite</a>
         <a href="/Lilians-Witchy-World/about">Über mich</a>
         <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
         <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-  <li class="dropdown">
+     <li class="dropdown">
             <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
             <ul class="submenu">
                 <li><a href="basics.html">Die Basics</a></li>
@@ -18,11 +104,11 @@
         <li class="dropdown">
             <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
             <ul class="submenu">
-                <li><a href="seifen-haarprodukte.html">Seifen & Haarprodukte</a></li>
-                <li><a href="teemischungen.html">Teemischungen für mehr Wohlbefinden</a></li>
-                <li><a href="raeuchermischungen.html">Räuchermischungen</a></li>
-                <li><a href="naturheilkunde.html">Naturheilkunde</a></li>
-                <li><a href="salben-balsam.html">Salben & Balsam</a></li>
+                <li><a href="#">Seifen & Haarprodukte</a></li>
+                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                <li><a href="#">Räuchermischungen</a></li>
+                <li><a href="#">Naturheilkunde</a></li>
+                <li><a href="#">Salben & Balsam</a></li>
             </ul>
         </li>
         <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
