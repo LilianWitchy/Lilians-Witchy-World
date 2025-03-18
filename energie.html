@@ -38,6 +38,20 @@
             font-size: 20px;
             padding: 10px;
         }
+        .dropdown:hover .submenu {
+            display: block;
+        }
+        .submenu {
+            display: none;
+            background-color: #660082;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .submenu li {
+            padding: 10px;
+            font-size: 18px;
+        }
         .contact-container {
             margin-top: 30px;
             padding: 20px;
@@ -49,6 +63,16 @@
             margin-right: auto;
         }
     </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>
@@ -66,7 +90,7 @@
         <a href="/Lilians-Witchy-World/about">Über mich</a>
         <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
         <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-<li class="dropdown">
+        <li class="dropdown">
             <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
             <ul class="submenu">
                 <li><a href="basics.html">Die Basics</a></li>
@@ -122,19 +146,10 @@
         <p>Die selbstständige Arbeit mit Energie ist ein kraftvoller Prozess der inneren Heilung und des Wachstums. Sie fordert uns auf, Verantwortung für unser eigenes Wohlbefinden zu übernehmen und aktiv zu gestalten, wie wir uns fühlen und wie wir unsere Welt erleben. Es ist ein Weg, auf dem wir immer mehr in unsere wahre Essenz eintauchen können – frei, authentisch und in Einklang mit uns selbst und dem Universum.</p>
   
         <p> Und deshalb habe ich ich meine Bücher geschrieben und werde noch viel mehr davon schreiben. Sie sollen genau dort ansetzen und ein selbst dazu ermächtigen, Blockaden, Traumata und Themen zu fühlen, gegebenfalls anzunehmen und dann aufzulösen. </p>
-
-
     </div>
   
-    </div>
 </body>
 </html>
-
-
-
-
-
-
 
 
 
