@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -36,6 +36,24 @@
             text-decoration: none;
             font-size: 20px;
             padding: 10px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #660082;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .dropdown:hover .submenu {
+            display: block;
+        }
+        .submenu a {
+            padding: 10px;
+            font-size: 18px;
         }
         .contact-container {
             margin-top: 30px;
@@ -77,7 +95,7 @@
 <body>
 
     <h1>
-        <img src="witchylogo.png">
+        <img src="witchylogo.png" alt="Lilian's Witchy World Logo">
         Lilian’s Witchy World
     </h1>
 
@@ -92,30 +110,37 @@
         <a href="/Lilians-Witchy-World/about">Über mich</a>
         <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
         <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-     <li class="dropdown">
+        
+        <!-- Dropdown für "Energetische Selbstarbeit" -->
+        <div class="dropdown">
             <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
-            <ul class="submenu">
-                <li><a href="basics.html">Die Basics</a></li>
-                <li><a href="reinigung.html">energetische Reinigung</a></li>
-                <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
-             </ul>
-        </li>
+            <div class="submenu">
+                <a href="basics.html">Die Basics</a>
+                <a href="reinigung.html">Energetische Reinigung</a>
+                <a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a>
+            </div>
+        </div>
+
         <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
-        <li class="dropdown">
+
+        <!-- Dropdown für "Rezepte" -->
+        <div class="dropdown">
             <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
-            <ul class="submenu">
-                <li><a href="#">Seifen & Haarprodukte</a></li>
-                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                <li><a href="#">Räuchermischungen</a></li>
-                <li><a href="#">Naturheilkunde</a></li>
-                <li><a href="#">Salben & Balsam</a></li>
-            </ul>
-        </li>
+            <div class="submenu">
+                <a href="#">Seifen & Haarprodukte</a>
+                <a href="#">Teemischungen für mehr Wohlbefinden</a>
+                <a href="#">Räuchermischungen</a>
+                <a href="#">Naturheilkunde</a>
+                <a href="#">Salben & Balsam</a>
+            </div>
+        </div>
+
         <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
         <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
         <a href="/Lilians-Witchy-World/agb.html">AGB</a>
         <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
     </div>
+
 
    <h1>Energetische Reinigung</h1>
         
@@ -158,12 +183,12 @@
     </div>
 
 <script>
-         // Menü ein- und ausblenden
-         function toggleMenu() {
-             var menu = document.getElementById("menu");
-             menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
-         }
- 
+    // Menü ein- und ausblenden
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+</script>
 </body>
 </html>
 
