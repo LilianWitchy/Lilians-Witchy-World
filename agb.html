@@ -4,33 +4,55 @@
      <link rel="icon" type="image/x-icon" href="favicon.ico">
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+     <title>Lilian´s Witchy World</title>
      <style>
          body {
              font-family: Garamond, serif;
-             color: #050505;
+             color: white;
              background-color: #4e0261;
              margin: 0;
              padding: 0;
              text-align: center;
+             overflow-x: hidden;
          }
-        body {
-              font-family: Garamond, serif;
-              color: #050505;
-              background-color: #4e0261;
-              margin: 0;
-              padding: 0;
-              text-align: center;
-          }
  
+         /* Sterne Hintergrund */
+         .stars {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+             z-index: -1; /* Sterne bleiben im Hintergrund */
+         }
+ 
+         .star {
+             position: absolute;
+             width: 3px;
+             height: 3px;
+             background-color: white;
+             border-radius: 50%;
+             opacity: 0;
+             animation: twinkle linear infinite;
+         }
+ 
+         @keyframes twinkle {
+             0%, 100% { opacity: 0; }
+             50% { opacity: 1; }
+         }
+ 
+         /* Navbar und Menü */
          .navbar {
              background-color: #0aa667;
              padding: 15px;
+             position: relative;
+             z-index: 10;
          }
  
          .navbar button {
-             background-color: #4e0261;
-             color: white;
+             background-color: white;
+             color: #660082;
              border: none;
              padding: 10px 20px;
              font-size: 18px;
@@ -40,40 +62,51 @@
          .menu {
              display: none;
              margin-top: 20px;
+             position: relative;
+             z-index: 20;
          }
  
          .menu a {
              display: block;
-             color: black;
+             color: white;
              text-decoration: none;
              font-size: 20px;
              padding: 10px;
          }
  
-         .about-section {
-             padding: 20px;
-             text-align: left;
-             max-width: 800px;
-             margin: 0 auto;
-         }
- 
-         h2 {
-             color: #f4c542;
+         /* Weitere Styling für Inhalt */
+         .content {
+             position: relative;
+             z-index: 1;
+             padding-bottom: 100px;
          }
      </style>
-
+ </head>
+ <body>
+     <!-- Sterne Hintergrund -->
+     <div class="stars"></div>
  
-       <div class="navbar">
-         <button onclick="toggleMenu()">Menü anzeigen</button>
-     </div>
+     <!-- Inhalt -->
+     <div class="content">
+         <h1>
+             <img src="logo2.png" alt="Magic Logo">
+             Lilian’s Witchy World
+             <img src="logo2.png" alt="Magic Logo">
+         </h1>
+         <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
  
-     <div class="menu" id="menu">
-     
-         <a href="index.html">Startseite</a>
-         <a href="/Lilians-Witchy-World/about.html">Über mich</a>
-         <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
-         <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-      <li class="dropdown">
+         <!-- Menü-Button -->
+         <div class="navbar">
+             <button onclick="toggleMenu()">Menü anzeigen</button>
+         </div>
+ 
+         <!-- Menü -->
+         <div class="menu" id="menu">
+             <a href="index.html">Startseite</a>
+             <a href="/Lilians-Witchy-World/about">Über mich</a>
+             <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
+             <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
+          <li class="dropdown">
             <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
             <ul class="submenu">
                 <li><a href="basics.html">Die Basics</a></li>
@@ -81,8 +114,8 @@
                 <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
              </ul>
         </li>
-         <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
-       <li class="dropdown">
+             <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+             <li class="dropdown">
             <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
             <ul class="submenu">
                 <li><a href="#">Seifen & Haarprodukte</a></li>
@@ -92,38 +125,12 @@
                 <li><a href="#">Salben & Balsam</a></li>
             </ul>
         </li>
-         <a href="/Lilians-Witchy-World/empfehlen.html">Bücher, die ich empfehle</a>
-         <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
-         <a href="/Lilians-Witchy-World/agb.html">AGB</a>
-         <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
-     </div>
-
-
-    <title>Allgemeine Geschäftsbedingungen (AGB) | Lilian's Witchy World</title>
-    <style>
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #4e0261;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #660082;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: left;
-        }
-        h1, h2 {
-            color: #ffccff;
-        }
-        p {
-            line-height: 1.5;
-        }
+             <a href="/Lilians-Witchy-World/empfehlen.html">Bücher, die ich empfehle</a>
+             <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+             <a href="/Lilians-Witchy-World/agb.html">AGB</a>
+             <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
+         </div>
+ 
     </style>
 </head>
 <body>
