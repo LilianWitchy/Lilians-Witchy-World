@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezepte | Lilian´s Witchy World</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Garamond, serif;
@@ -15,11 +14,42 @@
             padding: 0;
             text-align: center;
         }
+
+        /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Navbar Styling */
         .navbar {
             background-color: #0aa667;
             padding: 15px;
             text-align: center;
+            position: relative;
+            z-index: 10;
         }
+
         .navbar button {
             background-color: white;
             color: #660082;
@@ -28,10 +58,13 @@
             font-size: 18px;
             cursor: pointer;
         }
+
+        /* Menü sichtbar machen */
         .menu {
             display: none;
             margin-top: 20px;
         }
+
         .menu a {
             display: block;
             color: white;
@@ -39,65 +72,108 @@
             font-size: 20px;
             padding: 10px;
         }
-        .dropdown .submenu {
-            display: none;
-            padding-left: 20px;
-        }
+
         .dropdown:hover .submenu {
             display: block;
         }
-        .contact-container {
-            margin-top: 30px;
-            padding: 20px;
+
+        .submenu {
+            display: none;
             background-color: #660082;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
         }
+
+        .submenu li {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        h1 img {
+            width: 150px;
+        }
+
     </style>
+    <script>
+        // Menü ein- und ausblenden
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        // Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
+            let starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                starContainer.appendChild(star);
+            }
+        });
+    </script>
 </head>
 <body>
-    <h1>
-        <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
-        Lilian’s Witchy World
-    </h1>
-    
-    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
-    <div class="navbar">
-        <button onclick="toggleMenu()">Menü anzeigen</button>
-    </div>
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
 
-    <div class="menu" id="menu">
-        <a href="index.html">Startseite</a>
-        <a href="/Lilians-Witchy-World/about">Über mich</a>
-        <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
-        <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-        <div class="dropdown">
-            <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
-            <ul class="submenu">
-                <li><a href="basics.html">Die Basics</a></li>
-                <li><a href="reinigung.html">energetische Reinigung</a></li>
-                <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
-             </ul>
+    <!-- Inhalt -->
+    <div class="content">
+        <h1>
+            <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
+            Lilian’s Witchy World
+        </h1>
+        <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
+
+        <!-- Menü-Button -->
+        <div class="navbar">
+            <button onclick="toggleMenu()">Menü anzeigen</button>
         </div>
-        <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
-        <div class="dropdown">
-            <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
-            <ul class="submenu">
-                <li><a href="seifen-haarprodukte.html">Seifen & Haarprodukte</a></li>
-                <li><a href="teemischungen.html">Teemischungen für mehr Wohlbefinden</a></li>
-                <li><a href="raeuchermischungen.html">Räuchermischungen</a></li>
-                <li><a href="naturheilkunde.html">Naturheilkunde</a></li>
-                <li><a href="salben-balsam.html">Salben & Balsam</a></li>
-            </ul>
+
+        <!-- Menü -->
+        <div class="menu" id="menu">
+            <a href="index.html">Startseite</a>
+            <a href="/Lilians-Witchy-World/about">Über mich</a>
+            <a href="/Lilians-Witchy-World/weiterbildung.html">Weiterbildungen</a>
+            <a href="/Lilians-Witchy-World/meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
+            <li class="dropdown">
+                <a href="/Lilians-Witchy-World/energie.html">Energetische Selbstarbeit ▼</a>
+                <ul class="submenu">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <a href="/Lilians-Witchy-World/meinebücher.html">Meine Bücher</a>
+            <li class="dropdown">
+                <a href="/Lilians-Witchy-World/rezepte.html">Rezepte ▼</a>
+                <ul class="submenu">
+                    <li><a href="seifen-haarprodukte.html">Seifen & Haarprodukte</a></li>
+                    <li><a href="teemischungen.html">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="raeuchermischungen.html">Räuchermischungen</a></li>
+                    <li><a href="naturheilkunde.html">Naturheilkunde</a></li>
+                    <li><a href="salben-balsam.html">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
+            <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
+            <a href="/Lilians-Witchy-World/agb.html">AGB</a>
+            <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
         </div>
-        <a href="/Lilians-Witchy-World/buchempfehlen.html">Bücher, die ich empfehle</a>
-        <a href="/Lilians-Witchy-World/kontakt">Kontakt</a>
-        <a href="/Lilians-Witchy-World/agb.html">AGB</a>
-        <a href="/Lilians-Witchy-World/impressum.html">Impressum</a>
-    </div>
 
     <h1>Selbstständiges Arbeiten mit Energie: Der Weg zu innerer Freiheit und Transformation</h1>
     <p>Energie ist der unsichtbare Faden, der alles im Universum miteinander verbindet – von den kleinsten Atomen bis zu den größten kosmischen Phänomenen. Doch auch in uns selbst fließt Energie, die unser körperliches, emotionales und geistiges Wohlbefinden bestimmt. Sie ist der Motor, der unsere Gedanken, Gefühle und Handlungen antreibt. Doch wie oft bleiben wir uns dieser Kraft unbewusst? Wie oft lassen wir zu, dass ungelöste Themen und Emotionen in unserem Inneren blockieren und uns in unserem Leben festhalten?</p>
