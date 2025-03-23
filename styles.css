@@ -80,6 +80,18 @@
             background-color: #0a8540;
         }
     </style>
+.box {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto; /* Stellt sicher, dass alle Kästen zentriert sind */
+    text-align: left;
+    width: 90%; /* Du kannst die Breite nach Bedarf anpassen */
+    max-width: 800px; /* Optional: Stellt sicher, dass die Kästen nicht zu breit werden */
+}
+
+
 </head>
 <body>
 .banner {
