@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian’s Witchy World</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+            position: relative;
+            z-index: 10;
+        }
+        .navbar button {
+            background-color: white;
+            color: #660082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            margin-top: 20px;
+            position: relative;
+            z-index: 20;
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #ffd700;
+        }
+        .box {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .box ul, .box ol {
+            margin: 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="content">
+        <h1>
+            <img src="logo2.png" alt="Magic Logo">
+            Lilian’s Witchy World
+            <img src="logo2.png" alt="Magic Logo">
+        </h1>
+        <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+        <div class="navbar">
+            <button onclick="toggleMenu()">Menü anzeigen</button>
+        </div>
+        <div class="menu" id="menu">
+            <a href="index.html">Startseite</a>
+            <a href="about.html">Über mich</a>
+            <a href="weiterbildung.html">Weiterbildungen</a>
+            <a href="meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
+            <a href="energie.html">Energetische Selbstarbeit</a>
+            <ul>
+                <li><a href="basics.html">Die Basics</a></li>
+                <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                <li><a href="gedanken.html">Die Macht der Gedanken und Glaubenssätze</a></li>
+            </ul>
+            <a href="meinebuecher.html">Meine Bücher</a>
+            <a href="rezepte.html">Rezepte</a>
+            <ul>
+                <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                <li><a href="haare.html">Haarprodukte</a></li>
+                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                <li><a href="#">Räuchermischungen</a></li>
+                <li><a href="#">Naturheilkunde</a></li>
+                <li><a href="#">Salben & Balsam</a></li>
+            </ul>
+            <a href="empfehlen.html">Bücher, die ich empfehle</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="agb.html">AGB</a>
+            <a href="impressum.html">Impressum</a>
+        </div>
+        <p> In den heutigen Haarprodukten ist so viel Chemie drin, dass es die Haare mit der Zeit austrocknet oder gar leblos hinag hängen lässt.</p>
+        <p> Mit diesen Rezepten möchte ich allen helfen, die ihren Haaren Leben und Natürlichkeit zurück geben möchten. </p>
+        <p> Deshalb testet/ nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltstoffe (Kräuter, ätherische Öle) vertragt. </p>
+        <p> Und besonders wichtig! Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Inhaltstoffen.</p>
+        
+        
+        <h1>Rezept für ein Haaröl für Lockiges, trockenes Haar mit empfindlicher Kopfhaut.</h1>
+        <div class="box">
+            <h2>Zutaten:</h2>
+            <ul>
+                <li>- 2 Esslöffel Leinöl </li>
+                <li>- 2 EL Kokosöl</li>
+                <li>- 1 EL getrocknete Brennnesselblätter </li>
+                <li>- 1 EL getrocknete Rosmarinblätter </li>
+                <li>- 1 EL getrocknete Rosenblütenblätter </li>
+                <li>- 1 EL Lavendelblüten </li>
+                <li>- abgekochtes Glasgefäß </li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2> Anleitung: </h2>
+            <ol>
+                <li>Öle in einem kleinen Topf gut vermischen und bei niedriger Temperatur (im Wasserbad) erwärmen. </li>
+                <li>Dann alle Kräuter nach und nach hinzugeben und immer wieder mal umrühren. </li>
+                <li>Die Wirkstoffe der Kräuter in das Öl extrahieren. Etwa 15-20 Minuten bei niedriger Hitze ziehen lassen. </li>
+                <li>Alternativ können Sie die Mischung auch in einem dunklen, kühlen Ort für 1-2 Wochen ziehen lassen, um die Wirkstoffe zu extrahieren. </li>
+                <li>Zum Schluss alles Abseihen. Nach der Ziehzeit die Mischung durch ein feines Sieb oder ein Baumwolltuch abseihen, um die Kräuter zu entfernen. </li>
+                <li>Das fertige Öl in ein zuvor abgekochtes Glasgefäß geben. </li>
+                <li>1. Auftragen: Eine kleine Menge des Haaröls auf die Kopfhaut auftragen und sanft einmassieren. </li>
+                <li>2. Einwirkzeit: Lassen Sie das Öl mindestens 30 Minuten einwirken. Für eine intensivere Pflege kann das Öl auch über Nacht einwirken. </li>
+                <li>3. Ausspülen: Das Öl mit einem milden Shampoo gründlich auswaschen. </li>
+            </ol>
+        </div>
+        <div class="box">
+            <h2>Feuchtigkeitsspendende Haarkur mit Honig und Kokosjoghurt:</h2>
+            <p>- 2 Esslöffel Honig (Bitte nur echten Honig, vom Imker verwenden. Honig aus dem Supermarkt besteht oft aus Zuckersirup).</p>
+	    <p>- 1 Esslöffel Joghurt</p>
+	    <p>- 1 Teelöffel Aloe Vera Gel (optional, für zusätzliche Feuchtigkeit und Pflege) nicht jedes Haar mag Aloe Vera Gel.</p>
+	    <p>- etwas Warmes Wasser (um die Mischung leichter aufzutragen). Nur so viel, dass es eine cremige Konsistenz wird.</p>
+	    <p>Alles miteinander vermischen und dann aufs frisch gewaschene Haar auftragen.</p>
+	    <p>20 bis 30 Minuten einwirken lassen. Dann sehr gründlich auspülen. Haarkur kann 2-3 mal die Woche wiederholt werden, sollte das Haare die zusätzliche Feuchtigkeit brauchen.</p>
+            <p> Ist es zu viel Feuchtigkeit für dein Haar, dann verdrehe die Zutaten einmal. Also 1 EL Honig und 2 EL Kokosjoghurt.</p>
+ </div>
+    </div>
+
+ <div class="box">
+            <h2> </h2>
+            <ul>
+                <li>  </li>
+                <li> </li>
+                <li>  </li>
+                <li>  </li>
+                <li> </li>
+                <li>  </li>
+                <li> </li>
+                <li> </li>
+            </ul>
+        </div>
+
+
+
+
+
+  <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
