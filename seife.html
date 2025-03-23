@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+ <html lang="de">
+ <head>
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lilian´s Witchy World</title>
+     <style>
+         body {
+             font-family: Garamond, serif;
+             color: white;
+             background-color: #4e0261;
+             margin: 0;
+             padding: 0;
+             text-align: center;
+             overflow-x: hidden;
+         }
+ 
+         /* Sterne Hintergrund */
+         .stars {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+             z-index: -1; /* Sterne bleiben im Hintergrund */
+         }
+ 
+         .star {
+             position: absolute;
+             width: 3px;
+             height: 3px;
+             background-color: white;
+             border-radius: 50%;
+             opacity: 0;
+             animation: twinkle linear infinite;
+         }
+ 
+         @keyframes twinkle {
+             0%, 100% { opacity: 0; }
+             50% { opacity: 1; }
+         }
+ 
+         /* Navbar und Menü */
+         .navbar {
+             background-color: #0aa667;
+             padding: 15px;
+             position: relative;
+             z-index: 10;
+         }
+ 
+         .navbar button {
+             background-color: white;
+             color: #660082;
+             border: none;
+             padding: 10px 20px;
+             font-size: 18px;
+             cursor: pointer;
+         }
+ 
+         .menu {
+             display: none;
+             margin-top: 20px;
+             position: relative;
+             z-index: 20;
+         }
+ 
+         .menu a {
+             display: block;
+             color: white;
+             text-decoration: none;
+             font-size: 20px;
+             padding: 10px;
+         }
+ 
+         /* Weitere Styling für Inhalt */
+         .content {
+             position: relative;
+             z-index: 1;
+             padding-bottom: 100px;
+         }
+     </style>
+ </head>
+ <body>
+     <!-- Sterne Hintergrund -->
+     <div class="stars"></div>
+ 
+     <!-- Inhalt -->
+     <div class="content">
+         <h1>
+             <img src="logo2.png" alt="Magic Logo">
+             Lilian’s Witchy World
+             <img src="logo2.png" alt="Magic Logo">
+         </h1>
+         <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+ 
+         <!-- Menü-Button -->
+         <div class="navbar">
+             <button onclick="toggleMenu()">Menü anzeigen</button>
+         </div>
+ 
+         <!-- Menü -->
+         <div class="menu" id="menu">
+             <a href="index.html">Startseite</a>
+             <a href="about">Über mich</a>
+             <a href="weiterbildung.html">Weiterbildungen</a>
+             <a href="meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
+          <li class="dropdown">
+            <a href="energie.html">Energetische Selbstarbeit ▼</a>
+            <ul class="submenu">
+                <li><a href="basics.html">Die Basics</a></li>
+                <li><a href="reinigung.html">energetische Reinigung</a></li>
+                <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
+             </ul>
+        </li>
+             <a href="meinebücher.html">Meine Bücher</a>
+             <li class="dropdown">
+            <a href="rezepte.html">Rezepte ▼</a>
+            <ul class="submenu">
+                <li><a href="#">Seifen & Haarprodukte</a></li>
+                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                <li><a href="#">Räuchermischungen</a></li>
+                <li><a href="#">Naturheilkunde</a></li>
+                <li><a href="#">Salben & Balsam</a></li>
+            </ul>
+        </li>
+             <a href="empfehlen.html">Bücher, die ich empfehle</a>
+             <a href="kontakt">Kontakt</a>
+             <a href="agb.html">AGB</a>
+             <a href="impressum.html">Impressum</a>
+         </div>
+ 
+         <p>Diese Seite ist noch mitten im Aufbau. Bitte nicht wundern, dass noch nicht alle Punkte im Menü funktionieren.</p>
+         
+     </div>
+    <div class="content">
+        <h1>einfaches Rezept für eine Honigseife</h1>
+        <h2>Zutaten:</h2>
+        <ul>
+            <li>500 g Kernseife (gerieben oder in Flocken)</li>
+            <li>60 ml Kokosöl</li>
+            <li>30 ml Arganöl</li>
+            <li>2 Esslöffel Honig</li>
+            <li>Ätherische Öle nach Wahl (z.B. Lavendel, Rosmarin, Rose)</li>
+            <li>Getrocknete Kräuter (z.B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
+            <li>1 Esslöffel Himalayasalz oder Meersalz (optional)</li>
+        </ul>
+        <h2>Anleitung:</h2>
+        <ol>
+            <li>Form vorbereiten und reinigen.</li>
+            <li>Kernseife im Wasserbad schmelzen, nicht direkt erhitzen.</li>
+            <li>Kokosöl und Arganöl einrühren.</li>
+            <li>Honig hinzufügen und gut vermengen.</li>
+            <li>Ätherische Öle und getrocknete Kräuter nach Wahl hinzufügen und umrühren.</li>
+            <li>Falls gewünscht, Salz hinzufügen und gut mischen.</li>
+            <li>In vorbereitete Form gießen und Oberfläche glätten.</li>
+            <li>Bei Raumtemperatur 24-48 Stunden aushärten lassen.</li>
+            <li>In Stücke schneiden und für mindestens 4 Wochen reifen lassen.</li>
+        </ol>
+        <h2>Lagerung:</h2>
+        <p>Kühler, trockener Ort, innerhalb von 6 Monaten verwenden.</p>
+        <h2>Hinweis:</h2>
+        <p>Honig sorgt für milde und pflegende Reinigung und ist gut für trockene und empfindliche Haut.</p>
+    </div>
+</body>
+  <script>
+         // Menü ein- und ausblenden
+         function toggleMenu() {
+             var menu = document.getElementById("menu");
+             menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+         }
+ 
+         // Sterne erzeugen
+         document.addEventListener("DOMContentLoaded", function() {
+             let starContainer = document.querySelector(".stars");
+             for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                 let star = document.createElement("div");
+                 star.className = "star";
+                 star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                 star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                 star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                 starContainer.appendChild(star);
+             }
+         });
+     </script>
+
+ </body>
+ </html>
+ ~
+
