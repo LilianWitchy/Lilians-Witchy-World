@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hörbuch Galerie</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+        }
+        .frame {
+            border: 5px solid gold;
+            padding: 10px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .frame img {
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        .controls button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Beispiel für 15 Einträge -->
+        <div class="frame">
+            <img src="bild1.jpg" alt="Hörbuch 1">
+            <div class="controls">
+                <button onclick="playAudio('audio1')">▶️ Play</button>
+                <button onclick="pauseAudio('audio1')">⏸️ Pause</button>
+            </div>
+            <audio id="audio1" src="audio1.mp4"></audio>
+        </div>
+        
+        <!-- Hier kannst du weitere Einträge hinzufügen -->
+    </div>
+    
+    <script>
+        function playAudio(id) {
+            let audio = document.getElementById(id);
+            audio.play();
+        }
+        function pauseAudio(id) {
+            let audio = document.getElementById(id);
+            audio.pause();
+        }
+    </script>
+</body>
+</html>
