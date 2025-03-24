@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f5f5f5;
         }
         .gallery {
@@ -46,23 +46,30 @@
 </head>
 <body>
     <div class="gallery">
-        <!-- Beispiel für 15 Einträge -->
         <div class="frame">
-            <img src="coverbildvorne.jpg" alt="Hörbuch 1">
+            <img src="bild1.jpg" alt="Hörbuch 1">
             <div class="controls">
                 <button onclick="playAudio('audio1')">▶️ Play</button>
                 <button onclick="pauseAudio('audio1')">⏸️ Pause</button>
             </div>
-            <audio id="audio1" src="weristbaldur.mp4"></audio>
+            <audio id="audio1">
+                <source src="audio1.mp4" type="audio/mp4">
+                Dein Browser unterstützt dieses Audioformat nicht.
+            </audio>
         </div>
         
-        <!-- Hier kannst du weitere Einträge hinzufügen -->
+        <!-- Weitere Einträge können hier hinzugefügt werden -->
     </div>
     
     <script>
         function playAudio(id) {
             let audio = document.getElementById(id);
-            audio.play();
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.currentTime = 0;
+                audio.play();
+            }
         }
         function pauseAudio(id) {
             let audio = document.getElementById(id);
