@@ -213,6 +213,26 @@
             let audio = document.getElementById(id);
             audio.pause();
         }
-    </script>
-</body>
-</html>
+    <script>
+         // Menü ein- und ausblenden
+         function toggleMenu() {
+             var menu = document.getElementById("menu");
+             menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+         }
+ 
+         // Sterne erzeugen
+         document.addEventListener("DOMContentLoaded", function() {
+             let starContainer = document.querySelector(".stars");
+             for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                 let star = document.createElement("div");
+                 star.className = "star";
+                 star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                 star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                 star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                 starContainer.appendChild(star);
+             }
+         });
+     </script>
+
+ </body>
+ </html>
