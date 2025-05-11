@@ -20,7 +20,21 @@
             color: white;
         }
 
-        .navbar {
+     body {
+    font-family: Garamond, serif;
+    color: white;
+    background-color: #4e0261;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header, footer {
+    background-color: #0aa667;
+    color: white;
+}
+
+.navbar {
     background-color: #0aa667;
     padding: 0;
     display: flex;
@@ -83,58 +97,112 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-        .navbar button {
-            background-color: white;
-            color: #660082;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            margin-left: 10px; /* Abstand zum linken Rand */
-        }
 
-        .menu {
-            display: none;
-            margin-top: 20px;
-        }
+.contact-form {
+    background-color: #4e0261;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 
-        .menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 10px;
-        }
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
-        .contact-form {
-            background-color: #4e0261; 
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
+button {
+    background-color: #0aa667;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 
-        input, textarea {
-            width: 80%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd; 
-            border-radius: 4px;
-        }
+button:hover {
+    background-color: #0a8540;
+}
 
-        button {
-            background-color: #0aa667; 
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
+.box {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto; /* Stellt sicher, dass alle Kästen zentriert sind */
+    text-align: left;
+    width: 90%; /* Du kannst die Breite nach Bedarf anpassen */
+    max-width: 800px; /* Optional: Stellt sicher, dass die Kästen nicht zu breit werden */
+}
 
-        button:hover {
-            background-color: #0a8540;
-        }
+/* Banner-Style */
+.banner {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5); /* Optional: leicht transparente Hintergrundfarbe */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Menü-Styling */
+.menu {
+    display: none;
+    margin-top: 20px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Dropdown-Menü */
+.submenu {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #555;
+    display: none;
+    min-width: 200px;
+}
+
+.submenu li {
+    border-top: 1px solid #666;
+}
+
+.submenu a {
+    padding: 10px;
+}
+
+/* Dropdown beim Hover anzeigen */
+.dropdown:hover .submenu {
+    display: block;
+}
+
     </style>
 .box {
     background-color: rgba(255, 255, 255, 0.2);
