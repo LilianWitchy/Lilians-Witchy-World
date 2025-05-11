@@ -17,6 +17,8 @@
         .navbar {
             background-color: #0aa667;
             padding: 15px;
+            position: relative;
+            z-index: 2; /* Erhöhen des Z-Index für das Menü */
         }
 
         .navbar button {
@@ -61,6 +63,17 @@
             display: block;
         }
 
+        .banner {
+            position: relative;
+            z-index: 1; /* Bild unterhalb des Menüs */
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .about-section {
             padding: 20px;
             text-align: left;
@@ -72,10 +85,6 @@
             color: #f4c542;
         }
 
-        .banner-img {
-            width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
