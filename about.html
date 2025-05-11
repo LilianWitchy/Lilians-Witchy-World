@@ -1,153 +1,171 @@
 <!DOCTYPE html>
- <html lang="de">
- <head>
-     <link rel="icon" type="image/x-icon" href="favicon.ico">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-     <style>
-         body {
-             font-family: Garamond, serif;
-             color: white;
-             background-color: #4e0261;
-             margin: 0;
-             padding: 0;
-             text-align: center;
-         }
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
         body {
-              font-family: Garamond, serif;
-              color: white;
-              background-color: #4e0261;
-              margin: 0;
-              padding: 0;
-              text-align: center;
-          }
- 
-         .navbar {
-             background-color: #0aa667;
-             padding: 15px;
-         }
- 
-         .navbar button {
-             background-color: #4e0261;
-             color: white;
-             border: none;
-             padding: 10px 20px;
-             font-size: 18px;
-             cursor: pointer;
-         }
- 
-         .menu {
-             display: none;
-             margin-top: 20px;
-         }
- 
-         .menu a {
-             display: block;
-             color: white;
-             text-decoration: none;
-             font-size: 20px;
-             padding: 10px;
-         }
- 
-         .about-section {
-             padding: 20px;
-             text-align: left;
-             max-width: 800px;
-             margin: 0 auto;
-         }
- 
-         h2 {
-             color: #f4c542;
-         }
-     </style>
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
- 
-       <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+        .navbar {
+            background-color: #0aa667;
+            padding: 15px;
+        }
 
-<div class="banner">
-    <img src="strand.png" alt="Banner" class="banner-img">
-</div>
+        .navbar button {
+            background-color: #4e0261;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
 
-   <div class="about-section">
-      <h2>Über mich</h2>
-<p>Willkommen auf meiner Seite! Mein Name ist Lilian, die Kurzform von Elisabeth-Ann.</p>
-<p>Mit dieser Homepage teile ich meine Gedanken, Projekte und meine Leidenschaft für Kreativität und Natur.</p>
-<p>Ich bin staatlich anerkannte Erzieherin mit Bachelor-Abschluss und ausgebildete Erlebnispädagogin. Viele Jahre lang habe ich mit Herzblut in verschiedenen Kindergärten gearbeitet und wertvolle Erfahrungen gesammelt.</p>
+        .navmenu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: left;
+        }
 
-<p>Besonders inspiriert hat mich eine Einrichtung, in der alles harmonierte. Dort begann ich, Geschichten für Kinder zu schreiben – kleine Traumreisen, die die Fantasie anregen und Freude schenken. Es war unbeschreiblich schön zu sehen, wie die Kinderaugen leuchteten, wenn ich meine Geschichten vorlas. Dieser Moment hat mir gezeigt, dass meine Worte eine besondere Wirkung haben.</p>
+        .navmenu li {
+            display: inline-block;
+            position: relative;
+        }
 
-<p>Schon früher habe ich leidenschaftlich geschrieben, doch erst jetzt habe ich den Mut gefunden, meine Geschichten mit der Welt zu teilen. So entstanden die ersten Bände meiner "Traumreisen mit Baldur". Mittlerweile sind Band 1 und Band 2 erhältlich, und ich habe mich auch an ein Buch für Erwachsene gewagt, das nun ebenfalls veröffentlicht ist.</p>
+        .navmenu a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 20px;
+            display: block;
+        }
 
-<p>Damit meine Geschichten noch mehr Menschen erreichen, werde ich sie auch als Audio-Versionen hier und auf YouTube verfügbar machen.</p>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0aa667;
+            min-width: 160px;
+            z-index: 1;
+        }
 
-<p>Ich verlege meine Bücher im Selbstverlag, unterstützt durch das technische Know-how meines Mannes. Es ist eine spannende Reise, und ich freue mich darauf, noch viele weitere Werke zu erschaffen.</p>
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-<p>Doch nicht nur das Schreiben begeistert mich – seit Jahren fasziniert mich die Welt der Kräuter. Ich stelle meine eigene natürliche Kosmetik her und habe für mich entdeckt, wie wertvoll und wirkungsvoll chemiefreie Alternativen sind. Diese Erfahrungen teile ich gerne, indem ich meine Rezepte für Hautpflege, Teemischungen, Salben und pflanzliche Heilmittel hier veröffentliche.</p>
+        .about-section {
+            padding: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-<p>Ob Tees zur Entspannung, natürliche Pflegeprodukte oder selbstgemachte Heilmittel – ich liebe es, die Kraft der Natur zu nutzen und anderen damit zu helfen.</p>
+        h2 {
+            color: #f4c542;
+        }
 
-<h3>Was mir wichtig ist:</h3>
-<ul>
-    <li>Yoga</li>
-    <li>Ein bewusster und achtsamer Umgang mit der Natur</li>
-    <li>Chemiefreie Alternativen für Kosmetik, Hygieneprodukte, Nahrungsmittel und Medizin</li>
-    <li>Alles, was mit Entspannung und innerer Balance zu tun hat</li>
-</ul>
+        .banner-img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
 
-<p>Aktuell arbeite ich an weiteren Projekten, darunter neue Bücher und Audioaufnahmen. Ich freue mich, wenn du mich auf dieser Reise begleitest!</p>
+    <!-- Menü -->
+    <div class="navbar">
+        <ul class="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                </ul>
+            </li>
+            <li><a href="angebote.html">Meine Angebote</a></li>
+            <li class="dropdown">
+                <a href="energie.html">Energetische Selbstarbeit</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li><a href="meinebücher.html">Meine Bücher</a></li>
+            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
 
-<p>Schön, dass du hier bist! Ich hoffe, meine Inhalte inspirieren dich und helfen dir weiter. Falls du Fragen hast oder ein individuelles Rezept für Haut und Haar möchtest, schreibe mir gerne über das Kontaktformular – ich freue mich, mein Wissen zu teilen!</p>
+    <!-- Banner -->
+    <div class="banner">
+        <img src="strand.png" alt="Banner" class="banner-img">
+    </div>
 
-     </div>
- 
-     <script>
-         function toggleMenu() {
-             var menu = document.getElementById("menu");
-             if (menu.style.display === "none" || menu.style.display === "") {
-                 menu.style.display = "block";
-             } else {
-                 menu.style.display = "none";
-             }
-         }
-     </script>
- </body>
- </html>
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>Über mich</h2>
+        <p>Willkommen auf meiner Seite! Mein Name ist Lilian, die Kurzform von Elisabeth-Ann.</p>
+        <p>Mit dieser Homepage teile ich meine Gedanken, Projekte und meine Leidenschaft für Kreativität und Natur.</p>
+        <p>Ich bin staatlich anerkannte Erzieherin mit Bachelor-Abschluss und ausgebildete Erlebnispädagogin. Viele Jahre lang habe ich mit Herzblut in verschiedenen Kindergärten gearbeitet und wertvolle Erfahrungen gesammelt.</p>
 
+        <p>Besonders inspiriert hat mich eine Einrichtung, in der alles harmonierte. Dort begann ich, Geschichten für Kinder zu schreiben – kleine Traumreisen, die die Fantasie anregen und Freude schenken. Es war unbeschreiblich schön zu sehen, wie die Kinderaugen leuchteten, wenn ich meine Geschichten vorlas. Dieser Moment hat mir gezeigt, dass meine Worte eine besondere Wirkung haben.</p>
+
+        <p>Schon früher habe ich leidenschaftlich geschrieben, doch erst jetzt habe ich den Mut gefunden, meine Geschichten mit der Welt zu teilen. So entstanden die ersten Bände meiner "Traumreisen mit Baldur". Mittlerweile sind Band 1 und Band 2 erhältlich, und ich habe mich auch an ein Buch für Erwachsene gewagt, das nun ebenfalls veröffentlicht ist.</p>
+
+        <p>Damit meine Geschichten noch mehr Menschen erreichen, werde ich sie auch als Audio-Versionen hier und auf YouTube verfügbar machen.</p>
+
+        <p>Ich verlege meine Bücher im Selbstverlag, unterstützt durch das technische Know-how meines Mannes. Es ist eine spannende Reise, und ich freue mich darauf, noch viele weitere Werke zu erschaffen.</p>
+
+        <p>Doch nicht nur das Schreiben begeistert mich – seit Jahren fasziniert mich die Welt der Kräuter. Ich stelle meine eigene natürliche Kosmetik her und habe für mich entdeckt, wie wertvoll und wirkungsvoll chemiefreie Alternativen sind. Diese Erfahrungen teile ich gerne, indem ich meine Rezepte für Hautpflege, Teemischungen, Salben und pflanzliche Heilmittel hier veröffentliche.</p>
+
+        <p>Ob Tees zur Entspannung, natürliche Pflegeprodukte oder selbstgemachte Heilmittel – ich liebe es, die Kraft der Natur zu nutzen und anderen damit zu helfen.</p>
+
+        <h3>Was mir wichtig ist:</h3>
+        <ul>
+            <li>Yoga</li>
+            <li>Ein bewusster und achtsamer Umgang mit der Natur</li>
+            <li>Chemiefreie Alternativen für Kosmetik, Hygieneprodukte, Nahrungsmittel und Medizin</li>
+            <li>Alles, was mit Entspannung und innerer Balance zu tun hat</li>
+        </ul>
+
+        <p>Aktuell arbeite ich an weiteren Projekten, darunter neue Bücher und Audioaufnahmen. Ich freue mich, wenn du mich auf dieser Reise begleitest!</p>
+
+        <p>Schön, dass du hier bist! Ich hoffe, meine Inhalte inspirieren dich und helfen dir weiter. Falls du Fragen hast oder ein individuelles Rezept für Haut und Haar möchtest, schreibe mir gerne über das Kontaktformular – ich freue mich, mein Wissen zu teilen!</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
