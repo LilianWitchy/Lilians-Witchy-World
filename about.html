@@ -18,16 +18,7 @@
             background-color: #0aa667;
             padding: 15px;
             position: relative;
-            z-index: 2; /* Erhöhen des Z-Index für das Menü */
-        }
-
-        .navbar button {
-            background-color: #4e0261;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
+            z-index: 10; /* Sicherstellen, dass das Menü oben ist */
         }
 
         .navmenu {
@@ -58,6 +49,8 @@
             background-color: #0aa667;
             min-width: 160px;
             z-index: 1;
+            top: 100%;  /* Positioniert das Dropdown unter dem Menü */
+            left: 0;
         }
 
         .dropdown:hover .dropdown-content {
@@ -75,6 +68,7 @@
             color: #f4c542;
         }
 
+        /* Banner Bild */
         .banner {
             width: 100%;
             margin-top: 20px;
@@ -86,20 +80,10 @@
             display: block;
         }
 
-        /* Verhindert das Überlappen von Menüs oder anderen Elementen */
+        /* Sicherstellen, dass das Dropdown-Menü nicht vom Bild oder anderen Elementen überlappt wird */
         .menu-container {
             position: relative;
         }
-        
-        .dropdown-content a {
-            padding: 10px;
-            display: block;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
     </style>
 </head>
 <body>
@@ -193,4 +177,3 @@
     </script>
 </body>
 </html>
-
