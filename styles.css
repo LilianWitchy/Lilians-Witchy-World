@@ -7,6 +7,7 @@
     <title>Lilian´s Witchy World</title> 
     <style>
       /* Grundlegende Styles für die gesamte Seite */
+/* Grundlegende Styles für die gesamte Seite */
 body {
     font-family: Garamond, serif;
     color: white;
@@ -60,10 +61,14 @@ header, footer {
 }
 
 /* Dropdown-Menü */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     background-color: white;
     min-width: 180px;
