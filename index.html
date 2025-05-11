@@ -53,15 +53,6 @@
             align-items: center;
         }
 
-        .navbar button {
-            background-color: white;
-            color: #660082;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
         .navmenu {
             list-style: none;
             padding: 0;
@@ -145,9 +136,8 @@
         </h1>
         <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
 
-        <!-- Menü-Button -->
+        <!-- Navigationsmenü -->
         <div class="navbar">
-            <button onclick="toggleMenu()">Menü anzeigen</button>
             <ul class="navmenu">
                 <li class="dropdown">
                     <a href="index.html">Startseite</a>
@@ -214,12 +204,6 @@
     </footer>
 
     <script>
-        // Menü ein- und ausblenden
-        function toggleMenu() {
-            var menu = document.querySelector(".navmenu");
-            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
-        }
-
         // Sterne erzeugen
         document.addEventListener("DOMContentLoaded", function() {
             let starContainer = document.querySelector(".stars");
