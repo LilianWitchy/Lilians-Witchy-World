@@ -250,7 +250,7 @@
           font-size: 18px;
           padding: 12px;
         }
-      }
+      
 
 .about-container {
     display: flex;
@@ -260,17 +260,17 @@
     padding: 20px;
     max-width: 1000px;
     margin: auto;
-    flex-wrap: wrap;
     text-align: left;
+    flex-wrap: wrap;
 }
 
 .about-container img {
-    max-width: 200px;
+    width: 4cm; /* Fixe Breite von ca. 3–5 cm */
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
-
 
     </style>
 </head>
