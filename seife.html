@@ -15,6 +15,7 @@
             text-align: center;
             overflow-x: hidden;
         }
+
         .stars {
             position: fixed;
             top: 0;
@@ -24,6 +25,7 @@
             pointer-events: none;
             z-index: -1;
         }
+
         .star {
             position: absolute;
             width: 3px;
@@ -33,18 +35,19 @@
             opacity: 0;
             animation: twinkle linear infinite;
         }
+
         @keyframes twinkle {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
         }
+
         .navbar {
             background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
+            padding: 10px 20px;
             position: relative;
             z-index: 10;
             display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
+            justify-content: center;
         }
 
         .navmenu {
@@ -52,11 +55,12 @@
             padding: 0;
             display: flex;
             margin: 0;
+            flex-wrap: wrap;
         }
 
         .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
+            margin: 0 15px;
+            position: relative;
         }
 
         .navmenu a {
@@ -72,7 +76,6 @@
             border-radius: 5px;
         }
 
-        /* Dropdown-Menü */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -108,9 +111,11 @@
             max-width: 800px;
             margin: auto;
         }
+
         h1, h2 {
             color: #ffd700;
         }
+
         .box {
             background-color: rgba(255, 255, 255, 0.2);
             border: 2px solid #ffd700;
@@ -119,6 +124,7 @@
             margin: 20px 0;
             text-align: left;
         }
+
         .box ul, .box ol {
             margin: 0;
             padding: 0 20px;
@@ -127,62 +133,65 @@
 </head>
 <body>
     <div class="stars"></div>
+
+    <!-- Navigation außerhalb des Content-Containers -->
+    <div class="navbar">
+        <ul class="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                </ul>
+            </li>
+            <li><a href="angebote.html">Meine Angebote</a></li>
+            <li class="dropdown">
+                <a href="energie.html">Energetische Selbstarbeit</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li><a href="meinebücher.html">Meine Bücher</a></li>
+            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+
+    <!-- Inhalt -->
     <div class="content">
         <h1>
             <img src="logo2.png" alt="Magic Logo">
             Lilian’s Witchy World
             <img src="logo2.png" alt="Magic Logo">
         </h1>
+
         <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
 
-        
-         <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+        <p>Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben: Neurodermitis, Rosacea, Ausschlag.</p>
+        <p>Und auch allen, die ihren Körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten.</p>
+        <p>Deshalb testet/nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltsstoffe (Kräuter, ätherische Öle) vertragt.</p>
+        <p>Besonders wichtig: Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Zusatzstoffen.</p>
+        <p>Bitte verwende Salze als Peeling nur, wenn deine Haut das gut verträgt.</p>
 
-        
-        <p> Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben. Neurodermitis, Rosacea, Ausschlag.</p>
-        <p> Und auch allen, die ihre körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten </p>
-        <p> Deshalb testet/ nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltstoffe (Kräuter, ätherische Öle) vertragt. </p>
-        <p> Und besonders wichtig! Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Inhaltstoffen.</p>
-        <p> Und bitte nutze Salze auch nur dann als Peeling, wenn deine Haut das verträgt.</p>
-        
         <h1>Einfaches Rezept für eine Honigseife</h1>
+
         <div class="box">
             <h2>Zutaten:</h2>
             <ul>
@@ -190,11 +199,12 @@
                 <li>60 ml Kokosöl</li>
                 <li>30 ml Arganöl</li>
                 <li>2 Esslöffel Honig</li>
-                <li>Ätherische Öle nach Wahl (z.B. Lavendel, Rosmarin, Rose)</li>
-                <li>Getrocknete Kräuter (z.B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
+                <li>Ätherische Öle nach Wahl (z. B. Lavendel, Rosmarin, Rose)</li>
+                <li>Getrocknete Kräuter (z. B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
                 <li>1 Esslöffel Himalayasalz oder Meersalz (optional)</li>
             </ul>
         </div>
+
         <div class="box">
             <h2>Anleitung:</h2>
             <ol>
@@ -205,35 +215,32 @@
                 <li>Ätherische Öle und getrocknete Kräuter nach Wahl hinzufügen und umrühren.</li>
                 <li>Falls gewünscht, Salz hinzufügen und gut mischen.</li>
                 <li>In vorbereitete Form gießen und Oberfläche glätten.</li>
-                <li>Bei Raumtemperatur 24-48 Stunden aushärten lassen.</li>
-                <li>In Stücke schneiden und für mindestens 4 Wochen reifen lassen.</li>
+                <li>Bei Raumtemperatur 24–48 Stunden aushärten lassen.</li>
+                <li>In Stücke schneiden und mindestens 4 Wochen reifen lassen.</li>
             </ol>
         </div>
+
         <div class="box">
             <h2>Lagerung:</h2>
             <p>Kühl, trocken und innerhalb von 6 Monaten verwenden.</p>
         </div>
-    </div>
 
- <div class="box">
-            <h2>Zutaten für eine Körperseife, bei trockener, empfindlicher Haut</h2>
+        <div class="box">
+            <h2>Zutaten für eine Körperseife bei trockener, empfindlicher Haut:</h2>
             <ul>
-                <li> - 200 g Kernseife (geraspelt) </li>
-                <li> - 50 g Kokosöl</li>
-                <li> - 10 Tropfen Rosenöl </li>
-                <li> - 2 EL getrocknete Lavendelblüten </li>
-                <li> - 2 EL getrocknete Rosenblütenblätter </li>
-                <li> - 1 EL getrockneter Rosmarin </li>
-                <li> - 2 EL Himalaya-Salz </li>
-                <li> - 2 EL Meersalz </li>
+                <li>200 g Kernseife (geraspelt)</li>
+                <li>50 g Kokosöl</li>
+                <li>10 Tropfen Rosenöl</li>
+                <li>2 EL getrocknete Lavendelblüten</li>
+                <li>2 EL getrocknete Rosenblütenblätter</li>
+                <li>1 EL getrockneter Rosmarin</li>
+                <li>2 EL Himalaya-Salz</li>
+                <li>2 EL Meersalz</li>
             </ul>
         </div>
+    </div>
 
-
-
-
-
-  <script>
+    <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
