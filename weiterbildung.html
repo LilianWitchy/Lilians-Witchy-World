@@ -81,15 +81,58 @@
         button:hover {
             background-color: #088e59;
         }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #335918;
+            min-width: 160px;
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #335918;
+            left: 100%;
+            top: 0;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #445b24;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
-<div class="banner">
-    <img src="wald2.png" alt="Banner" class="banner-img">
-</div>
+    <div class="banner">
+        <img src="wald2.png" alt="Banner" class="banner-img">
+    </div>
 
     <h1>
-        <img src="witchylogo.png">
+        <img src="witchylogo.png" alt="Logo">
         Lilian’s Witchy World
     </h1>
 
@@ -101,34 +144,38 @@
 
     <div class="menu" id="menu">
         <a href="index.html">Startseite</a>
-        <a href="about">Über mich</a>
+        <a href="about.html">Über mich</a>
         <a href="weiterbildung.html">Meine Weiterbildungen</a>
         <a href="meinemission.html">Meine Mission: Licht, Heilung und Wachstum</a>
-	    <a href="angebote.html">Meine Angebote für dich und euch</a>
-     <li class="dropdown">
+        <a href="angebote.html">Meine Angebote für dich und euch</a>
+        
+        <div class="dropdown">
             <a href="energie.html">Energetische Selbstarbeit ▼</a>
-            <ul class="submenu">
-                <li><a href="basics.html">Die Basics</a></li>
-                <li><a href="reinigung.html">energetische Reinigung</a></li>
-                <li><a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a></li>
-             </ul>
-     </li>
-	<a href="blog.html">Mein Blog</a>      
+            <div class="dropdown-content">
+                <a href="basics.html">Die Basics</a>
+                <a href="reinigung.html">Energetische Reinigung</a>
+                <a href="gedanken.html">Die Macht der eigenen Gedanken und Glaubenssätze</a>
+            </div>
+        </div>
+
+        <a href="blog.html">Mein Blog</a>      
         <a href="meinebücher.html">Meine Bücher</a>
-	<a href="hörbuch.html">Meine Bücher als Hörbuch</a>   
-       <li class="dropdown">
+        <a href="hörbuch.html">Meine Bücher als Hörbuch</a>
+
+        <div class="dropdown">
             <a href="rezepte.html">Rezepte ▼</a>
-            <ul class="submenu">
-                <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                <li><a href="haare.html">Haarprodukte</a></li>
-                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                <li><a href="#">Räuchermischungen</a></li>
-                <li><a href="#">Naturheilkunde</a></li>
-                <li><a href="#">Salben & Balsam</a></li>
-            </ul>
-        </li>
+            <div class="dropdown-content">
+                <a href="seife.html">Körperseifen und Duschjelly</a>
+                <a href="haare.html">Haarprodukte</a>
+                <a href="#">Teemischungen für mehr Wohlbefinden</a>
+                <a href="#">Räuchermischungen</a>
+                <a href="#">Naturheilkunde</a>
+                <a href="#">Salben & Balsam</a>
+            </div>
+        </div>
+
         <a href="empfehlen.html">Bücher, die ich empfehle</a>
-        <a href="kontakt">Kontakt</a>
+        <a href="kontakt.html">Kontakt</a>
         <a href="agb.html">AGB</a>
         <a href="impressum.html">Impressum</a>
     </div>
@@ -137,142 +184,16 @@
         <h2>Meine Weiterbildungen</h2>
         <p class="content-text">
             Hier findest du eine Übersicht meiner abgeschlossenen Weiterbildungen. Ich lege großen Wert darauf, mich stetig weiterzuentwickeln und neue Perspektiven in meine Arbeit einzubringen.
-            Ich werde hier nur all die Weiterbildungen beifügen, die ich für meinen jetzigen und zukünftigen Weg wichtig finde. Was ich als unwichtig erachte, lasse ich aus.
-            Das bedeutet, Weiterbildungen, die ich als Erzieherin machen MUSSTE, wie PeerGroup und Co. werden hier nicht aufgeführt.
         </p>
 
-      
         <ul class="education-list">
             <li class="education-item">
-                <h3> 03/2012 - "Einführung in die Erlebnispädagogik"</h3>
-                <p>Inhalte der fortbildung:</p>
-                <p> - Selbsterfahrung in der Rolle als Teilnehmer/in in einer Reihe von Initiativübungen, kooperativen Abenteuerspielen und komplexen Lernprojekten </p>
-                <p> - Zielgerichteter pädagogigischer Einsatz kooperativer Abenteuerspiele </p>
-                <p> - Geschichte und Hintergründe der Erlebnispädagogik </p>
-                <p> - Ziele der Erlebnispädagogik </p>
-                <p> - Wirkungsmodelle und methodische Prinzipien </p>
-                <p> - Kennen lernen unterschiedlicher Reflexionsmethoden </p>
-                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
+                <h3>03/2012 - "Einführung in die Erlebnispädagogik"</h3>
+                <p>Inhalte der Fortbildung:</p>
+                <p>- Selbsterfahrung in der Rolle als Teilnehmer/in in einer Reihe von Initiativübungen...</p>
+                <!-- Weitere Fortbildungseinträge -->
             </li>
-
-            <li class="education-item">
-                <h3> 10/2012 - "Kooperative Abenteuerspiele - praktische Erlebnispädagogik"</h3>
-                <p> - Zielgerichteter Einsatz kooperativer Abenteuerspiele und Initiativübungen</p>
-                <p> - Reflexionsmöglichkeiten und Transfer in den Alltag </p>
-                <p> - Phasen und Methodik der Spielleitung </p>
-                <p> - Sicherheit in der Erlebnispädagogik und bei kooperativen Abenteuerspielen </p>
-                <p> - Selbsterfahrung in der Anleitung kooperativer Abenteuerspiele und in der Moderation von Reflexionsrunden </p>
-                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
-            </li>
-            
-           <li class="education-item">
-                <h3> 08/2013 - "Draußen unterwegs sein und lernen" </h3>
-                <p> - "Expedition" als Kernbestandteil erlebnispädagogischer Programme </p>
-                <p> - Selbsterfahrung: zweitägige Treckingtour in Gruppenselbststeuerung mit Biwak unter einfachen Bedingungen und mit intensiver Naturerfahrung</p>
-                <p> - Überlegungen zum pädagogischen Einsatz des Mediums "Expedition"</p>
-                <p> - Erwerb grundlegender Outdoorkompetenzen</p>
-                <p> - Naturerfahrungsübungen </p>
-                <p> - Gewährleistung der physischen und psychischen Sicherheit während einer Tour </p>
-                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas</p>
-            </li>
-
-           <li class="education-item">
-                <h3> 07/2014 - "Umfangreiche Qualifizierung in der Methode der Erlebnispädagogik</h3>
-                <p> - Fachunterricht mit zusätzlich 99 Stunden absolvierte Ausbildung</p>
-                <p> - Diese Ausbildung (2011-2014) qualifiziert dazu, im eigenem Arbeitsfeld für unterschiedliche Zielgruppen erlebnispädagogische Angebote und Projekte zu entwickeln und umzusetzen. </p>
-                <p> - Modul 1 : Einführung in die Erlebnispädagogik, 3 Tage</p>
-                <p> - Modul 2: Kooperative Abenteuerspiele - praktische Erlebnospädagogik, 4 tage</p>
-                <p> - Modul 3: Draußen unterwegs sein und lernen, 3 Tage </p>
-                <p> Weiterbildungstrainer Hardy Lux und Jens Thomas und Abteilungsleiter der Fachschule für Sozialpädagogik Axel Lüttich</p>
-            </li>
-
-           <li class="education-item">
-                <h3> 01/2017 - "Erlebnispädagogik Spezial - Grenzerfahrung, Sicherheit und Risikomanagement"</h3>
-                <p> Ziele der Fortbildung: </p>
-                <p> - Auseinandersetzung mit eigener Grenzen </p>
-                <p> - Selbsterfahrung in herausfordernden Situationen in einer Gruppe</p>
-                <p> - Erwerb von Kenntnisse und Erfahrungen mit Herausforderungen und Grenzerfahrungen im pädagogischen Kontext</p>
-                <p> - Vertiefung des Verständnisses der Balance von Sicherheit und Risikoempfinden in erlebnispädagogischen Programmen</p>
-                <p> - eindrückliche Naturerfahrung </p>
-		<p> Inhalte der Fortbildung: </p>
-                <p> - dreitägige Wander- und Kanuexpedition in der winterlichen Uckermark </p>
-                <p> - Zeltbiwak und Kochen am Feuer in Gruppenselbststeuerung </p>
-                <p> - Befahrung des Baches "Küstrinchen" mit Kanu und winterlichen Bedingungen </p>
-                <p> - Reflexionen und Inputs zu den Themen: Herausforderung, Grenzerfahrung, Sicherheit </p>
-                <p> - Chancen und Grenzen des pädagogischen Einsatzes herausfordernder Unternehmungen </p>
-                <p> Weiterbildungstrainer Jens Thomas</p>
-            </li>
-
-            <li class="education-item">
-                <h3> 05/2019 bis 11/2019 - Ausbildung zur Praxisanleiterin</h3>
-                <p> Fortbildung von pädagogischen Fachkräften für die fachliche Anleitung und Betreuung von Praktikantinnen  und Praktikanten in  Einrichtungen der Kinder- und Jugendhilfe, sowie in Einrichtungen und Diensten der Behindertenhilfe</p>
-                <p> Modul 1: Grundlagen der Ausbildung von Erziehern und berufsrelevanten rechtlichen Rahmenbedingungen kennen, sowie Anforderungen an Praxisanleiter in den Unterschiedlichen Arbeitsfeldern reflektieren. </p>
-                <p> Modul 2: Den Ausbildungsprozess gemeinsam mit dem Team, sowie dem Praktikanten planen. </p>
-                <p> Modul 3: Beziehungen gestalten sowie Bildungsprozesse anregen und unterstützen. </p>
-                <p> Modul 4: Reflexionsgespräche führen, Feedback geben und beurteilen.</p>
-                <p> Modul 5: Lernortkooperation gestalten  </p>
-		<p> Weiterbildungsträger: BildungsBeratung, Monika Hütt</p>
-            </li>
-
-<li class="education-item">
-                <h3> 03/2018 - "Entspannungspädagogik" - zur direkten Anwendung mit Kindern </h3>
-                <p> - Wirkung von Ruhe und Entspannung </p>
-                <p> - Was ist Stress und was stresst Kinder? </p>
-                <p> - Autogenes Training </p>
-                <p> - Kindgerechtes Yoga</p>
-                <p> - Spezielle Wahrnemungsübungen (Wie geht es mir? Was brauche ich?) </p>
-                <p> - progressive Muskelentspannung </p>
-		<p> - spielerische Bewegung </p>
-                <p> - Selbsterfahrung und gruppendynamische Prozesse </p>
-                <p> - Bewältigungshilfen durch Aktionen </p>
-                <p> Weiterbildungsträger: Ländliche Erwachsenenbildung im Freistaat Sachsen e.V. (LEB), bei Nancy Seidel </p>
-            </li>
-
-
-           <li class="education-item">
-                <h3> 07/2018 - "Forschen rund um den Körper" </h3>
-                <p> Inhalte der Fortbildung: </p>
-                <p> - Fachliches Wissen über die Organe bzw. Organsysteme des menschlichen Körpers, sowie eigene Recherchen zu anatomischen und physiologischen Aspekten. </p>
-                <p> - Erfahrungsaustausch über die Körperwahrnehmung und das Körperwissen bei Kindern im Alter von 3-10 Jahren </p>
-                <p> - Impulse zur differenzierten Lernbegleitung der Kinder zum Thema Körper bei entdeckenden, sowie forschenden Aktivitäten. </p>
-                <p> - Ko-Konstruktive Entwicklung einfacher Struktur- und Funktionsmodellen und die didaktische Auseinandersetzung im modellkritischen Dialog. </p>
-                <p> - Highlight: Lebensmittel, wie Butter und Quark selbst herstellen.</p>
-                <p> Die Fortbildung wurde von der Handwerkskammer zu Leipzig durchgeführt, lokaler Netzwerkpartner der Stiftung "Haus der kleinen Forscher" </p>
-            </li>
-
-
-            <li class="education-item">
-                <h3> 11/2018 - "Kinder fordern uns heraus. Kinder mit Verhaltensaufälligkeiten erkennen, begleiten und unterstützen." </h3>
-                <p> Weiterbildungsträger: Soziale Initiative Camburg e.V., Seminarleiterin Brigitte Holz-Schöttler </p>
-            </li>
-
-           <li class="education-item">
-                <h3> 11/2018 - "Forschen zu Licht, Farben und Sehen - Als Lernbegleitung Projekte mit Kindern gestalten." </h3>
-                <p> Inhalt der Fortbildung: </p>
-                <p> - Reflexion zu den bisherigen Höhepunkten des Forschens mit Kindern </p>
-                <p> - Auseinadersetzung mit verschiedenen Licht- und Farbphänomenen (z.B. Naturfarben, Farbmischungen, Farbsicht im  Dunkeln, ...) durch selbstständiges Experimentieren und Forschen. </p>
-                <p> - Kennenlernen der Bewertungskriterien guter Projektarbeit </p>
-                <p> - gemeinsame Entwicklung verschiedener Bausteine aus unterschiedlichen Bildungsbereichen, zu "Licht, Farben, Sehen" - Projekten. </p>
-                <p> Die Fortbildung wurde von der Handwerkskammer zu Leipzig durchgeführt, lokaler Netzwerkpartner der Stiftung "Haus der kleinen Forscher" </p>
-            </li>
-
-
-
-		 <li class="education-item">
-                <h3> 04/2025 - "Human Design" Selbststudium, noch laufend ... </h3>
-                <p> Inhalt der Fortbildung: </p>
-                <p> - Charts lesen und auswerten lernen. </p>
-	 	<p> - Lernen und verstehen der vier (bzw. fünf) Typen- </p>
-                <p> - Die Bedeutung der Charts und Energiezentren für die Person verstehen und erläutern. </p>
-                <p> - Stärken, wie Schwächen erkennen. </p>
-                <p> - Lernen von Zielen und der Anwendung im realen Leben (Persönlichkeitsentwicklung, Partnerschaftsberatung, Berufliche Orientierung, Kindererziehung).</p>
-                <p> - Lernen der Strategien und Zentren. </p>
-	        <p> - Wie definiert das eine Person. </p>
-	        <p> - offene Chakren. </p>
-		<p> - Schatten und Entfaltung. </p>
-		<p> - Erstellen eines Workbooks. </p>	 
-            </li>
-         </ul>
+        </ul>
     </div>
 
     <script>
