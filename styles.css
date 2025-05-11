@@ -24,15 +24,24 @@ header, footer {
 }
 
 /* Navbar-Styles */
+
 .navbar {
     background-color: #0aa667;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start; /* Menü nach links ausrichten */
-    height: 60px;
-    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 100;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0aa667;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Höherer z-index */
+}
 .navmenu {
     list-style-type: none;
     margin: 0;
