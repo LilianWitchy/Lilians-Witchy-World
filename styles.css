@@ -145,6 +145,23 @@ button:hover {
     max-width: 800px; /* Optional: Stellt sicher, dass die Kästen nicht zu breit werden */
 }
 
+/* Braune Box für die Weiterbildungen */
+.weiterbildung-box {
+    background-color: #3e1f1b; /* Brauner Hintergrund */
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: left;
+    width: 90%; /* Kann nach Bedarf angepasst werden */
+    max-width: 800px; /* Maximale Breite für die Box */
+    border: 2px solid #ffd700; /* Goldener Rand für einen edlen Look */
+}
+
+/* Optional: Eine leichte Schattenwirkung für die Box */
+.weiterbildung-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
 /* Banner-Styles */
 .banner {
     position: relative;
