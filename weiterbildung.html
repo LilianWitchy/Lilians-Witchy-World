@@ -103,12 +103,16 @@
             padding: 0;
         }
 
+     /* Anpassung für die Weiterbildungs-Kästen */
         .education-item {
-            background-color: #6a4e23; /* Brauner Hintergrund für jeden Kasten */
+            background-color: #8B5E3C; /* Brauner Hintergrund */
+            color: white;
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px auto; /* Zentrieren der Kasten */
+            border-radius: 8px;
+            display: block; /* Kasten wird sich an die Breite des Textes anpassen */
+            width: fit-content; /* Passt sich automatisch der Breite des Inhalts an */
+            max-width: 100%; /* Verhindert, dass der Kasten über die Containerbreite hinausgeht */
         }
 
         .education-item h3 {
