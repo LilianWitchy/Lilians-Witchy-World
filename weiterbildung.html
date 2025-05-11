@@ -15,13 +15,36 @@
             text-align: center;
         }
 
+        /* Container für das Bild und den Text */
+        .hero-section {
+            background-image: url('wald2.png'); /* Ersetze 'dein-bild.jpg' mit dem Pfad zu deinem Bild */
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Höhe des Bildes anpassen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für besseren Kontrast */
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            font-size: 30px;
+            max-width: 90%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund für besseren Text-Kontrast */
+            border-radius: 10px;
+        }
+
         .navbar {
             background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
+            padding: 10px 20px;
             position: relative;
             z-index: 10;
             display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -34,7 +57,7 @@
 
         .navmenu li {
             margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
+            position: relative;
         }
 
         .navmenu a {
@@ -50,36 +73,6 @@
             border-radius: 5px;
         }
 
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
-
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
-
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Weitere Styling für Inhalt */
         .content {
             position: relative;
             z-index: 1;
@@ -93,52 +86,27 @@
             color: white;
         }
 
-        /* Styling für die Liste der Weiterbildungen */
-        .content-container {
-            padding: 20px;
-        }
-
-        .education-list {
-            list-style: none;
-            padding: 0;
-        }
-
-     /* Anpassung für die Weiterbildungs-Kästen */
         .education-item {
             background-color: #8B5E3C; /* Brauner Hintergrund */
             color: white;
             padding: 20px;
             margin: 10px auto; /* Zentrieren der Kasten */
             border-radius: 8px;
-            display: block; /* Kasten wird sich an die Breite des Textes anpassen */
-            width: fit-content; /* Passt sich automatisch der Breite des Inhalts an */
-            max-width: 100%; /* Verhindert, dass der Kasten über die Containerbreite hinausgeht */
-        }
-
-        .education-item h3 {
-            margin-top: 0;
-            font-size: 20px;
-            color: white;
-        }
-
-        .education-item p {
-            color: white;
+            display: block;
+            width: fit-content;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sterne Hintergrund -->
-    <div class="stars"></div>
-
-    <!-- Inhalt -->
-    <div class="content">
-        <h1>
-            <img src="logo2.png" alt="Magic Logo">
-            Lilian’s Witchy World
-            <img src="logo2.png" alt="Magic Logo">
-        </h1>
-        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+    <!-- Hero-Bereich mit Bild und Text -->
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1>Lilian’s Witchy World</h1>
+            <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+        </div>
+    </div>
 
         <!-- Navigationsmenü -->
         <div class="navbar">
