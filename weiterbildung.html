@@ -38,13 +38,14 @@
             border-radius: 10px;
         }
 
-        .navbar {
+       
+         .navbar {
             background-color: #0aa667;
-            padding: 10px 20px;
+            padding: 10px 20px; /* Schmaler Balken */
             position: relative;
             z-index: 10;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
             align-items: center;
         }
 
@@ -57,7 +58,7 @@
 
         .navmenu li {
             margin-right: 30px;
-            position: relative;
+            position: relative; /* Für Dropdown-Menüs */
         }
 
         .navmenu a {
@@ -73,6 +74,36 @@
             border-radius: 5px;
         }
 
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Weitere Styling für Inhalt */
         .content {
             position: relative;
             z-index: 1;
