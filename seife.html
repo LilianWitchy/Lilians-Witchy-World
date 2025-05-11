@@ -1,247 +1,249 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lilian’s Witchy World</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #4e0261;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilian’s Witchy World</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Garamond, serif;
+      color: white;
+      background-color: #4e0261;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle linear infinite;
-        }
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
 
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            z-index: 10;
-        }
+    h1, h2 {
+      color: #ffd700;
+    }
 
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-        }
+    .navbar {
+      background-color: #0aa667;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative;
-        }
+    .navmenu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
+    .navmenu li {
+      margin: 0 15px;
+      position: relative;
+    }
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      display: block;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+      color: #000;
+    }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
+    .dropdown-content li a {
+      padding: 10px;
+    }
 
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
 
-        .content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
 
-        h1, h2 {
-            color: #ffd700;
-        }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .box {
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid #ffd700;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: left;
-        }
+    .box {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
 
-        .box ul, .box ol {
-            margin: 0;
-            padding: 0 20px;
-        }
-    </style>
+    .box ul, .box ol {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
+  <div class="stars"></div>
 
-    <div class="content">
-        <h1>
-            <img src="logo2.png" alt="Magic Logo">
-            Lilian’s Witchy World
-            <img src="logo2.png" alt="Magic Logo">
-        </h1>
+  <!-- Logo -->
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+  </div>
 
-        <!-- Navigation wurde HIER eingefügt -->
-        <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+  <!-- Navigation (außerhalb von .content) -->
+  <div class="navbar">
+    <ul class="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
 
-        <!-- Nun folgt der restliche Inhalt -->
+  <!-- Inhalt -->
+  <div class="content">
+    <p>Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben. Neurodermitis, Rosacea, Ausschlag.</p>
+    <p>Und auch allen, die ihre Körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten.</p>
+    <p>Deshalb testet/nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltsstoffe (Kräuter, ätherische Öle) vertragt.</p>
+    <p>Und besonders wichtig: Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Inhaltsstoffen.</p>
+    <p>Und bitte nutze Salze auch nur dann als Peeling, wenn deine Haut das verträgt.</p>
 
-        <p>Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben. Neurodermitis, Rosacea, Ausschlag.</p>
-        <p>Und auch allen, die ihre Körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten.</p>
-        <p>Deshalb testet/nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltsstoffe (Kräuter, ätherische Öle) vertragt.</p>
-        <p>Und besonders wichtig! Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Inhaltsstoffen.</p>
-        <p>Und bitte nutze Salze auch nur dann als Peeling, wenn deine Haut das verträgt.</p>
-
-        <h1>Einfaches Rezept für eine Honigseife</h1>
-        <div class="box">
-            <h2>Zutaten:</h2>
-            <ul>
-                <li>500 g Kernseife (gerieben oder in Flocken)</li>
-                <li>60 ml Kokosöl</li>
-                <li>30 ml Arganöl</li>
-                <li>2 Esslöffel Honig</li>
-                <li>Ätherische Öle nach Wahl (z.B. Lavendel, Rosmarin, Rose)</li>
-                <li>Getrocknete Kräuter (z.B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
-                <li>1 Esslöffel Himalayasalz oder Meersalz (optional)</li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Anleitung:</h2>
-            <ol>
-                <li>Form vorbereiten und reinigen.</li>
-                <li>Kernseife im Wasserbad schmelzen, nicht direkt erhitzen.</li>
-                <li>Kokosöl und Arganöl einrühren.</li>
-                <li>Honig hinzufügen und gut vermengen.</li>
-                <li>Ätherische Öle und getrocknete Kräuter nach Wahl hinzufügen und umrühren.</li>
-                <li>Falls gewünscht, Salz hinzufügen und gut mischen.</li>
-                <li>In vorbereitete Form gießen und Oberfläche glätten.</li>
-                <li>Bei Raumtemperatur 24–48 Stunden aushärten lassen.</li>
-                <li>In Stücke schneiden und für mindestens 4 Wochen reifen lassen.</li>
-            </ol>
-        </div>
-
-        <div class="box">
-            <h2>Lagerung:</h2>
-            <p>Kühl, trocken und innerhalb von 6 Monaten verwenden.</p>
-        </div>
-
-        <div class="box">
-            <h2>Zutaten für eine Körperseife bei trockener, empfindlicher Haut:</h2>
-            <ul>
-                <li>200 g Kernseife (geraspelt)</li>
-                <li>50 g Kokosöl</li>
-                <li>10 Tropfen Rosenöl</li>
-                <li>2 EL getrocknete Lavendelblüten</li>
-                <li>2 EL getrocknete Rosenblütenblätter</li>
-                <li>1 EL getrockneter Rosmarin</li>
-                <li>2 EL Himalaya-Salz</li>
-                <li>2 EL Meersalz</li>
-            </ul>
-        </div>
+    <h1>Einfaches Rezept für eine Honigseife</h1>
+    <div class="box">
+      <h2>Zutaten:</h2>
+      <ul>
+        <li>500 g Kernseife (gerieben oder in Flocken)</li>
+        <li>60 ml Kokosöl</li>
+        <li>30 ml Arganöl</li>
+        <li>2 Esslöffel Honig</li>
+        <li>Ätherische Öle nach Wahl (z.B. Lavendel, Rosmarin, Rose)</li>
+        <li>Getrocknete Kräuter (z.B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
+        <li>1 Esslöffel Himalayasalz oder Meersalz (optional)</li>
+      </ul>
     </div>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
-        }
-    </script>
+    <div class="box">
+      <h2>Anleitung:</h2>
+      <ol>
+        <li>Form vorbereiten und reinigen.</li>
+        <li>Kernseife im Wasserbad schmelzen, nicht direkt erhitzen.</li>
+        <li>Kokosöl und Arganöl einrühren.</li>
+        <li>Honig hinzufügen und gut vermengen.</li>
+        <li>Ätherische Öle und getrocknete Kräuter nach Wahl hinzufügen und umrühren.</li>
+        <li>Falls gewünscht, Salz hinzufügen und gut mischen.</li>
+        <li>In vorbereitete Form gießen und Oberfläche glätten.</li>
+        <li>Bei Raumtemperatur 24–48 Stunden aushärten lassen.</li>
+        <li>In Stücke schneiden und für mindestens 4 Wochen reifen lassen.</li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>Lagerung:</h2>
+      <p>Kühl, trocken und innerhalb von 6 Monaten verwenden.</p>
+    </div>
+
+    <div class="box">
+      <h2>Zutaten für eine Körperseife bei trockener, empfindlicher Haut</h2>
+      <ul>
+        <li>200 g Kernseife (geraspelt)</li>
+        <li>50 g Kokosöl</li>
+        <li>10 Tropfen Rosenöl</li>
+        <li>2 EL getrocknete Lavendelblüten</li>
+        <li>2 EL getrocknete Rosenblütenblätter</li>
+        <li>1 EL getrockneter Rosmarin</li>
+        <li>2 EL Himalaya-Salz</li>
+        <li>2 EL Meersalz</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script (optional, aktuell nicht genutzt) -->
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
