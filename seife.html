@@ -44,22 +44,21 @@
         .navbar {
             background-color: #0aa667;
             padding: 10px 20px;
-            position: relative;
-            z-index: 10;
             display: flex;
             justify-content: center;
+            z-index: 10;
         }
 
         .navmenu {
             list-style: none;
             padding: 0;
             display: flex;
-            margin: 0;
             flex-wrap: wrap;
+            margin: 0;
         }
 
         .navmenu li {
-            margin: 0 15px;
+            margin-right: 30px;
             position: relative;
         }
 
@@ -134,47 +133,6 @@
 <body>
     <div class="stars"></div>
 
-    <!-- Navigation außerhalb des Content-Containers -->
-    <div class="navbar">
-        <ul class="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="meinemission.html">Meine Mission</a></li>
-                </ul>
-            </li>
-            <li><a href="angebote.html">Meine Angebote</a></li>
-            <li class="dropdown">
-                <a href="energie.html">Energetische Selbstarbeit</a>
-                <ul class="dropdown-content">
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li><a href="meinebücher.html">Meine Bücher</a></li>
-            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-            <li class="dropdown">
-                <a href="rezepte.html">Rezepte ▼</a>
-                <ul class="dropdown-content">
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                    <li><a href="#">Räuchermischungen</a></li>
-                    <li><a href="#">Naturheilkunde</a></li>
-                    <li><a href="#">Salben & Balsam</a></li>
-                </ul>
-            </li>
-            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
-
-    <!-- Inhalt -->
     <div class="content">
         <h1>
             <img src="logo2.png" alt="Magic Logo">
@@ -182,16 +140,55 @@
             <img src="logo2.png" alt="Magic Logo">
         </h1>
 
-        <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+        <!-- Navigation wurde HIER eingefügt -->
+        <div class="navbar">
+            <ul class="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
 
-        <p>Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben: Neurodermitis, Rosacea, Ausschlag.</p>
-        <p>Und auch allen, die ihren Körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten.</p>
+        <!-- Nun folgt der restliche Inhalt -->
+
+        <p>Ich möchte mit diesen Rezepten allen helfen, die Hautprobleme haben. Neurodermitis, Rosacea, Ausschlag.</p>
+        <p>Und auch allen, die ihre Körper nicht mehr mit chemischen Zusätzen vergiften oder austrocknen möchten.</p>
         <p>Deshalb testet/nutzt meine Rezepte bitte nur, wenn ihr alle Inhaltsstoffe (Kräuter, ätherische Öle) vertragt.</p>
-        <p>Besonders wichtig: Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Zusatzstoffen.</p>
-        <p>Bitte verwende Salze als Peeling nur, wenn deine Haut das gut verträgt.</p>
+        <p>Und besonders wichtig! Nutzt bitte nur reine Zutaten. Keine billigen ätherischen Öle. Keine Salze oder Kräuter mit sonstigen Inhaltsstoffen.</p>
+        <p>Und bitte nutze Salze auch nur dann als Peeling, wenn deine Haut das verträgt.</p>
 
         <h1>Einfaches Rezept für eine Honigseife</h1>
-
         <div class="box">
             <h2>Zutaten:</h2>
             <ul>
@@ -199,8 +196,8 @@
                 <li>60 ml Kokosöl</li>
                 <li>30 ml Arganöl</li>
                 <li>2 Esslöffel Honig</li>
-                <li>Ätherische Öle nach Wahl (z. B. Lavendel, Rosmarin, Rose)</li>
-                <li>Getrocknete Kräuter (z. B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
+                <li>Ätherische Öle nach Wahl (z.B. Lavendel, Rosmarin, Rose)</li>
+                <li>Getrocknete Kräuter (z.B. Lavendelblüten, Rosenblütenblätter, Rosmarin)</li>
                 <li>1 Esslöffel Himalayasalz oder Meersalz (optional)</li>
             </ul>
         </div>
@@ -216,7 +213,7 @@
                 <li>Falls gewünscht, Salz hinzufügen und gut mischen.</li>
                 <li>In vorbereitete Form gießen und Oberfläche glätten.</li>
                 <li>Bei Raumtemperatur 24–48 Stunden aushärten lassen.</li>
-                <li>In Stücke schneiden und mindestens 4 Wochen reifen lassen.</li>
+                <li>In Stücke schneiden und für mindestens 4 Wochen reifen lassen.</li>
             </ol>
         </div>
 
