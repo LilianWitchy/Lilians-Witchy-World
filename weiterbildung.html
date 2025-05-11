@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="de">
-<head> 
+<head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lilian´s Witchy World</title> 
+    <title>Weiterbildungen | Lilian´s Witchy World</title>
     <style>
-        /* Grundlegende Styles für die gesamte Seite */
         body {
             font-family: Garamond, serif;
             color: white;
-            background-color: #4e0261; 
+            background-color: #699c44;
             margin: 0;
             padding: 0;
             text-align: center;
         }
-
-        /* Header und Footer */
-        header, footer {
+         .navbar {
             background-color: #0aa667;
-            color: white;
-        }
-
-        /* Navbar-Styles */
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px;
+            padding: 10px 20px; /* Schmaler Balken */
             position: relative;
-            z-index: 100;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
         }
 
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
+        }
+
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -39,234 +59,44 @@
             min-width: 180px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-        }
-
-        .navmenu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            height: 60px;
-        }
-
-        .navmenu > li {
-            position: relative;
-            margin-right: 30px;
-        }
-
-        .navmenu > li > a {
-            text-decoration: none;
-            color: #660082;
-            font-size: 18px;
-            padding: 15px 10px;
-            display: block;
-        }
-
-        .navmenu > li > a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
-
-        /* Dropdown-Menü */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            padding: 0;
             list-style: none;
+            padding: 0;
         }
 
         .dropdown-content li a {
-            padding: 12px 16px;
-            display: block;
-            color: #660082;
+            color: white;
+            padding: 10px;
             text-decoration: none;
         }
 
         .dropdown-content li a:hover {
             background-color: #f1f1f1;
+            color: #660082;
         }
 
-        .dropdown:hover .dropdown-content {
+        .navmenu li:hover .dropdown-content {
             display: block;
         }
 
-        /* Kontaktformular-Styles */
-        .contact-form {
-            background-color: #4e0261;
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        input, textarea {
-            width: 80%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #0aa667;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #0a8540;
-        }
-
-        /* Weiterbildungsbox mit braunem Hintergrund */
-        .weiterbildung-box {
-            background-color: #3e1f1b; /* Brauner Hintergrund */
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            text-align: left;
-            width: 90%; /* Kann nach Bedarf angepasst werden */
-            max-width: 800px; /* Maximale Breite für die Box */
-            border: 2px solid #ffd700; /* Goldener Rand für einen edlen Look */
-        }
-
-        /* Optional: Eine leichte Schattenwirkung für die Box */
-        .weiterbildung-box:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Box-Styles */
-        .box {
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid #ffd700;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px auto;
-            text-align: left;
-            width: 90%; /* Du kannst die Breite nach Bedarf anpassen */
-            max-width: 800px; /* Optional: Stellt sicher, dass die Kästen nicht zu breit werden */
-        }
-
-        /* Banner-Styles */
-        .banner {
+        /* Weitere Styling für Inhalt */
+        .content {
             position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
             text-align: center;
-            width: 100%;
-        }
-
-        .banner-img {
-            width: 100%;
-            height: auto;
-        }
-
-        .banner-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 36px;
-            font-weight: bold;
-            color: black;
-            background-color: rgba(255, 255, 255, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        /* Menü-Styling */
-        .menu {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .menu a {
-            display: block;
             color: white;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 10px;
-        }
-
-        /* Dropdown-Menü */
-        .submenu {
-            list-style: none;
-            padding: 0;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #555;
-            display: none;
-            min-width: 200px;
-        }
-
-        .submenu li {
-            border-top: 1px solid #666;
-        }
-
-        .submenu a {
-            padding: 10px;
-        }
-
-        /* Dropdown beim Hover anzeigen */
-        .dropdown:hover .submenu {
-            display: block;
-        }
-
-        /* Sterneneffekt */
-        .star {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 0 10px white;
-            animation: twinkle 2s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Media Queries für mobile Geräte */
-        @media (max-width: 768px) {
-            .navmenu {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .navbar button {
-                margin-top: 10px;
-            }
-
-            .menu {
-                display: block;
-            }
-
-            .menu a {
-                font-size: 18px;
-                padding: 12px;
-            }
         }
     </style>
 </head>
 <body>
 
-   
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
 
     <!-- Inhalt -->
     <div class="content">
@@ -318,15 +148,13 @@
         </div>
 
 
- 
+    <div class="content-container">
         <h2>Meine Weiterbildungen</h2>
         <p class="content-text">
             Hier findest du eine Übersicht meiner abgeschlossenen Weiterbildungen. Ich lege großen Wert darauf, mich stetig weiterzuentwickeln und neue Perspektiven in meine Arbeit einzubringen.
         </p>
 
-     <!-- Beispiel einer Weiterbildung -->
-    <div class="weiterbildung-box">
-	    <ul class="education-list">
+       <ul class="education-list">
             <li class="education-item">
                 <h3> 03/2012 - "Einführung in die Erlebnispädagogik"</h3>
                 <p>Inhalte der fortbildung:</p>
