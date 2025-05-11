@@ -14,119 +14,138 @@
             text-align: center;
         }
 
-        .navbar {
+         .navbar {
             background-color: #0aa667;
-            padding: 15px;
+            padding: 10px 20px; /* Schmaler Balken */
             position: relative;
-            z-index: 10; /* Sicherstellen, dass das Menü oben ist */
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
         }
 
         .navmenu {
-            list-style-type: none;
-            margin: 0;
+            list-style: none;
             padding: 0;
-            overflow: hidden;
-            text-align: left;
-            display: inline-block;
+            display: flex;
+            margin: 0;
         }
 
         .navmenu li {
-            display: inline-block;
-            position: relative;
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
         }
 
         .navmenu a {
-            color: white;
             text-decoration: none;
-            font-size: 20px;
-            padding: 10px 20px;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
             display: block;
         }
 
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #0aa667;
-            min-width: 160px;
-            z-index: 1;
-            top: 100%;  /* Positioniert das Dropdown unter dem Menü */
+            top: 100%;
             left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
             display: block;
         }
 
-        .about-section {
-            padding: 20px;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            color: #f4c542;
-        }
-
-        /* Banner Bild */
-        .banner {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .banner-img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Sicherstellen, dass das Dropdown-Menü nicht vom Bild oder anderen Elementen überlappt wird */
-        .menu-container {
+        /* Weitere Styling für Inhalt */
+        .content {
             position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
 <body>
 
-    <!-- Menü -->
-    <div class="navbar">
-        <ul class="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="meinemission.html">Meine Mission</a></li>
-                </ul>
-            </li>
-            <li><a href="angebote.html">Meine Angebote</a></li>
-            <li class="dropdown">
-                <a href="energie.html">Energetische Selbstarbeit</a>
-                <ul class="dropdown-content">
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li><a href="meinebücher.html">Meine Bücher</a></li>
-            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-            <li class="dropdown">
-                <a href="rezepte.html">Rezepte ▼</a>
-                <ul class="dropdown-content">
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                    <li><a href="#">Räuchermischungen</a></li>
-                    <li><a href="#">Naturheilkunde</a></li>
-                    <li><a href="#">Salben & Balsam</a></li>
-                </ul>
-            </li>
-            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
+
+    <!-- Inhalt -->
+    <div class="content">
+        <h1>
+            <img src="logo2.png" alt="Magic Logo">
+            Lilian’s Witchy World
+            <img src="logo2.png" alt="Magic Logo">
+        </h1>
+        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+
+        <!-- Navigationsmenü -->
+        <div class="navbar">
+            <ul class="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
 
     <!-- About Section -->
     <div class="about-section">
