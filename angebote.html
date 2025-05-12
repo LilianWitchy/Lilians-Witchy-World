@@ -9,7 +9,6 @@
         body {
             font-family: Garamond, serif;
             color: #6a1b9a;
-            background-color: #917556;
             background-color: #8f602e;
             margin: 0;
             padding: 0;
@@ -44,11 +43,11 @@
 
         .navbar {
             background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
+            padding: 10px 20px;
             position: relative;
             z-index: 10;
             display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -61,7 +60,7 @@
 
         .navmenu li {
             margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
+            position: relative;
         }
 
         .navmenu a {
@@ -77,7 +76,6 @@
             border-radius: 5px;
         }
 
-        /* Dropdown-Menü */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -106,7 +104,6 @@
             display: block;
         }
 
-        /* Weitere Styling für Inhalt */
         .content {
             position: relative;
             z-index: 1;
@@ -119,205 +116,179 @@
             text-align: center;
             color: white;
         }
+
+        .karte {
+            background-color: #f5f2e7;
+            color: #6a0dad;
+            padding: 2rem;
+            font-family: Garamond, serif;
+            margin: 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .karte h2, .karte h3 {
+            text-align: center;
+        }
+
+        .karte ul, .karte p, .karte table {
+            margin: 1rem auto;
+            max-width: 800px;
+        }
+
+        .karte table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .karte table td, .karte table th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+
+        .karte ul {
+            list-style: none;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .karte ul li {
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
-    <div class="stars"></div>
+<div class="stars"></div>
 
-    <div class="content">
-        <h1>
-            <img src="logo2.png" alt="Magic Logo">
-            Lilian’s Witchy World
-            <img src="logo2.png" alt="Magic Logo">
-        </h1>
-        <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+<div class="content">
+    <h1>
+        <img src="logo2.png" alt="Magic Logo">
+        Lilian’s Witchy World
+        <img src="logo2.png" alt="Magic Logo">
+    </h1>
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
 
-       
-
-        <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
-
-
-    <div style="font-weight: bold; font-size: 1.2em;">
-      
-        <!-- ... (gekürzt für Übersichtlichkeit) ... -->
-        
-
+    <div class="navbar">
+        <ul class="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                </ul>
+            </li>
+            <li><a href="angebote.html">Meine Angebote</a></li>
+            <li class="dropdown">
+                <a href="energie.html">Energetische Selbstarbeit</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li><a href="meinebücher.html">Meine Bücher</a></li>
+            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
     </div>
 
-    <!-- Neue Sektion eingefügt -->
-
-        
-
-       
-
-           <section style="background-color: #f5f2e7; color: #6a0dad; padding: 2rem; font-family: Garamond, serif; display: inline-block; margin: 0 auto; max-width: 100%; text-align: left;">
-  <h2>Meine Angebote für dich und euch</h2>
-  <p>Ich biete vielfältige, achtsamkeits- und erlebnisorientierte Programme für Kinder, pädagogische Fachkräfte sowie für andere Gruppen und Einrichtungen an...</p>
-
-  <h2 style="text-align: center;">Meine Angebote für Kindergruppen</h2>
-  <p style="text-align: center;">Ob in Kitas, Familienzentren oder als separates Gruppenangebot – hier findest du liebevoll gestaltete Stunden voller Bewegung, Natur und Entspannung.</p>
-
-  <ul style="max-width: 600px; margin: 2rem auto; padding: 0; list-style: none;">
-    <li style="margin-bottom: 1.5rem;">
-      <strong>🌿 Natur erleben (Erlebnispädagogik)</strong><br>
-      Gemeinsam in der Natur unterwegs sein, Vertrauen aufbauen, Teamgeist stärken.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>🧘 Entspannung & Traumreisen</strong><br>
-      Fantasiereisen und kleine Ruhepausen zur Förderung von Achtsamkeit und innerer Balance.
-    </li>
-    <li style="margin-bottom: 1.5rem;">
-      <strong>🤸 Sport & Yoga</strong><br>
-      Bewegung mit Freude und gleichzeitigem Ausgleich für Körper und Geist.
-    </li>
-  </ul>
-
-  <h3 style="text-align: center;">Preisübersicht</h3>
-  <table style="margin: 0 auto; border-collapse: collapse; font-size: 1.1rem;">
-    <tr>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #ccc;">🔍 Schnupperstunde</td>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #ccc;">14 € pro Kind</td>
-    </tr>
- 
-    <tr>
-      <td style="padding: 8px 12px;">📅 Monatsangebot (1x/Woche)</td>
-      <td style="padding: 8px 12px;">48 € pro Kind/Monat</td>
-    </tr>
-</table>
-               
-  <p style="text-align: center; margin-top: 2rem;"><strong>Vertragsbedingungen:</strong><br>
-  Das Monatsangebot kann jeweils bis zwei Wochen vor Monatsende gekündigt werden. Erfolgt keine Kündigung innerhalb dieser Frist, verlängert sich der Vertrag automatisch um einen weiteren Monat.</p>
-</section>
-
-       <section style="background-color: #f5f2e7; color: #6a0dad; padding: 2rem; font-family: Garamond, serif; display: inline-block; margin: 0 auto; max-width: 100%; text-align: left;">
-       <table style="margin: 0 auto; border-collapse: collapse; font-size: 1.1rem;">
-           <tr>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #ccc;">🎯 Einmalige Teilnahme</td>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #ccc;">25 € pro Kind</td>
-      <p>Hierbei handelt es sich um ein einmalig stattfindendes Angebot, was gut durchdacht ist, und separat gebucht werden kann.</p>
-      <p>Dieses Einzelangebot hat absolut nichts mit der Schnupperstunde und dem Monatsangebot zu tun.</p>
-    </tr>
- </table>
-        
-<section style="background-color: #f5f0e6; color: #6b299e; padding: 40px 20px; font-family: Garamond, serif; display: inline-block; margin: 2rem auto; max-width: 100%; text-align: left;">
-  <h2 style="text-align: center;">Meine Angebote für euch (Für Erzieher*innen und sonstige Teams) – Teamentwicklung & Erlebnispädagogik</h2>
-
-  <p style="max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1em;">
-    In einer Zeit, in der pädagogische Fachkräfte täglich Höchstleistungen erbringen, ist es wichtiger denn je, Räume für Entlastung, Gemeinschaft und neue Impulse zu schaffen.  
-    Ob draußen in der Natur oder in einem geschützten Innenraum: Ich biete euch mit erlebnispädagogischen Methoden und achtsamen Elementen eine Möglichkeit, als Team wieder zueinanderzufinden, frische Kraft zu schöpfen – und gemeinsam zu wachsen.
-  </p>
-
-  <table style="margin: 0 auto; border-collapse: collapse; width: 90%; max-width: 900px; font-size: 1em;">
-    <thead>
-      <tr style="background-color: #e6dccd;">
-        <th style="padding: 12px; border: 1px solid #d0c5b6;">Angebot</th>
-        <th style="padding: 12px; border: 1px solid #d0c5b6;">Dauer</th>
-        <th style="padding: 12px; border: 1px solid #d0c5b6;">Preis</th>
-        <th style="padding: 12px; border: 1px solid #d0c5b6;">Zielgruppe</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Erlebnispädagogik & Teambuilding – Kompakt</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">3 Stunden</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;"><strong>390 €</strong></td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Kita-Teams, Schulpersonal, soziale Einrichtungen</td>
-      </tr>
-      <tr>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Entspannung & Kraft schöpfen – Workshop</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">2,5 Stunden</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;"><strong>350 €</strong></td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Pädagog:innen, Teams im sozialen Bereich</td>
-      </tr>
-      <tr>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Individuelle Konzeption nach Bedarf</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">nach Absprache</td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">ab <strong>480 €</strong></td>
-        <td style="padding: 12px; border: 1px solid #d0c5b6;">Träger, Leitung, Fortbildungsformate</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="max-width: 800px; margin: 30px auto 0 auto; font-size: 1em; font-style: italic;">
-    Die Preise verstehen sich inklusive Vorbereitung, Materialien und einer kurzen Nachbereitung. Fahrtkosten ab 7 km Anfahrt werden separat berechnet, da ich mit der Bahn anreise.
-  </p>
-
-  <ul style="max-width: 800px; margin: 30px auto 0 auto; font-size: 1em; line-height: 1.6;">
-    <li>Halbtagesveranstaltungen für Inhouse-Fortbildungen</li>
-    <li>Draußen-Zeiten mit Naturerleben, Kooperationsaufgaben und Reflexion</li>
-    <li>Achtsamkeitsformate zur Stressreduktion (z. B. mit Traumreisen, Meditation, Naturklängen)</li>
-    <li>Angebote als Teil eures pädagogischen Tages, Konferenztags oder Teamtages</li>
-  </ul>
-
-  <h3>Für andere Einrichtungen & offene Gruppen</h3>
-  <ul>
-    <li><strong>Erlebnispädagogik & Bewegung</strong> für Kindergruppen.</li>
-    <li><strong>Teamentwicklung & Naturerleben</strong> für Erwachsene.</li>
-  </ul>
-
-  <h3>Besondere Angebote</h3>
-  <ul>
-    <li><strong>Buchlesungen</strong> für Kinder und Erwachsene – lebendig & thematisch angepasst.</li>
-    <li><strong>Kräuterwerkstatt</strong>: Gesunde Ernährung, Tinkturen, Salben selbst herstellen.</li>
-  </ul>
-</section>
-
-   
+    <!-- Kasten: Kindergruppen -->
+    <div class="karte">
+        <h2>Angebote für Kindergruppen</h2>
+        <p>Ob in Kitas, Familienzentren oder als separates Gruppenangebot – liebevoll gestaltete Stunden voller Bewegung, Natur und Entspannung.</p>
+        <ul>
+            <li><strong>🌿 Natur erleben (Erlebnispädagogik)</strong><br>Vertrauen aufbauen, Teamgeist stärken.</li>
+            <li><strong>🧘 Entspannung & Traumreisen</strong><br>Förderung von Achtsamkeit und innerer Balance.</li>
+            <li><strong>🤸 Sport & Yoga</strong><br>Bewegung mit Freude und Ausgleich für Körper und Geist.</li>
+        </ul>
+        <h3>Preisübersicht</h3>
+        <table>
+            <tr><td>🔍 Schnupperstunde</td><td>14 € pro Kind</td></tr>
+            <tr><td>📅 Monatsangebot (1x/Woche)</td><td>48 € pro Kind/Monat</td></tr>
+        </table>
+        <p style="text-align: center;"><strong>Vertragsbedingungen:</strong><br>
+        Kündigung bis zwei Wochen vor Monatsende möglich. Verlängerung sonst automatisch.</p>
     </div>
+
+    <!-- Kasten: Einmalige Angebote -->
+    <div class="karte">
+        <h2>🎯 Einmalige Teilnahme</h2>
+        <p>Ein einmalig stattfindendes, separat buchbares Angebot.</p>
+        <p><strong>Preis:</strong> 25 € pro Kind</p>
+        <p>Dieses Einzelangebot ist unabhängig vom Schnupper- oder Monatsangebot.</p>
+    </div>
+
+    <!-- Kasten: Angebote für Erzieher -->
+    <div class="karte">
+        <h2>Angebote für Erzieher*innen & Teams</h2>
+        <p>Raum für Entlastung, neue Impulse und Teamentwicklung – draußen oder drinnen.</p>
+        <table>
+            <thead>
+                <tr><th>Angebot</th><th>Dauer</th><th>Preis</th><th>Zielgruppe</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Erlebnispädagogik & Teambuilding</td><td>3 Std.</td><td>390 €</td><td>Kita-Teams etc.</td></tr>
+                <tr><td>Entspannung & Kraft schöpfen</td><td>2,5 Std.</td><td>350 €</td><td>Pädagog:innen</td></tr>
+                <tr><td>Individuelle Konzeption</td><td>nach Absprache</td><td>ab 480 €</td><td>Leitung, Fortbildung</td></tr>
+            </tbody>
+        </table>
+        <p><em>Inklusive Materialien und Nachbereitung. Bahnfahrten ab 7 km extra.</em></p>
+        <ul>
+            <li>Halbtagesformate, auch Inhouse</li>
+            <li>Kooperationsaufgaben in der Natur</li>
+            <li>Achtsamkeit mit Klang, Meditation, etc.</li>
+        </ul>
+    </div>
+
+    <!-- Kasten: Besondere/sonstige Angebote -->
+    <div class="karte">
+        <h2>🌟 Besondere Angebote & mehr</h2>
+        <ul>
+            <li><strong>Buchlesungen</strong> – lebendig und thematisch angepasst für alle Altersgruppen.</li>
+            <li><strong>Kräuterwerkstatt</strong> – Tinkturen, Salben und gesunde Ernährung entdecken.</li>
+            <li><strong>Bewegungsangebote</strong> für Gruppen – kreativ & naturnah.</li>
+        </ul>
+    </div>
+
     <p><strong>Von Herzen, Lilian</strong></p>
-    <footer>
-        <p>&copy; 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
-        <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
-    </footer>
+</div>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+<footer>
+    <p>&copy; 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let starContainer = document.querySelector(".stars");
+        for (let i = 0; i < 50; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+            starContainer.appendChild(star);
         }
+    });
+</script>
 
-        document.addEventListener("DOMContentLoaded", function() {
-            let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDuration = (Math.random() * 2 + 1*
+</body>
+</html>
