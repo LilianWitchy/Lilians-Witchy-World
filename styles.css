@@ -261,7 +261,7 @@ button:hover {
 
 /* Hero-Bereich mit Bild und überlagertem Text */
 .hero-section {
-    background-image: url('angebot.png'); /* Passe ggf. den Pfad an */
+    background-image: url('angebot.jpg'); /* Passe ggf. den Pfad an */
     background-size: cover;
     background-position: center;
     height: 400px;
