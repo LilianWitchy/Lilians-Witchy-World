@@ -59,6 +59,8 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            width: 100vw;
+            margin: 0;
         }
 
         .navmenu {
@@ -142,7 +144,6 @@
             color: white;
         }
 
-        /* Responsive Anpassungen */
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -185,7 +186,6 @@
             }
         }
 
-        /* Logo ggf. auf größeren Bildschirmen begrenzen */
         h1 img {
             max-width: 150px;
             height: auto;
@@ -202,59 +202,71 @@
             Lilian’s Witchy World
             <img src="logo2.png" alt="Magic Logo">
         </h1>
-        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+         <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>More actions
 
-        <p>Diese Seite ist noch mitten im Aufbau. Bitte nicht wundern, dass noch nicht alle Punkte im Menü funktionieren.</p>
+        <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
 
-        <!-- Navbar (verschoben) -->
-        <div class="navbar">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="navmenu" id="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
+        <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
+
+        <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
+
+        <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
+
+        <p>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</p>
+
+        <p><strong>Von Herzen, Lilian</strong></p>
+
+    <!-- NAVBAR AUSSERHALB DER CONTENT-DIV -->
+    <div class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <ul class="navmenu" id="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                </ul>
+            </li>
+            <li><a href="angebote.html">Meine Angebote</a></li>
+            <li class="dropdown">
+                <a href="energie.html">Energetische Selbstarbeit</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li><a href="meinebücher.html">Meine Bücher</a></li>
+            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
 
+    <div class="content">
         <div style="color: white; font-weight: bold; font-size: 1.2em; text-align: left;">
             <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
             <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen ...</p>
-            <!-- (vollständiger Text wie im Original bleibt erhalten) -->
+            <!-- Hier kannst du deinen weiteren Text ergänzen -->
             <p><strong>Von Herzen, Lilian</strong></p>
             <img src="relax.png" alt="Relaxbild">
         </div>
