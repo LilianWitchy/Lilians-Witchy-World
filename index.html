@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lilian’s Witchy World</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
         * {
             box-sizing: border-box;
@@ -46,29 +46,38 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+            0%,
+            100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
+        /* Menü jetzt vollflächig: keine Seitennavigation-Paddings mehr */
         .navbar {
             background-color: #0aa667;
-            padding: 10px 20px;
+            padding: 10px 0; /* nur vertikal, kein horizontaler Abstand */
             position: relative;
             z-index: 10;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            width: 100vw;
-            margin: 0;
+            width: 100vw; /* volle Breite */
+            margin: 0; /* kein margin, damit keine Verschiebung */
+            left: 0; /* sicherstellen, dass es ganz links startet */
         }
 
         .navmenu {
             list-style: none;
-            padding: 0;
+            padding: 0 20px; /* padding horizontal für Abstand der Links */
             display: flex;
             flex-wrap: wrap;
             margin: 0;
+            width: 100%; /* Damit die navmenu die volle Breite nutzt */
+            justify-content: center; /* zentriert die Menüeinträge */
         }
 
         .navmenu li {
@@ -76,17 +85,22 @@
             position: relative;
         }
 
+        .navmenu li:last-child {
+            margin-right: 0; /* Kein margin beim letzten Eintrag */
+        }
+
         .navmenu a {
             text-decoration: none;
             color: white;
             font-size: 18px;
-            padding: 10px;
+            padding: 10px 12px; /* etwas mehr Padding für bessere Klickfläche */
             display: block;
         }
 
         .navmenu a:hover {
             background-color: #b0d5ac;
             border-radius: 5px;
+            color: #660082;
         }
 
         .dropdown-content {
@@ -106,6 +120,7 @@
             color: white;
             padding: 10px;
             text-decoration: none;
+            display: block;
         }
 
         .dropdown-content li a:hover {
@@ -135,6 +150,7 @@
             padding: 20px;
             max-width: 1000px;
             margin: auto;
+            text-align: left; /* Text linksbündig */
         }
 
         footer {
@@ -144,10 +160,12 @@
             color: white;
         }
 
+        /* Responsive Anpassungen */
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 10px 0; /* wenig Padding */
             }
 
             .menu-toggle {
@@ -160,6 +178,7 @@
                 width: 100%;
                 display: none;
                 margin-top: 10px;
+                padding: 0 20px;
             }
 
             .navmenu li {
@@ -193,17 +212,19 @@
     </style>
 </head>
 <body>
-
     <div class="stars"></div>
 
     <div class="content">
         <h1>
-            <img src="logo2.png" alt="Magic Logo">
+            <img src="logo2.png" alt="Magic Logo" />
             Lilian’s Witchy World
-            <img src="logo2.png" alt="Magic Logo">
+            <img src="logo2.png" alt="Magic Logo" />
         </h1>
-         <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>More actions
+        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+
+        <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+
+        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
 
         <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
 
@@ -213,11 +234,12 @@
 
         <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
 
-        <p>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</p>
+        <p><strong>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</strong></p>
 
         <p><strong>Von Herzen, Lilian</strong></p>
+    </div>
 
-    <!-- NAVBAR AUSSERHALB DER CONTENT-DIV -->
+    <!-- Menü jetzt HIER -->
     <div class="navbar">
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
@@ -238,63 +260,4 @@
                 <a href="energie.html">Energetische Selbstarbeit</a>
                 <ul class="dropdown-content">
                     <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li><a href="meinebücher.html">Meine Bücher</a></li>
-            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-            <li class="dropdown">
-                <a href="rezepte.html">Rezepte ▼</a>
-                <ul class="dropdown-content">
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                    <li><a href="#">Räuchermischungen</a></li>
-                    <li><a href="#">Naturheilkunde</a></li>
-                    <li><a href="#">Salben & Balsam</a></li>
-                </ul>
-            </li>
-            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
-
-    <div class="content">
-        <div style="color: white; font-weight: bold; font-size: 1.2em; text-align: left;">
-            <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-            <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen ...</p>
-            <!-- Hier kannst du deinen weiteren Text ergänzen -->
-            <p><strong>Von Herzen, Lilian</strong></p>
-            <img src="relax.png" alt="Relaxbild">
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
-        <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("navmenu");
-            menu.classList.toggle("show");
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-                starContainer.appendChild(star);
-            }
-        });
-    </script>
-
-</body>
-</html>
+                   
