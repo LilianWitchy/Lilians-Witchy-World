@@ -178,57 +178,23 @@
             .dropdown-content {
                 background-color: #0aa667;
             }
+
+            h1 img {
+                max-width: 80px;
+                height: auto;
+            }
+        }
+
+        /* Logo ggf. auf größeren Bildschirmen begrenzen */
+        h1 img {
+            max-width: 150px;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
     <div class="stars"></div>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="navmenu" id="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="meinemission.html">Meine Mission</a></li>
-                </ul>
-            </li>
-            <li><a href="angebote.html">Meine Angebote</a></li>
-            <li class="dropdown">
-                <a href="energie.html">Energetische Selbstarbeit</a>
-                <ul class="dropdown-content">
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li><a href="meinebücher.html">Meine Bücher</a></li>
-            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-            <li class="dropdown">
-                <a href="rezepte.html">Rezepte ▼</a>
-                <ul class="dropdown-content">
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                    <li><a href="#">Räuchermischungen</a></li>
-                    <li><a href="#">Naturheilkunde</a></li>
-                    <li><a href="#">Salben & Balsam</a></li>
-                </ul>
-            </li>
-            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
 
     <div class="content">
         <h1>
@@ -239,6 +205,51 @@
         <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
 
         <p>Diese Seite ist noch mitten im Aufbau. Bitte nicht wundern, dass noch nicht alle Punkte im Menü funktionieren.</p>
+
+        <!-- Navbar (verschoben) -->
+        <div class="navbar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navmenu" id="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
 
         <div style="color: white; font-weight: bold; font-size: 1.2em; text-align: left;">
             <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
