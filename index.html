@@ -1,263 +1,352 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lilian’s Witchy World</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilian’s Witchy World</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    /* Grund-Reset und Box-Sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #6a4b8c;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Garamond, serif;
+      background-color: #6a4b8c;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+    /* Hintergrund-Sterne */
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle linear infinite;
-        }
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
 
-        @keyframes twinkle {
-            0%,
-            100% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
+    @keyframes twinkle {
+      0%, 100% {opacity: 0;}
+      50% {opacity: 1;}
+    }
 
-        /* Menü jetzt vollflächig: keine Seitennavigation-Paddings mehr */
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 0; /* nur vertikal, kein horizontaler Abstand */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100vw; /* volle Breite */
-            margin: 0; /* kein margin, damit keine Verschiebung */
-            left: 0; /* sicherstellen, dass es ganz links startet */
-        }
+    /* Überschriften */
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .navmenu {
-            list-style: none;
-            padding: 0 20px; /* padding horizontal für Abstand der Links */
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-            width: 100%; /* Damit die navmenu die volle Breite nutzt */
-            justify-content: center; /* zentriert die Menüeinträge */
-        }
+    h1 img {
+      max-width: 150px;
+      height: auto;
+    }
 
-        .navmenu li {
-            margin-right: 20px;
-            position: relative;
-        }
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px 0;
+      font-weight: normal;
+    }
 
-        .navmenu li:last-child {
-            margin-right: 0; /* Kein margin beim letzten Eintrag */
-        }
+    /* Inhaltstext */
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+      line-height: 1.6;
+    }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px 12px; /* etwas mehr Padding für bessere Klickfläche */
-            display: block;
-        }
+    /* Vollflächige grüne Menüleiste */
+    .navbar {
+      background-color: #0aa667;
+      width: 100vw;  /* volle Bildschirmbreite */
+      margin: 0;
+      padding: 10px 0;
+      position: relative;
+      left: 0;
+      z-index: 10;
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-            color: #660082;
-        }
+      display: flex;
+      justify-content: center;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+    /* Menüul und -items */
+    .navmenu {
+      list-style: none;
+      margin: 0;
+      padding: 0 20px; /* Abstand innen */
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1000px; /* max breite des menus */
+    }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
+    .navmenu li {
+      position: relative;
+    }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
+    .navmenu a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      color: #660082;
+    }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    /* Dropdown-Menü */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1000;
+    }
 
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 5px 0;
-            border-radius: 2px;
-        }
+    .dropdown-content li a {
+      padding: 10px;
+      font-size: 16px;
+    }
 
-        .content {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-            text-align: left; /* Text linksbündig */
-        }
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
 
-        footer {
-            background-color: #0aa667;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+    .navmenu li:hover > .dropdown-content {
+      display: block;
+    }
 
-        /* Responsive Anpassungen */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 0; /* wenig Padding */
-            }
+    /* Hamburger für Mobil */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+      padding-right: 20px;
+    }
 
-            .menu-toggle {
-                display: flex;
-                margin-left: auto;
-            }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
 
-            .navmenu {
-                flex-direction: column;
-                width: 100%;
-                display: none;
-                margin-top: 10px;
-                padding: 0 20px;
-            }
+    /* Footer */
+    footer {
+      background-color: #0aa667;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
 
-            .navmenu li {
-                width: 100%;
-                margin: 0;
-            }
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
 
-            .navmenu.show {
-                display: flex;
-            }
+      h1 img {
+        max-width: 80px;
+      }
 
-            .navmenu li:hover .dropdown-content {
-                position: static;
-                box-shadow: none;
-            }
+      .navbar {
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
 
-            .dropdown-content {
-                background-color: #0aa667;
-            }
+      .menu-toggle {
+        display: flex;
+      }
 
-            h1 img {
-                max-width: 80px;
-                height: auto;
-            }
-        }
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        gap: 0;
+        background-color: #0aa667;
+      }
 
-        h1 img {
-            max-width: 150px;
-            height: auto;
-        }
-    </style>
+      .navmenu.show {
+        display: flex;
+      }
+
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+      }
+
+      .navmenu li:first-child {
+        border-top: none;
+      }
+
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      /* Dropdowns im Mobilmodus */
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
+
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
+
+      .navmenu li:hover > .dropdown-content {
+        display: none; /* Hover fällt weg, Klick-Funktion wäre besser */
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stars"></div>
+  <div class="stars"></div>
 
-    <div class="content">
-        <h1>
-            <img src="logo2.png" alt="Magic Logo" />
-            Lilian’s Witchy World
-            <img src="logo2.png" alt="Magic Logo" />
-        </h1>
-        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+  </div>
 
-        <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-
-        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
-
-        <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-
-        <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
-
-        <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
-
-        <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
-
-        <p><strong>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</strong></p>
-
-        <p><strong>Von Herzen, Lilian</strong></p>
+  <!-- Menü: direkt unter dem Titel -->
+  <nav class="navbar" role="navigation" aria-label="Hauptmenü">
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menü umschalten" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <ul class="navmenu" id="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content" aria-label="Untermenü Startseite">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content" aria-label="Untermenü Energetische Selbstarbeit">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken &amp; Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content" aria-label="Untermenü Rezepte">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben &amp; Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </nav>
 
-    <!-- Menü jetzt HIER -->
-    <div class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="navmenu" id="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="meinemission.html">Meine Mission</a></li>
-                </ul>
-            </li>
-            <li><a href="angebote.html">Meine Angebote</a></li>
-            <li class="dropdown">
-                <a href="energie.html">Energetische Selbstarbeit</a>
-                <ul class="dropdown-content">
-                    <li><a href="basics.html">Die Basics</a></li>
-                   
+  <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
+    <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+
+    <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
+
+    <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
+
+    <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
+
+    <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
+
+    <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
+
+    <p><strong>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</strong></p>
+
+    <p><strong>Von Herzen, Lilian</strong></p>
+  </div>
+
+  <div class="content" style="text-align:center; padding-bottom: 40px;">
+    <img src="relax.png" alt="Relaxbild" />
+  </div>
+
+  <footer>
+    <p>© 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+  </footer>
+
+  <script>
+    // Hamburger-Menü Toggle
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+    // Sterne zufällig generieren
+    document.addEventListener("DOMContentLoaded", () => {
+      const starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+    });
+  </script>
+</body>
+</html>
+
