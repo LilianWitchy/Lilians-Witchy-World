@@ -95,15 +95,16 @@
       justify-content: center;
     }
 
-    /* Menüul und -items */
+    /* Menüul und -items nebeneinander */
     .navmenu {
       list-style: none;
       margin: 0;
-      padding: 0 20px; /* Abstand innen */
+      padding: 0 20px; /* Innenabstand */
       display: flex;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
       max-width: 1000px; /* max breite des menus */
+      align-items: center;
     }
 
     .navmenu li {
@@ -118,6 +119,7 @@
       display: block;
       border-radius: 4px;
       transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap; /* Damit die Menüpunkte nicht umbrechen */
     }
 
     .navmenu a:hover {
@@ -225,6 +227,7 @@
       .navmenu a {
         padding: 15px 20px;
         font-size: 16px;
+        white-space: normal; /* Damit Text umbrechen kann im Mobil */
       }
 
       /* Dropdowns im Mobilmodus */
@@ -263,14 +266,7 @@
       <span></span>
     </div>
     <ul class="navmenu" id="navmenu">
-      <li class="dropdown">
-        <a href="index.html">Startseite</a>
-        <ul class="dropdown-content" aria-label="Untermenü Startseite">
-          <li><a href="about.html">Über mich</a></li>
-          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-          <li><a href="meinemission.html">Meine Mission</a></li>
-        </ul>
-      </li>
+      <li><a href="index.html">Startseite</a></li>
       <li><a href="angebote.html">Meine Angebote</a></li>
       <li class="dropdown">
         <a href="energie.html">Energetische Selbstarbeit</a>
@@ -349,4 +345,3 @@
   </script>
 </body>
 </html>
-
