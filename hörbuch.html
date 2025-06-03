@@ -1,226 +1,245 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Lilian´s Witchy World</title>
-     <style>
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #4e0261;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilian´s Witchy World</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Garamond, serif;
+      color: white;
+      background-color: #4e0261;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-        /* Navbar */
-         .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
-        }
+    /* Navbar */
+    .navbar {
+      background-color: #0aa667;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
-        }
+    .navmenu li {
+      position: relative;
+    }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      display: block;
+    }
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+    }
 
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      list-style: none;
+      padding: 0;
+      z-index: 1000;
+    }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .dropdown-content li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
 
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
 
-        /* Galerie */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
+    /* Galerie */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .frame {
-            border: 5px solid gold;
-            padding: 10px;
-            text-align: center;
-            background-color: white;
-            border-radius: 10px;
-        }
+    .frame {
+      border: 5px solid gold;
+      padding: 10px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+    }
 
-        .frame img {
-            width: 150px;
-            height: 150px;
-            display: block;
-            margin: auto;
-            border-radius: 5px;
-        }
+    .frame img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      border-radius: 5px;
+    }
 
-        .controls {
-            margin-top: 10px;
-        }
+    .controls {
+      margin-top: 10px;
+    }
 
-        .controls button {
-            margin: 5px;
-            padding: 5px 10px;
-            background-color: gold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    .controls button {
+      margin: 5px;
+      padding: 5px 10px;
+      background-color: gold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Video-Styling */
+    .video-container {
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border: 4px solid gold;
+      border-radius: 10px;
+    }
+
+    /* Responsive Menü - auf kleinen Geräten gestapelt */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navmenu li {
+        width: 100%;
+      }
+
+      .navmenu a {
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="content">
-         <h1>
-             <img src="logo2.png" alt="Magic Logo">
-             Lilian’s Witchy World
-             <img src="logo2.png" alt="Magic Logo">
-         </h1>
-   
-   <!-- Navbar mit Menü -->
-  
-    
-   <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+
+    <!-- Navigation -->
+    <div class="navbar">
+      <ul class="navmenu">
+        <li class="dropdown">
+          <a href="index.html">Startseite</a>
+          <ul class="dropdown-content">
+            <li><a href="about.html">Über mich</a></li>
+            <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+            <li><a href="meinemission.html">Meine Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="angebote.html">Meine Angebote</a></li>
+        <li class="dropdown">
+          <a href="energie.html">Energetische Selbstarbeit</a>
+          <ul class="dropdown-content">
+            <li><a href="basics.html">Die Basics</a></li>
+            <li><a href="reinigung.html">Energetische Reinigung</a></li>
+            <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+          </ul>
+        </li>
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li class="dropdown">
+          <a href="rezepte.html">Rezepte ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+            <li><a href="haare.html">Haarprodukte</a></li>
+            <li><a href="#">Teemischungen</a></li>
+            <li><a href="#">Räuchermischungen</a></li>
+            <li><a href="#">Naturheilkunde</a></li>
+            <li><a href="#">Salben & Balsam</a></li>
+          </ul>
+        </li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </div>
 
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-    
     <p>Hier kannst du in meine Bücher reinhören.</p>
     <p>Ich werde nach und nach ein paar meiner Traumreisen aus meinen Büchern aufnehmen und hier posten.</p>
     <p>Viel Spaß beim Zuhören.</p>
-    
+
     <!-- Hörbuch Galerie -->
     <div class="gallery">
-        <div class="frame">
-           <p><strong>Band 1, Wer ist Baldur?:</strong></p>
-            <img src="coverbildvorne.jpg" alt="Hörbuch 1">
-            <div class="controls">
-                <button onclick="playAudio('audio1')">▶️ Play</button>
-                <button onclick="pauseAudio('audio1')">⏸️ Pause</button>
-            </div>
-            <audio id="audio1">
-                <source src="weristbaldur.mp4" type="audio/mp4">
-              
-            </audio>
+      <div class="frame">
+        <p><strong>Band 1, Wer ist Baldur?:</strong></p>
+        <img src="coverbildvorne.jpg" alt="Hörbuch 1" />
+        <div class="controls">
+          <button onclick="playAudio('audio1')">▶️ Play</button>
+          <button onclick="pauseAudio('audio1')">⏸️ Pause</button>
         </div>
+        <audio id="audio1" preload="metadata">
+          <source src="weristbaldur.mp4" type="audio/mp4" />
+          Dein Browser unterstützt dieses Audioformat nicht.
+        </audio>
+      </div>
     </div>
 
-       <div style="margin-top: 2rem;">
-        <p><strong>Titelsong - Traumreisen mit Baldur:</strong></p>
-        <video width="100%" controls>
-          <source src="unbenannt2.mp4" type="video/mp4">
-        
-        </video>
-      </div>
+    <!-- Video -->
+    <div class="video-container">
+      <p><strong>Titelsong - Traumreisen mit Baldur:</strong></p>
+      <video controls preload="metadata">
+        <source src="unbenannt2.mp4" type="video/mp4" />
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
+    </div>
+  </div>
 
-    <script>
-        function playAudio(id) {
-            let audio = document.getElementById(id);
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.currentTime = 0;
-                audio.play();
-            }
-        }
+  <script>
+    function playAudio(id) {
+      const audio = document.getElementById(id);
+      audio.play();
+    }
 
-        function pauseAudio(id) {
-            let audio = document.getElementById(id);
-            audio.pause();
-        }
-
-        // Menü ein- und ausblenden
-        function toggleMenu() {
-            let menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
-        }
-    </script>
+    function pauseAudio(id) {
+      const audio = document.getElementById(id);
+      audio.pause();
+    }
+  </script>
 </body>
 </html>
