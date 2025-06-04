@@ -307,6 +307,51 @@ button:hover {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
+/* Pfeil nach unten an Dropdown-Links */
+.navmenu > li.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 6px;
+}
+
+/* Dropdown-Menü im Desktop-Modus per Hover sichtbar */
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navmenu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Dropdown-Inhalt standardmäßig verstecken */
+  .dropdown-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    background-color: #0aa667; /* passt zum Navbar-Hintergrund */
+    width: 100%;
+  }
+
+  /* Links in Dropdown etwas eingerückt */
+  .dropdown-content li a {
+    padding-left: 30px;
+  }
+
+  /* Dropdown öffnen, wenn Eltern-li die Klasse "open" hat */
+  .dropdown.open > .dropdown-content {
+    display: block;
+  }
+
+  /* Pfeil nach unten drehen, wenn offen */
+  .dropdown.open > a::after {
+    content: " ▲";
+  }
+}
+
+
     </style>
 </head>
 <body>
