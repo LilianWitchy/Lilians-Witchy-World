@@ -367,18 +367,24 @@
       });
 
       // Mobile Dropdowns steuern
-      const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
-      dropdownLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = this.nextElementSibling;
-            // Alle anderen Dropdowns schließen
-            document.querySelectorAll(".dropdown-content").forEach(menu => {
-              if (menu !== dropdown) menu.style.display = "none";
-            });
-            // Aktuelles Dropdown toggeln
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+     const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
+dropdownLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const dropdown = this.nextElementSibling;
+
+      // Alle anderen Dropdowns schließen
+      document.querySelectorAll(".dropdown-content").forEach(menu => {
+        if (menu !== dropdown) menu.classList.remove("show");
+      });
+
+      // Aktuelles Dropdown toggeln
+      dropdown.classList.toggle("show");
+    }
+  });
+});
+
           }
         });
       });
