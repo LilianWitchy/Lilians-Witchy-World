@@ -79,24 +79,36 @@
 
     .navbar {
       background-color: #0aa667;
-      width: 100vw;
-      margin: 0;
-      padding: 10px 0;
+      width: 100%;
+      padding: 10px 20px;
       position: relative;
-      left: 0;
       z-index: 10;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
     }
 
     .navmenu {
       list-style: none;
       margin: 0;
-      padding: 0 20px;
+      padding: 0;
       display: flex;
       gap: 25px;
       flex-wrap: wrap;
-      max-width: 1000px;
       align-items: center;
     }
 
@@ -128,8 +140,6 @@
       background-color: #0aa667;
       min-width: 180px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      padding: 0;
-      margin: 0;
       list-style: none;
       z-index: 1000;
     }
@@ -146,22 +156,6 @@
 
     .navmenu li:hover > .dropdown-content {
       display: block;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin-left: auto;
-      padding-right: 20px;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 2px;
     }
 
     footer {
@@ -181,11 +175,6 @@
         max-width: 80px;
       }
 
-      .navbar {
-        justify-content: space-between;
-        padding: 10px 20px;
-      }
-
       .menu-toggle {
         display: flex;
       }
@@ -194,9 +183,6 @@
         flex-direction: column;
         display: none;
         width: 100%;
-        max-width: none;
-        padding: 0;
-        gap: 0;
         background-color: #0aa667;
       }
 
@@ -207,10 +193,6 @@
       .navmenu li {
         width: 100%;
         border-top: 1px solid #088852;
-      }
-
-      .navmenu li:first-child {
-        border-top: none;
       }
 
       .navmenu a {
@@ -234,7 +216,6 @@
         display: none;
       }
     }
-    }
   </style>
 </head>
 <body>
@@ -248,47 +229,105 @@
     </h1>
   </div>
 
-     <!-- Navbar -->
- 
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
 
-      <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+  <div class="content">
+    <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+    <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen...</p>
+    <p><strong>Von Herzen, Lilian</strong></p>
+  </div>
+
+  <div class="content" style="text-align:center; padding-bottom: 40px;">
+    <img src="relax.png" alt="Relaxbild" />
+  </div>
+
+  <footer>
+    <p>© 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+  </footer>
+
+  <script>
+    // Hintergrund-Sterne erzeugen
+    document.addEventListener("DOMContentLoaded", () => {
+      const starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+
+      // Mobile Menü ein-/ausblenden
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("navmenu").classList.toggle("show");
+      });
+
+      // Mobile Dropdowns steuern
+      const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
+      dropdownLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = this.nextElementSibling;
+            // Alle anderen Dropdowns schließen
+            document.querySelectorAll(".dropdown-content").forEach(menu => {
+              if (menu !== dropdown) menu.style.display = "none";
+            });
+            // Aktuelles Dropdown toggeln
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
 
   <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
@@ -308,43 +347,40 @@
   </footer>
 
   <script>
-  // Funktion für das Umschalten des Menüs (z.B. Hamburger-Button)
-  function toggleMenu() {
-    const menu = document.getElementById("navmenu");
-    menu.classList.toggle("show");
-  }
+    // Hintergrund-Sterne erzeugen
+    document.addEventListener("DOMContentLoaded", () => {
+      const starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    // Sterne im Hintergrund erzeugen
-    const starContainer = document.querySelector(".stars");
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * 100 + "vh";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      starContainer.appendChild(star);
-    }
+      // Mobile Menü ein-/ausblenden
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("navmenu").classList.toggle("show");
+      });
 
-    // Dropdown-Menüs für mobile Ansicht steuern
-    // Wichtig: Die li-Elemente mit Dropdown müssen die Klasse "dropdown" haben
-    const dropdownParents = document.querySelectorAll(".navmenu > li.dropdown > a");
-    dropdownParents.forEach(link => {
-      link.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const dropdown = this.nextElementSibling;
-          // Alle anderen Dropdowns schließen
-          document.querySelectorAll(".dropdown-content").forEach(menu => {
-            if (menu !== dropdown) menu.style.display = "none";
-          });
-          // Aktuelles Dropdown toggeln
-          dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-        }
+      // Mobile Dropdowns steuern
+      const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
+      dropdownLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = this.nextElementSibling;
+            // Alle anderen Dropdowns schließen
+            document.querySelectorAll(".dropdown-content").forEach(menu => {
+              if (menu !== dropdown) menu.style.display = "none";
+            });
+            // Aktuelles Dropdown toggeln
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+          }
+        });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
