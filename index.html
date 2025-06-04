@@ -234,6 +234,7 @@
         display: none;
       }
     }
+    }
   </style>
 </head>
 <body>
@@ -309,36 +310,43 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navmenu");
-      menu.classList.toggle("show");
+  // Funktion für das Umschalten des Menüs (z.B. Hamburger-Button)
+  function toggleMenu() {
+    const menu = document.getElementById("navmenu");
+    menu.classList.toggle("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Sterne im Hintergrund erzeugen
+    const starContainer = document.querySelector(".stars");
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const starContainer = document.querySelector(".stars");
-      for (let i = 0; i < 50; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        starContainer.appendChild(star);
-      }
-
-      const dropdownParents = document.querySelectorAll(".navmenu > li.dropdown > a");
-      dropdownParents.forEach(link => {
-        link.addEventListener("click", function (e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = this.nextElementSibling;
-            document.querySelectorAll(".dropdown-content").forEach(menu => {
-              if (menu !== dropdown) menu.style.display = "none";
-            });
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-          }
-        });
+    // Dropdown-Menüs für mobile Ansicht steuern
+    // Wichtig: Die li-Elemente mit Dropdown müssen die Klasse "dropdown" haben
+    const dropdownParents = document.querySelectorAll(".navmenu > li.dropdown > a");
+    dropdownParents.forEach(link => {
+      link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdown = this.nextElementSibling;
+          // Alle anderen Dropdowns schließen
+          document.querySelectorAll(".dropdown-content").forEach(menu => {
+            if (menu !== dropdown) menu.style.display = "none";
+          });
+          // Aktuelles Dropdown toggeln
+          dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
