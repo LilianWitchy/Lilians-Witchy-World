@@ -6,7 +6,6 @@
   <title>Lilian’s Witchy World</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    /* Grund-Reset und Box-Sizing */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -26,7 +25,6 @@
       height: auto;
     }
 
-    /* Hintergrund-Sterne */
     .stars {
       position: fixed;
       top: 0; left: 0;
@@ -51,7 +49,6 @@
       50% {opacity: 1;}
     }
 
-    /* Überschriften */
     h1 {
       font-size: 2.5em;
       margin: 20px 0 10px 0;
@@ -72,7 +69,6 @@
       font-weight: normal;
     }
 
-    /* Inhaltstext */
     .content {
       max-width: 1000px;
       margin: auto;
@@ -81,29 +77,26 @@
       line-height: 1.6;
     }
 
-    /* Vollflächige grüne Menüleiste */
     .navbar {
       background-color: #0aa667;
-      width: 100vw;  /* volle Bildschirmbreite */
+      width: 100vw;
       margin: 0;
       padding: 10px 0;
       position: relative;
       left: 0;
       z-index: 10;
-
       display: flex;
       justify-content: center;
     }
 
-    /* Menüul und -items nebeneinander */
     .navmenu {
       list-style: none;
       margin: 0;
-      padding: 0 20px; /* Innenabstand */
+      padding: 0 20px;
       display: flex;
       gap: 25px;
       flex-wrap: wrap;
-      max-width: 1000px; /* max breite des menus */
+      max-width: 1000px;
       align-items: center;
     }
 
@@ -119,7 +112,7 @@
       display: block;
       border-radius: 4px;
       transition: background-color 0.3s, color 0.3s;
-      white-space: nowrap; /* Damit die Menüpunkte nicht umbrechen */
+      white-space: nowrap;
     }
 
     .navmenu a:hover {
@@ -127,7 +120,6 @@
       color: #660082;
     }
 
-    /* Dropdown-Menü */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -156,7 +148,6 @@
       display: block;
     }
 
-    /* Hamburger für Mobil */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -173,7 +164,6 @@
       border-radius: 2px;
     }
 
-    /* Footer */
     footer {
       background-color: #0aa667;
       padding: 20px;
@@ -182,7 +172,6 @@
       font-size: 14px;
     }
 
-    /* Responsive */
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 1.8em;
@@ -227,11 +216,11 @@
       .navmenu a {
         padding: 15px 20px;
         font-size: 16px;
-        white-space: normal; /* Damit Text umbrechen kann im Mobil */
+        white-space: normal;
       }
 
-      /* Dropdowns im Mobilmodus */
       .dropdown-content {
+        display: none !important;
         position: static;
         box-shadow: none;
         background-color: #0aa667;
@@ -242,7 +231,7 @@
       }
 
       .navmenu li:hover > .dropdown-content {
-        display: none; /* Hover fällt weg, Klick-Funktion wäre besser */
+        display: none;
       }
     }
   </style>
@@ -258,75 +247,54 @@
     </h1>
   </div>
 
-  <!-- Menü: direkt unter dem Titel -->
   <nav class="navbar" role="navigation" aria-label="Hauptmenü">
-  <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menü umschalten" role="button" tabindex="0">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul class="navmenu" id="navmenu">
-    <li class="dropdown">
-      <a href="index.html">Startseite</a>
-      <ul class="dropdown-content">
-        <li><a href="about.html">Über mich</a></li>
-        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-        <li><a href="meinemission.html">Meine Mission</a></li>
-      </ul>
-    </li>
-    <li><a href="angebote.html">Meine Angebote</a></li>
-    <li class="dropdown">
-      <a href="energie.html">Energetische Selbstarbeit</a>
-      <ul class="dropdown-content" aria-label="Untermenü Energetische Selbstarbeit">
-        <li><a href="basics.html">Die Basics</a></li>
-        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-        <li><a href="gedanken.html">Gedanken &amp; Glaubenssätze</a></li>
-      </ul>
-    </li>
-    <li><a href="meinebücher.html">Meine Bücher</a></li>
-    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-    <li class="dropdown">
-      <a href="rezepte.html">Rezepte ▼</a>
-      <ul class="dropdown-content" aria-label="Untermenü Rezepte">
-        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-        <li><a href="haare.html">Haarprodukte</a></li>
-        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-        <li><a href="#">Räuchermischungen</a></li>
-        <li><a href="#">Naturheilkunde</a></li>
-        <li><a href="#">Salben &amp; Balsam</a></li>
-      </ul>
-    </li>
-    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-    <li><a href="agb.html">AGB</a></li>
-    <li><a href="impressum.html">Impressum</a></li>
-  </ul>
-</nav>
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menü umschalten" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navmenu" id="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken &amp; Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben &amp; Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </nav>
 
   <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
 
-    <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
-
-    <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-
-    <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
-
-    <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
-
-    <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
-
-    <p><strong>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</strong></p>
-
-    <div class="autorenkasten">
-  <p>„Ich bin Elisabeth-Ann Wolf – eine Hälfte eines Duos, das Gegensätze in Geschichten verwandelt.</p>
-  <p>Seine Bücher sind dunkle Reisen durch Welten voller Magie, Macht und Schatten – Dark Fantasy, die den Atem anhält.</p>
-  <p>Ihre Geschichten sind lichtvoll, achtsam und voller Herz – sie berühren, bewegen und heilen die Seele.</p>
-  <p>Gemeinsam formen wir Worte zu Welten, die man nicht nur liest, sondern erlebt. Für Träumer, Suchende und Schattenwanderer. Wir sind nicht irgendwer. Wir sind DAS Autorenpärchen.“</p>
-  
-  <a href="https://lilianwitchy.github.io/Das_Autorenpaerchen/index.html" class="autoren-button" target="_blank">DAS Autorenpärchen</a>
-</div>
-
+    <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen...</p>
 
     <p><strong>Von Herzen, Lilian</strong></p>
   </div>
@@ -341,13 +309,11 @@
   </footer>
 
   <script>
-    // Hamburger-Menü Toggle
     function toggleMenu() {
       const menu = document.getElementById("navmenu");
       menu.classList.toggle("show");
     }
 
-    // Sterne zufällig generieren
     document.addEventListener("DOMContentLoaded", () => {
       const starContainer = document.querySelector(".stars");
       for (let i = 0; i < 50; i++) {
@@ -358,6 +324,20 @@
         star.style.animationDuration = (Math.random() * 2 + 1) + "s";
         starContainer.appendChild(star);
       }
+
+      const dropdownParents = document.querySelectorAll(".navmenu > li.dropdown > a");
+      dropdownParents.forEach(link => {
+        link.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = this.nextElementSibling;
+            document.querySelectorAll(".dropdown-content").forEach(menu => {
+              if (menu !== dropdown) menu.style.display = "none";
+            });
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+          }
+        });
+      });
     });
   </script>
 </body>
