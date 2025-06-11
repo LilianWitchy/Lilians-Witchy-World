@@ -42,13 +42,13 @@
             50% { opacity: 1; }
         }
 
-        .navbar {
+               .navbar {
             background-color: #0aa667;
-            padding: 10px 20px;
+            padding: 10px 20px; /* Schmaler Balken */
             position: relative;
             z-index: 10;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
             align-items: center;
         }
 
@@ -61,7 +61,7 @@
 
         .navmenu li {
             margin-right: 30px;
-            position: relative;
+            position: relative; /* Für Dropdown-Menüs */
         }
 
         .navmenu a {
@@ -77,6 +77,7 @@
             border-radius: 5px;
         }
 
+        /* Dropdown-Menü */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -105,20 +106,7 @@
             display: block;
         }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 5px 0;
-            border-radius: 2px;
-        }
-
+        /* Weitere Styling für Inhalt */
         .content {
             position: relative;
             z-index: 1;
@@ -131,6 +119,7 @@
             text-align: center;
             color: white;
         }
+
 
         img {
             max-width: 100%;
@@ -187,14 +176,10 @@
         </h1>
         <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
 
-        <!-- Navigationsmenü -->
+         <!-- Navigationsmenü -->
+     
         <div class="navbar">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="navmenu" id="navmenu">
+            <ul class="navmenu">
                 <li class="dropdown">
                     <a href="index.html">Startseite</a>
                     <ul class="dropdown-content">
@@ -265,24 +250,29 @@
         </div>
     </div>
 
-    <script>
+   <script>
         function toggleMenu() {
-            const menu = document.getElementById("navmenu");
-            menu.classList.toggle("show");
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
         }
-
-        // Sterne erzeugen
-        document.addEventListener("DOMContentLoaded", function () {
+// Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
             let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
                 let star = document.createElement("div");
                 star.className = "star";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
                 starContainer.appendChild(star);
             }
         });
+
+	    
     </script>
 </body>
 </html>
