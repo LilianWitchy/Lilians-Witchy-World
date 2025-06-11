@@ -95,18 +95,9 @@ footer {
 
 /* === Responsive Layout ab 768px und kleiner === */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.8em;
-  }
+  ...
 
-  h1 img {
-    max-width: 80px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
+  /* Menü wird vertikal */
   .navmenu {
     flex-direction: column;
     display: none;
@@ -129,16 +120,23 @@ footer {
     padding: 15px 20px;
     font-size: 16px;
     white-space: normal;
+    cursor: pointer; /* Wichtig für Klickbarkeit */
+    position: relative; /* für Pfeil */
   }
 
-  /* 👉 Dropdowns wie normale Menüpunkte anzeigen */
+  /* Dropdowns per Klasse steuern - nicht mehr dauerhaft anzeigen! */
   .dropdown-content {
-    display: block !important;
+    display: none; /* Standard: ausgeblendet */
     position: static;
     box-shadow: none;
     background-color: transparent;
     padding-left: 20px;
     width: 100%;
+  }
+
+  /* Wenn Dropdown geöffnet, Dropdown-Inhalt anzeigen */
+  .dropdown.open .dropdown-content {
+    display: block;
   }
 
   .dropdown-content li a {
@@ -147,13 +145,25 @@ footer {
     font-size: 15px;
   }
 
-  /* Hover auf Mobile deaktivieren */
+  /* Hover auf Mobil deaktiviert */
   .dropdown:hover .dropdown-content {
     display: none;
   }
 
-  /* Pfeile deaktivieren oder ändern, wenn gewünscht */
+  /* Pfeil nach unten als Indikator */
   .navmenu > li.dropdown > a::after {
-    content: "";
+    content: " ▼";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+
+  /* Pfeil drehen, wenn geöffnet */
+  .dropdown.open > a::after {
+    transform: translateY(-50%) rotate(180deg);
+    content: " ▲";
   }
 }
