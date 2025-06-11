@@ -82,6 +82,13 @@
             background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund für besseren Text-Kontrast */
             border-radius: 10px;
         }
+	    
+/* Media Query für mobile Geräte */
+@media (max-width: 768px) {
+    .hero-section {
+        font-size: 1.8rem; /* kleinere Schriftgröße auf Smartphones/Tablets */
+    }
+}
 
        h1 {
       font-size: 2.5em;
@@ -216,12 +223,18 @@
         /* Hamburger-Menü wird angezeigt */
       }
 
+ .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+	
       .navmenu {
         flex-direction: column;
         display: none;
         width: 100%;
         background-color: #0aa667;
-      }
+       overflow-x: hidden; /* verhindert horizontales Scrollen */
+  }
 
       .navmenu.show {
         display: flex;
@@ -231,7 +244,9 @@
       .navmenu li {
         width: 100%;
         border-top: 1px solid #088852;
-      }
+          box-sizing: border-box;
+  }
+}
 
       .navmenu a {
         padding: 15px 20px;
@@ -492,6 +507,10 @@
     window.addEventListener("DOMContentLoaded", function () {
       updateMenuToggleVisibility();
 
+
+  
+
+	    
       // Button klickbar machen
       document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 // Sterne erzeugen
@@ -504,7 +523,14 @@
                 star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
                 star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
                 starContainer.appendChild(star);
+
+		    document.getElementById('menu-toggle').style.display = 'block';
+
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
             }
+	
         });
 
 	 // Bei Fenstergröße ändern: Button ggf. anzeigen
