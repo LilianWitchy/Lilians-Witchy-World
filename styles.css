@@ -1,173 +1,118 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lilian´s Witchy World</title>
-  <style>
-    body {
-      font-family: Garamond, serif;
-      color: white;
-      background-color: #4e0261;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+body {
+  font-family: Garamond, serif;
+  color: white;
+  background-color: #4e0261;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-    header, footer {
-      background-color: #0aa667;
-      color: white;
-    }
+header,
+footer {
+  background-color: #0aa667;
+  color: white;
+}
 
-    .navbar {
-      background-color: #0aa667;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 100;
-    }
+.navbar {
+  background-color: #0aa667;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 100;
+}
 
-    .navmenu {
-      list-style-type: none;
-      margin: 0;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      height: 60px;
-      flex-wrap: wrap;
-    }
+.navmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  flex-wrap: wrap;
+}
 
-    .navmenu > li {
-      position: relative;
-      margin-right: 30px;
-    }
+.navmenu > li {
+  position: relative;
+  margin-right: 30px;
+}
 
-    .navmenu > li > a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-      padding: 15px 10px;
-      display: block;
-    }
+.navmenu > li > a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 15px 10px;
+  display: block;
+}
 
-    .navmenu > li > a:hover {
-      background-color: #b0d5ac;
-      border-radius: 5px;
-    }
+.navmenu > li > a:hover {
+  background-color: #b0d5ac;
+  border-radius: 5px;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: white;
-      min-width: 180px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      padding: 0;
-      list-style: none;
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0;
+  list-style: none;
+}
 
-    .dropdown-content li a {
-      padding: 12px 16px;
-      display: block;
-      color: #660082;
-      text-decoration: none;
-    }
+.dropdown-content li a {
+  padding: 12px 16px;
+  display: block;
+  color: #660082;
+  text-decoration: none;
+}
 
-    .dropdown-content li a:hover {
-      background-color: #f1f1f1;
-    }
+.dropdown-content li a:hover {
+  background-color: #f1f1f1;
+}
 
-    /* Desktop: Dropdown per Hover */
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+/* Dropdown auf Desktop per Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-    /* Pfeil nach unten */
-    .navmenu > li.dropdown > a::after {
-      content: " ▼";
-      font-size: 0.7em;
-      margin-left: 6px;
-    }
+/* Pfeil nach unten für Dropdown */
+.navmenu > li.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 6px;
+}
 
-    /* Offen-Zustand */
-    .dropdown.open > .dropdown-content {
-      display: block;
-    }
+/* Klassenbasierte Anzeige für mobiles Dropdown */
+.dropdown.open > .dropdown-content {
+  display: block;
+}
 
-    .dropdown.open > a::after {
-      content: " ▲";
-    }
+.dropdown.open > a::after {
+  content: " ▲";
+}
 
-    @media (max-width: 768px) {
-      .navmenu {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+@media (max-width: 768px) {
+  .navmenu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: #0aa667;
-        width: 100%;
-      }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #0aa667;
+    width: 100%;
+  }
 
-      .dropdown-content li a {
-        color: white;
-        padding-left: 30px;
-      }
+  .dropdown-content li a {
+    color: white;
+    padding-left: 30px;
+  }
 
-      .dropdown:hover .dropdown-content {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar">
-    <ul class="navmenu">
-      <li><a href="#">Home</a></li>
-      <li class="dropdown">
-        <a href="#">Angebote</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Kurse</a></li>
-          <li><a href="#">Beratung</a></li>
-          <li><a href="#">Workshops</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Über mich</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Werdegang</a></li>
-          <li><a href="#">Vision</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Kontakt</a></li>
-    </ul>
-  </nav>
-
-  <script>
-    const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
-
-    dropdownLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const parentLi = this.parentElement;
-
-          // Alle anderen Dropdowns schließen
-          document.querySelectorAll(".navmenu > li.dropdown").forEach(li => {
-            if (li !== parentLi) li.classList.remove("open");
-          });
-
-          // Aktuelles Dropdown toggeln
-          parentLi.classList.toggle("open");
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
-
+  /* Hover auf Mobile deaktivieren */
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
