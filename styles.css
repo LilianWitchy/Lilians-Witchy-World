@@ -95,21 +95,56 @@ footer {
 
 /* === Responsive Layout ab 768px und kleiner === */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h1 img {
+    max-width: 80px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
   .navmenu {
     flex-direction: column;
+    display: none;
+    width: 100%;
+    background-color: #0aa667;
     align-items: flex-start;
   }
 
+  .navmenu.show {
+    display: flex;
+  }
+
+  .navmenu li {
+    width: 100%;
+    border-top: 1px solid #088852;
+  }
+
+  .navmenu > li > a {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  /* 👉 Dropdowns wie normale Menüpunkte anzeigen */
   .dropdown-content {
+    display: block !important;
     position: static;
     box-shadow: none;
-    background-color: #0aa667;
+    background-color: transparent;
+    padding-left: 20px;
     width: 100%;
   }
 
   .dropdown-content li a {
     color: white;
-    padding-left: 30px;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
   }
 
   /* Hover auf Mobile deaktivieren */
@@ -117,15 +152,8 @@ footer {
     display: none;
   }
 
-  /* Auch sinnvoll: Dropdown-Pfeil mobil zentrieren */
-  .navmenu > li > a {
-    width: 100%;
+  /* Pfeile deaktivieren oder ändern, wenn gewünscht */
+  .navmenu > li.dropdown > a::after {
+    content: "";
   }
-
-@media screen and (max-width: 768px) {
-  .navmenu li.open > .dropdown-content {
-    display: block;
-  }
-}
-  
 }
