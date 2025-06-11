@@ -78,83 +78,80 @@
     }
 
     .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
-        }
+      background-color: #0aa667;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+    }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
-        }
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+    }
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+    }
 
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .dropdown-content li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
 
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
 
-        /* Weitere Styling für Inhalt */
-        .content {
-            position: relative;
-            z-index: 1;
-            padding-bottom: 100px;
-        }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 100px;
+    }
 
-        footer {
-            background-color: #0aa667;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
+    footer {
+      background-color: #0aa667;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
 
     @media screen and (max-width: 768px) {
       h1 {
@@ -191,7 +188,6 @@
         white-space: normal;
       }
 
-      /* Alle Untermenüs immer anzeigen, wenn das Menü offen ist */
       .navmenu.show .dropdown-content {
         display: block !important;
         position: static;
@@ -203,7 +199,6 @@
         padding-left: 40px;
       }
 
-      /* Hover-Dropdown auf Mobile deaktivieren */
       .navmenu li:hover > .dropdown-content {
         display: none;
       }
@@ -221,48 +216,48 @@
     </h1>
   </div>
 
-  <!-- Navigationsmenü -->
-     
-        <div class="navbar">
-  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">
-    &#9776; <!-- Hamburger-Symbol -->
-  <ul id="menu" class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+  <!-- Navigation -->
+  <div class="navbar">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen" style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+      &#9776;
+    </button>
+    <ul id="menu" class="navmenu">
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content" style="background-color:#0aa667;">
+          <li><a href="about.html" style="color:white;">Über mich</a></li>
+          <li><a href="weiterbildung.html" style="color:white;">Weiterbildungen</a></li>
+          <li><a href="meinemission.html" style="color:white;">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content" style="background-color:#0aa667;">
+          <li><a href="basics.html" style="color:white;">Die Basics</a></li>
+          <li><a href="reinigung.html" style="color:white;">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html" style="color:white;">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content" style="background-color:#0aa667;">
+          <li><a href="seife.html" style="color:white;">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html" style="color:white;">Haarprodukte</a></li>
+          <li><a href="#" style="color:white;">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#" style="color:white;">Räuchermischungen</a></li>
+          <li><a href="#" style="color:white;">Naturheilkunde</a></li>
+          <li><a href="#" style="color:white;">Salben & Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
 
   <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
@@ -272,8 +267,8 @@
     <p> Und genauso ist es mit meiner Webseite. Sie lässt sich nicht in etwas kleines quetschen, denn sie ist so verdammt viel mehr. </p>
     <p> Vielleicht gibt es auch Jemanden, der mir helfen kann. <3 </p>
     <p>So, und nun zu dem, was ich eigtl. sagen möchte.</p>
-    
-     <p> Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
+
+    <p> Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
 
     <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
 
@@ -284,8 +279,6 @@
     <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
 
     <p><strong>Möge diese Seite dir Inspiration, Erkenntnis und ein Stück Magie auf deiner Reise schenken.</strong></p>
-
-
 
     <p><strong>Von Herzen, Lilian</strong></p>
   </div>
@@ -299,27 +292,38 @@
     <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
   </footer>
 
-  <!-- JS -->
- <script>
-  function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-  }
-
-  document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
-
-  // Sterne erzeugen
-  document.addEventListener("DOMContentLoaded", function() {
-    let starContainer = document.querySelector(".stars");
-    for (let i = 0; i < 50; i++) {
-      let star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * 100 + "vh";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      starContainer.appendChild(star);
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("show");
     }
-  });
-</script>
+
+    // Menü-Button nur bei kleiner Bildschirmbreite anzeigen
+    function updateMenuToggleVisibility() {
+      const toggleBtn = document.getElementById("menu-toggle");
+      if (window.innerWidth <= 768) {
+        toggleBtn.style.display = "inline-block";
+      } else {
+        toggleBtn.style.display = "none";
+      }
+    }
+
+    window.addEventListener("resize", updateMenuToggleVisibility);
+    window.addEventListener("DOMContentLoaded", function () {
+      updateMenuToggleVisibility();
+      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
+
+      // Sterne erzeugen
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+    });
+  </script>
 </body>
 </html>
