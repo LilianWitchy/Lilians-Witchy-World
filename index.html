@@ -336,32 +336,30 @@
       starContainer.appendChild(star);
     }
 
-    // Menü-Schalter (Hamburger-Menü)
+    // Burger-Menü anzeigen/ausblenden
     const menuToggle = document.getElementById("menu-toggle");
     const navmenu = document.getElementById("navmenu");
     menuToggle.addEventListener("click", () => {
       navmenu.classList.toggle("show");
     });
 
-    // Mobile Dropdowns
+    // Dropdown-Menüs mobil anzeigen/ausblenden
     const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
     dropdownLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const parentLi = this.parentElement;
+          e.preventDefault(); // verhindert normales Linkverhalten
+
+          const dropdown = this.nextElementSibling; // <ul class="dropdown-content">
 
           // Alle anderen Dropdowns schließen
-          document.querySelectorAll(".dropdown-content").forEach(dc => {
-            if (dc !== parentLi.querySelector(".dropdown-content")) {
-              dc.classList.remove("show");
-            }
+          document.querySelectorAll(".dropdown-content").forEach(ul => {
+            if (ul !== dropdown) ul.classList.remove("show");
           });
 
-          // Aktuelles Dropdown toggeln
-          const dropdownContent = parentLi.querySelector(".dropdown-content");
-          if (dropdownContent) {
-            dropdownContent.classList.toggle("show");
+          // Dieses Dropdown umschalten
+          if (dropdown) {
+            dropdown.classList.toggle("show");
           }
         }
       });
