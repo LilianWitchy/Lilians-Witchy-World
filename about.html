@@ -295,6 +295,27 @@
         starContainer.appendChild(star);
       }
     });
+
+    function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Dropdown auf Mobil auf Klick öffnen/schließen
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      // Verhindert, dass der Link navigiert, falls er nur ein Menü öffnen soll
+      e.preventDefault();
+
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+
   </script>
 </body>
 </html>
