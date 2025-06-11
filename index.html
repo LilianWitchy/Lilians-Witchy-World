@@ -1,13 +1,28 @@
 <!DOCTYPE html>
+<!-- Dokumenttyp-Deklaration: Teilt dem Browser mit, dass es sich um HTML5 handelt -->
+
 <html lang="de">
+<!-- Sprache der Seite: Deutsch -->
+
 <head>
   <meta charset="UTF-8" />
+  <!-- Zeichencodierung: UTF-8 unterstützt Umlaute und Sonderzeichen -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
+
   <title>Lilian’s Witchy World</title>
+  <!-- Titel der Seite im Browser-Tab -->
+
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Browser-Icon (kleines Bild im Tab) -->
+
   <style>
+    /* Globales CSS */
+
     *, *::before, *::after {
       box-sizing: border-box;
+      /* Einheitliche Größenberechnung für alle Elemente */
     }
 
     body {
@@ -18,11 +33,13 @@
       color: white;
       text-align: center;
       overflow-x: hidden;
+      /* Verhindert horizontales Scrollen */
     }
 
     img {
       max-width: 100%;
       height: auto;
+      /* Bilder werden responsiv skaliert */
     }
 
     .stars {
@@ -32,6 +49,7 @@
       height: 100%;
       pointer-events: none;
       z-index: -1;
+      /* Hintergrund-Ebene mit Sternenanimation */
     }
 
     .star {
@@ -42,11 +60,13 @@
       border-radius: 50%;
       opacity: 0;
       animation: twinkle linear infinite;
+      /* Einzelne weiße Punkte, die flackern (siehe Animation) */
     }
 
     @keyframes twinkle {
       0%, 100% {opacity: 0;}
       50% {opacity: 1;}
+      /* Animation: Ein-/Ausblenden für Sternflackern */
     }
 
     h1 {
@@ -56,6 +76,7 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      /* Überschrift mit Bild links & rechts */
     }
 
     h1 img {
@@ -75,6 +96,7 @@
       padding: 0 20px 40px 20px;
       text-align: left;
       line-height: 1.6;
+      /* Container für Inhalte */
     }
 
     .navbar {
@@ -85,6 +107,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      /* Navigationsleiste oben */
     }
 
     .navmenu {
@@ -92,6 +115,7 @@
       padding: 0;
       display: flex;
       margin: 0;
+      /* Menü horizontal */
     }
 
     .navmenu li {
@@ -123,6 +147,7 @@
       z-index: 1000;
       list-style: none;
       padding: 0;
+      /* Untermenü bei Hover sichtbar */
     }
 
     .dropdown-content li a {
@@ -138,12 +163,7 @@
 
     .navmenu li:hover .dropdown-content {
       display: block;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      padding-bottom: 100px;
+      /* Bei Mauszeiger über Menüpunkt: Untermenü zeigen */
     }
 
     footer {
@@ -151,9 +171,12 @@
       padding: 20px;
       text-align: center;
       color: white;
+      /* Fußzeile */
     }
 
     @media screen and (max-width: 768px) {
+      /* Anpassungen für kleine Bildschirme (Handys) */
+
       h1 {
         font-size: 1.8em;
       }
@@ -164,6 +187,7 @@
 
       .menu-toggle {
         display: flex;
+        /* Hamburger-Menü wird angezeigt */
       }
 
       .navmenu {
@@ -175,6 +199,7 @@
 
       .navmenu.show {
         display: flex;
+        /* Wird per JavaScript eingeblendet */
       }
 
       .navmenu li {
@@ -205,9 +230,12 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- Hintergrund-Sterne -->
   <div class="stars"></div>
 
+  <!-- Seitenkopf mit Logo und Titel -->
   <div class="content">
     <h1>
       <img src="logo2.png" alt="Magic Logo" />
@@ -216,40 +244,45 @@
     </h1>
   </div>
 
-  <!-- Navigation -->
+  <!-- Navigation mit Untermenüs -->
   <div class="navbar">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen" style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+    <!-- Hamburger-Menü für Handy -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+      style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
       &#9776;
     </button>
+
+    <!-- Hauptmenü -->
     <ul id="menu" class="navmenu">
+      <!-- Jeder <li> ist ein Menüpunkt, teilweise mit Unterpunkten (Dropdowns) -->
       <li class="dropdown">
         <a href="index.html">Startseite</a>
-        <ul class="dropdown-content" style="background-color:#0aa667;">
-          <li><a href="about.html" style="color:white;">Über mich</a></li>
-          <li><a href="weiterbildung.html" style="color:white;">Weiterbildungen</a></li>
-          <li><a href="meinemission.html" style="color:white;">Meine Mission</a></li>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
         </ul>
       </li>
       <li><a href="angebote.html">Meine Angebote</a></li>
       <li class="dropdown">
         <a href="energie.html">Energetische Selbstarbeit</a>
-        <ul class="dropdown-content" style="background-color:#0aa667;">
-          <li><a href="basics.html" style="color:white;">Die Basics</a></li>
-          <li><a href="reinigung.html" style="color:white;">Energetische Reinigung</a></li>
-          <li><a href="gedanken.html" style="color:white;">Gedanken & Glaubenssätze</a></li>
+        <ul class="dropdown-content">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
         </ul>
       </li>
       <li><a href="meinebücher.html">Meine Bücher</a></li>
       <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
       <li class="dropdown">
         <a href="rezepte.html">Rezepte ▼</a>
-        <ul class="dropdown-content" style="background-color:#0aa667;">
-          <li><a href="seife.html" style="color:white;">Körperseifen und Duschjelly</a></li>
-          <li><a href="haare.html" style="color:white;">Haarprodukte</a></li>
-          <li><a href="#" style="color:white;">Teemischungen für mehr Wohlbefinden</a></li>
-          <li><a href="#" style="color:white;">Räuchermischungen</a></li>
-          <li><a href="#" style="color:white;">Naturheilkunde</a></li>
-          <li><a href="#" style="color:white;">Salben & Balsam</a></li>
+        <ul class="dropdown-content">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
         </ul>
       </li>
       <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
@@ -280,22 +313,25 @@
     <p><strong>Von Herzen, Lilian</strong></p>
   </div>
 
+ <!-- Bild zum Abschluss -->
   <div class="content" style="text-align:center; padding-bottom: 40px;">
     <img src="relax.png" alt="Relaxbild" />
   </div>
 
+  <!-- Footer-Bereich -->
   <footer>
     <p>© 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
     <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
   </footer>
 
   <script>
+    // Funktion zum Umschalten des mobilen Menüs
     function toggleMenu() {
       var menu = document.getElementById("menu");
       menu.classList.toggle("show");
     }
 
-    // Menü-Button nur bei kleiner Bildschirmbreite anzeigen
+    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
     function updateMenuToggleVisibility() {
       const toggleBtn = document.getElementById("menu-toggle");
       if (window.innerWidth <= 768) {
@@ -305,9 +341,11 @@
       }
     }
 
-    window.addEventListener("resize", updateMenuToggleVisibility);
+    // Sobald Seite geladen ist:
     window.addEventListener("DOMContentLoaded", function () {
       updateMenuToggleVisibility();
+
+      // Button klickbar machen
       document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 
       // Sterne erzeugen
@@ -321,6 +359,9 @@
         starContainer.appendChild(star);
       }
     });
+
+    // Bei Fenstergröße ändern: Button ggf. anzeigen
+    window.addEventListener("resize", updateMenuToggleVisibility);
   </script>
 </body>
 </html>
