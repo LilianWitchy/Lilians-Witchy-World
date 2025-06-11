@@ -352,16 +352,22 @@
           const parentLi = this.parentElement;
 
           // Alle anderen Dropdowns schließen
-          document.querySelectorAll(".navmenu > li.dropdown").forEach(li => {
-            if (li !== parentLi) li.classList.remove("open");
+          document.querySelectorAll(".dropdown-content").forEach(dc => {
+            if (dc !== parentLi.querySelector(".dropdown-content")) {
+              dc.classList.remove("show");
+            }
           });
 
           // Aktuelles Dropdown toggeln
-          parentLi.classList.toggle("open");
+          const dropdownContent = parentLi.querySelector(".dropdown-content");
+          if (dropdownContent) {
+            dropdownContent.classList.toggle("show");
+          }
         }
       });
     });
   });
 </script>
+
 </body>
 </html>
