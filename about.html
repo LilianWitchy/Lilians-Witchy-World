@@ -42,7 +42,7 @@
             50% { opacity: 1; }
         }
 
-             .navbar {
+          .navbar {
             background-color: #0aa667;
             padding: 10px 20px; /* Schmaler Balken */
             position: relative;
@@ -120,7 +120,6 @@
             color: white;
         }
 
-
         img {
             max-width: 100%;
             height: auto;
@@ -132,36 +131,49 @@
                 align-items: flex-start;
             }
 
-            .menu-toggle {
-                display: flex;
-                margin-left: auto;
-            }
+             .menu-toggle {
+        display: flex;
+      }
 
-            .navmenu {
-                flex-direction: column;
-                width: 100%;
-                display: none;
-                margin-top: 10px;
-            }
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #0aa667;
+      }
 
-            .navmenu.show {
-                display: flex;
-            }
+      .navmenu.show {
+        display: flex;
+      }
 
-            .navmenu li {
-                width: 100%;
-                margin: 0;
-            }
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+      }
 
-            .navmenu li:hover .dropdown-content {
-                position: static;
-                box-shadow: none;
-            }
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+        white-space: normal;
+      }
 
-            .dropdown-content {
-                background-color: #0aa667;
-            }
-        }
+      /* Alle Untermenüs immer anzeigen, wenn das Menü offen ist */
+      .navmenu.show .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
+
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
+
+      /* Hover-Dropdown auf Mobile deaktivieren */
+      .navmenu li:hover > .dropdown-content {
+        display: none;
+      }
+    }
     </style>
 </head>
 <body>
