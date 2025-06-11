@@ -3,10 +3,19 @@
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
     <title>Weiterbildungen | Lilian´s Witchy World</title>
     <style>
-        body {
+          /* Globales CSS */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      /* Einheitliche Größenberechnung für alle Elemente */
+    }
+	    
+	    
+	    body {
             font-family: Garamond, serif;
             color: white;
             background-color: #388045
@@ -14,7 +23,9 @@
             margin: 0;
             padding: 0;
             text-align: center;
-        }
+            overflow-x: hidden;
+      /* Verhindert horizontales Scrollen */
+    }
 
 	   
 
@@ -156,6 +167,59 @@
             display: block;
             width: fit-content;
             max-width: 100%;
+		@media screen and (max-width: 768px) {
+      /* Anpassungen für kleine Bildschirme (Handys) */
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h1 img {
+        max-width: 80px;
+      }
+
+      .menu-toggle {
+        display: flex;
+        /* Hamburger-Menü wird angezeigt */
+      }
+
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #0aa667;
+      }
+
+      .navmenu.show {
+        display: flex;
+        /* Wird per JavaScript eingeblendet */
+      }
+
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+      }
+
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+        white-space: normal;
+      }
+
+      .navmenu.show .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
+
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
+
+      .navmenu li:hover > .dropdown-content {
+        display: none;
+      }
         }
     </style>
 </head>
@@ -171,46 +235,53 @@
         </div>
     </div>
 
-        <!-- Navigationsmenü -->
-     
-        <div class="navbar">
-            <ul class="navmenu">
-                <li class="dropdown">
-                    <a href="index.html">Startseite</a>
-                    <ul class="dropdown-content">
-                        <li><a href="about.html">Über mich</a></li>
-                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                        <li><a href="meinemission.html">Meine Mission</a></li>
-                    </ul>
-                </li>
-                <li><a href="angebote.html">Meine Angebote</a></li>
-                <li class="dropdown">
-                    <a href="energie.html">Energetische Selbstarbeit</a>
-                    <ul class="dropdown-content">
-                        <li><a href="basics.html">Die Basics</a></li>
-                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
-                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                    </ul>
-                </li>
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li class="dropdown">
-                    <a href="rezepte.html">Rezepte ▼</a>
-                    <ul class="dropdown-content">
-                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                        <li><a href="haare.html">Haarprodukte</a></li>
-                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                        <li><a href="#">Räuchermischungen</a></li>
-                        <li><a href="#">Naturheilkunde</a></li>
-                        <li><a href="#">Salben & Balsam</a></li>
-                    </ul>
-                </li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="agb.html">AGB</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
+     <!-- Navigation mit Untermenüs -->
+  <div class="navbar">
+    <!-- Hamburger-Menü für Handy -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+      style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+      &#9776;
+    </button>
+
+    <!-- Hauptmenü -->
+    <ul id="menu" class="navmenu">
+      <!-- Jeder <li> ist ein Menüpunkt, teilweise mit Unterpunkten (Dropdowns) -->
+      <li class="dropdown">
+        <a href="index.html">Startseite</a>
+        <ul class="dropdown-content">
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+          <li><a href="meinemission.html">Meine Mission</a></li>
+        </ul>
+      </li>
+      <li><a href="angebote.html">Meine Angebote</a></li>
+      <li class="dropdown">
+        <a href="energie.html">Energetische Selbstarbeit</a>
+        <ul class="dropdown-content">
+          <li><a href="basics.html">Die Basics</a></li>
+          <li><a href="reinigung.html">Energetische Reinigung</a></li>
+          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+        </ul>
+      </li>
+      <li><a href="meinebücher.html">Meine Bücher</a></li>
+      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+      <li class="dropdown">
+        <a href="rezepte.html">Rezepte ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+          <li><a href="haare.html">Haarprodukte</a></li>
+          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+          <li><a href="#">Räuchermischungen</a></li>
+          <li><a href="#">Naturheilkunde</a></li>
+          <li><a href="#">Salben & Balsam</a></li>
+        </ul>
+      </li>
+      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="agb.html">AGB</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
 
     <div class="content-container">
         <h2>Meine Weiterbildungen</h2>
@@ -367,14 +438,29 @@
           </ul>
     </div>
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none" || menu.style.display === "") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
-        }
+   <script>
+    // Funktion zum Umschalten des mobilen Menüs
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
+    function updateMenuToggleVisibility() {
+      const toggleBtn = document.getElementById("menu-toggle");
+      if (window.innerWidth <= 768) {
+        toggleBtn.style.display = "inline-block";
+      } else {
+        toggleBtn.style.display = "none";
+      }
+    }
+
+    // Sobald Seite geladen ist:
+    window.addEventListener("DOMContentLoaded", function () {
+      updateMenuToggleVisibility();
+
+      // Button klickbar machen
+      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 // Sterne erzeugen
         document.addEventListener("DOMContentLoaded", function() {
             let starContainer = document.querySelector(".stars");
@@ -388,7 +474,8 @@
             }
         });
 
-	    
+	 // Bei Fenstergröße ändern: Button ggf. anzeigen
+    window.addEventListener("resize", updateMenuToggleVisibility);    
     </script>
 
 </body>
