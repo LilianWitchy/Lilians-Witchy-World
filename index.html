@@ -336,32 +336,26 @@
         starContainer.appendChild(star);
       }
 
-      // Menü-Schalter
-      const menuToggle = document.getElementById("menu-toggle");
-      const navmenu = document.getElementById("navmenu");
-      menuToggle.addEventListener("click", () => {
-        navmenu.classList.toggle("show");
-      });
 
-      // Mobile Dropdowns
-      const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
-      dropdownLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = this.nextElementSibling;
-
-            // Alle anderen Dropdowns schließen
-            document.querySelectorAll(".dropdown-content").forEach(menu => {
-              if (menu !== dropdown) menu.classList.remove("show");
-            });
-
-            // Aktuelles Dropdown toggeln
-            dropdown.classList.toggle("show");
-          }
-        });
-      });
+    // Menü-Schalter für das ganze Menü (Hamburger Icon)
+    const menuToggle = document.getElementById("menu-toggle");
+    const navmenu = document.getElementById("navmenu");
+    menuToggle.addEventListener("click", () => {
+      navmenu.classList.toggle("show");
     });
-  </script>
-</body>
-</html>
+
+    // Mobile Dropdowns (für Untermenüs)
+    const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
+    dropdownLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdown = this.parentElement; // <li class="dropdown">
+
+          // Alle anderen Dropdowns schließen
+          document.querySelectorAll(".navmenu > li.dropdown").forEach(menu => {
+            if (menu !== dropdown) menu.classList.remove("open");
+          });
+
+          // Aktuelles Dropdown toggeln (öffnen/schließen)
+          dropdown.classList.toggle("open");
