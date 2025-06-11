@@ -201,21 +201,19 @@
         white-space: normal;
       }
 
-      .dropdown-content {
-        display: none;
+      /* Alle Untermenüs immer anzeigen, wenn das Menü offen ist */
+      .navmenu.show .dropdown-content {
+        display: block !important;
         position: static;
         box-shadow: none;
         background-color: #0aa667;
-      }
-
-      .dropdown-content.show {
-        display: block;
       }
 
       .dropdown-content li a {
         padding-left: 40px;
       }
 
+      /* Hover-Dropdown auf Mobile deaktivieren */
       .navmenu li:hover > .dropdown-content {
         display: none;
       }
@@ -316,30 +314,31 @@
     <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
   </footer>
 
-
-      }
- <!-- JS -->
-<script>
+  <!-- JS -->
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Sterne
-      const starContainer = document.querySelector(".stars");
-      for (let i = 0; i < 50; i++) {
+      const starsContainer = document.querySelector(".stars");
+      const numStars = 100;
+      for (let i = 0; i < numStars; i++) {
         const star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        starContainer.appendChild(star);
+        star.classList.add("star");
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        star.style.animationDelay = (Math.random() * 5) + "s";
+        starsContainer.appendChild(star);
       }
 
-      // Menü-Button
+      // Menu-Button
       const menuToggle = document.getElementById("menu-toggle");
       const navmenu = document.getElementById("navmenu");
       menuToggle.addEventListener("click", () => {
         navmenu.classList.toggle("show");
       });
 
-      // Dropdown für Mobil
+      // Untermenü-Klick-Events für Mobile entfernt, da Untermenüs immer sichtbar sind
+      /*
       const dropdowns = document.querySelectorAll(".navmenu > li.dropdown > a");
       dropdowns.forEach(link => {
         link.addEventListener("click", e => {
@@ -347,14 +346,13 @@
             e.preventDefault();
             const dropdown = link.nextElementSibling;
             dropdown.classList.toggle("show");
-
-            // Alle anderen schließen
             document.querySelectorAll(".dropdown-content").forEach(el => {
               if (el !== dropdown) el.classList.remove("show");
             });
           }
         });
       });
+      */
     });
   </script>
 </body>
