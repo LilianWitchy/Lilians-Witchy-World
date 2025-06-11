@@ -27,7 +27,11 @@
       /* Verhindert horizontales Scrollen */
     }
 
-	   
+	  img {
+      max-width: 100%;
+      height: auto;
+      /* Bilder werden responsiv skaliert */
+    }  
 
          /* Sterne Hintergrund */
         .stars {
@@ -79,7 +83,35 @@
             border-radius: 10px;
         }
 
-       
+       h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      /* Überschrift mit Bild links & rechts */
+    }
+
+    h1 img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+      line-height: 1.6;
+      /* Container für Inhalte */
+    }
          .navbar {
             background-color: #0aa667;
             padding: 10px 20px; /* Schmaler Balken */
@@ -167,7 +199,8 @@
             display: block;
             width: fit-content;
             max-width: 100%;
-		@media screen and (max-width: 768px) {
+		
+@media screen and (max-width: 768px) {
       /* Anpassungen für kleine Bildschirme (Handys) */
 
       h1 {
