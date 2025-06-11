@@ -166,7 +166,6 @@
       font-size: 14px;
     }
 
-    /* Mobile Styles */
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 1.8em;
@@ -237,9 +236,7 @@
   <!-- Navbar -->
   <div class="navbar">
     <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
     <ul class="navmenu" id="navmenu">
       <li class="dropdown">
@@ -279,16 +276,15 @@
     </ul>
   </div>
 
-    <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
+  <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-
-      <p> Ich habe erst im April angefangen mit Programmieren. Bin noch mitten am Lernen. Das Codieren fürs Handy ist leider echt schwer. </p> 
-    <p> Deshalb bitte bitte, schaut euch meine Seite übers Tablet, Laptop und Co. an, bis ich es endlich geschafft habe. Beim Handy ist leider nicht das ganze Menü zu öffnen.</p> 
-      <p> Ich habe schon so viele Codierungen versucht. Es will einfach nicht klappen. Wahrscheinlich ist das genau das, was MIR entspricht. Ich war auch nie in eine Schublade zu quetschen.</p> 
- <p> Und genauso ist es mit meiner Webseite. Sie lässt sich nicht in etwas kleines quetschen, denn sie ist so verdammt viel mehr. </p> 
-      <p> Vielleicht gibt es auch Jemanden, der mir helfen kann. <3 </p> 
-
-    <p>So, und nun zu dem, was ich eigtl. sagen möchte.</p> 
+    <p> Ich habe erst im April angefangen mit Programmieren. Bin noch mitten am Lernen. Das Codieren fürs Handy ist leider echt schwer. </p>
+    <p> Deshalb bitte bitte, schaut euch meine Seite übers Tablet, Laptop und Co. an, bis ich es endlich geschafft habe. Beim Handy ist leider nicht das ganze Menü zu öffnen.</p>
+    <p> Ich habe schon so viele Codierungen versucht. Es will einfach nicht klappen. Wahrscheinlich ist das genau das, was MIR entspricht. Ich war auch nie in eine Schublade zu quetschen.</p>
+    <p> Und genauso ist es mit meiner Webseite. Sie lässt sich nicht in etwas kleines quetschen, denn sie ist so verdammt viel mehr. </p>
+    <p> Vielleicht gibt es auch Jemanden, der mir helfen kann. <3 </p>
+    <p>So, und nun zu dem, was ich eigtl. sagen möchte.</p>
+    
      <p> Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
 
     <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
@@ -324,48 +320,42 @@
       }
  <!-- JS -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Sterne erzeugen
-    const starContainer = document.querySelector(".stars");
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * 100 + "vh";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      starContainer.appendChild(star);
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      // Sterne
+      const starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
 
-    // Burger-Menü anzeigen/ausblenden
-    const menuToggle = document.getElementById("menu-toggle");
-    const navmenu = document.getElementById("navmenu");
-    menuToggle.addEventListener("click", () => {
-      navmenu.classList.toggle("show");
-    });
+      // Menü-Button
+      const menuToggle = document.getElementById("menu-toggle");
+      const navmenu = document.getElementById("navmenu");
+      menuToggle.addEventListener("click", () => {
+        navmenu.classList.toggle("show");
+      });
 
-    // Dropdown-Menüs mobil anzeigen/ausblenden
-    const dropdownLinks = document.querySelectorAll(".navmenu > li.dropdown > a");
-    dropdownLinks.forEach(link => {
-      link.addEventListener("click", function(e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault(); // verhindert normales Linkverhalten
-
-          const dropdown = this.nextElementSibling; // <ul class="dropdown-content">
-
-          // Alle anderen Dropdowns schließen
-          document.querySelectorAll(".dropdown-content").forEach(ul => {
-            if (ul !== dropdown) ul.classList.remove("show");
-          });
-
-          // Dieses Dropdown umschalten
-          if (dropdown) {
+      // Dropdown für Mobil
+      const dropdowns = document.querySelectorAll(".navmenu > li.dropdown > a");
+      dropdowns.forEach(link => {
+        link.addEventListener("click", e => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = link.nextElementSibling;
             dropdown.classList.toggle("show");
+
+            // Alle anderen schließen
+            document.querySelectorAll(".dropdown-content").forEach(el => {
+              if (el !== dropdown) el.classList.remove("show");
+            });
           }
-        }
+        });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
