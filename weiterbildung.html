@@ -89,6 +89,15 @@
         font-size: 1.8rem; /* kleinere Schriftgröße auf Smartphones/Tablets */
     }
 }
+	        .hero-text {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
 
        h1 {
       font-size: 2.5em;
@@ -129,7 +138,11 @@
             align-items: center;
         }
 
-        .navmenu {
+      .menu-toggle {
+    display: block; /* Zeige den Menübutton nur auf kleinen Geräten */
+}
+
+	    .navmenu {
             list-style: none;
             padding: 0;
             display: flex;
@@ -531,6 +544,15 @@
 	
         });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleButton.addEventListener('click', function () {
+        menu.classList.toggle('show');
+    });
+});
+		    
 	 // Bei Fenstergröße ändern: Button ggf. anzeigen
     window.addEventListener("resize", updateMenuToggleVisibility);    
     </script>
