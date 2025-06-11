@@ -121,4 +121,11 @@ footer {
   .navmenu > li > a {
     width: 100%;
   }
+
+@media screen and (max-width: 768px) {
+  .navmenu li.open > .dropdown-content {
+    display: block;
+  }
+}
+  
 }
