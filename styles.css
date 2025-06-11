@@ -84,8 +84,8 @@ footer {
   margin-left: 6px;
 }
 
-/* Klassenbasierte Anzeige für mobiles Dropdown */
-.dropdown.open > .dropdown-content {
+/* === Wichtig: Anzeige bei mobiler Aktivierung === */
+.dropdown.open .dropdown-content {
   display: block;
 }
 
@@ -93,6 +93,7 @@ footer {
   content: " ▲";
 }
 
+/* === Responsive Layout ab 768px und kleiner === */
 @media (max-width: 768px) {
   .navmenu {
     flex-direction: column;
@@ -114,5 +115,10 @@ footer {
   /* Hover auf Mobile deaktivieren */
   .dropdown:hover .dropdown-content {
     display: none;
+  }
+
+  /* Auch sinnvoll: Dropdown-Pfeil mobil zentrieren */
+  .navmenu > li > a {
+    width: 100%;
   }
 }
