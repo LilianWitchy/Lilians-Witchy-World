@@ -78,93 +78,83 @@
     }
 
     .navbar {
-      background-color: #0aa667;
-      width: 100%;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+            background-color: #0aa667;
+            padding: 10px 20px; /* Schmaler Balken */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
+        }
 
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
 
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+        .navmenu li {
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
+        }
 
-    .navmenu {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
 
-    .navmenu li {
-      position: relative;
-    }
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
 
-    .navmenu a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 12px;
-      display: block;
-      border-radius: 4px;
-      transition: background-color 0.3s, color 0.3s;
-      white-space: nowrap;
-    }
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
 
-    .navmenu a:hover {
-      background-color: #b0d5ac;
-      color: #660082;
-    }
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #0aa667;
-      min-width: 180px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      list-style: none;
-      z-index: 1000;
-    }
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
 
-    .dropdown-content li a {
-      padding: 10px;
-      font-size: 16px;
-    }
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
 
-    .dropdown-content li a:hover {
-      background-color: #f1f1f1;
-      color: #660082;
-    }
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
 
-    .navmenu li:hover > .dropdown-content {
-      display: block;
-    }
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
 
-    footer {
-      background-color: #0aa667;
-      padding: 20px;
-      color: white;
-      text-align: center;
-      font-size: 14px;
-    }
 
     @media screen and (max-width: 768px) {
       h1 {
@@ -231,48 +221,46 @@
     </h1>
   </div>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-    <ul class="navmenu" id="navmenu">
-      <li class="dropdown">
-        <a href="index.html">Startseite</a>
-        <ul class="dropdown-content">
-          <li><a href="about.html">Über mich</a></li>
-          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-          <li><a href="meinemission.html">Meine Mission</a></li>
-        </ul>
-      </li>
-      <li><a href="angebote.html">Meine Angebote</a></li>
-      <li class="dropdown">
-        <a href="energie.html">Energetische Selbstarbeit</a>
-        <ul class="dropdown-content">
-          <li><a href="basics.html">Die Basics</a></li>
-          <li><a href="reinigung.html">Energetische Reinigung</a></li>
-          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-        </ul>
-      </li>
-      <li><a href="meinebücher.html">Meine Bücher</a></li>
-      <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-      <li class="dropdown">
-        <a href="rezepte.html">Rezepte ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-          <li><a href="haare.html">Haarprodukte</a></li>
-          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-          <li><a href="#">Räuchermischungen</a></li>
-          <li><a href="#">Naturheilkunde</a></li>
-          <li><a href="#">Salben & Balsam</a></li>
-        </ul>
-      </li>
-      <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="agb.html">AGB</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </div>
+  <!-- Navigationsmenü -->
+     
+        <div class="navbar">
+            <ul class="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
 
   <div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
     <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
@@ -316,44 +304,28 @@
 
   <!-- JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Sterne
-      const starsContainer = document.querySelector(".stars");
-      const numStars = 100;
-      for (let i = 0; i < numStars; i++) {
-        const star = document.createElement("div");
-        star.classList.add("star");
-        star.style.top = Math.random() * 100 + "%";
-        star.style.left = Math.random() * 100 + "%";
-        star.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        star.style.animationDelay = (Math.random() * 5) + "s";
-        starsContainer.appendChild(star);
-      }
-
-      // Menu-Button
-      const menuToggle = document.getElementById("menu-toggle");
-      const navmenu = document.getElementById("navmenu");
-      menuToggle.addEventListener("click", () => {
-        navmenu.classList.toggle("show");
-      });
-
-      // Untermenü-Klick-Events für Mobile entfernt, da Untermenüs immer sichtbar sind
-      /*
-      const dropdowns = document.querySelectorAll(".navmenu > li.dropdown > a");
-      dropdowns.forEach(link => {
-        link.addEventListener("click", e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = link.nextElementSibling;
-            dropdown.classList.toggle("show");
-            document.querySelectorAll(".dropdown-content").forEach(el => {
-              if (el !== dropdown) el.classList.remove("show");
-            });
-          }
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+// Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
+            let starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                starContainer.appendChild(star);
+            }
         });
-      });
-      */
-    });
-  </script>
+
+	    
+    </script>
 </body>
 </html>
