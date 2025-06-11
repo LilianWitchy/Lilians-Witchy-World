@@ -42,7 +42,7 @@
             50% { opacity: 1; }
         }
 
-               .navbar {
+             .navbar {
             background-color: #0aa667;
             padding: 10px 20px; /* Schmaler Balken */
             position: relative;
@@ -178,8 +178,13 @@
 
          <!-- Navigationsmenü -->
      
+       <!-- Navigationsmenü -->
+     
         <div class="navbar">
-            <ul class="navmenu">
+  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">
+    &#9776; <!-- Hamburger-Symbol -->
+  </button>
+  <ul id="menu" class="navmenu">
                 <li class="dropdown">
                     <a href="index.html">Startseite</a>
                     <ul class="dropdown-content">
@@ -250,29 +255,27 @@
         </div>
     </div>
 
-   <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none" || menu.style.display === "") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
-        }
-// Sterne erzeugen
-        document.addEventListener("DOMContentLoaded", function() {
-            let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
-                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
-                starContainer.appendChild(star);
-            }
-        });
+    <!-- JS -->
+ <script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
 
-	    
-    </script>
+  document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
+
+  // Sterne erzeugen
+  document.addEventListener("DOMContentLoaded", function() {
+    let starContainer = document.querySelector(".stars");
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
+    }
+  });
+</script>
 </body>
 </html>
