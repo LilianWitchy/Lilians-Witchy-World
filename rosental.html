@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: #6a1b9a;
+            background-color: #8f602e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .navbar {
+            background-color: #0aa667;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative;
+        }
+
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .karte {
+            background-color: #f5f2e7;
+            color: #6a0dad;
+            padding: 2rem;
+            font-family: Garamond, serif;
+            margin: 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .karte h2, .karte h3 {
+            text-align: center;
+        }
+
+        .karte ul, .karte p, .karte table {
+            margin: 1rem auto;
+            max-width: 800px;
+        }
+
+        .karte table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .karte table td, .karte table th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+
+        .karte ul {
+            list-style: none;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .karte ul li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="stars"></div>
+
+<!-- Hero-Bereich mit Bild und Text -->
+<div class="hero-section" style="height: 50vh; position: relative; background-image: url('angebot.jpg'); background-size: cover; background-position: center;">
+    <!-- Overlay für den Textbereich -->
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+    
+    <!-- Textbereich auf dem Bild -->
+    <div class="hero-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 2;">
+        <h1>Lilian’s Witchy World</h1>
+        <p>Willkommen in meiner magischen Welt. Hier findest du Bücher, Zauberhaftes und vieles mehr.</p>
+    </div>
+</div>
+
+
+
+<p><strong>Ganz besonders diese Seite ist gerade noch mitten im Aufbau, da ich gerade erst dabei bin, all das aufzubauen und zu starten.</strong></p>
+<p>Ich werde nach und nach alles ergänzen, was geplant ist und was ich anbieten werde.</p>
+  <p>Diese Seite hier umfasst alle Infos und buchbare Termine, für mein Angebot für Kinder von 4-7 Jahren.</p>
+
+
+
+    <div class="navbar">
+        <ul class="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                </ul>
+           <ul class="dropdown-content">
+            <li><a href="angebote.html">Meine Angebote</a></li>
+            <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
+          </ul>
+            <li class="dropdown">
+                <a href="energie.html">Energetische Selbstarbeit</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li><a href="meinebücher.html">Meine Bücher</a></li>
+            <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+
+    <!-- Kasten: Kindergruppen -->
+    <div class="karte">
+        <h2>Mein Angebot speziell hier im Rosental</h2>
+        <h2>Entdecken. Erleben. Entfalten.</h2>
+
+ <p>Ein besonderes Angebot für Kinder im Alter von 4–7 Jahren im Rosental</p>
+ <p>Hallo, ich bin Lilian – staatlich anerkannte Erzieherin, ausgebildete Erlebnispädagogin und mit ganzem Herzen Begleiterin kindlicher Entwicklung.</p>
+ <p>Seit vielen Jahren arbeite ich mit Kindern und habe dabei eines ganz deutlich gespürt:</p>
+ <p>Viele Kinder brauchen mehr Raum – für ihr Wesen, ihre Fantasie, ihren Bewegungsdrang und ihre Bedürfnisse.</p>
+ <p>Deshalb biete ich nun etwas Eigenes an – draußen in der Natur, frei von Leistungsdruck, ganz nah an den Kindern. Und vorallem mit Eins. Spaßfaktor.</p>
+
+ <p>Natur erleben – mit allen Sinnen</p>
+ <p>Wald, Wiesen, kleine Abenteuer – spielerisch Vertrauen, Achtsamkeit und Teamgeist erfahren.</p>
+ <p>Entspannung & Traumreisen</p>
+ <p>Selbstgeschriebene Fantasiereisen laden ein zum Ankommen, Spüren und Auftanken.</p>
+ <p>Bewegung, Sport & Yoga</p>
+ <p>Freude an Bewegung, Körperbewusstsein und innere Balance – spielerisch und kindgerecht.</p>
+
+ <p>Für wen ist dieses Angebot gedacht?</p>
+ <p>Für alle Kinder von 4 bis 7 Jahren – egal ob in der Kita, zuhause oder irgendwo dazwischen.</p>
+ <p>Für Kinder, die gerne entdecken und staunen, aber auch für feinfühlige Kinder oder solche, die in Gruppen schnell untergehen.</p>
+ <p>Ich arbeite bindungs- und bedürfnisorientiert und habe Fortbildungen für sensible & „herausfordernde“ Kinder gemacht.</p>
+ <p>Auch ihr Eltern seid willkommen!</p>
+ <p>Ob aktiv oder auf einer Decke daneben – ihr dürft dabei sein, zusehen, entspannen oder mitmachen.</p>
+
+ <p>Ort: Im Rosental (genauer Standort nach Anmeldung, variiert je nach Angebot).</p>
+ <p>Kosten: 14 € pro Kind</p>
+ <p>Teilnehmerzahl: Maximal 10–12 Kinder – für echte Qualität und individuelle Begleitung.</p>
+ <p>Deshalb ist eine Anmeldung erforderlich.</p>
+
+ <p>Jedes meiner Angebote plane ich individuell anhand der Interesse der Kinder</p>     
+ <p>Der Grundrahmen ist folgender: Wup (Warming up, erstmal miteinander warm werden und kennen lernen), verschiedene Spiele (Art und Anzahl abhängig vom Kind/Kindern) und etwas entspannendes zum Schluss.</p>
+
+ <p>Termine:</p>
+ <p>• Montag, 14.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+ <p>• Mittwoch, 16.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+ <p>• Donnerstag, 17.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+<p>• Montag, 21.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+ <p>• Mittwoch, 23.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+ <p>• Donnerstag, 24.07.2025 – 9:30 Uhr & 16:30 Uhr</p>
+
+<p>Weitere möglich buchbare Termine ergänze ich künftig immer hier. Melde dich gerne für meinen Newsletter an, wenn du alle aktuellen Termine und Möglichkeiten erhalten möchtest.</p>
+
+ <p>Interesse geweckt?</p>
+<p>Dieses Angebot kannst du auch ganz Privat für dein Kind oder Kindergruppe, Geburtstag, etc ab 4 Jahren buchen.</p>
+ <p>Schreib mir gerne eine E-Mail und wir können alles besprechen:</p>
+ <p>Elisabeth-Ann_Wolf88@proton.me</p>
+ <p>Ich freue mich darauf, euch kennenzulernen – und gemeinsam mit euren Kindern neue Wege zu gehen.</p>
+
+
+
+
+
+      
+       
+
+    <!-- Kasten: Einmalige Angebote -->
+    <div class="karte">
+        <h2>AGB </h2>
+     <p> Mit Absenden der Anmeldung bestätigst du, die AGB & Buchungsbedingungen gelesen und akzeptiert zu haben.</p>
+     <p><strong> Verbindlichkeit der Buchung</strong></p>
+      <p>Mit der Buchung eines meiner Angebote gilt die Anmeldung als verbindlich. 
+      <p>Sollte keine schriftliche Absage (per E-Mail) mindestens 24 Stunden vor Beginn des jeweiligen Angebots erfolgen, ist der volle Teilnahmebeitrag auch bei Nichterscheinen zu zahlen.</p>
+     <p><strong> Zahlungsbedingungen</strong></p>
+    <p> Die Bezahlung erfolgt in bar vor Ort zu Beginn des Angebots.</p>
+    <p>Erfolgt keine rechtzeitige Absage oder erscheint das Kind ohne vorherige Mitteilung nicht zum Termin, ist der Teilnahmebeitrag innerhalb von 7 Tagen per Überweisung zu entrichten. </p>
+    <p>Die Kontodaten werden in diesem Fall nachträglich übermittelt.</p>
+     <p>Alle weiteren AGB sind bei meiner Webseite auf der Seite "AGB" zu lesen</p> 
+    </div>
+
+
+
+
+            
+        <p><strong>Von Herzen, Lilian</strong></p>
+        </ul>
+    </div>
+
+
+<footer>
+    <p>&copy; 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let starContainer = document.querySelector(".stars");
+        for (let i = 0; i < 50; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+            starContainer.appendChild(star);
+        }
+    });
+</script>
+
+</body>
+</html>
