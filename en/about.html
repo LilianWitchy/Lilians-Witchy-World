@@ -1,0 +1,364 @@
+<!DOCTYPE html> <!-- Deklariert das Dokument als HTML5 -->
+<html lang="de"> <!-- Legt die Sprache der Seite auf Deutsch fest -->
+<head>
+  <meta charset="UTF-8" /> <!-- Zeichensatz: UTF-8 für Umlaute & Sonderzeichen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsives Design -->
+  <title>Lilian’s Witchy World</title> <!-- Titel der Webseite im Browser-Tab -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- Favicon (kleines Symbol im Tab) -->
+
+  <style>
+    /* Globale Box-Größenregel */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Grundgestaltung des Body */
+    body {
+      font-family: Garamond, serif; /* Schriftart */
+      color: white; /* Textfarbe */
+      background-color: #2c4d9c; /* Hintergrundfarbe */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Hintergrund-Sternenlayer */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Klicks werden durchgeleitet */
+      z-index: -1; /* Hinter allem anderen */
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%; /* Kreisform */
+      opacity: 0;
+      animation: twinkle linear infinite; /* Blinken */
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* Navigationsleiste */
+    .navbar {
+      background-color: #0aa667;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Hauptmenü (ul-Liste) */
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+    }
+
+    /* Dropdown-Menüs */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+    }
+
+    .dropdown-content li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
+
+    /* Zeigt Dropdown bei Hover an (Desktop) */
+    .navmenu li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Menü-Schaltfläche (Hamburger-Menü) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    /* Haupt-Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 100px;
+    }
+
+    /* Fußzeile */
+    footer {
+      background-color: #0aa667;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Media Query für kleinere Bildschirme */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navmenu.show {
+        display: flex; /* Menü anzeigen, wenn Klasse "show" */
+      }
+
+      .navmenu li {
+        width: 100%;
+        margin: 0;
+      }
+
+      .navmenu li:hover .dropdown-content {
+        position: static; /* Kein Overlay bei mobilen Geräten */
+        box-shadow: none;
+      }
+
+      .dropdown-content {
+        background-color: #0aa667;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sternen-Hintergrund -->
+  <div class="stars"></div>
+
+  <!-- Inhalt der Seite -->
+  <div class="content">
+
+    <!-- Überschrift mit Logos -->
+    <h1>
+      <img src="logo2.png" alt="Magic Logo">
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo">
+    </h1>
+
+<!-- Navigation bar with dropdown menus -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="/en/index.html">Home</a>
+      <ul class="dropdown-content">
+        <li><a href="/en/about.html">About Me</a></li>
+        <li><a href="/en/training.html">Further Training</a></li>
+        <li><a href="/en/mission.html">My Mission</a></li>
+      </ul>
+    </li>
+    
+    <li class="dropdown">
+      <a href="/en/indoor-and-outdoor-offers-leipzig.html">My Indoor and Outdoor Offers in Leipzig</a>
+      <ul class="dropdown-content">
+        <li><a href="/en/rosental.html">Offer in Rosental Park</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="/en/energy.html">Connecting with Yourself</a>
+      <ul class="dropdown-content">
+        <li><a href="/en/basics.html">The Basics</a></li>
+        <li><a href="/en/cleansing.html">Body and Mind in Harmony</a></li>
+        <li><a href="/en/thoughts.html">Thoughts & Beliefs</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/en/mybooks.html">My Books</a></li>
+    <li><a href="/en/audiobook.html">My Books as Audiobooks</a></li>
+
+    <li class="dropdown">
+      <a href="/en/recipes.html">Recipes ▼</a>
+      <ul class="dropdown-content">
+        <li><a href="/en/soap.html">Body Soaps and Shower Jelly</a></li>
+        <li><a href="/en/hair.html">Hair Products</a></li>
+        <li><a href="#">Herbal Tea Blends for Well-Being</a></li>
+        <li><a href="#">Incense Blends</a></li>
+        <li><a href="#">Natural Remedies</a></li>
+        <li><a href="#">Salves & Balms</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/en/recommendations.html">Books I Recommend</a></li>
+    <li><a href="/en/contact.html">Contact</a></li>
+    <li><a href="/en/terms.html">Terms & Conditions</a></li>
+    <li><a href="/en/imprint.html">Imprint</a></li>
+  </ul>
+</div>
+
+<p>Welcome to my magical world. Here you'll find books, enchantment, and much more.</p>
+
+<!-- About Section -->
+<div class="about-container">
+    <img class="about-image" src="lilian.jpg" alt="Photo of Lilian">
+    <div class="about-section">
+        <h2>About Me</h2>
+        <p>Welcome to my page! My name is Lilian, short for Elisabeth-Ann.</p>
+        <p>Through this website, I share my thoughts, projects, and my passion for creativity and nature.</p>
+        <p>I am a state-certified educator with a bachelor's degree and trained experiential educator. For many years, I worked passionately in various kindergartens and gained valuable experience.</p>
+        <p>I was especially inspired by one setting where everything harmonized beautifully. There, I began writing stories for children – small dream journeys that stimulate imagination and bring joy. It was indescribably beautiful to see the children’s eyes light up as I read my stories aloud. That moment showed me the special power of my words.</p>
+        <p>Even earlier, I wrote passionately, but only now have I found the courage to share my stories with the world. That’s how the first volumes of my "Dream Journeys with Baldur" came to life. Volumes 1 and 2 are now available, and I’ve also dared to write a book for adults, which has also been published.</p>
+        <p>To reach even more people with my stories, I will offer audio versions here and on YouTube.</p>
+        <p>I publish my books independently, supported by my husband's technical know-how. It’s an exciting journey, and I’m looking forward to creating many more works.</p>
+        <p>But writing is not my only passion – for years, I’ve been fascinated by the world of herbs. I make my own natural cosmetics and have discovered how valuable and effective chemical-free alternatives are. I’m happy to share these experiences by publishing my recipes for skincare, tea blends, salves, and herbal remedies here.</p>
+        <p>Whether it’s calming teas, natural care products, or homemade remedies – I love using the power of nature to help others.</p>
+
+        <h3>What matters to me:</h3>
+        <ul>
+            <li>Music</li>
+            <li>Yoga</li>
+            <li>A mindful and conscious approach to nature</li>
+            <li>Chemical-free alternatives for cosmetics, hygiene products, food, and medicine</li>
+            <li>Everything related to relaxation and inner balance</li>
+            <li>Free expression and transformation through words</li>
+        </ul>
+
+        <p>But most of all – one thing defines me.</p>
+        <p>DIY!</p>
+        <p>I create so many things myself:</p>
+        <p>- Jams (unique varieties, including with herbs and flowers)</p>
+        <p>- A variety of lemonades with herbs, fruits, and flowers</p>
+        <p>- Canning/preserving (homemade compotes, soups, sauces, ...)</p>
+        <p>- Soaps (for different skin types and energetic cleansing)</p>
+        <p>- Salves/creams → St. John’s Wort oil, fir (with and without mint or eucalyptus oil), calendula, rose (various types), and many more</p>
+        <p>- Author of mindful and conscious dream journeys for children and adults</p>
+        <p>- Tea blends tailored to specific issues and needs</p>
+        <p>- Incense blends “ ”</p>
+        <p>- Herbal remedies tailored to complaints (from syrups to plant-based antibiotics) – they don’t harm the body, unlike chemical options</p>
+        <p>- Sugar-free gummy bears and other treats for kids</p>
+        <p>- Homemade juices</p>
+        <p>- In April I started learning programming and have already created websites for my husband and myself – not finished yet. It's real work!</p>
+        <p>- Hair and skin care products</p>
+        <p>- I knit and crochet children’s clothing</p>
+        <p>- I even sewed a medieval dress (child size) completely by hand – more are planned</p>
+
+        <p>Let’s see what topic or project will catch my interest next. I love learning new things.</p>
+        <p>I’m currently working on new projects, including more books and audio recordings. I’d be happy if you join me on this journey!</p>
+        <p>I’m glad you’re here! I hope my content inspires you and is helpful. If you have any questions or would like a custom recipe for skin or hair, feel free to write me via the contact form – I’m happy to share my knowledge!</p>
+
+        <p>“I am Elisabeth-Ann Wolf – one half of a duo that turns contrasts into stories. </p>
+        <p>His books are dark journeys through worlds full of magic, power, and shadows – dark fantasy that takes your breath away. </p>
+        <p>Her stories are full of light, mindfulness, and heart – they touch, move, and heal the soul. </p>
+        <p>Together we shape words into worlds you don’t just read, but experience. For dreamers, seekers, and shadow-walkers. We are not just anyone. We are THE author couple.”</p>
+
+        <a href="https://lilianwitchy.github.io/Das_Autorenpaerchen/" class="footer-button right-button" target="_blank">Our shared website</a>
+    </div>
+</div>
+
+  <!-- Bannerbild -->
+    <div class="banner">
+      <img src="strand.png" alt="Banner" class="banner-img">
+    </div>
+  </div>
+
+  <!-- JavaScript für Menü und Sterne -->
+  <script>
+    // Menü umschalten (mobil)
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
+    }
+
+    // Sterne beim Laden erzeugen
+    document.addEventListener("DOMContentLoaded", function () {
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+    });
+
+    // Dropdown-Menüs auf Mobilgeräten öffnen per Klick
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault(); // verhindert Navigation beim Klick
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
