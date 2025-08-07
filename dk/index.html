@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!-- Dokumenttyp-Deklaration: Teilt dem Browser mit, dass es sich um HTML5 handelt -->
+
+<html lang="de">
+<!-- Sprache der Seite: Deutsch -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Zeichencodierung: UTF-8 unterstützt Umlaute und Sonderzeichen -->
+
+  <meta name="description" content="Lilian’s Witchy World – Angebote für Kinder, Erwachsene und Teams, Erlebnispädagogik, Indoor und Outdoor Angebote, Familien, Leipzig Energetische Selbstarbeit, Kräuterwissen, Naturrezepte & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+<meta name="keywords" content="Angebote für Kinder, Erwachsene und Teams, Erlebnispädagogik, Indoor und Outdoor, Angebote Familien, Leipzig, Energetische Selbstarbeit, Naturheilkunde, Seifen selber machen, Hexenwissen, Energiearbeit, Meditation, Lilian’s Witchy World" />
+
+<meta name="google-site-verification" content="HRbzd9Dte9oMMSYpA-5dJTr3WlHCJm8Vihm6qZ4sSYQ" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
+
+  <title>Lilian’s Witchy World</title>
+  <!-- Titel der Seite im Browser-Tab -->
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Browser-Icon (kleines Bild im Tab) -->
+
+  <style>
+    /* Globales CSS */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      /* Einheitliche Größenberechnung für alle Elemente */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Garamond, serif;
+      background-color: #6a4b8c;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      /* Verhindert horizontales Scrollen */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      /* Bilder werden responsiv skaliert */
+    }
+
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      /* Hintergrund-Ebene mit Sternenanimation */
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+      /* Einzelne weiße Punkte, die flackern (siehe Animation) */
+    }
+
+    @keyframes twinkle {
+      0%, 100% {opacity: 0;}
+      50% {opacity: 1;}
+      /* Animation: Ein-/Ausblenden für Sternflackern */
+    }
+
+<div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/da/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      /* Überschrift mit Bild links & rechts */
+    }
+
+    h1 img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+      line-height: 1.6;
+      /* Container für Inhalte */
+    }
+
+    .navbar {
+      background-color: #0aa667;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* Navigationsleiste oben */
+    }
+
+    .navmenu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+      /* Menü horizontal */
+    }
+
+    .navmenu li {
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+    }
+
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0aa667;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+      /* Untermenü bei Hover sichtbar */
+    }
+
+    .dropdown-content li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #660082;
+    }
+
+    .navmenu li:hover .dropdown-content {
+      display: block;
+      /* Bei Mauszeiger über Menüpunkt: Untermenü zeigen */
+    }
+
+    footer {
+      background-color: #0aa667;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      /* Fußzeile */
+    }
+
+      .education-item {
+            background-color: #bda259 /* Hintergrund */
+            color: black;
+            padding: 20px;
+            margin: 10px auto; /* Zentrieren der Kasten */
+            border-radius: 8px;
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+   }
+
+    @media screen and (max-width: 768px) {
+      /* Anpassungen für kleine Bildschirme (Handys) */
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h1 img {
+        max-width: 80px;
+      }
+
+      .menu-toggle {
+        display: flex;
+        /* Hamburger-Menü wird angezeigt */
+      }
+
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #0aa667;
+      }
+
+      .navmenu.show {
+        display: flex;
+        /* Wird per JavaScript eingeblendet */
+      }
+
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+      }
+
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+        white-space: normal;
+      }
+
+      .navmenu.show .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
+
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
+
+      .navmenu li:hover > .dropdown-content {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hintergrund-Sterne -->
+  <div class="stars"></div>
+
+  <!-- Seitenkopf mit Logo und Titel -->
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+  </div>
+
+  <!-- Navigation mit Untermenüs -->
+  <div class="navbar">
+    <!-- Hamburger-Menü für Handy -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+      style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+      &#9776;
+    </button>
+<!-- Navigationsmenu med dropdown -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="/da/index.html">Startside</a>
+      <ul class="dropdown-content">
+        <li><a href="/da/about.html">Om mig</a></li>
+        <li><a href="/da/training.html">Videreuddannelser</a></li>
+        <li><a href="/da/mission.html">Min mission</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="/da/indoor-og-outdoor-tilbud-leipzig.html">Mine indendørs- og udendørstilbud i Leipzig</a>
+      <ul class="dropdown-content">
+        <li><a href="/da/rosental.html">Tilbud i Rosental-parken</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="/da/energi.html">At komme i kontakt med sig selv</a>
+      <ul class="dropdown-content">
+        <li><a href="/da/basics.html">Grundlæggende</a></li>
+        <li><a href="/da/renselse.html">Krop og sind i harmoni</a></li>
+        <li><a href="/da/tanker.html">Tanker og overbevisninger</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/da/minebøger.html">Mine bøger</a></li>
+    <li><a href="/da/lydbog.html">Mine bøger som lydbog</a></li>
+
+    <li class="dropdown">
+      <a href="/da/opskrifter.html">Opskrifter ▼</a>
+      <ul class="dropdown-content">
+        <li><a href="/da/sæbe.html">Kropssæber og shower jelly</a></li>
+        <li><a href="/da/hår.html">Hårprodukter</a></li>
+        <li><a href="#">Te-blandinger for velvære</a></li>
+        <li><a href="#">Røgelsesblandinger</a></li>
+        <li><a href="#">Naturmedicin</a></li>
+        <li><a href="#">Salver og balsam</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/da/anbefalinger.html">Bøger jeg anbefaler</a></li>
+    <li><a href="/da/kontakt.html">Kontakt</a></li>
+    <li><a href="/da/vilkaar.html">Vilkår og betingelser</a></li>
+    <li><a href="/da/impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+<div class="content" style="max-width: 1000px; margin: auto; padding: 40px 20px 40px 20px; text-align: left;">
+    <h2>Velkommen – hvor er det dejligt, at du er her.</h2>
+
+    <p>Vores verden er fuld af muligheder. Mange af dem ligger skjult i det tilsyneladende almindelige – og nogle gange skal der kun et lille perspektivskifte til for at opdage dem.</p>
+
+    <p>Flere og flere mennesker fornemmer, at der er "mere": en fin fornemmelse, en forbindelse til noget større – selvom vi måske ikke helt kan sætte ord på det.</p>
+
+    <p>Samtidig viser videnskaben os i stigende grad det, som mange længe har følt intuitivt: Alt er i bevægelse, alt er energi.</p>
+    <p>Og når vi begynder at omgås denne energi mere bevidst, kan vi aktivt være med til at forme vores liv og omgivelser.</p>
+    <p>Vi lever i en tid med forandring. Gamle tankemønstre opløses, og nye muligheder opstår. Mange mennesker stiller spørgsmål, søger retning og ønsker udvikling – personligt, følelsesmæssigt, og nogle gange på helt nye måder.</p>
+    <p>Denne side er en invitation til at forblive åben. Nysgerrig. Og måske også modig – for ægte forandring begynder ofte stille: med en impuls, en tanke, et ærligt blik indad.</p>
+    <p>Jeg ønsker at inspirere – ikke belære. Her deler jeg tanker, erfaringer og idéer, der kan ledsage eller røre dig. Hvad du gør med dem, er helt op til dig.</p>
+
+    <p>Jeg er virkelig glad for, at du har fundet vej hertil.</p>
+
+    <p>Må denne side styrke dig, inspirere dig – og måske også fortrylle dig en lille smule.</p>
+
+    <p><strong>Af hjertet, Lilian</strong></p>
+</div>
+
+<!-- Billede til afslutning -->
+<div class="content" style="text-align:center; padding-bottom: 40px;">
+    <img src="relax.png" alt="Afslapningsbillede" />
+</div>
+
+<ul class="education-list">
+    <li class="education-item">
+        <h3>Indendørs og udendørs aktiviteter i Leipzig for børn, familier og teams</h3>
+        <p>Jeg tilbyder kvalificerede <strong>indendørs og udendørs aktiviteter</strong> samt <strong>oplevelsespædagogiske tilbud</strong>, som tilpasses fleksibelt efter behovene hos børn, voksne og teams.</p>
+        <p>Jeg lægger stor vægt på at møde alle dér, hvor de er – med alle deres interesser og muligheder.</p>
+        <p>Glæde og leg for både små og store er altid i centrum hos mig.</p>
+
+        <p>Uanset om det er udendørs i al slags vejr, i daginstitutionen eller i jeres egne lokaler – jeg er fleksibel og tilpasser aktiviteterne individuelt.</p>
+        <p>Leder du efter en <strong>indendørs oplevelse i Leipzig</strong> eller et <strong>udendørs tilbud for børn eller familier</strong>?</p>
+        <p>Eller planlægger du en særlig pause for dit team eller din institution?</p>
+        <p><strong>Oplevelsespædagogik i Leipzig</strong> – med hjerte, erfaring og masser af plads til kreativitet.</p>
+        <p><strong>Er din nysgerrighed vakt?</strong> Så kig forbi min <a href="indoor-und-outdoor-angebote-leipzig.html">aktivitets-side for Leipzig</a> – indendørs og udendørs oplevelser for familier, børn og teams i Leipzig. Eller send mig gerne en e-mail direkte.</p>
+    </li>
+</ul>
+
+<!-- Footer-område -->
+<footer>
+    <p>© 2025 Elisabeth-Ann Wolf | Alle rettigheder forbeholdes</p>
+    <p>Ved at besøge denne hjemmeside accepteres handelsbetingelserne (AGB).</p>
+</footer>
+
+
+  <script>
+    // Funktion zum Umschalten des mobilen Menüs
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
+    function updateMenuToggleVisibility() {
+      const toggleBtn = document.getElementById("menu-toggle");
+      if (window.innerWidth <= 768) {
+        toggleBtn.style.display = "inline-block";
+      } else {
+        toggleBtn.style.display = "none";
+      }
+    }
+
+    // Sobald Seite geladen ist:
+    window.addEventListener("DOMContentLoaded", function () {
+      updateMenuToggleVisibility();
+
+      // Button klickbar machen
+      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
+
+      // Sterne erzeugen
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+    });
+
+    // Bei Fenstergröße ändern: Button ggf. anzeigen
+    window.addEventListener("resize", updateMenuToggleVisibility);
+  </script>
+</body>
+</html>
