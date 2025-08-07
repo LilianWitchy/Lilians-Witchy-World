@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
+    <title>Weiterbildungen | Lilian´s Witchy World</title>
+    <style>
+          /* Globales CSS */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      /* Einheitliche Größenberechnung für alle Elemente */
+    }
+	    
+	    
+	    body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #388045
+		;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+      /* Verhindert horizontales Scrollen */
+    }
+
+	  img {
+      max-width: 100%;
+      height: auto;
+      /* Bilder werden responsiv skaliert */
+    }  
+
+         /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+
+		<div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+        /* Container für das Bild und den Text */
+        .hero-section {
+            background-image: url('wald2.png'); /* Ersetze 'dein-bild.jpg' mit dem Pfad zu deinem Bild */
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Höhe des Bildes anpassen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für besseren Kontrast */
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            font-size: 30px;
+            max-width: 90%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund für besseren Text-Kontrast */
+            border-radius: 10px;
+        }
+	    
+/* Media Query für mobile Geräte */
+@media (max-width: 768px) {
+    .hero-section {
+        font-size: 1.8rem; /* kleinere Schriftgröße auf Smartphones/Tablets */
+    }
+}
+	        .hero-text {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+       h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      /* Überschrift mit Bild links & rechts */
+    }
+
+    h1 img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 40px 0 20px 0;
+      font-weight: normal;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px 40px 20px;
+      text-align: left;
+      line-height: 1.6;
+      /* Container für Inhalte */
+    }
+         .navbar {
+            background-color: #0aa667;
+            padding: 10px 20px; /* Schmaler Balken */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
+        }
+
+      .menu-toggle {
+    display: block; /* Zeige den Menübutton nur auf kleinen Geräten */
+}
+
+	    .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
+        }
+
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .education-item {
+            background-color: #8B5E3C; /* Brauner Hintergrund */
+            color: white;
+            padding: 20px;
+            margin: 10px auto; /* Zentrieren der Kasten */
+            border-radius: 8px;
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+		
+@media screen and (max-width: 768px) {
+      /* Anpassungen für kleine Bildschirme (Handys) */
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h1 img {
+        max-width: 80px;
+      }
+
+      .menu-toggle {
+        display: flex;
+        /* Hamburger-Menü wird angezeigt */
+      }
+
+ .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+	
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #0aa667;
+       overflow-x: hidden; /* verhindert horizontales Scrollen */
+  }
+
+      .navmenu.show {
+        display: flex;
+        /* Wird per JavaScript eingeblendet */
+      }
+
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+          box-sizing: border-box;
+  }
+}
+
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+        white-space: normal;
+      }
+
+      .navmenu.show .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
+
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
+
+      .navmenu li:hover > .dropdown-content {
+        display: none;
+      }
+        }
+    </style>
+</head>
+<body>
+
+<div class="stars"></div>
+	
+    <!-- Hero-Bereich mit Bild und Text -->
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1>Mine efteruddannelser</h1>
+         <p>Her finder du en oversigt over mine gennemførte efteruddannelser, som er relevante for min videre livsvej. Jeg elsker at lære nyt.</p>
+
+        </div>
+    </div>
+
+
+     <!-- Navigation mit Untermenüs -->
+  <div class="navbar">
+    <!-- Hamburger-Menü für Handy -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+      style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+      &#9776;
+    </button>
+
+<!-- Navigation mit Untermenüs -->
+<div class="navbar">
+  <!-- Hamburger-Menü für Handy -->
+  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+    style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+    &#9776;
+  </button>
+
+  <!-- Hamburger-Icon für mobiles Menü -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="/dk/index.html">Startside</a>
+      <ul class="dropdown-content">
+        <li><a href="/dk/about.html">Om mig</a></li>
+        <li><a href="/dk/training.html">Videreuddannelser</a></li>
+        <li><a href="/dk/mission.html">Min mission</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="/dk/indoor-og-outdoor-tilbud-leipzig.html">Mine indendørs- og udendørstilbud i Leipzig</a>
+      <ul class="dropdown-content">
+        <li><a href="/dk/rosental.html">Tilbud i Rosental-parken</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="/dk/energi.html">At komme i kontakt med sig selv</a>
+      <ul class="dropdown-content">
+        <li><a href="/dk/basics.html">Grundlæggende</a></li>
+        <li><a href="/dk/renselse.html">Krop og sind i harmoni</a></li>
+        <li><a href="/dk/tanker.html">Tanker og overbevisninger</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/dk/minebøger.html">Mine bøger</a></li>
+    <li><a href="/dk/lydbog.html">Mine bøger som lydbog</a></li>
+
+    <li class="dropdown">
+      <a href="/dk/opskrifter.html">Opskrifter ▼</a>
+      <ul class="dropdown-content">
+        <li><a href="/dk/sæbe.html">Kropssæber og shower jelly</a></li>
+        <li><a href="/dk/hår.html">Hårprodukter</a></li>
+        <li><a href="#">Te-blandinger for velvære</a></li>
+        <li><a href="#">Røgelsesblandinger</a></li>
+        <li><a href="#">Naturmedicin</a></li>
+        <li><a href="#">Salver og balsam</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/dk/anbefalinger.html">Bøger jeg anbefaler</a></li>
+    <li><a href="/dk/kontakt.html">Kontakt</a></li>
+    <li><a href="/dk/vilkaar.html">Vilkår og betingelser</a></li>
+    <li><a href="/dk/impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+<ul class="education-list">
+    <li class="education-item">
+        <h3>03/2012 - "Introduktion til oplevelsespædagogik"</h3>
+        <p>Indhold i efteruddannelsen:</p>
+        <p>- Selvoplevelse i rollen som deltager i en række initiativøvelser, kooperative eventyrspil og komplekse læringsprojekter</p>
+        <p>- Målrettet pædagogisk brug af kooperative eventyrspil</p>
+        <p>- Historie og baggrund for oplevelsespædagogik</p>
+        <p>- Mål med oplevelsespædagogik</p>
+        <p>- Virkningsmodeller og metodiske principper</p>
+        <p>- Introduktion til forskellige refleksionsmetoder</p>
+        <p>Efteruddannelsestrænere Hardy Lux og Jens Thomas</p>
+    </li>
+
+    <li class="education-item">
+        <h3>10/2012 - "Kooperative eventyrspil - praktisk oplevelsespædagogik"</h3>
+        <p>- Målrettet brug af kooperative eventyrspil og initiativøvelser</p>
+        <p>- Refleksionsmuligheder og overførsel til hverdagen</p>
+        <p>- Faser og metodik i spilledelse</p>
+        <p>- Sikkerhed i oplevelsespædagogik og ved kooperative eventyrspil</p>
+        <p>- Selvoplevelse i ledelse af kooperative eventyrspil og facilitering af refleksionsrunder</p>
+        <p>Efteruddannelsestrænere Hardy Lux og Jens Thomas</p>
+    </li>
+    
+    <li class="education-item">
+        <h3>08/2013 - "Ude i naturen og læring"</h3>
+        <p>- "Ekspedition" som kerneelement i oplevelsespædagogiske programmer</p>
+        <p>- Selvoplevelse: to-dages trekkingtur i gruppeselvstyring med lejr under simple forhold og intens naturoplevelse</p>
+        <p>- Overvejelser om pædagogisk brug af mediet "ekspedition"</p>
+        <p>- Erhvervelse af grundlæggende outdoor-kompetencer</p>
+        <p>- Naturoplevelsesøvelser</p>
+        <p>- Sikring af fysisk og psykisk sikkerhed under en tur</p>
+        <p>Efteruddannelsestrænere Hardy Lux og Jens Thomas</p>
+    </li>
+
+    <li class="education-item">
+        <h3>07/2014 - "Omfattende kvalificering i metoden oplevelsespædagogik"</h3>
+        <p>- Faglig undervisning med yderligere 99 timers uddannelse</p>
+        <p>- Denne uddannelse (2011-2014) kvalificerer til at udvikle og gennemføre oplevelsespædagogiske tilbud og projekter for forskellige målgrupper i eget arbejdsfelt.</p>
+        <p>- Modul 1: Introduktion til oplevelsespædagogik, 3 dage</p>
+        <p>- Modul 2: Kooperative eventyrspil - praktisk oplevelsespædagogik, 4 dage</p>
+        <p>- Modul 3: Ude i naturen og læring, 3 dage</p>
+        <p>Efteruddannelsestrænere Hardy Lux og Jens Thomas og afdelingsleder ved socialpædagogisk fagskole Axel Lüttich</p>
+    </li>
+
+    <li class="education-item">
+        <h3>01/2017 - "Oplevelsespædagogik special - grænseoplevelser, sikkerhed og risikostyring"</h3>
+        <p>Mål med efteruddannelsen:</p>
+        <p>- Forholden sig til egne grænser</p>
+        <p>- Selvoplevelse i udfordrende situationer i en gruppe</p>
+        <p>- Erhvervelse af viden og erfaringer med udfordringer og grænseoplevelser i pædagogisk kontekst</p>
+        <p>- Forståelse af balancen mellem sikkerhed og risikofornemmelse i oplevelsespædagogiske programmer</p>
+        <p>- Imponerende naturoplevelse</p>
+        <p>Indhold i efteruddannelsen:</p>
+        <p>- Tre-dages vandre- og kanoekspedition i det vinterlige Uckermark</p>
+        <p>- Teltelejr og madlavning ved bål i gruppeselvstyring</p>
+        <p>- Padling på bækken "Küstrinchen" med kano under vinterforhold</p>
+        <p>- Refleksioner og input om emnerne: udfordring, grænseoplevelse, sikkerhed</p>
+        <p>- Muligheder og begrænsninger ved pædagogisk brug af udfordrende aktiviteter</p>
+        <p>Efteruddannelsestræner Jens Thomas</p>
+    </li>
+
+    <li class="education-item">
+        <h3>05/2019 til 11/2019 - Uddannelse til praktikvejleder</h3>
+        <p>Efteruddannelse for pædagogiske fagfolk til faglig vejledning og støtte af praktikanter i institutioner inden for børne- og ungdomspleje samt handicappleje og -tjenester</p>
+        <p>Modul 1: Grundlæggende kendskab til uddannelse af pædagoger og relevante juridiske rammer samt refleksion over krav til praktikvejledere i forskellige arbejdsfelter</p>
+        <p>Modul 2: Planlægning af uddannelsesforløb i samarbejde med teamet og praktikanten</p>
+        <p>Modul 3: Skabe relationer samt fremme og støtte læringsprocesser</p>
+        <p>Modul 4: Gennemføre refleksionssamtaler, give feedback og bedømme</p>
+        <p>Modul 5: Samarbejde om læringssteder</p>
+        <p>Efteruddannelsesudbyder: BildungsBeratung, Monika Hütt</p>
+    </li>
+
+    <li class="education-item">
+        <h3>03/2018 - "Afspændingspædagogik" - til direkte anvendelse med børn</h3>
+        <p>- Virkningen af ro og afspænding</p>
+        <p>- Hvad er stress, og hvad stresser børn?</p>
+        <p>- Autogen træning</p>
+        <p>- Børnevenlig yoga</p>
+        <p>- Specielle opmærksomhedsøvelser (Hvordan har jeg det? Hvad har jeg brug for?)</p>
+        <p>- Progressiv muskelafslapning</p>
+        <p>- Legende bevægelse</p>
+        <p>- Selvoplevelse og gruppedynamiske processer</p>
+        <p>- Mestringshjælp gennem handlinger</p>
+        <p>Efteruddannelsesudbyder: Ländliche Erwachsenenbildung im Freistaat Sachsen e.V. (LEB), ved Nancy Seidel</p>
+    </li>
+
+    <li class="education-item">
+        <h3>07/2018 - "Forskning omkring kroppen"</h3>
+        <p>Indhold i efteruddannelsen:</p>
+        <p>- Faglig viden om menneskets organer og organsystemer samt egen research i anatomiske og fysiologiske aspekter</p>
+        <p>- Erfaringsudveksling om kropsopfattelse og kropsviden hos børn i alderen 3-10 år</p>
+        <p>- Impulser til differentieret læringsvejledning af børn om kroppen gennem opdagende og undersøgende aktiviteter</p>
+        <p>- Samkonstruktiv udvikling af enkle struktur- og funktionsmodeller og didaktisk bearbejdning i modelkritisk dialog</p>
+        <p>- Højdepunkt: selv at fremstille madvarer som smør og kvark</p>
+        <p>Efteruddannelsen blev gennemført af Håndværkerkammeret i Leipzig, lokal netværkspartner til fonden "Haus der kleinen Forscher"</p>
+    </li>
+
+    <li class="education-item">
+        <h3>11/2018 - "Børn udfordrer os. At genkende, ledsage og støtte børn med adfærdsproblemer."</h3>
+        <p>Efteruddannelsesudbyder: Soziale Initiative Camburg e.V., seminarleder Brigitte Holz-Schöttler</p>
+    </li>
+
+    <li class="education-item">
+        <h3>11/2018 - "Forskning om lys, farver og syn - at skabe projekter med børn som læringsvejledning."</h3>
+        <p>Indhold i efteruddannelsen:</p>
+        <p>- Refleksion over hidtidige højdepunkter i forskning med børn</p>
+        <p>- Undersøgelse af forskellige lys- og farvefænomener (f.eks. naturfarver, farveblandinger, farvesyn i mørke osv.) gennem selvstændige eksperimenter og forskning</p>
+        <p>- Kendskab til vurderingskriterier for godt projektarbejde</p>
+        <p>- Fælles udvikling af forskellige byggesten fra forskellige uddannelsesområder til "lys, farver, syn"-projekter</p>
+        <p>Efteruddannelsen blev gennemført af Håndværkerkammeret i Leipzig, lokal netværkspartner til fonden "Haus der kleinen Forscher"</p>
+    </li>
+
+    <li class="education-item">
+        <h3>11/23 - løbende - Helhedsorienteret viden om urter (selvstudium)</h3>
+        <p>- Genkendelse og skelnen af urter, inklusiv ligheder med giftige planter</p>
+        <p>- Udseende og indsamling af urter i skove og boligområder</p>
+        <p>- Genkendelse af helbredende bestanddele i ellers giftige planter (f.eks. spiselige frugter)</p>
+        <p>- Helbredende virkninger og interaktioner med medicin</p>
+        <p>- Fremstilling og anvendelse af sæber, salver, badeprodukter og olier</p>
+        <p>- Udvikling og sammensætning af plantebaserede opskrifter mod lidelser</p>
+        <p>- Tilberedning og virkning af urte-teer, røgblandinger samt plantebaserede lægemidler</p>
+        <p>- Indsigt i, at en urt kan hjælpe mod mange lidelser, og at en lidelse kan behandles med flere forskellige urter</p>
+        <p>- Fremstilling af plantebaseret medicin (hostesirup, smertestillende midler, naturlige antibiotika osv.)</p>
+        <p>- Undersøgelse af afgiftende virkninger i kroppen af forskellige urter samt afgiftning med urter ved akut madforgiftning</p>
+        <p>- Fremme af sundhed gennem plantebaserede lægemidler med mildere effekt end syntetiske lægemidler</p>
+        <p>- Konserveringsmetoder til hjemmelavede pleje- og plantebaserede medicinprodukter (konservering, tørring, fermentering)</p>
+        <p>- Undersøgelse af traditionelle helbredelsesmetoder og historiske anvendelser</p>
+        <p>- Beskæftigelse med urter til prævention og hvorfor mange urter og fødevarer kan fremkalde veer eller føre til abort og derfor bør undgås</p>
+        <p>- Undersøgelse af Ayurveda og dets nytte for fysisk og mentalt velbefindende</p>
+    </li>
+
+    <li class="education-item">
+        <h3>04/2025 - "Human Design" selvstudium, stadig igang ...</h3>
+        <p>Indhold i efteruddannelsen:</p>
+        <p>- Lære at læse og fortolke diagrammer</p>
+        <p>- Lære og forstå de fire (eller fem) typer</p>
+        <p>- Forstå og forklare betydningen af diagrammer og energicentre for personen</p>
+        <p>- Genkende styrker og svagheder</p>
+        <p>- Lære mål og anvendelse i det virkelige liv (personlig udvikling, parrådgivning, erhvervsvejledning, børneopdragelse)</p>
+        <p>- Lære strategier og centre</p>
+        <p>- Hvordan definerer det en person</p>
+        <p>- Åbne chakraer</p>
+        <p>- Skygger og udfoldelse</p>
+        <p>- Udarbejdelse af en workbook</p>
+    </li>
+
+    <li class="education-item">
+        <h3>05/2025 - løbende, uddannelse til certificeret urtepædagog</h3>
+        <p>Vilde urter basis</p>
+        <p>Urtekøkken</p>
+        <p>Naturlig apotek</p>
+        <p>Plantebaseret kosmetik</p>
+        <p>Vilde bær</p>
+        <p>Green & Clean</p>
+        <p>Fenologiske årstider</p>
+        <p>Planter i årscyklus</p>
+        <p>Skovmedicin træharpiks</p>
+        <p>Urteavl og produkter</p>
+        <p>Træ- og knopsmedicin</p>
+        <p>Rodslåning (rods kraft)</p>
+        <p>Familiebånd (plantefamilier)</p>
+        <p>Kvindelige urter</p>
+        <p>Helbredende omslag og pålæg</p>
+        <p>Undervurderede ritualer - kunsten at ryge</p>
+        <p>Urtepædagogik - naturen som arbejdsplads</p>
+        <p>Giftige, narkotiske og skærmblomster</p>
+    </li>
+
+    <li class="education-item">
+        <h3>06/2025 - Workshop "Arbejde med stemmegaffler"</h3>
+        <p>Stephanie Schwipps - Klangterapeut / eksaminator</p>
+        <p>Workshopindhold:</p>
+        <p>Stemmegaffelverden</p>
+        <p>Anvendelse</p>
+        <p>Egnet frekvenser</p>
+        <p>Energipunkter hos voksne og børn</p>
+        <p>Behandling af arvævforstyrrelser</p>
+    </li>
+</ul>
+</div>
+    <script>
+   <script>
+    // Funktion zum Umschalten des mobilen Menüs
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
+    function updateMenuToggleVisibility() {
+      const toggleBtn = document.getElementById("menu-toggle");
+      if (window.innerWidth <= 768) {
+        toggleBtn.style.display = "inline-block";
+      } else {
+        toggleBtn.style.display = "none";
+      }
+    }
+
+    // Sobald Seite geladen ist:
+    window.addEventListener("DOMContentLoaded", function () {
+      updateMenuToggleVisibility();
+
+
+  
+
+	    
+      // Button klickbar machen
+      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
+// Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
+            let starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                starContainer.appendChild(star);
+
+		    document.getElementById('menu-toggle').style.display = 'block';
+
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
+            }
+	
+        });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleButton.addEventListener('click', function () {
+        menu.classList.toggle('show');
+    });
+});
+		    
+	 // Bei Fenstergröße ändern: Button ggf. anzeigen
+    window.addEventListener("resize", updateMenuToggleVisibility);    
+    </script>
+
+</body>
+</html>
