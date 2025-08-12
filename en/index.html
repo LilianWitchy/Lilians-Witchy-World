@@ -246,6 +246,36 @@
       .navmenu li:hover > .dropdown-content {
         display: none;
       }
+
+      /* ✨ Änderung START: Hamburger styling & mobile dropdown support */
+.menu-toggle {
+  display: none; /* wird durch Media Query sichtbar gemacht */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Wenn ein Dropdown per JS geöffnet ist, soll das Dropdown sichtbar werden */
+.navmenu .dropdown.open > .dropdown-content {
+  display: block !important;
+  position: static;
+  box-shadow: none;
+  background-color: #0aa667;
+}
+/* ✨ Änderung ENDE */
+
     }
   </style>
 </head>
