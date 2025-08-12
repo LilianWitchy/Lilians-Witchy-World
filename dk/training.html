@@ -559,10 +559,10 @@
     <script>
    <script>
     // Funktion zum Umschalten des mobilen Menüs
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+  				function toggleMenu() {
+    var menu = document.getElementById("navmenu");
+    menu.classList.toggle("show");
+}
 
     // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
     function updateMenuToggleVisibility() {
@@ -615,6 +615,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		    
 	 // Bei Fenstergröße ändern: Button ggf. anzeigen
     window.addEventListener("resize", updateMenuToggleVisibility);    
+
+
     </script>
 
 </body>
