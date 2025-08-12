@@ -272,16 +272,14 @@
 <!-- Navigation mit Untermenüs -->
 <div class="navbar">
   <!-- Hamburger-Menü für Handy -->
-  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
-    style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
-    &#9776;
-  </button>
+<!-- ✨ Änderung START: Ein einziger Hamburger-Button -->
+<button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen" style="display: none; background: none; border: none;">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+<!-- ✨ Änderung ENDE -->
 
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
 
   <ul class="navmenu" id="navmenu">
     <li class="dropdown">
