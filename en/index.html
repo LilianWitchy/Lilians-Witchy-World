@@ -394,6 +394,53 @@
       }
     }
 
+    /* ✨ Änderung START: Mobile Dropdown-Handling (erst Tip öffnet, zweiter Tip navigiert) */
+function setupMobileDropdowns() {
+  const dropdownAnchors = document.querySelectorAll('.navmenu .dropdown > a');
+
+  dropdownAnchors.forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        const li = anchor.parentElement;
+        if (!li.classList.contains('open')) {
+          // Erstes Tip: Dropdown öffnen (Navigation verhindern)
+          e.preventDefault();
+          // andere offene Dropdowns schließen
+          document.querySelectorAll('.navmenu .dropdown.open').forEach(openLi => {
+            if (openLi !== li) openLi.classList.remove('open');
+          });
+          li.classList.add('open');
+          // Menü sicher sichtbar machen (falls geschlossen)
+          const nav = document.getElementById('navmenu');
+          if (nav && !nav.classList.contains('show')) nav.classList.add('show');
+        }
+        // Wenn bereits 'open', dann Normalverhalten (zweiter Tap navigiert)
+      }
+    });
+  });
+
+  // Klick außerhalb schließt alle offenen Dropdowns
+  document.addEventListener('click', function (e) {
+    const nav = document.querySelector('.navbar');
+    if (!nav || !nav.contains(e.target)) {
+      document.querySelectorAll('.navmenu .dropdown.open').forEach(openLi => openLi.classList.remove('open'));
+    }
+  });
+
+  // Bei Vergrößerung (z.B. Tablet/Desktop) offene Dropdowns schließen
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.navmenu .dropdown.open').forEach(openLi => openLi.classList.remove('open'));
+    }
+  });
+}
+
+// Aufruf nach DOM ready (wenn du bereits einen DOMContentLoaded-Handler hast, genügt es,
+// diesen Funktionsaufruf dort einzufügen)
+document.addEventListener('DOMContentLoaded', setupMobileDropdowns);
+/* ✨ Änderung ENDE */
+
+
     // Sobald Seite geladen ist:
     window.addEventListener("DOMContentLoaded", function () {
       updateMenuToggleVisibility();
