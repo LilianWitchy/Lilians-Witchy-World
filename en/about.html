@@ -216,12 +216,15 @@
 </div>
     
 <!-- Navigation bar with dropdown menus -->
-<div class="navbar">
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<!-- ✨ Änderung START: Ein einziger Hamburger-Button -->
+<button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen" style="display: none; background: none; border: none;">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+<!-- ✨ Änderung ENDE -->
+
+  
   <ul class="navmenu" id="navmenu">
     <li class="dropdown">
       <a href="/en/index.html">Home</a>
