@@ -181,16 +181,17 @@
       /* Fußzeile */
     }
 
-      .education-item {
-            background-color: #bda259 /* Hintergrund */
-            color: black;
-            padding: 20px;
-            margin: 10px auto; /* Zentrieren der Kasten */
-            border-radius: 8px;
-            display: block;
-            width: fit-content;
-            max-width: 100%;
-   }
+ .education-item {
+    background-color: #bda259; /* Hintergrund */
+    color: black;
+    padding: 20px;
+    margin: 10px auto; /* Zentrieren der Kasten */
+    border-radius: 8px;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+}
+
 
     @media screen and (max-width: 768px) {
       /* Anpassungen für kleine Bildschirme (Handys) */
@@ -379,12 +380,11 @@
 
   <script>
     // Funktion zum Umschalten des mobilen Menüs
-    function toggleMenu() {
-      var menu = document.getElementById("navmenu");
-menu.classList.toggle("show");
+ function toggleMenu() {
+    var menu = document.getElementById("navmenu");
+    menu.classList.toggle("show");
+}
 
-      menu.classList.toggle("show");
-    }
 
     // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
     function updateMenuToggleVisibility() {
