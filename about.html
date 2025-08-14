@@ -216,13 +216,16 @@
 </div>
 
     
-<!-- ✨ NAVBAR (saubere, stabile Version) -->
+<!-- Navigation mit Untermenüs -->
 <div class="navbar">
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <!-- Hamburger-Menü für Handy -->
+  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
+    style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
+    &#9776;
+  </button>
 
-  <ul class="navmenu" id="navmenu">
+  <!-- Hauptmenü -->
+  <ul id="menu" class="navmenu">
     <li class="dropdown">
       <a href="index.html">Startseite</a>
       <ul class="dropdown-content">
@@ -235,11 +238,11 @@
     </li>
 
     <li class="dropdown">
-      <a href="energie.html">Mit sich selbst in Verbindung kommen</a>
+      <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
       <ul class="dropdown-content">
         <li><a href="basics.html">Die Basics</a></li>
         <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-        <li><a href="gedanken.html">Gedanken &amp; Glaubenssätze</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
       </ul>
     </li>
 
@@ -260,7 +263,7 @@
         <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
         <li><a href="#">Räuchermischungen</a></li>
         <li><a href="#">Naturheilkunde</a></li>
-        <li><a href="#">Salben &amp; Balsam</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
       </ul>
     </li>
 
@@ -269,7 +272,7 @@
     <li><a href="impressum.html">Impressum</a></li>
   </ul>
 </div>
-<!-- ✅ NAVBAR Ende (achte darauf, dass dieses </div> wirklich vorhanden ist) -->
+
 
 
 
