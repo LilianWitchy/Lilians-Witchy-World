@@ -13,6 +13,7 @@ footer {
   color: white;
 }
 
+/* Navbar – nur Balken grün */
 .navbar {
   background-color: #0aa667;
   padding: 10px 20px;
@@ -20,6 +21,7 @@ footer {
   z-index: 100;
 }
 
+/* Hauptmenü */
 .navmenu {
   list-style-type: none;
   margin: 0;
@@ -48,6 +50,7 @@ footer {
   border-radius: 5px;
 }
 
+/* Dropdown-Menü */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -84,7 +87,7 @@ footer {
   margin-left: 6px;
 }
 
-/* === Wichtig: Anzeige bei mobiler Aktivierung === */
+/* Geöffnetes Dropdown */
 .dropdown.open .dropdown-content {
   display: block;
 }
@@ -95,8 +98,6 @@ footer {
 
 /* === Responsive Layout ab 768px und kleiner === */
 @media (max-width: 768px) {
-  ...
-
   /* Menü wird vertikal */
   .navmenu {
     flex-direction: column;
@@ -120,13 +121,13 @@ footer {
     padding: 15px 20px;
     font-size: 16px;
     white-space: normal;
-    cursor: pointer; /* Wichtig für Klickbarkeit */
-    position: relative; /* für Pfeil */
+    cursor: pointer;
+    position: relative;
   }
 
-  /* Dropdowns per Klasse steuern - nicht mehr dauerhaft anzeigen! */
+  /* Dropdowns per Klasse steuern */
   .dropdown-content {
-    display: none; /* Standard: ausgeblendet */
+    display: none;
     position: static;
     box-shadow: none;
     background-color: transparent;
@@ -134,7 +135,6 @@ footer {
     width: 100%;
   }
 
-  /* Wenn Dropdown geöffnet, Dropdown-Inhalt anzeigen */
   .dropdown.open .dropdown-content {
     display: block;
   }
@@ -150,7 +150,7 @@ footer {
     display: none;
   }
 
-  /* Pfeil nach unten als Indikator */
+  /* Pfeile für Mobil */
   .navmenu > li.dropdown > a::after {
     content: " ▼";
     position: absolute;
@@ -161,92 +161,21 @@ footer {
     transition: transform 0.3s ease;
   }
 
-  /* Pfeil drehen, wenn geöffnet */
   .dropdown.open > a::after {
     transform: translateY(-50%) rotate(180deg);
     content: " ▲";
   }
 }
 
+/* Sprachumschalter */
 #language-switcher {
   position: fixed;
   top: 10px;
   right: 10px;
   z-index: 1000;
 }
+
 #language-switcher img {
   margin-left: 5px;
   cursor: pointer;
 }
-
-
-
-/* Navbar-Hintergrund nur für den Balken */
-.navbar {
-  background-color: #228B22; /* Grün für den Menü-Balken */
-  padding: 0;
-}
-
-/* Hauptmenü */
-.navmenu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.navmenu li {
-  position: relative;
-}
-
-.navmenu li a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 12px 16px;
-}
-
-.navmenu li a:hover {
-  background-color: #2E8B57; /* etwas dunkleres Grün beim Hover */
-}
-
-/* Dropdown-Menüs */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #228B22;
-  min-width: 200px;
-  z-index: 1000;
-}
-
-.dropdown-content li a {
-  padding: 10px 14px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Hamburger-Menü fürs Handy */
-.menu-toggle {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .navmenu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-  .navmenu li {
-    width: 100%;
-  }
-  .navmenu.show {
-    display: flex;
-  }
-}
-
