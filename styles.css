@@ -178,3 +178,75 @@ footer {
   margin-left: 5px;
   cursor: pointer;
 }
+
+
+
+/* Navbar-Hintergrund nur für den Balken */
+.navbar {
+  background-color: #228B22; /* Grün für den Menü-Balken */
+  padding: 0;
+}
+
+/* Hauptmenü */
+.navmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navmenu li {
+  position: relative;
+}
+
+.navmenu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+}
+
+.navmenu li a:hover {
+  background-color: #2E8B57; /* etwas dunkleres Grün beim Hover */
+}
+
+/* Dropdown-Menüs */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #228B22;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-content li a {
+  padding: 10px 14px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger-Menü fürs Handy */
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navmenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .navmenu li {
+    width: 100%;
+  }
+  .navmenu.show {
+    display: flex;
+  }
+}
+
