@@ -85,117 +85,59 @@
         }
 	    
 /* Media Query für mobile Geräte */
-@media (max-width: 768px) {
-    .hero-section {
-        font-size: 1.8rem; /* kleinere Schriftgröße auf Smartphones/Tablets */
-    }
-}
-	        .hero-text {
-        font-size: 1.2rem;
-        padding: 10px;
-    }
+ @media screen and (max-width: 768px) {
+      /* Anpassungen für kleine Bildschirme (Handys) */
 
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
+      h1 {
+        font-size: 1.8em;
+      }
 
-       h1 {
-      font-size: 2.5em;
-      margin: 20px 0 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      /* Überschrift mit Bild links & rechts */
-    }
-
-    h1 img {
-      max-width: 150px;
-      height: auto;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin: 40px 0 20px 0;
-      font-weight: normal;
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 40px 20px;
-      text-align: left;
-      line-height: 1.6;
-      /* Container für Inhalte */
-    }
-         .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
-        }
+      h1 img {
+        max-width: 80px;
+      }
 
       .menu-toggle {
-    display: block; /* Zeige den Menübutton nur auf kleinen Geräten */
-}
+        display: flex;
+        /* Hamburger-Menü wird angezeigt */
+      }
 
-	    .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
+      .navmenu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #0aa667;
+      }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
-        }
+      .navmenu.show {
+        display: flex;
+        /* Wird per JavaScript eingeblendet */
+      }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
+      .navmenu li {
+        width: 100%;
+        border-top: 1px solid #088852;
+      }
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
+      .navmenu a {
+        padding: 15px 20px;
+        font-size: 16px;
+        white-space: normal;
+      }
 
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+      .navmenu.show .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background-color: #0aa667;
+      }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
+      .dropdown-content li a {
+        padding-left: 40px;
+      }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
-
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
+      .navmenu li:hover > .dropdown-content {
+        display: none;
+      }
 
         /* Weitere Styling für Inhalt */
         .content {
@@ -220,68 +162,8 @@
             display: block;
             width: fit-content;
             max-width: 100%;
-		
-@media screen and (max-width: 768px) {
-      /* Anpassungen für kleine Bildschirme (Handys) */
+	}	
 
-      h1 {
-        font-size: 1.8em;
-      }
-
-      h1 img {
-        max-width: 80px;
-      }
-
-      .menu-toggle {
-        display: flex;
-        /* Hamburger-Menü wird angezeigt */
-      }
-
- .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-	
-      .navmenu {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: #0aa667;
-       overflow-x: hidden; /* verhindert horizontales Scrollen */
-  }
-
-      .navmenu.show {
-        display: flex;
-        /* Wird per JavaScript eingeblendet */
-      }
-
-      .navmenu li {
-        width: 100%;
-        border-top: 1px solid #088852;
-          box-sizing: border-box;
-  }
-}
-
-      .navmenu a {
-        padding: 15px 20px;
-        font-size: 16px;
-        white-space: normal;
-      }
-
-      .navmenu.show .dropdown-content {
-        display: block !important;
-        position: static;
-        box-shadow: none;
-        background-color: #0aa667;
-      }
-
-      .dropdown-content li a {
-        padding-left: 40px;
-      }
-
-      .navmenu li:hover > .dropdown-content {
-        display: none;
-      }
         }
     </style>
 </head>
@@ -361,7 +243,8 @@
             <li class="education-item">
                 <h3> 03/2012 - "Einführung in die Erlebnispädagogik"</h3>
                 <p>Inhalte der fortbildung:</p>
-                <p> - Selbsterfahrung in der Rolle als Teilnehmer/in in einer Reihe von Initiativübungen, kooperativen Abenteuerspielen und komplexen Lernprojekten </p>
+                <p> - Selbsterfahrung in der Rolle als Teilnehmer/in
+ in einer Reihe von Initiativübungen, kooperativen Abenteuerspielen und komplexen Lernprojekten </p>
                 <p> - Zielgerichteter pädagogigischer Einsatz kooperativer Abenteuerspiele </p>
                 <p> - Geschichte und Hintergründe der Erlebnispädagogik </p>
                 <p> - Ziele der Erlebnispädagogik </p>
@@ -486,7 +369,8 @@
 <p>- Förderung der Gesundheit durch pflanzliche Heilmittel mit schonenderer Wirkung als synthetische Medikamente</p>
 <p>- Konservierungsmethoden für selbst hergestelle Pflege- und oder pflanzliche Medizinprodukte (Einkochen, Trocknung, Fermentation)</p>
 <p>- Erforschung traditioneller Heilmethoden und historischer Anwendungen</p>
-<p>- Beschäftigung mit Kräutern zur Verhütung und warum so viele Kräuter und Lebensmittel Wehen auslösen/ zu einem Schwanegrschaftsabbruch führen. Diese dann lieber gemieden werden sollten.</p>
+<p>- Beschäftigung mit Kräutern zur Verhütung und warum so viele Kräuter und Lebensmittel
+ Wehen auslösen/ zu einem Schwanegrschaftsabbruch führen. Diese dann lieber gemieden werden sollten.</p>
 <p>- Auseinandersetzung mit Ayurveda und dessen Nutzen für körperliches und geistiges Wohlbefinden</p>
 
 		 <li class="education-item">
