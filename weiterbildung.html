@@ -3,47 +3,32 @@
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weiterbildungen | Lilian´s Witchy World</title>
     <style>
-          /* Globales CSS */
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      /* Einheitliche Größenberechnung für alle Elemente */
-    }
-	    
-	    
-	    body {
+        /* Globales CSS */
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
             font-family: Garamond, serif;
             color: white;
-            background-color: #388045
-		;
+            background-color: #388045;
             margin: 0;
             padding: 0;
             text-align: center;
             overflow-x: hidden;
-      /* Verhindert horizontales Scrollen */
-    }
+        }
+        img { max-width: 100%; height: auto; }
 
-	  img {
-      max-width: 100%;
-      height: auto;
-      /* Bilder werden responsiv skaliert */
-    }  
-
-         /* Sterne Hintergrund */
+        /* Sterne Hintergrund */
         .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
-            z-index: -1; /* Sterne bleiben im Hintergrund */
+            pointer-events: none;
+            z-index: -1;
         }
-
         .star {
             position: absolute;
             width: 3px;
@@ -53,152 +38,48 @@
             opacity: 0;
             animation: twinkle linear infinite;
         }
-
         @keyframes twinkle {
-            0%, 100% { opacity: 0; }
+            0%,100% { opacity: 0; }
             50% { opacity: 1; }
         }
 
-
-
-        /* Container für das Bild und den Text */
+        /* Hero-Bereich */
         .hero-section {
-            background-image: url('wald2.png'); /* Ersetze 'dein-bild.jpg' mit dem Pfad zu deinem Bild */
+            background-image: url('wald2.png');
             background-size: cover;
             background-position: center;
-            height: 400px; /* Höhe des Bildes anpassen */
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für besseren Kontrast */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             position: relative;
         }
-
         .hero-text {
             text-align: center;
             font-size: 30px;
             max-width: 90%;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund für besseren Text-Kontrast */
+            background-color: rgba(0,0,0,0.5);
             border-radius: 10px;
         }
-	    
-/* Media Query für mobile Geräte */
-@media (max-width: 768px) {
-    .hero-section {
-        font-size: 1.8rem; /* kleinere Schriftgröße auf Smartphones/Tablets */
-    }
-}
-	        .hero-text {
-        font-size: 1.2rem;
-        padding: 10px;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
-       h1 {
-      font-size: 2.5em;
-      margin: 20px 0 10px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      /* Überschrift mit Bild links & rechts */
-    }
-
-    h1 img {
-      max-width: 150px;
-      height: auto;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin: 40px 0 20px 0;
-      font-weight: normal;
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 40px 20px;
-      text-align: left;
-      line-height: 1.6;
-      /* Container für Inhalte */
-    }
-         .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
+        @media (max-width: 768px) {
+            .hero-section { font-size: 1.8rem; }
+            .hero-text { font-size: 1.2rem; padding: 10px; }
+            .hero-text p { font-size: 1rem; }
         }
 
-      .menu-toggle {
-    display: block; /* Zeige den Menübutton nur auf kleinen Geräten */
-}
+        h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        h1 img { max-width: 150px; height: auto; }
+        h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: normal; }
 
-	    .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
-
-        .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
-        }
-
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
-
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
-
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
-
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
-
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Weitere Styling für Inhalt */
         .content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px 40px 20px;
+            text-align: left;
+            line-height: 1.6;
             position: relative;
             z-index: 1;
             padding-bottom: 100px;
@@ -212,84 +93,95 @@
         }
 
         .education-item {
-            background-color: #8B5E3C; /* Brauner Hintergrund */
+            background-color: #8B5E3C;
             color: white;
             padding: 20px;
-            margin: 10px auto; /* Zentrieren der Kasten */
+            margin: 10px auto;
             border-radius: 8px;
             display: block;
             width: fit-content;
             max-width: 100%;
-		
-@media screen and (max-width: 768px) {
-      /* Anpassungen für kleine Bildschirme (Handys) */
+        }
 
-      h1 {
-        font-size: 1.8em;
-      }
+        /* Navigation */
+        .navbar {
+            background-color: #0aa667;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-      h1 img {
-        max-width: 80px;
-      }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
 
-      .menu-toggle {
-        display: flex;
-        /* Hamburger-Menü wird angezeigt */
-      }
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+        .navmenu li { margin-right: 30px; position: relative; }
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+        .navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
 
- .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-	
-      .navmenu {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: #0aa667;
-       overflow-x: hidden; /* verhindert horizontales Scrollen */
-  }
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+        .dropdown-content li a { padding: 10px; color: white; }
+        .dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
 
-      .navmenu.show {
-        display: flex;
-        /* Wird per JavaScript eingeblendet */
-      }
+        /* Hover auf Desktop */
+        .navmenu li:hover > .dropdown-content { display: block; }
 
-      .navmenu li {
-        width: 100%;
-        border-top: 1px solid #088852;
-          box-sizing: border-box;
-  }
-}
-
-      .navmenu a {
-        padding: 15px 20px;
-        font-size: 16px;
-        white-space: normal;
-      }
-
-      .navmenu.show .dropdown-content {
-        display: block !important;
-        position: static;
-        box-shadow: none;
-        background-color: #0aa667;
-      }
-
-      .dropdown-content li a {
-        padding-left: 40px;
-      }
-
-      .navmenu li:hover > .dropdown-content {
-        display: none;
-      }
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: inline-block; }
+            .navbar { flex-direction: column; align-items: flex-start; }
+            .navmenu {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background-color: #0aa667;
+                overflow-x: hidden;
+            }
+            .navmenu.show { display: flex; }
+            .navmenu li { width: 100%; border-top: 1px solid #088852; box-sizing: border-box; }
+            .navmenu a { padding: 15px 20px; font-size: 16px; white-space: normal; }
+            .navmenu.show .dropdown-content { display: block !important; position: static; box-shadow: none; background-color: #0aa667; }
+            .dropdown-content li a { padding-left: 40px; }
+            .navmenu li:hover > .dropdown-content { display: none; }
         }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
 
-<div class="stars"></div>
-	
-    <!-- Hero-Bereich mit Bild und Text -->
+    <!-- Hero-Bereich -->
     <div class="hero-section">
         <div class="hero-text">
             <h1>Meine Weiterbildungen</h1>
@@ -297,67 +189,52 @@
         </div>
     </div>
 
-
-   <!-- Navigation mit Untermenüs -->
-
-
-  <div class="navbar">
-
-
-    <!-- Hamburger-Menü für Handy -->
-
-
-    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen"
-
-
-      style="display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer;">
-
-    <!-- Hauptmenü -->
-    <ul id="menu" class="navmenu">
-      <!-- Jeder <li> ist ein Menüpunkt, teilweise mit Unterpunkten (Dropdowns) -->
-      <li class="dropdown">
-        <a href="index.html">Startseite</a>
-        <ul class="dropdown-content">
-          <li><a href="about.html">Über mich</a></li>
-          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-          <li><a href="meinemission.html">Meine Mission</a></li>
-		<li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a>
-			 <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
+    <!-- Navigation -->
+    <div class="navbar">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776; Menü</button>
+        <ul id="menu" class="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="meinemission.html">Meine Mission</a></li>
+                    <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
+                    <li><a href="rosental.html">Angebot im Rosenthal</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
+                <ul class="dropdown-content">
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Bücher</a>
+                <ul class="dropdown-content">
+                    <li><a href="meinebücher.html">Meine Bücher</a></li>
+                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="rezepte.html">Rezepte</a>
+                <ul class="dropdown-content">
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                    <li><a href="#">Räuchermischungen</a></li>
+                    <li><a href="#">Naturheilkunde</a></li>
+                    <li><a href="#">Salben & Balsam</a></li>
+                </ul>
+            </li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
         </ul>
-      </li>
-      <li class="dropdown">
-        <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
-        <ul class="dropdown-content">
-          <li><a href="basics.html">Die Basics</a></li>
-          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-        </ul>
-      </li>
- <li class="dropdown">
-          <a href="#">Bücher</a>
-          <ul class="dropdown-content">
-        <li><a href="meinebücher.html">Meine Bücher</a></li>
-        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-       <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-             </ul>
-        </li>
-      <li class="dropdown">
-        <a href="rezepte.html">Rezepte </a>
-        <ul class="dropdown-content">
-          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-          <li><a href="haare.html">Haarprodukte</a></li>
-          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-          <li><a href="#">Räuchermischungen</a></li>
-          <li><a href="#">Naturheilkunde</a></li>
-          <li><a href="#">Salben & Balsam</a></li>
-        </ul>
-      </li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="agb.html">AGB</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </div>
-
+    </div>
   
 	<div class="content-container">
       
@@ -548,64 +425,41 @@
           </ul>
     </div>
     <script>
-   <script>
+
    
-	 // Funktion zum Umschalten des mobilen Menüs
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+<script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
 
-    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
-    function updateMenuToggleVisibility() {
-      const toggleBtn = document.getElementById("menu-toggle");
-      if (window.innerWidth <= 768) {
-        toggleBtn.style.display = "inline-block";
-      } else {
-        toggleBtn.style.display = "none";
-      }
-    }
+            // Funktion für Menü umschalten
+            toggleBtn.addEventListener("click", function() {
+                menu.classList.toggle("show");
+            });
 
-    // Sobald Seite geladen ist:
-    window.addEventListener("DOMContentLoaded", function () {
-      updateMenuToggleVisibility();
-
-      // Button klickbar machen
-      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
-		
-// Sterne erzeugen
-        document.addEventListener("DOMContentLoaded", function() {
-            let starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+            // Sterne generieren
+            const starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) {
                 let star = document.createElement("div");
                 star.className = "star";
-                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
-                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
                 starContainer.appendChild(star);
-
-		    document.getElementById('menu-toggle').style.display = 'block';
-
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('show');
             }
-	
         });
-
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggleButton.addEventListener('click', function () {
-        menu.classList.toggle('show');
-    });
-});
-		    
-	 // Bei Fenstergröße ändern: Button ggf. anzeigen
-    window.addEventListener("resize", updateMenuToggleVisibility);    
     </script>
 
+    <div class="content">
+        <h2>Meine Weiterbildungen:</h2>
+        <p class="education-item">Yoga Ausbilderin bei Yoga Vidya (2020)</p>
+        <p class="education-item">Aromatherapie Workshop (2019)</p>
+        <p class="education-item">Naturheilkunde Seminar (2021)</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Lilian´s Witchy World
+    </footer>
 </body>
 </html>
 
