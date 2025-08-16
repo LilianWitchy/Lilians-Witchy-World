@@ -45,16 +45,28 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
 .dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
 .navmenu li:hover .dropdown-content { display: block; }
 
-/* Mobile Anpassungen */
-@media screen and (max-width: 768px) {
-  .menu-toggle { display: block; }
-  .navmenu { flex-direction: column; display: none; width: 100%; background-color: #0aa667; overflow-x: hidden; }
-  .navmenu.show { display: flex; }
-  .navmenu li { width: 100%; border-top: 1px solid #088852; }
-  .navmenu a { padding: 15px 20px; font-size: 16px; }
-  .navmenu li .dropdown-content { position: static; box-shadow: none; background-color: #0aa667; display: none; }
-  .navmenu li.open > .dropdown-content { display: flex; flex-direction: column; }
-}
+/* Mobile Menü-Schaltfläche (Hamburger-Menü) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    /* Haupt-Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 100px;
+    }
+
 </style>
 </head>
 <body>
@@ -341,6 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
