@@ -190,52 +190,53 @@
     </div>
 
     <!-- Navigation -->
-    <div class="navbar">
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776; Menü</button>
-        <ul id="menu" class="navmenu">
-            <li class="dropdown">
-                <a href="index.html">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="meinemission.html">Meine Mission</a></li>
-                    <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
-                    <li><a href="rosental.html">Angebot im Rosenthal</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
-                <ul class="dropdown-content">
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Bücher</a>
-                <ul class="dropdown-content">
-                    <li><a href="meinebücher.html">Meine Bücher</a></li>
-                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="rezepte.html">Rezepte</a>
-                <ul class="dropdown-content">
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                    <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                    <li><a href="#">Räuchermischungen</a></li>
-                    <li><a href="#">Naturheilkunde</a></li>
-                    <li><a href="#">Salben & Balsam</a></li>
-                </ul>
-            </li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
-  
+<!-- Navigation -->
+<div class="navbar">
+    <!-- Nur Hamburger-Symbol -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
+    <ul id="menu" class="navmenu">
+        <li class="dropdown">
+            <a href="index.html">Startseite</a>
+            <ul class="dropdown-content">
+                <li><a href="about.html">Über mich</a></li>
+                <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                <li><a href="meinemission.html">Meine Mission</a></li>
+                <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
+                <li><a href="rosental.html">Angebot im Rosenthal</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
+            <ul class="dropdown-content">
+                <li><a href="basics.html">Die Basics</a></li>
+                <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+                <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Bücher</a>
+            <ul class="dropdown-content">
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="rezepte.html">Rezepte</a>
+            <ul class="dropdown-content">
+                <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                <li><a href="haare.html">Haarprodukte</a></li>
+                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                <li><a href="#">Räuchermischungen</a></li>
+                <li><a href="#">Naturheilkunde</a></li>
+                <li><a href="#">Salben & Balsam</a></li>
+            </ul>
+        </li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+</div>
 	<div class="content-container">
       
       
@@ -428,40 +429,35 @@
 
    
 <script>
-        window.addEventListener("DOMContentLoaded", function () {
-            const toggleBtn = document.getElementById("menu-toggle");
-            const menu = document.getElementById("menu");
+    window.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
 
-            // Funktion für Menü umschalten
-            toggleBtn.addEventListener("click", function() {
-                menu.classList.toggle("show");
-            });
-
-            // Sterne generieren
-            const starContainer = document.querySelector(".stars");
-            for (let i = 0; i < 50; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-                starContainer.appendChild(star);
-            }
+        // Menü umschalten
+        toggleBtn.addEventListener("click", function() {
+            menu.classList.toggle("show");
         });
-    </script>
 
-    <div class="content">
-        <h2>Meine Weiterbildungen:</h2>
-        <p class="education-item">Yoga Ausbilderin bei Yoga Vidya (2020)</p>
-        <p class="education-item">Aromatherapie Workshop (2019)</p>
-        <p class="education-item">Naturheilkunde Seminar (2021)</p>
-    </div>
+        // Sterne generieren
+        const starContainer = document.querySelector(".stars");
+        for (let i = 0; i < 50; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+            starContainer.appendChild(star);
+        }
+    });
+</script>
+
 
     <footer>
         &copy; 2025 Lilian´s Witchy World
     </footer>
 </body>
 </html>
+
 
 
 
