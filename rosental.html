@@ -41,74 +41,35 @@
             50% { opacity: 1; }
         }
 
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px;
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+     
+     /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
 
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative;
-        }
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
-
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
-
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
-
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            padding-bottom: 100px;
-        }
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
 
         footer {
             background-color: #0aa667;
@@ -183,7 +144,7 @@
 
 
 
-    <!-- Navigationsleiste mit Dropdown-Menüs -->
+ <!-- Navigationsleiste mit Dropdown-Menüs -->
 <div class="navbar">
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
@@ -191,49 +152,49 @@
     <span></span>
   </div>
   <ul class="navmenu" id="navmenu">
-  <li class="dropdown">
-        <a href="index.html">Startseite</a>
-        <ul class="dropdown-content">
-          <li><a href="about.html">Über mich</a></li>
-          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-          <li><a href="meinemission.html">Meine Mission</a></li>
-          <a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor-Angebote in Leipzig</a>
-          <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
-        </ul>
-      </li>
-            <li class="dropdown">
-          <a href="energie.html">Mit sich selbst in Verbindung kommen</a>
-          <ul class="dropdown-content">
-            <li><a href="basics.html">Die Basics</a></li>
-            <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-            <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-          </ul>
-        </li>
-      <li class="dropdown">
-          <a href="energie.html">Bücher</a>
-          <ul class="dropdown-content">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor-Angebote in Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="energie.html">Mit sich selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
         <li><a href="meinebücher.html">Meine Bücher</a></li>
         <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-       <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-             </ul>
-        </li>
-        <li class="dropdown">
-          <a href="rezepte.html">Rezepte ▼</a>
-          <ul class="dropdown-content">
-            <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-            <li><a href="haare.html">Haarprodukte</a></li>
-            <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-            <li><a href="#">Räuchermischungen</a></li>
-            <li><a href="#">Naturheilkunde</a></li>
-            <li><a href="#">Salben & Balsam</a></li>
-          </ul>
-        </li>
-       
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="agb.html">AGB</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
       </ul>
-    </div>
+    </li>
+    <li class="dropdown">
+      <a href="rezepte.html">Rezepte</a>
+      <ul class="dropdown-content">
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
 
     <!-- Kasten: Kindergruppen -->
     <div class="karte">
@@ -319,18 +280,34 @@
     <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let starContainer = document.querySelector(".stars");
-        for (let i = 0; i < 50; i++) {
-            let star = document.createElement("div");
-            star.className = "star";
-            star.style.top = Math.random() * 100 + "vh";
-            star.style.left = Math.random() * 100 + "vw";
-            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-            starContainer.appendChild(star);
-        }
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
     });
+  });
+});
 </script>
 
 </body>
