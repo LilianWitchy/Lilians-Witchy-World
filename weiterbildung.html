@@ -1,251 +1,119 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weiterbildungen | Lilian´s Witchy World</title>
-    <style>
-        /* Globales CSS */
-        *, *::before, *::after { box-sizing: border-box; }
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #388045;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        img { max-width: 100%; height: auto; }
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weiterbildungen | Lilian´s Witchy World</title>
+<style>
+/* Globales CSS */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: Garamond, serif; color: white; background-color: #388045; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
 
-        /* Sterne Hintergrund */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle linear infinite;
-        }
-        @keyframes twinkle {
-            0%,100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
+/* Sterne Hintergrund */
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.star { position: absolute; width: 3px; height: 3px; background-color: white; border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+@keyframes twinkle { 0%,100% {opacity:0;} 50% {opacity:1;} }
 
-        /* Hero-Bereich */
-        .hero-section {
-            background-image: url('wald2.png');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            position: relative;
-        }
-        .hero-text {
-            text-align: center;
-            font-size: 30px;
-            max-width: 90%;
-            padding: 20px;
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 10px;
-        }
-        @media (max-width: 768px) {
-            .hero-section { font-size: 1.8rem; }
-            .hero-text { font-size: 1.2rem; padding: 10px; }
-            .hero-text p { font-size: 1rem; }
-        }
+/* Hero-Bereich */
+.hero-section { background-image: url('wald2.png'); background-size: cover; background-position: center; height: 400px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); position: relative; }
+.hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
+@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
+.hero-text { font-size: 1.2rem; padding: 10px; }
+.hero-text p { font-size: 1rem; }
 
-        h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
-        h1 img { max-width: 150px; height: auto; }
-        h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: normal; }
+h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
+h1 img { max-width: 150px; height: auto; }
+h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: normal; }
+.content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; line-height: 1.6; }
 
-        .content {
-            max-width: 1000px;
-            margin: auto;
-            padding: 0 20px 40px 20px;
-            text-align: left;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-            padding-bottom: 100px;
-        }
+footer { background-color: #0aa667; padding: 20px; text-align: center; color: white; }
+.education-item { background-color: #8B5E3C; color: white; padding: 20px; margin: 10px auto; border-radius: 8px; display: block; width: fit-content; max-width: 100%; }
 
-        footer {
-            background-color: #0aa667;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+/* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
 
-        .education-item {
-            background-color: #8B5E3C;
-            color: white;
-            padding: 20px;
-            margin: 10px auto;
-            border-radius: 8px;
-            display: block;
-            width: fit-content;
-            max-width: 100%;
-        }
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
 
-        /* Navigation */
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px;
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
-        .navmenu li { margin-right: 30px; position: relative; }
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
-        .navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
-
-        /* Dropdown */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
-        .dropdown-content li a { padding: 10px; color: white; }
-        .dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
-
-        /* Hover auf Desktop */
-        .navmenu li:hover > .dropdown-content { display: block; }
-
-       <style>
-/* Mobile Styles */
+/* Mobile Anpassungen */
 @media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Hamburger-Button sichtbar */
-    }
-    .navmenu {
-        display: none; /* Menü standardmäßig aus */
-        flex-direction: column;
-        width: 100%;
-        background-color: #0aa667;
-    }
-    .navmenu.show {
-        display: flex; /* Menü wird sichtbar bei Klick */
-    }
-    .navmenu li {
-        width: 100%;
-        border-top: 1px solid #088852;
-        box-sizing: border-box;
-    }
-    .navmenu a {
-        padding: 15px 20px;
-        font-size: 16px;
-    }
-    /* Dropdown-Menüs auf Mobilgerät anders behandeln */
-    .navmenu li:hover > .dropdown-content {
-        display: none; /* Hover deaktivieren */
-    }
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        display: none;
-        flex-direction: column;
-        background-color: #0aa667;
-    }
-    .navmenu li.show-dropdown > .dropdown-content {
-        display: flex; /* Untermenü bei Klick sichtbar */
-    }
-    .dropdown-content li a {
-        padding-left: 40px;
-    }
+  .menu-toggle { display: block; }
+  .navmenu { flex-direction: column; display: none; width: 100%; background-color: #0aa667; overflow-x: hidden; }
+  .navmenu.show { display: flex; }
+  .navmenu li { width: 100%; border-top: 1px solid #088852; }
+  .navmenu a { padding: 15px 20px; font-size: 16px; }
+  .navmenu li .dropdown-content { position: static; box-shadow: none; background-color: #0aa667; display: none; }
+  .navmenu li.open > .dropdown-content { display: flex; flex-direction: column; }
 }
 </style>
+</head>
+<body>
 
+<div class="stars"></div>
+
+<!-- Hero-Bereich -->
+<div class="hero-section">
+  <div class="hero-text">
+    <h1>Meine Weiterbildungen</h1>
+    <p>Hier findest du eine Übersicht meiner abgeschlossenen Weiterbildungen, die für meinen weiteren Lebensweg relevant sind. Ich liebe es, Neues zu lernen.</p>
+  </div>
+</div>
+
+<!-- Navigation -->
 <div class="navbar">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
-    <ul id="menu" class="navmenu">
-        <li class="dropdown">
-            <a href="index.html">Startseite</a>
-            <ul class="dropdown-content">
-                <li><a href="about.html">Über mich</a></li>
-                <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                <li><a href="meinemission.html">Meine Mission</a></li>
-                <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
-                <li><a href="rosental.html">Angebot im Rosenthal</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
-            <ul class="dropdown-content">
-                <li><a href="basics.html">Die Basics</a></li>
-                <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-                <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Bücher</a>
-            <ul class="dropdown-content">
-                <li><a href="meinebücher.html">Meine Bücher</a></li>
-                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="rezepte.html">Rezepte</a>
-            <ul class="dropdown-content">
-                <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                <li><a href="haare.html">Haarprodukte</a></li>
-                <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-                <li><a href="#">Räuchermischungen</a></li>
-                <li><a href="#">Naturheilkunde</a></li>
-                <li><a href="#">Salben & Balsam</a></li>
-            </ul>
-        </li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="agb.html">AGB</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-    </ul>
+  <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
+  <ul id="menu" class="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="rezepte.html">Rezepte</a>
+      <ul class="dropdown-content">
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
 </div>
 	<div class="content-container">
       
@@ -438,46 +306,42 @@
     <script>
 
 <script>
-window.addEventListener("DOMContentLoaded", function() {
-    const toggleBtn = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
+// Hamburger Menü
+const toggleButton = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
 
-    // Hauptmenü umschalten
-    toggleBtn.addEventListener("click", function() {
-        menu.classList.toggle("show");
-    });
+toggleButton.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
 
-    // Untermenüs mobil per Klick öffnen
-    const dropdowns = document.querySelectorAll(".navmenu .dropdown > a");
-    dropdowns.forEach(item => {
-        item.addEventListener("click", function(e) {
-            if(window.innerWidth <= 768) {
-                e.preventDefault(); // Verhindert direkten Link
-                const parentLi = this.parentElement;
-                parentLi.classList.toggle("show-dropdown");
-            }
-        });
-    });
-
-    // Sterne generieren (wie vorher)
-    const starContainer = document.querySelector(".stars");
-    for(let i=0;i<50;i++){
-        let star = document.createElement("div");
-        star.className="star";
-        star.style.top = Math.random()*100 + "vh";
-        star.style.left = Math.random()*100 + "vw";
-        star.style.animationDuration = (Math.random()*2 +1) + "s";
-        starContainer.appendChild(star);
+// Untermenüs auf Mobil per Klick öffnen
+document.querySelectorAll('.navmenu .dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if(window.innerWidth <= 768){
+      e.preventDefault(); // Verhindert Standard-Link
+      const parentLi = link.parentElement;
+      parentLi.classList.toggle('open');
     }
+  });
+});
+
+// Sterne erzeugen
+document.addEventListener('DOMContentLoaded', () => {
+  const starContainer = document.querySelector('.stars');
+  for(let i=0;i<50;i++){
+    const star = document.createElement('div');
+    star.className='star';
+    star.style.top = Math.random()*100+'vh';
+    star.style.left = Math.random()*100+'vw';
+    star.style.animationDuration = (Math.random()*2+1)+'s';
+    starContainer.appendChild(star);
+  }
 });
 </script>
 
-
-    <footer>
-        &copy; 2025 Lilian´s Witchy World
-    </footer>
 </body>
 </html>
+
 
 
 
