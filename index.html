@@ -1,353 +1,148 @@
 <!DOCTYPE html>
 
 <!-- Dokumenttyp-Deklaration: Teilt dem Browser mit, dass es sich um HTML5 handelt -->
-
-
-
 <html lang="de">
 
 <!-- Sprache der Seite: Deutsch -->
-
-
-
 <head>
-
   <meta charset="UTF-8" />
 
   <!-- Zeichencodierung: UTF-8 unterstützt Umlaute und Sonderzeichen -->
-
-
-
   <meta name="description" content="Lilian’s Witchy World – Angebote für Kinder, Erwachsene und Teams, Erlebnispädagogik, Indoor und Outdoor Angebote, Familien, Leipzig Energetische Selbstarbeit, Kräuterwissen, Naturrezepte & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
-
 <meta name="keywords" content="Angebote für Kinder, Erwachsene und Teams, Erlebnispädagogik, Indoor und Outdoor, Angebote Familien, Leipzig, Energetische Selbstarbeit, Naturheilkunde, Seifen selber machen, Hexenwissen, Energiearbeit, Meditation, Lilian’s Witchy World" />
-
-
-
 <meta name="google-site-verification" content="HRbzd9Dte9oMMSYpA-5dJTr3WlHCJm8Vihm6qZ4sSYQ" />
-
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Responsives Design: Sorgt für gute Darstellung auf Handys/Tablets -->
-
-
-
-  <title>Lilian’s Witchy World</title>
-
-  <!-- Titel der Seite im Browser-Tab -->
-
-
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
+ <title>Lilian’s Witchy World</title>
+ <!-- Titel der Seite im Browser-Tab -->
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
   <!-- Browser-Icon (kleines Bild im Tab) -->
-
-
-
   <style>
-
-    /* Globales CSS */
-
-
-
-    *, *::before, *::after {
-
-      box-sizing: border-box;
+  /* Globales CSS */
+   *, *::before, *::after {
+   box-sizing: border-box;
 
       /* Einheitliche Größenberechnung für alle Elemente */
 
     }
-
-
-
-    body {
+   body {
 
       margin: 0;
-
-      padding: 0;
-
-      font-family: Garamond, serif;
-
-      background-color: #6a4b8c;
-
-      color: white;
-
-      text-align: center;
-
-      overflow-x: hidden;
+   padding: 0;
+ font-family: Garamond, serif;
+ background-color: #6a4b8c;
+ color: white;
+ text-align: center;
+overflow-x: hidden;
 
       /* Verhindert horizontales Scrollen */
 
     }
 
-
-
-    img {
-
-      max-width: 100%;
-
-      height: auto;
-
-      /* Bilder werden responsiv skaliert */
+  img {
+ max-width: 100%;
+ height: auto;
+/* Bilder werden responsiv skaliert */
 
     }
-
-
-
-    .stars {
-
-      position: fixed;
-
-      top: 0; left: 0;
-
-      width: 100%;
-
-      height: 100%;
-
-      pointer-events: none;
-
-      z-index: -1;
+    
+   .stars {
+   position: fixed;
+   top: 0; left: 0;
+   width: 100%;
+   height: 100%;
+  pointer-events: none;
+   z-index: -1;
 
       /* Hintergrund-Ebene mit Sternenanimation */
 
     }
 
-
-
     .star {
-
-      position: absolute;
-
-      width: 3px;
-
-      height: 3px;
-
-      background-color: white;
-
-      border-radius: 50%;
-
-      opacity: 0;
-
-      animation: twinkle linear infinite;
-
-      /* Einzelne weiße Punkte, die flackern (siehe Animation) */
+    position: absolute;
+    width: 3px;
+    height: 3px;
+  background-color: white;
+  border-radius: 50%;
+   opacity: 0;
+  animation: twinkle linear infinite;
+   /* Einzelne weiße Punkte, die flackern (siehe Animation) */
 
     }
-
-
 
     @keyframes twinkle {
-
-      0%, 100% {opacity: 0;}
-
-      50% {opacity: 1;}
-
-      /* Animation: Ein-/Ausblenden für Sternflackern */
+    0%, 100% {opacity: 0;}
+    50% {opacity: 1;}
+   /* Animation: Ein-/Ausblenden für Sternflackern */
 
     }
 
-
-
-
-
-
-
     h1 {
-
-      font-size: 2.5em;
-
-      margin: 20px 0 10px 0;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 10px;
+     font-size: 2.5em;
+    margin: 20px 0 10px 0;
+   display: flex;
+   justify-content: center;
+    align-items: center;
+   gap: 10px;
 
       /* Überschrift mit Bild links & rechts */
 
     }
 
-
-
     h1 img {
-
-      max-width: 150px;
-
-      height: auto;
-
-    }
-
-
+    max-width: 150px;
+    height: auto;
+   }
 
     h2 {
-
-      font-size: 2em;
-
-      margin: 40px 0 20px 0;
-
-      font-weight: normal;
+   font-size: 2em;
+   margin: 40px 0 20px 0;
+   font-weight: normal;
 
     }
 
-
-
-    .content {
-
-      max-width: 1000px;
-
-      margin: auto;
-
-      padding: 0 20px 40px 20px;
-
-      text-align: left;
-
-      line-height: 1.6;
+   .content {
+     max-width: 1000px;
+  margin: auto;
+  padding: 0 20px 40px 20px;
+     text-align: left;
+   line-height: 1.6;
 
       /* Container für Inhalte */
 
     }
 
-
-
-    .navbar {
-
-      background-color: #0aa667;
-
-      padding: 10px 20px;
-
-      position: relative;
-
-      z-index: 10;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      /* Navigationsleiste oben */
-
-    }
-
-
-
-    .navmenu {
-
-      list-style: none;
-
-      padding: 0;
-
-      display: flex;
-
-      margin: 0;
-
-      /* Menü horizontal */
-
-    }
-
-
-
-    .navmenu li {
-
-      margin-right: 30px;
-
-      position: relative;
-
-    }
-
-
-
-    .navmenu a {
-
-      text-decoration: none;
-
-      color: white;
-
-      font-size: 18px;
-
-      padding: 10px;
-
-      display: block;
-
-    }
-
-
-
-    .navmenu a:hover {
-
-      background-color: #b0d5ac;
-
-      border-radius: 5px;
-
-    }
-
-
-
-    .dropdown-content {
-
-      display: none;
-
-      position: absolute;
-
-      top: 100%;
-
-      left: 0;
-
-      background-color: #0aa667;
-
-      min-width: 180px;
-
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-      z-index: 1000;
-
-      list-style: none;
-
-      padding: 0;
-
-      /* Untermenü bei Hover sichtbar */
-
-    }
-
-
-
-    .dropdown-content li a {
-
-      color: white;
-
-      padding: 10px;
-
-      text-decoration: none;
-
-    }
-
-
-
-    .dropdown-content li a:hover {
-
-      background-color: #f1f1f1;
-
-      color: #660082;
-
-    }
-
-
-
-    .navmenu li:hover .dropdown-content {
-
-      display: block;
-
-      /* Bei Mauszeiger über Menüpunkt: Untermenü zeigen */
-
-    }
-
-
-
+  /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+   
     footer {
 
       background-color: #0aa667;
@@ -365,130 +160,22 @@
 
 
       .education-item {
-
-            background-color: #bda259 /* Hintergrund */
-
-            color: black;
-
-            padding: 20px;
-
-            margin: 10px auto; /* Zentrieren der Kasten */
-
-            border-radius: 8px;
-
-            display: block;
-
-            width: fit-content;
-
-            max-width: 100%;
-
-   }
-
-
-
-    @media screen and (max-width: 768px) {
-
-      /* Anpassungen für kleine Bildschirme (Handys) */
-
-
+ background-color: #bda259 /* Hintergrund */
+color: black;
+ padding: 20px;
+ margin: 10px auto; /* Zentrieren der Kasten */
+   border-radius: 8px;
+  display: block;
+ width: fit-content;
+  max-width: 100%;
+ }
 
       h1 {
+    font-size: 1.8em;
+  }
 
-        font-size: 1.8em;
-
-      }
-
-
-
-      h1 img {
-
-        max-width: 80px;
-
-      }
-
-
-
-      .menu-toggle {
-
-        display: flex;
-
-        /* Hamburger-Menü wird angezeigt */
-
-      }
-
-
-
-      .navmenu {
-
-        flex-direction: column;
-
-        display: none;
-
-        width: 100%;
-
-        background-color: #0aa667;
-
-      }
-
-
-
-      .navmenu.show {
-
-        display: flex;
-
-        /* Wird per JavaScript eingeblendet */
-
-      }
-
-
-
-      .navmenu li {
-
-        width: 100%;
-
-        border-top: 1px solid #088852;
-
-      }
-
-
-
-      .navmenu a {
-
-        padding: 15px 20px;
-
-        font-size: 16px;
-
-        white-space: normal;
-
-      }
-
-
-
-      .navmenu.show .dropdown-content {
-
-        display: block !important;
-
-        position: static;
-
-        box-shadow: none;
-
-        background-color: #0aa667;
-
-      }
-
-
-
-      .dropdown-content li a {
-
-        padding-left: 40px;
-
-      }
-
-
-
-      .navmenu li:hover > .dropdown-content {
-
-        display: none;
+   h1 img {
+  max-width: 80px;
 
       }
 
@@ -535,41 +222,33 @@
   <a href="/da/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
 
 </div>
-  <!-- Navigation -->
-
-
- <!-- Navigation -->
+<!-- Navigationsleiste mit Dropdown-Menüs -->
 <div class="navbar">
-  <!-- Logo oder optionaler Bereich links kann hier stehen -->
-
-  <!-- Hamburger-Menü für Mobilgeräte -->
-  <div class="menu-center">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-
-  <!-- Hauptmenü -->
-  <ul id="menu" class="navmenu">
+  <ul class="navmenu" id="navmenu">
     <li class="dropdown">
       <a href="index.html">Startseite</a>
       <ul class="dropdown-content">
         <li><a href="about.html">Über mich</a></li>
         <li><a href="weiterbildung.html">Weiterbildungen</a></li>
         <li><a href="meinemission.html">Meine Mission</a></li>
-        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Indoor- und Outdoor Angebote Leipzig</a></li>
-        <li><a href="rosental.html">Angebot im Rosenthal</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor-Angebote in Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
       </ul>
     </li>
-
     <li class="dropdown">
-      <a href="#">Mit sich Selbst in Verbindung kommen</a>
+      <a href="#">Mit sich selbst in Verbindung kommen</a>
       <ul class="dropdown-content">
-         <li><a href="energie.html">Innere Balance</a></li>
+        <li><a href="energie.html">Innere Balance</a></li>
         <li><a href="basics.html">Die Basics</a></li>
         <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
         <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
       </ul>
     </li>
-
     <li class="dropdown">
       <a href="#">Bücher</a>
       <ul class="dropdown-content">
@@ -578,25 +257,26 @@
         <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
       </ul>
     </li>
-
     <li class="dropdown">
-      <a href="#">DIY und Co.</a>
+      <a href="#">Rezepte</a>
       <ul class="dropdown-content">
-        <li><a href="rezepte.html">Warum DIY?</a></li>
+        <li><a href="Rezepte.html">Warum DIY?</a></li>
         <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
         <li><a href="haare.html">Haarprodukte</a></li>
-        <li><a href="#">Teemischungen</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
         <li><a href="#">Räuchermischungen</a></li>
         <li><a href="#">Naturheilkunde</a></li>
         <li><a href="#">Salben & Balsam</a></li>
       </ul>
     </li>
-
     <li><a href="kontakt.html">Kontakt</a></li>
     <li><a href="agb.html">AGB</a></li>
     <li><a href="impressum.html">Impressum</a></li>
   </ul>
 </div>
+
+
+
 
 
 
@@ -697,72 +377,38 @@
 
 
 
- <script>
-  // Hamburger-Menü Funktion
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
   }
 
-  function updateMenuToggleVisibility() {
-    const toggleBtn = document.getElementById("menu-toggle");
-    toggleBtn.style.display = window.innerWidth <= 768 ? "inline-block" : "none";
-  }
-
-  window.addEventListener("DOMContentLoaded", function () {
-    updateMenuToggleVisibility();
-    document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
-
-    // Sterne erzeugen
-    let starContainer = document.querySelector(".stars");
-    for (let i = 0; i < 50; i++) {
-      let star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * 100 + "vh";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      starContainer.appendChild(star);
-    }
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
   });
-
-  window.addEventListener("resize", updateMenuToggleVisibility);
+});
 </script>
 
-      // Sterne erzeugen
-
-      let starContainer = document.querySelector(".stars");
-
-      for (let i = 0; i < 50; i++) {
-
-        let star = document.createElement("div");
-
-        star.className = "star";
-
-        star.style.top = Math.random() * 100 + "vh";
-
-        star.style.left = Math.random() * 100 + "vw";
-
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-
-        starContainer.appendChild(star);
-
-      }
-
-    });
-
-
-
-    // Bei Fenstergröße ändern: Button ggf. anzeigen
-
-    window.addEventListener("resize", updateMenuToggleVisibility);
-
-  </script>
-
 </body>
-
 </html>
-
-
-
 
 
 
