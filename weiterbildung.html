@@ -365,40 +365,39 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     </div>
     <script>
 
-<script>
-// Hamburger Menü
-const toggleButton = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
-
-toggleButton.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
-
-// Untermenüs auf Mobil per Klick öffnen
-document.querySelectorAll('.navmenu .dropdown > a').forEach(link => {
-  link.addEventListener('click', e => {
-    if(window.innerWidth <= 768){
-      e.preventDefault(); // Verhindert Standard-Link
-      const parentLi = link.parentElement;
-      parentLi.classList.toggle('open');
+  <!-- JavaScript für Menü und Sterne -->
+  <script>
+    // Menü umschalten (mobil)
+    function toggleMenu() {
+      const menu = document.getElementById("navmenu");
+      menu.classList.toggle("show");
     }
-  });
-});
 
-// Sterne erzeugen
-document.addEventListener('DOMContentLoaded', () => {
-  const starContainer = document.querySelector('.stars');
-  for(let i=0;i<50;i++){
-    const star = document.createElement('div');
-    star.className='star';
-    star.style.top = Math.random()*100+'vh';
-    star.style.left = Math.random()*100+'vw';
-    star.style.animationDuration = (Math.random()*2+1)+'s';
-    starContainer.appendChild(star);
-  }
-});
-</script>
+    // Sterne beim Laden erzeugen
+    document.addEventListener("DOMContentLoaded", function () {
+      let starContainer = document.querySelector(".stars");
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+        starContainer.appendChild(star);
+      }
+    });
 
+    // Dropdown-Menüs auf Mobilgeräten öffnen per Klick
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', e => {
+          e.preventDefault(); // verhindert Navigation beim Klick
+          const parentLi = dropdownToggle.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
 
