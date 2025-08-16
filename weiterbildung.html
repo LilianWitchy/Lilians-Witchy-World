@@ -360,43 +360,43 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
             </li>
           </ul>
     </div>
-    <script>
+   <script>
+  // JavaScript für Menü und Sterne
 
-  <!-- JavaScript für Menü und Sterne -->
+  // Menü umschalten (mobil)
+  function toggleMenu() {
+    const menu = document.getElementById("navmenu");
+    menu.classList.toggle("show");
+  }
 
-    // Menü umschalten (mobil)
-    function toggleMenu() {
-      const menu = document.getElementById("navmenu");
-      menu.classList.toggle("show");
+  // Sterne beim Laden erzeugen
+  document.addEventListener("DOMContentLoaded", function () {
+    let starContainer = document.querySelector(".stars");
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
     }
+  });
 
-    // Sterne beim Laden erzeugen
-    document.addEventListener("DOMContentLoaded", function () {
-      let starContainer = document.querySelector(".stars");
-      for (let i = 0; i < 50; i++) {
-        let star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        starContainer.appendChild(star);
-      }
-    });
-
-    // Dropdown-Menüs auf Mobilgeräten öffnen per Klick
-    document.addEventListener('DOMContentLoaded', () => {
-      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
-      dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', e => {
-          e.preventDefault(); // verhindert Navigation beim Klick
-          const parentLi = dropdownToggle.parentElement;
-          parentLi.classList.toggle('open');
-        });
+  // Dropdown-Menüs auf Mobilgeräten öffnen per Klick
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+    dropdowns.forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', e => {
+        e.preventDefault(); // verhindert Navigation beim Klick
+        const parentLi = dropdownToggle.parentElement;
+        parentLi.classList.toggle('open');
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
+
 
 
 
