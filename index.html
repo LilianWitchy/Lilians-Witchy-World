@@ -542,105 +542,61 @@
 
 
 
-    <!-- Hamburger-Menü für Mobilgeräte (zentriert) -->
-
-
-    <div class="menu-center">
-
-
-      <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">
-
-
-        &#9776;
-
-
-      </button>
-
-
-    </div>
-
-
-
-
-
-<!-- Hauptmenü -->
-
-
-    <ul id="menu" class="navmenu">
-
-      <!-- Jeder <li> ist ein Menüpunkt, teilweise mit Unterpunkten (Dropdowns) -->
-
-      <li class="dropdown">
-
-        <a href="index.html">Startseite</a>
-
-        <ul class="dropdown-content">
-
-          <li><a href="about.html">Über mich</a></li>
-
-          <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-
-          <li><a href="meinemission.html">Meine Mission</a></li>
-          <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor Angebote in Leipzig</a></li>
-           <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
-         </ul>
-    </li>
-      <li class="dropdown">
-
-        <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
-
-        <ul class="dropdown-content">
-
-          <li><a href="basics.html">Die Basics</a></li>
-
-          <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-
-          <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
-
-        </ul>
-
-      </li>
- <li class="dropdown">
-
-        <a href="#">Bücher</a>
- <ul class="dropdown-content">
-      <li><a href="meinebücher.html">Meine Bücher</a></li>
-   <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-  </ul>
-  </li>
-      <li class="dropdown">
-
-        <a href="rezepte.html">Rezepte ▼</a>
-
-        <ul class="dropdown-content">
-
-          <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-
-          <li><a href="haare.html">Haarprodukte</a></li>
-
-          <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
-
-          <li><a href="#">Räuchermischungen</a></li>
-
-          <li><a href="#">Naturheilkunde</a></li>
-
-          <li><a href="#">Salben & Balsam</a></li>
-
-        </ul>
-
-      </li>
-
-
-      <li><a href="kontakt.html">Kontakt</a></li>
-
-      <li><a href="agb.html">AGB</a></li>
-
-      <li><a href="impressum.html">Impressum</a></li>
-
-    </ul>
-
+  <!-- Navigation -->
+<div class="navbar">
+  <!-- Hamburger-Menü für Mobilgeräte -->
+  <div class="menu-center">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
   </div>
+
+  <!-- Hauptmenü -->
+  <ul id="menu" class="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Indoor- und Outdoor Angebote Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="energie.html">Mit sich Selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">Rezepte</a>
+      <ul class="dropdown-content">
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</div>
 
 
 
@@ -740,53 +696,35 @@
 
 
 
-  <script>
+ <script>
+  // Hamburger-Menü Funktion
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
 
-    // Funktion zum Umschalten des mobilen Menüs
+  function updateMenuToggleVisibility() {
+    const toggleBtn = document.getElementById("menu-toggle");
+    toggleBtn.style.display = window.innerWidth <= 768 ? "inline-block" : "none";
+  }
 
-    function toggleMenu() {
+  window.addEventListener("DOMContentLoaded", function () {
+    updateMenuToggleVisibility();
+    document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 
-      var menu = document.getElementById("menu");
-
-      menu.classList.toggle("show");
-
+    // Sterne erzeugen
+    let starContainer = document.querySelector(".stars");
+    for (let i = 0; i < 50; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
     }
+  });
 
-
-
-    // Sichtbarkeit des Menü-Buttons abhängig von Bildschirmgröße
-
-    function updateMenuToggleVisibility() {
-
-      const toggleBtn = document.getElementById("menu-toggle");
-
-      if (window.innerWidth <= 768) {
-
-        toggleBtn.style.display = "inline-block";
-
-      } else {
-
-        toggleBtn.style.display = "none";
-
-      }
-
-    }
-
-
-
-    // Sobald Seite geladen ist:
-
-    window.addEventListener("DOMContentLoaded", function () {
-
-      updateMenuToggleVisibility();
-
-
-
-      // Button klickbar machen
-
-      document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
-
-
+  window.addEventListener("resize", updateMenuToggleVisibility);
+</script>
 
       // Sterne erzeugen
 
@@ -821,6 +759,7 @@
 </body>
 
 </html>
+
 
 
 
