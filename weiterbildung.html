@@ -67,6 +67,44 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
       padding-bottom: 100px;
     }
 
+	  /* Media Query für kleinere Bildschirme */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navmenu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .navmenu.show {
+        display: flex; /* Menü anzeigen, wenn Klasse "show" */
+      }
+
+      .navmenu li {
+        width: 100%;
+        margin: 0;
+      }
+
+      .navmenu li:hover .dropdown-content {
+        position: static; /* Kein Overlay bei mobilen Geräten */
+        box-shadow: none;
+      }
+
+      .dropdown-content {
+        background-color: #0aa667;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -353,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
