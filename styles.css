@@ -21,6 +21,23 @@ footer {
   z-index: 100;
 }
 
+/* Menü-Button für Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
 /* Hauptmenü */
 .navmenu {
   list-style-type: none;
@@ -98,7 +115,12 @@ footer {
 
 /* === Responsive Layout ab 768px und kleiner === */
 @media (max-width: 768px) {
-  /* Menü wird vertikal */
+  /* Menü-Button anzeigen */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menü wird vertikal und zuerst versteckt */
   .navmenu {
     flex-direction: column;
     display: none;
@@ -125,7 +147,7 @@ footer {
     position: relative;
   }
 
-  /* Dropdowns per Klasse steuern */
+  /* Dropdowns nur bei Klick öffnen */
   .dropdown-content {
     display: none;
     position: static;
@@ -136,7 +158,8 @@ footer {
   }
 
   .dropdown.open .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .dropdown-content li a {
