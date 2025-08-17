@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Mission: Licht, Heilung und Wachstum | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #18544f;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+<div class="stars"></div>
+
+         /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+
+     /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+        .mission-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #7d4116;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mission-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="stars"></div>
+    
+    <h1>
+        <img src="witchylogo.png">
+        Lilian’s Witchy World
+    </h1>
+
+ 
+
+   
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+   <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+<div class="mission-container" id="mission">
+    <h2>Min mission: Lys, heling og vækst</h2>
+    <p class="mission-text">
+        Dejligt, at du er her! 💜  
+        I mit arbejde handler det om at hjælpe dig med at finde din indre balance og bringe dit liv i harmoni med dig selv og naturen. Uanset om det er gennem mine bøger, der tager dig med på spirituelle rejser, gennem urter, der understøtter dit velbefindende på en naturlig måde, eller gennem afslapningspraksisser som yoga – jeg ønsker at give dig redskaber, der kan følge dig i din hverdag, støtte dig og hjælpe dig med at finde ind i din egen styrke. Hvert skridt på denne vej er et skridt mod mere heling, klarhed og indre ro.
+    </p>
+
+    <h2>Om mine bøger:</h2>
+    <p>Med mine bøger ønsker jeg at give dig muligheden for at dykke dybt ind i dit indre selv og begive dig ud på en rejse, der fører dig til dit sande jeg. Især mine drømmerejser har en stærk transformerende kraft. De hjælper dig med at give slip på blokeringer, frigøre dig fra gamle mønstre og finde vejen til indre fred. Disse bøger er ikke kun ord på papir – de er vejvisere, der hjælper dig med at opdage din indre visdom, hele din sjæl og udfolde dig i dit fulde lys. Hver bog, du læser, er et skridt mod selvrealisering og frihed.</p>
+
+    <h2>Urter & naturmedicin:</h2>
+    <p>Naturen tilbyder os utallige skatte, der kan ledsage os på vores rejse mod sundhed og velvære. Jeg arbejder med urter og planter for at give dig naturlige midler til at støtte din krop og dit sind. Mine urteprodukter – fra teer og røgelsesblandinger til kosmetiske anvendelser – er skabt til at styrke dit immunsystem, fremme din indre balance og give dig en følelse af forbundethed med naturen. De planter, jeg bruger i mine produkter, er ikke kun lægemidler, men også kærlige ledsagere på din vej til sundhed og indre fred.</p>
+
+    <h2>Erfaringspædagogik:</h2>
+    <p>I min erfaringspædagogik handler det om på legende vis at lære mere om os selv og vores medmennesker. Med gruppespil for voksne og kreative tilbud for børn vil jeg hjælpe dig med at få tillid til dine egne evner og samtidig styrke fællesskabet. Disse aktiviteter fremmer selvbevidsthed, hjælper med at opløse blokeringer og gør det muligt at se sig selv som en del af en større helhed. Gennem fælles oplevelser og udforskning vil du få nye perspektiver og genopdage glæden ved livet.</p>
+
+    <p>En anden vigtig del af erfaringspædagogikken er at være ude i al slags vejr. "Der findes ikke dårligt vejr, kun forkert påklædning". Selv i vind, regn og frostgrader er der meget at opdage i verden.</p>
+    <p>Et særligt punkt i erfaringspædagogikken er også at træde ud af komfortzonen. At lære noget nyt og udvide sin horisont. Det fungerer særligt godt, fordi der er en fast ramme af sikkerhed, der er planlagt og afgrænset, hvilket gør det muligt virkelig at "give slip" og fordybe sig i øvelserne.</p>
+    
+    <h2>Yoga & afslapning:</h2>
+    <p>Yoga og afslapningsøvelser er kraftfulde redskaber til at bringe krop og sind i harmoni. Jeg tilbyder dig enkle teknikker, som du kan integrere i din hverdag for at finde mere ro, fokus og energi. Med mindfulness og målrettede øvelser lærer du at løsne dig fra livets ydre distraktioner og finde tilbage til dit center. Lad os sammen finde ud af, hvordan du kan genoprette din indre balance – også i stressede eller udfordrende tider.</p>
+
+    <h2>Råd & tips:</h2>
+    <p>Selvom jeg endnu ikke kan tilbyde mange af mine aktiviteter officielt, vil jeg allerede nu gerne give dig værdifulde råd og tips, som du let kan implementere i dit liv. Jeg deler enkle øvelser, opskrifter og vejledninger, der hjælper dig med at integrere mere harmoni, heling og velvære i din hverdag. Disse inspirationer er de første skridt til at støtte dig på din egen vej mod selvrealisering, sundhed og indre styrke.</p>
+</div>
+
+
+  <div class="banner">
+    <img src="heilendehände.jpg" alt="Banner" width="300">
+</div>
+    
+  <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
