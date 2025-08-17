@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #8032ad;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+         /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+
+
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        h1 img {
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
+
+    <!-- Inhalt -->
+    <div class="content">
+        <h1>
+            <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
+            Lilian’s Witchy World
+      
+       
+        <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor-Angebote in Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Mit sich selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Innere Balance</a></li>
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Rezepte</a>
+      <ul class="dropdown-content">
+        <li><a href="rezepte.html">Warum DIY?</a></li>
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</div>
+
+
+     <h1>Indre balance og forandring: Forstå energi – mød dig selv på ny</h1>
+<p>Energi er det, der forbinder os alle. Den er konstant i bevægelse – i naturen, mellem mennesker og også i os selv. Uanset om vi er bevidste om det eller ej: Vores tanker, følelser og handlinger er tæt knyttet til vores indre energi. </p>
+<p>Og ofte mærker vi intuitivt, når noget "ikke længere flyder" – vi føler os blokerede, udmattede eller styret udefra. </p>
+
+<p>Men hvad nu, hvis vi kunne lære at opfatte vores energi bevidst og arbejde med den?</p>
+
+<p>Det første skridt i arbejdet med energi er at forholde sig bevidst til sine følelser. Det betyder ikke at blive hængende i dem, men at give dem plads til at blive følt og anerkendt. Når vi tillader os selv at føle uden at dømme, kan vi transformere deres energi. For hver følelse rummer et budskab, der kan hjælpe os til at udvikle os og hele. </p>
+<p>Vejen begynder hos os selv. Det handler om at give sig selv plads, stoppe op og mærke, hvad der virkelig er til stede lige nu. </p>
+<p>Følelser, tanker, minder – de rummer alle informationer, der kan hjælpe os med bedre at forstå, hvad vi har brug for, hvad der holder os tilbage, og hvad der kan styrke os. </p>
+
+<h2>Følelser som vejvisere</h2>
+<p>I stedet for at skubbe ubehagelige følelser væk, kan vi lære at se dem som vigtige signaler. Vrede, sorg, frygt eller usikkerhed vil fortælle os noget – om erfaringer, grænser, sår eller ønsker. </p>
+<p>At undertrykke dem giver ofte kun midlertidig ro. Den, der tør se nærmere, skaber på længere sigt plads til forandring. </p>
+<p>Det betyder ikke at blive fanget i svære følelser. Det betyder at lytte til dem, forstå dem – og derefter give slip på det, der ikke længere er nødvendigt. </p>
+
+<h2>Løsne blokeringer – blive fri indeni</h2>
+<p>Ofte bærer vi temaer med os, der har fulgt os i årevis. De viser sig som tilbagevendende mønstre, lammende tvivl eller en vedvarende følelse af ikke helt at være sig selv. </p>
+<p>Sådanne indre blokeringer kan hæmme energistrømmen – også selvom vi ikke altid opdager det med det samme. </p>
+<p>Her begynder processen med det indre arbejde. Gennem målrettet opmærksomhed, refleksion og nogle gange også støttende metoder som visualisering, skrivning eller bevidst åndedræt kan noget komme i bevægelse. </p>
+<p>Det handler om at give slip på gamle historier, få nye perspektiver – og gradvist finde mere klarhed og lethed. </p>
+
+<h2>Forandring begynder i det små</h2>
+<p>Transformation lyder stort – og nogle gange skræmmende. Men den begynder ofte helt enkelt: med en ærlig tanke, et bevidst øjeblik, en ny beslutning. </p>
+<p>Det handler ikke om at ændre alt på én gang. Det handler om skridt for skridt at komme mere i kontakt med sig selv. Med mod, med tålmodighed – og med selvmedfølelse. </p>
+
+<h2>At tage sig selv alvorligt – at styrke sig selv</h2>
+<p>Selvomsorg er ikke luksus. Det er en indstilling. Den, der passer godt på sig selv, tager ansvar for sin egen oplevelse og for, hvordan livet føles. </p>
+<p>Der skal ikke til store ritualer eller ydre perfektion – men en villighed til igen og igen at lytte: Hvad har jeg virkelig brug for? Hvad gør mig godt? Hvad må jeg give slip på? </p>
+
+<h2>En vej til indre frihed</h2>
+<p>Den bevidste omgang med sin egen energi er en vej til mere frihed – indre såvel som ydre. Når vi lærer at genkende vores mønstre, forstå vores følelser og ændre vores tænkning, begynder også vores hverdag at forandre sig. </p>
+<p>Vi reagerer ikke længere kun – vi skaber. Med klarhed. Med styrke. Og med en følelse af forbundethed med os selv. </p>
+
+<p>Netop derfor skriver jeg mine bøger. </p>
+<p>De skal give dig redskaber til at arbejde med dine temaer selv – på din måde, i dit tempo. </p>
+<p>De er en invitation til ikke længere at gøre dig selv lille, men til at give dig lov til at føle, erkende – og vokse. </p>
+
+    </div>
+  <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+    
+</body>
+</html>
