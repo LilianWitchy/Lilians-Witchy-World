@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #14450d;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        
+
+         /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        
+        /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+
+    </style>
+</head>
+<body>
+
+<div class="stars"></div>
+    
+    <h1>
+        <img src="witchylogo.png" alt="Lilian's Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+
+  
+   <div id="language-switcher">
+
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+
+</div>
+  
+
+  <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+
+ <h1>Energirensning: Metoder til mere lethed i hverdagen</h1>
+        
+<p>I løbet af en dag optager vi meget – indtryk, følelser, spændinger. Nogle situationer, møder eller tanker kan få os til at føle os "fulde" indeni eller endda belastede. Netop her kommer det, man kan kalde "energetisk rensning": en bevidst tilbagevenden til sin egen kerne, til indre klarhed.</p>
+
+<p>På denne side præsenterer jeg enkle, effektive metoder, som du kan bruge til aktivt at påvirke din indre tilstand – uden forudgående kendskab, uden at skulle "tro" på noget. Mange af disse teknikker er gennemprøvede, lette at integrere i hverdagen – og inviterer dig blot til at prøve dem af.</p>
+
+<h2>Jording – forbind dig igen med jorden under fødderne</h2>
+<p>Når hovedet er fuldt, eller du føler dig indre urolig, hjælper det at styrke kontakten til jorden. Det kaldes "jording". En af de enkleste metoder: gå barfodet på græs, jord eller sand. Det beroliger nervesystemet, skaber en følelse af stabilitet – og hjælper med at slippe overskydende spænding. Også bevidst stående eller siddende med fokus på fodsålerne kan have denne effekt.</p>
+    
+<h2>Røgelse – rens luften, klar atmosfæren</h2>
+<p>Røgelse er en gammel praksis til at rense rum og stemninger. Den stigende røg har en beroligende og rensende effekt – ligesom at lufte et rum efter en lang dag. Vigtigt: Brug venligst naturlige urter eller kvalitetsrøgelse (f.eks. salvie, Palo Santo eller røgelse), ikke kunstigt parfumerede røgelsesstænger. Røgelse kan hjælpe med at føle sig bedre tilpas – hjemme eller inden i sig selv.</p>
+
+<h2>Sten – naturlige følgesvende med effekt</h2>
+<p>Nogle mennesker mærker, at bestemte sten gør dem godt – enten gennem deres farve, form eller simpelthen følelsen af at bære dem med sig. Om det er ametyst, bjergkrystal eller rosenkvarts: Sådanne sten har i århundreder været betragtet som støttende. Prøv det bare – du behøver ikke "tro" på det for at mærke, om en sten hjælper dig med at blive mere rolig, klar eller stabil.</p>
+     
+<h2>Visualisering og meditation – tanker som værktøj</h2>
+<p>At sætte sig et øjeblik, trække vejret bevidst og forestille sig f.eks., hvordan frisk lys strømmer gennem kroppen og tager alt udtjent med sig – det er ikke "magi", men en effektiv form for mental rensning. Meditation eller korte visualiseringer hjælper med at reducere stress og finde tilbage til sig selv. Det kræver ikke meget tid – kun viljen til kort at engagere sig med sig selv.</p>
+
+<h2>Vand og salt – rensning udefra og indefra</h2>
+<p>Et varmt bad med lidt havsalt eller æterisk olie kan virke overraskende rensende – især efter en krævende dag. Det afslapper kroppen og hjælper sindet med at falde til ro. Vigtigt: Saltbade er ikke egnet til børn. Sørg også for behagelige temperaturer – fokus er på aflastning, ikke på stimuli.</p>
+     
+<h2>Lyd – indre reorganisering af rummet</h2>
+<p>Lyd har en direkte effekt på vores velbefindende. Om det er musik, naturlyde eller målrettede toner (f.eks. fra klangskåle eller gong): Toner kan have en ordnende, beroligende eller aktiverende effekt. Prøv, hvad der virker for dig – om det er en enkelt tone, en melodi eller blot et roligt øjeblik med lukkede øjne og din yndlingssang.</p>
+
+<h2>Åndedræt – den nemmeste adgang til egen energi</h2>
+<p>Måden, vi ånder på, påvirker direkte, hvordan vi har det. Mange trækker vejret for lavt – især under stress. Bevidst, dyb maveånding kan hjælpe med at reducere spændinger og tænke klarere. Selv tre til fem rolige åndedrag – ind gennem næsen, ud gennem munden – kan gøre en mærkbar forskel.</p>
+
+<h2>Farver – virkning man kan se (og mærke)</h2>
+<p>Farver påvirker os. Blå virker beroligende, grøn afbalancerende, gul aktiverende. Du kan bruge dette bevidst – fx i tøj, lyskilder eller indretning af et rum. Også en gåtur i naturen omgivet af "naturlige farver" kan have en afbalancerende effekt.</p>
+
+<h2>Sols- og måneskin – naturlig regeneration</h2>
+<p>Dagslys, frisk luft, et blik mod himlen – alt dette har en styrkende effekt. Solen aktiverer, vækker os, løfter humøret. Månen inviterer til ro og refleksion. Begge rytmer er naturlige følgesvende, som du bevidst kan integrere i din daglige rutine – om det er med morgenkaffen i sollys eller en aftentur under åben himmel.</p>
+
+<h2>Kost – hvad du spiser påvirker din oplevelse</h2>
+<p>Vores mad har direkte indflydelse på vores velbefindende. Frisk, naturlig mad – frugt, grøntsager, nødder, urter – fremmer ikke kun fysisk sundhed, men også indre klarhed. Her gælder det også: Tænk ikke dogmatisk – tænk bevidst. Nogle gange er en frisk smoothie eller en enkel urte-te nok til at føle sig bedre tilpas.</p>
+<p>Regelmæssig afgiftning er også essentiel i dag for en sund krop.</p>
+
+<p>Prøv det – du vil mærke, hvad der gør dig godt</p>
+<p>Energetisk rensning kan måske lyde "højtravende" for nogen. I virkeligheden handler det om noget meget jordnært: at finde tilbage til sig selv. Mange af disse metoder virker ikke "fordi man tror på det", men fordi de tillader krop og sind at blive aflastet, renset og regenereret.</p>
+<p>Du behøver ikke at prøve alt på én gang. Tag blot det, der tiltaler dig. Test, hvad der føles godt. Og se, hvad der ændrer sig.</p>
+<p>Nogle gange kræves kun et lille skub – for at trække vejret igen, se klarere og føle sig lettere indeni.</p>
+
+
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
