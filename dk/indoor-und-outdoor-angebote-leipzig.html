@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: #6a1b9a;
+            background-color: #8f602e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+       
+     /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+    
+
+        footer {
+            background-color: #0aa667;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .karte {
+            background-color: #f5f2e7;
+            color: #6a0dad;
+            padding: 2rem;
+            font-family: Garamond, serif;
+            margin: 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .karte h2, .karte h3 {
+            text-align: center;
+        }
+
+        .karte ul, .karte p, .karte table {
+            margin: 1rem auto;
+            max-width: 800px;
+        }
+
+        .karte table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .karte table td, .karte table th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+
+        .karte ul {
+            list-style: none;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .karte ul li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="stars"></div>
+
+<!-- Hero-Bereich mit Bild und Text -->
+<div class="hero-section" style="height: 50vh; position: relative; background-image: url('angebot.jpg'); background-size: cover; background-position: center;">
+    <!-- Overlay für den Textbereich -->
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+    
+    <!-- Textbereich auf dem Bild -->
+    <div class="hero-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 2;">
+        <h1>Lilian’s Witchy World</h1>
+    </div>
+</div>
+
+
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+    <!-- Kasten: Kindergruppen -->
+ <div class="karte">
+    <h2>Tilbud til børnegrupper</h2>
+    <p>Uanset om det er i daginstitutioner, familiecentre eller som et separat gruppeforløb – kærligt tilrettelagte timer fyldt med bevægelse, natur og afslapning.</p>
+    <ul>
+        <li><strong>🌿 Oplev naturen (erfaringspædagogik)</strong><br>Opbygge tillid, styrke teamånd.</li>
+        <li><strong>🧘 Afslapning & drømmerejser</strong><br>Fremme opmærksomhed og indre balance.</li>
+        <li><strong>🤸 Sport & yoga</strong><br>Bevægelse med glæde og balance for krop og sind.</li>
+    </ul>
+    <h3>Prisoversigt</h3>
+    <table>
+        <tr><td>🔍 Prøvetime</td><td>14 € pr. barn</td></tr>
+        <tr><td>📅 Månedstilbud (1x/uge)</td><td>48 € pr. barn/måned</td></tr>
+    </table>
+    <p style="text-align: center;"><strong>Kontraktbetingelser:</strong><br>
+    Opsigelse skal ske skriftligt via e-mail senest to uger før månedens udgang. Ellers forlænges aftalen automatisk med endnu en måned.</p>
+</div>
+
+<!-- Boks: Engangstilbud -->
+<div class="karte">
+    <h2>🎯 Engangsdeltagelse</h2>
+    <p>Et enkeltstående, separat bookbart tilbud.</p>
+    <p><strong>Pris:</strong> 25 € pr. barn, samletid 1 til 1,5 time inklusive mindre drikkepauser undervejs (i alt 10-20 minutter). </p>
+    <p><strong>Pris:</strong> 30 € pr. voksen, samletid 2,5 til 3 timer, inklusive en pause på 10-25 minutter. </p>
+    <p>Dette enkelttilbud er uafhængigt af prøve- eller månedstilbuddet.</p>
+    <p>Dette tilbud planlægges separat og individuelt.</p>
+</div>
+
+<!-- Boks: Tilbud til pædagoger -->
+<div class="karte">
+    <h2>Tilbud til pædagoger, undervisere & andre teams</h2>
+    <p>Plads til aflastning, nye impulser og teamudvikling – ude eller inde.</p>
+    <table>
+        <thead>
+            <tr><th>Tilbud</th><th>Varighed</th><th>Pris</th><th>Målgruppe</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Erfaringspædagogik & teambuilding</td><td>Samletid på 3 timer, inkl. en pause på 15-25 min. efter ca. 1 time.</td><td>390 €</td></tr>
+            <tr><td>Afslapning & finde ny energi</td><td>Samletid på 2,5 timer, inkl. en pause på 10-15 min. efter ca. 1 time.</td><td>350 €</td></tr>
+            <tr><td>Individuel planlægning</td><td>efter aftale, med samletid på 2,5 til 3 timer og inkl. en pause på 10-25 min. efter ca. 1 time.</td><td>fra 480 €</td></tr>
+        </tbody>
+    </table>
+    <p><em>Inklusive materialer og efterbearbejdning. Togrejser fra 7 km ekstra.</em></p>
+    <ul>
+        <li>Halvdagsformater, også inhouse</li>
+        <li>Samarbejdsopgaver i naturen</li>
+        <li>Opmærksomhed med lyd, meditation m.m.</li>
+    </ul>
+</div>
+
+<!-- Boks: Særlige/andre tilbud -->
+<div class="karte">
+    <h2>🌟 Særlige tilbud & mere</h2>
+    <ul>
+        <li><strong>Boglæsninger</strong> – levende og tematisk tilpasset til alle aldersgrupper.</li>
+        <li><strong>Urteværksted</strong> – opdag tinkturer, salver og sund ernæring.</li>
+        <li><strong>Bevægelsestilbud</strong> for grupper – kreativt & tæt på naturen.</li>
+    </ul>
+</div>
+
+<div class="karte">
+    <h2>Andre tilbud fra mig til dig</h2>
+    <ul>
+        <li><strong>Programmering af din hjemmeside</strong> Som du allerede har bemærket, programmerer jeg selv denne side. Hvis du er interesseret, så kontakt mig, og vi kan aftale nærmere om priser.</li>
+        <li><strong>Blogindlæg</strong> Jeg skriver også blogindlæg. Kontakt mig bare, hvis du har brug for det. Jeg gør det både som ghostwriter og med mit navn under. Også her aftaler jeg vilkårene individuelt.</li>
+    </ul>
+
+    <p><strong>Af hjertet, Lilian</strong></p>
+</div>
+
+
+
+<footer>
+    <p>&copy; 2025 Elisabeth-Ann Wolf | Alle Rechte vorbehalten</p>
+    <p>Mit Besuch dieser Webseite werden die AGB akzeptiert.</p>
+</footer>
+
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
