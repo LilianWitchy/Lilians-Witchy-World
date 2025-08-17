@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+ <html lang="de">
+ <head>
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lilian´s Witchy World</title>
+     <style>
+         body {
+             font-family: Garamond, serif;
+             color: white;
+             background-color: #4e0261;
+             margin: 0;
+             padding: 0;
+             text-align: center;
+             overflow-x: hidden;
+         }
+ 
+         /* Sterne Hintergrund */
+         .stars {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+             z-index: -1; /* Sterne bleiben im Hintergrund */
+         }
+ 
+         .star {
+             position: absolute;
+             width: 3px;
+             height: 3px;
+             background-color: white;
+             border-radius: 50%;
+             opacity: 0;
+             animation: twinkle linear infinite;
+         }
+ 
+         @keyframes twinkle {
+             0%, 100% { opacity: 0; }
+             50% { opacity: 1; }
+         }
+ 
+        /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+         /* Weitere Styling für Inhalt */
+         .content {
+             position: relative;
+             z-index: 1;
+             padding-bottom: 100px;
+         }
+     </style>
+ </head>
+ <body>
+     <!-- Sterne Hintergrund -->
+     <div class="stars"></div>
+ 
+     <!-- Inhalt -->
+     <div class="content">
+         <h1>
+             <img src="logo2.png" alt="Magic Logo">
+             Lilian’s Witchy World
+             <img src="logo2.png" alt="Magic Logo">
+         </h1>
+
+
+      
+      <div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+      
+ 
+       <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+      
+  <h1>Velkommen til mine opskrifter!</h1>
+<p>Her finder du forskellige naturlige opskrifter til dit helbred, pleje og velvære.</p>
+<p>Klik på en kategori for direkte at gå til opskrifterne:</p>
+
+<p>Disse opskrifter er opstået ud fra min viden om urter og krydderier samt min glæde ved at eksperimentere.</p>
+<p>Jeg er blevet mere og mere opmærksom på, hvor skadelige mange produkter fra supermarkedet og apoteket er – fyldt med kemi og unødvendige tilsætningsstoffer.</p>
+<p>Ofte står der “grønt” eller “naturligt” på emballagen, men desværre betyder det ikke altid, at der faktisk er kvalitetsrige, effektive ingredienser i. Hvis der er, er det ofte kun i så små mængder, at man næsten ikke mærker nogen helbredende effekt.</p>
+
+<p>Min hud blev på et tidspunkt så følsom, at jeg reagerede allergisk på næsten alt og fik slemme udslæt.</p>
+<p>Derfor begyndte jeg at afgifte min krop og undersøge intensivt, hvordan man selv kan fremstille plejeprodukter og helbredende midler.</p>
+<p>Mine ingredienser skulle samtidig være let tilgængelige, billige og nemme for alle at samle.</p>
+
+<p>Før du prøver mine opskrifter, vil jeg gerne gøre dig opmærksom på følgende:</p>
+<p>Hvert menneske er unikt – ligesom hver hud og hvert hår.</p>
+<p>Mange mennesker har allergier, f.eks. over for kurveblomster eller visse æteriske olier. Sørg venligst for, at du ikke er allergisk over for nogen af ingredienserne, før du prøver en opskrift.</p>
+<p>Det, der fungerer perfekt for 100 mennesker, virker måske ikke for én person eller kan endda give den modsatte effekt.</p>
+
+<p>Ja, jeg har allerede hjulpet mange mennesker med mine opskrifter – selv ved neurodermitis, rosacea og slapt hår.</p>
+<p>Men vær altid opmærksom på, hvordan din krop reagerer, når du tester! Prøv nye produkter først på et lille hudområde og lav kun en lille mængde for at sikre, at du tåler dem.</p>
+
+
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
