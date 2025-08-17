@@ -1,0 +1,208 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #4e0261;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+  /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0aa667;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #088e59;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <img src="witchylogo.png">
+        Lilian’s Witchy World
+    </h1>
+
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
+
+
+ <div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+ 
+       <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+ 
+    <div class="contact-container" id="kontakt">
+        <h2>Kontakt</h2>
+        <p class="contact-text">
+           Dejligt, at du er her! 💜  
+Jeg er glad for, at du har fundet vej til min side.  
+Hvis du har spørgsmål om mit arbejde, mine projekter eller bare noget, du har på hjerte,  
+kan du sende mig en besked her. Jeg vil svare så hurtigt som muligt! ✨
+</p>
+
+<a href="https://www.instagram.com/elisabethann_wolf" target="_blank">
+    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
+        Følg mig på Instagram
+    </button>
+</a>
+
+<a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
+    <img src="youtube.png" alt="YouTube" width="50" height="50">
+</a>
+
+<form action="https://formspree.io/f/mkgjyywk" method="POST">
+  <label for="email">Vil du høre mere om mit arbejde, kommende bøger og spændende projekter? Tilmeld dig mit nyhedsbrev her og hold dig opdateret!</label><br>
+  <input type="email" name="email" id="email" required placeholder="din@email.dk">
+  <button type="submit">Tilmeld</button>
+
+  <p style="font-size: small;">
+    Ved at sende accepterer du, at din e-mailadresse gemmes med henblik på udsendelse af nyhedsbrevet.
+    <a href="/agb.html">Læs mere</a>
+  </p>
+</form>
+
+
+
+     
+
+    </div>
+
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
