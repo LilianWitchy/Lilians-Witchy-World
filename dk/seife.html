@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilian’s Witchy World</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Garamond, serif;
+      color: white;
+      background-color: #4e0261;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    h1, h2 {
+      color: #ffd700;
+    }
+
+  
+  /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+    .box {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .box ul, .box ol {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <!-- Logo -->
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+  </div>
+
+
+  <div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+    <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+  
+
+  <!-- Indhold -->
+<div class="content">
+  <p>Jeg ønsker med disse opskrifter at hjælpe alle, der har hudproblemer. Neurodermitis, rosacea, udslæt.</p>
+  <p>Og også alle, som ikke længere ønsker at forgifte eller udtørre deres krop med kemiske tilsætningsstoffer.</p>
+  <p>Derfor, brug/test venligst mine opskrifter kun, hvis du tåler alle ingredienser (urter, æteriske olier).</p>
+  <p>Og særligt vigtigt: Brug kun rene ingredienser. Ingen billige æteriske olier. Ingen salte eller urter med andre tilsætningsstoffer.</p>
+  <p>Og brug venligst kun salt som peeling, hvis din hud kan tåle det.</p>
+
+  <h1>Enkel opskrift på honningsæbe</h1>
+  <div class="box">
+    <h2>Ingredienser:</h2>
+    <ul>
+      <li>500 g neutral sæbe (revet eller i flager)</li>
+      <li>60 ml kokosolie</li>
+      <li>30 ml arganolie</li>
+      <li>2 spiseskefulde honning</li>
+      <li>Æteriske olier efter eget valg (f.eks. lavendel, rosmarin, rose)</li>
+      <li>Tørrede urter (f.eks. lavendelblomster, rosenblade, rosmarin)</li>
+      <li>1 spiseskefuld Himalaya-salt eller havsalt (valgfrit)</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>Fremgangsmåde:</h2>
+    <ol>
+      <li>Forbered og rengør formen.</li>
+      <li>Smelt neutral sæbe i vandbad, ikke direkte over varmen.</li>
+      <li>Rør kokosolie og arganolie i.</li>
+      <li>Tilsæt honning og bland godt.</li>
+      <li>Tilsæt æteriske olier og tørrede urter efter eget valg og rør rundt.</li>
+      <li>Hvis ønsket, tilsæt salt og bland godt.</li>
+      <li>Hæld i den forberedte form og glat overfladen.</li>
+      <li>Lad hærde ved stuetemperatur i 24–48 timer.</li>
+      <li>Skær i stykker og lad modne i mindst 4 uger.</li>
+    </ol>
+  </div>
+
+  <div class="box">
+    <h2>Opbevaring:</h2>
+    <p>Køligt, tørt og anvend inden for 6 måneder.</p>
+  </div>
+
+  <div class="box">
+    <h2>Ingredienser til en kropssæbe til tør og følsom hud</h2>
+    <ul>
+      <li>200 g neutral sæbe (revet)</li>
+      <li>50 g kokosolie</li>
+      <li>10 dråber rosenolie</li>
+      <li>2 spsk tørrede lavendelblomster</li>
+      <li>2 spsk tørrede rosenblade</li>
+      <li>1 spsk tørret rosmarin</li>
+      <li>2 spsk Himalaya-salt</li>
+      <li>2 spsk havsalt</li>
+    </ul>
+  </div>
+</div>
+
+
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
