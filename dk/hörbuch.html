@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilian´s Witchy World</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Garamond, serif;
+      color: white;
+      background-color: #4e0261;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+
+    /* Galerie */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .frame {
+      border: 5px solid gold;
+      padding: 10px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+    }
+
+    .frame img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+
+    .controls button {
+      margin: 5px;
+      padding: 5px 10px;
+      background-color: gold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Video-Styling */
+    .video-container {
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border: 4px solid gold;
+      border-radius: 10px;
+    }
+
+  
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>
+      <img src="logo2.png" alt="Magic Logo" />
+      Lilian’s Witchy World
+      <img src="logo2.png" alt="Magic Logo" />
+    </h1>
+
+
+    <div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+   <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+    
+
+    <h2>Velkommen til min magiske og fortryllende verden!</h2>
+    <p>Her kan du lytte til mine bøger.</p>
+    <p>Jeg vil gradvist indlæse nogle af mine drømmerejser fra mine bøger og poste dem her.</p>
+    <p>God fornøjelse med at lytte.</p>
+
+    <!-- Lydbog Galerie -->
+ <div class="gallery">
+        <div class="frame">
+           <p><strong>Bind 1, Hvem er Baldur?:</strong></p>
+            <img src="coverbildvorne.jpg" alt="Lydbog 1">
+            <div class="controls">
+                <button onclick="playAudio('audio1')">▶️ Play</button>
+                <button onclick="pauseAudio('audio1')">⏸️ Pause</button>
+            </div>
+            <audio id="audio1">
+                <source src="weristbaldur.mp4" type="audio/mp4">
+              
+            </audio>
+        </div>
+    </div>
+
+    <!-- Video -->
+
+
+
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
