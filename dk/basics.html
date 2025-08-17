@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #5c0c07;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+       
+  /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+        /* Weitere Styling für Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        h1 img {
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sterne Hintergrund -->
+    <div class="stars"></div>
+
+    <!-- Inhalt -->
+    <div class="content">
+        <h1>
+            <img src="witchylogo.png" alt="Lilian’s Witchy World Logo">
+            Lilian’s Witchy World
+        </h1>
+     
+<div id="language-switcher">
+
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+
+</div>
+  
+       
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+
+  <h1>Forstå energi: Grundlaget for forandring og udvikling</h1>
+<h2>Alt er energi – et perspektivskifte</h2>
+
+<p>Uanset om det er i moderne fysik eller i gamle visdomslærdomme: Tanken om, at alt, hvad der eksisterer, i sidste ende består af energi, får stadig større betydning. Det, vi oplever som materie – ting, tanker, følelser – er på et fundamentalt niveau vibration, bevægelse og frekvens. Kvantefysikken beskriver præcis dette: Selv det, der synes fast, består af energi i bevægelse.</p>
+
+<p>Dette perspektiv er ikke kun fascinerende, men også praktisk: For når alt er i bevægelse, kan vi også bevidst påvirke – vores tanker, følelser og handlinger. Vores tanker og følelser udsender impulser, der former vores oplevelse. Ligesom vores krop har brug for næring for at fungere optimalt, har vores indre "energi" brug for opmærksomhed, retning og pleje.</p>
+
+<p>Tanker som impulsgivere</p>
+<p>Tanker er mere end bare stille processer i hovedet. De har effekt. De påvirker, hvordan vi føler, hvordan vi handler – og hvordan vi opfatter vores omgivelser. En positiv, klar tanke kan styrke os, mens belastende overbevisninger kan virke hæmmende. Her kommer energiarbejde ind: Det gør disse indre processer bevidste og hjælper med at igangsætte målrettede forandringer.</p>
+
+<p>Uanset om det er gennem bevidst refleksion, meditation eller enkle dagligdagsøvelser – den, der begynder at forme sin indre holdning aktivt, kan opleve forandring på mange områder. Energi følger opmærksomhed – og hvor vi retter vores fokus, skaber vi effekt.</p>
+
+<h2>De hermetiske love – universelle principper for et mere bevidst liv</h2>
+<p>De såkaldte hermetiske love stammer fra en filosofisk tradition, der går tilbage til Hermes Trismegistos’ lære. Selvom oprindelsen til dels ligger i myten, giver disse syv principper tidløs vejledning i, hvordan vi kan forholde os til os selv, andre og verden. De beskriver lovmæssigheder, der afspejler sig både i hverdagen og på dybere niveauer af tænkning og oplevelse – uanset om man forstår dem åndeligt eller ej.</p>
+
+<h2>1. Mentalitetsloven – "Alt begynder i sindet"</h2>
+<p>Vores tanker former vores virkelighed. Det, vi tænker, skaber vores oplevelse – ikke magisk, men gennem den måde, vi håndterer situationer, hvad vi forventer, og hvordan vi handler. Denne lov opfordrer til at tage ansvar for egne tanker.</p>
+
+<h2>2. Loven om korrespondance – "Som inden, så uden"</h2>
+<p>Det, der foregår indeni os, afspejler sig ofte udenpå – og omvendt. Princippet beskriver sammenhænge mellem mikro- og makrokosmos, mellem personlige mønstre og større strukturer. Den, der forstår sig selv, begynder også at se verden omkring sig klarere.</p>
+
+<h2>3. Svingningsloven – "Intet står stille"</h2>
+<p>Alt bevæger sig, alt svinger. Også følelser, tanker og sindsstemninger har en bestemt "frekvens". Denne lov minder os om, at forandring altid er mulig – fordi intet er statisk. Alt efter hvad vi forbinder os med indeni, ændres vores opfattelse.</p>
+
+<h2>4. Polarisationsloven – "Modsætninger hører sammen"</h2>
+<p>Lys og skygge, glæde og smerte, aktivitet og ro – alt har to sider. Denne lov hjælper os med at se modsætninger ikke som problemer, men som en del af en større helhed. Det handler ikke om at undgå det ene, men om at integrere begge poler.</p>
+
+<h2>5. Rytmeloven – "Alt har sin rytme"</h2>
+<p>Livet forløber i cyklusser: op- og nedture, spænding og afslapning, forandring og stabilitet. Dette princip kan hjælpe med at se perioder med stilstand eller udfordring ikke som tilbageskridt, men som en naturlig del af udviklingsprocessen.</p>
+
+<h2>6. Loven om årsag og virkning – "Det, vi gør, har effekt"</h2>
+<p>Intet sker uden grund. Tanker, ord og handlinger sætter processer i gang – nogle gange synlige, nogle gange subtile. Når man er bevidst om dette, kan man handle mere målrettet, vælge mere bevidst – og forme sit liv aktivt i stedet for blot at lade sig drive med.</p>
+
+<h2>7. Kønsloven – "I alt virker en kreativ balance"</h2>
+<p>Denne lov beskriver samspillet mellem aktive og modtagende kræfter – uanset biologisk køn. I os alle virker kreative, strukturerende, intuitive og skabende aspekter. Når disse kræfter er i balance, skabes indre stabilitet og klarhed.</p>
+
+<p>Bevidst energiliv – aktivt liv</p>
+<p>Forståelsen af energimæssige sammenhænge – på videnskabeligt, filosofisk eller personligt niveau – åbner nye muligheder: for vækst, klarhed og selvansvar. De hermetiske love giver ikke færdige svar, men de giver vejledning. De hjælper med at genkende mønstre, forstå sammenhænge – og træffe bevidste valg.</p>
+
+<p>Energibehandling i denne forstand betyder: at tage sig selv alvorligt. At anerkende sin egen handlingskraft. Og at gå nye veje – skridt for skridt, med nysgerrighed og klarhed.</p>
+
+  
+   
+
+  
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
