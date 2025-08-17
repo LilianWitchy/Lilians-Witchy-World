@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="favicon.ico" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Bücher | Lilian’s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color:black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+   /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        
+        /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+        
+        .book {
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 250px;
+            margin-right: 20px;
+            background-color: #660082;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .book a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .book p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .contact-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0aa667;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="stars"></div>
+    
+    <h1>
+        <img src="witchylogo.png" alt="Lilian's Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+
+  
+    <div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+
+  
+        <!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+  
+
+      <!-- Bøger -->
+    <h2>Mine bøger</h2>
+
+    <div class="book">
+        <a href="https://www.amazon.de/Traumreisen-mit-Baldur-Einschlafgeschichten-Jahren-ebook/dp/B0DL5ZX1GS?crid=2GVW48M8NGZ10&dib=eyJ2IjoiMSJ9.kK9p30exQdp-2R2QvMCVkcYmKEGtNyNuKws0Y1iFuAD5Owm9dqxyMHln7gtuP_-3jU9gYvaQ71rRtB3RoqB7GTX_Cw8omerXiJbaH9640qhjgXvJCsB9VeI52tRn3vQ-XzSYkIkIi-SB1Gl8FQ5GJQ.lVwFqjfLI_3hGe8gWJ843I8Tt_W7B7esjhawIzRz6vQ&dib_tag=se&keywords=traumreisen+mit+baldur&qid=1742061812&sprefix=traumreisen+mit%2Caps%2C185&sr=8-1" target="_blank">
+            <img src="baldur1.png" alt="Baldur 1">
+            <p>Bog 1: Drømmerejser med Baldur, Bind 1, tysk og engelsk </p>
+        </a>
+    </div>
+
+    <div class="book">
+         <a href="https://www.amazon.de/Traumreisen-mit-Baldur-Einschlafgeschichten-9-Jährige/dp/B0DTK95QHZ?crid=2GVW48M8NGZ10&dib=eyJ2IjoiMSJ9.kK9p30exQdp-2R2QvMCVkcYmKEGtNyNuKws0Y1iFuAD5Owm9dqxyMHln7gtuP_-3jU9gYvaQ71rRtB3RoqB7GTX_Cw8omerXiJbaH9640qhjgXvJCsB9VeI52tRn3vQ-XzSYkIkIi-SB1Gl8FQ5GJQ.lVwFqjfLI_3hGe8gWJ843I8Tt_W7B7esjhawIzRz6vQ&dib_tag=se&keywords=traumreisen+mit+baldur&qid=1742061812&sprefix=traumreisen+mit%2Caps%2C185&sr=8-4" target="_blank">
+             <img src="baldur2.png" alt="Baldur 2">
+             <p>Bog 2: Drømmerejser med Baldur, Bind 2, tysk og engelsk </p>
+         </a>
+     </div>
+
+     <div class="book">
+          <p>Bind 3 er under udarbejdelse...</p>
+             <p>Bog 3: Drømmerejser med Baldur</p>
+         </a>
+     </div>
+
+    <div class="book">
+         <a href="https://www.amazon.de/dp/B0F1DDHPLT?__mk_de_DE=ÅMÅŽÕÑ&crid=1OG7NC3Z1XEWK&dib=eyJ2IjoiMSJ9.c0adbYXWyXDO-f4vuLPkDcJpkEuOFAVkkezwquuP-LWRovPJrksV4kExbLRXvXrVGGNaNjpd3KxJ73QTrgoTKQEUUlYCUc29vy7ANSGNB1spdbksjiHceZ4S6TM7d9RKsdmreFqWL3ZAuGu-oP_dcP8NkzgZPSoC5JLWSsqY6Tz2nCDhrYifnWMuiE4DKQqymERAnTQaFueftD7ZruV0eFPySZbrURc_k5g-5Ryw7is.hXB5RZXVXK_X0PY4sYTJLr0P_wQKYmZQdRtc8L_Y60Q&dib_tag=se&keywords=traumreisen+erwachsene+elisabeth-ann&qid=1742061834&sprefix=traumreisen+erwachsene+elisabeth-ann%2Caps%2C102&sr=8-1" target="_blank">
+             <img src="traumrerw.png" alt="Drømmerejser Voksne">
+             <p>Bog 3: Bevidste og opmærksomme drømmerejser for voksne, tysk og engelsk </p>
+         </a>
+     </div>
+
+     <div class="book">
+            <p>Bog under udarbejdelse</p>
+             <p>Drømmerejser for voksne, et specialprojekt</p>
+         </a>
+     </div>
+
+    
+    <!-- Flere bøger ... -->
+
+       <div class="book">
+        <a href="https://www.amazon.de/Personalmangel-deutschen-Kitas-Erzieher-ausüben-ebook/dp/B0DQVLHJS8?__mk_de_DE=ÅMÅŽÕÑ&crid=1UTIWJ4TW7B2N&dib=eyJ2IjoiMSJ9.2ykEdCgurqkoUBAEywXpPXrAEtLjEl8cQm1g5d-XUZHyPaLYG0SP5NiaQz1xi9wQ--M8sdmIgOcERKzC05dEextqMPrjR9O3-G5-pNej3EndjwdJ-vPhN4X-IMkUzm3B8-vBfllI6Nvs1p_GZMLoXaVtgKDttIXn5_8knqN8X0R2xogMWBgRAmPHHhf950Dl5iAWEO6y59IyYIG8UJe82eslF6ja6cjSGs4e_daVT2U.EGI0sRpv5z78w8zDUx2yldYT7OENAL1_7A0VhsbQtO0&dib_tag=se&keywords=erzieher+personalmangel&qid=1753119401&sprefix=erzieher+personalmangel%2Caps%2C156&sr=8-2">
+            <img src="personalmangel.JPG" alt="Mangel på personale i børnehaver">
+            <p>Bog 4: Mangel på personale i tyske børnehaver: Hvorfor pædagoger ikke længere kan og vil udføre dette erhverv!, tysk</p>
+        </a>
+    </div>
+
+
+ <script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
