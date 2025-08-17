@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Lilian´s Witchy World</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color: #0f114f;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+  /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+  /* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+        
+        .contact-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+  
+    </style>
+</head>
+<body>
+
+
+<div class="stars"></div>
+    
+    <h1>
+        <img src="witchylogo.png" alt="Lilian's Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+
+<div id="language-switcher">
+
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+
+</div>    
+
+
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startside </a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Om mig </a></li>
+        <li><a href="weiterbildung.html">Efteruddannelser </a></li>
+        <li><a href="meinemission.html">Min mission </a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Mine indendørs- og udendørs tilbud i Leipzig </a></li>
+        <li><a href="rosental.html">Tilbud i Rosenthal </a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Komme i kontakt med sig selv </a>
+      <ul class="dropdown-content">
+        <li><a href="energie.html">Indre balance </a></li>
+        <li><a href="basics.html">Det grundlæggende </a></li>
+        <li><a href="reinigung.html">Krop og sind i harmoni </a></li>
+        <li><a href="gedanken.html">Tanker & overbevisninger </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bøger </a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Mine bøger </a></li>
+        <li><a href="hörbuch.html">Mine bøger som lydbog </a></li>
+        <li><a href="empfehlen.html">Bøger jeg anbefaler </a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Opskrifter </a>
+      <ul class="dropdown-content">
+        <li><a href="Rezepte.html">Hvorfor DIY? </a></li>
+        <li><a href="seife.html">Kropssæber og brusegelé </a></li>
+        <li><a href="haare.html">Hårprodukter </a></li>
+        <li><a href="#">Te-blandinger for mere velvære </a></li>
+        <li><a href="#">Røgelsesblandinger </a></li>
+        <li><a href="#">Naturmedicin </a></li>
+        <li><a href="#">Salver & balsam </a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">Handelsbetingelser (AGB) </a></li>
+    <li><a href="impressum.html">Impressum (Juridisk meddelelse) </a></li>
+  </ul>
+</div>
+
+
+<header>
+    <h1>Kraften af dine egne tanker og overbevisninger</h1>
+</header>
+
+<section>
+    <h2>Indledning</h2>
+    <p>Vores tanker og overbevisninger er ikke bare abstrakte koncepter – de er de grundlæggende kræfter, der former vores virkelighed. Hvad vi tænker om os selv og verden, påvirker, hvordan vi har det, hvad vi gør, og hvilke oplevelser vi har. I energetisk arbejde lærer vi, hvor vigtigt det er at forstå kraften i vores egne tanker og aktivt styre dem.</p>
+
+    <h2>Hvordan tanker påvirker vores energi</h2>
+    <p>Vores tanker skaber en specifik energimæssig vibration, som udstråler til vores omgivelser og interagerer med verdens energier. Positive tanker kan opbygge os og tiltrække det, vi ønsker, mens negative tanker kan blokere os og fastholde os i gamle mønstre. Jo mere vi hengiver os til en bestemt tankeretning, desto stærkere bliver den energetiske udstråling af disse tanker, og desto mere manifesterer tilsvarende begivenheder sig i vores liv.</p>
+
+    <h2>Betydningen af overbevisninger</h2>
+    <p>Overbevisninger er dybt rodfæstede opfattelser, vi har om os selv, andre og verden. Disse opfattelser er ofte resultatet af erfaringer fra fortiden og påvirkning fra vores omgivelser. De styrer, hvordan vi ser os selv, og hvilke muligheder vi tillader os selv. Negative overbevisninger kan forhindre os i at opdage og leve vores sande potentiale.</p>
+
+    <h2>Sådan transformerer du dine overbevisninger</h2>
+    <p>Det første skridt til at øge din selvvirkning er at blive bevidst om dine overbevisninger. Når du erkender, hvilke overbevisninger der begrænser dig, kan du aktivt arbejde på at ændre dem. Her er nogle praktiske teknikker til at omdanne begrænsende overbevisninger:</p>
+    <ul>
+        <li><strong>Bevidstgørelse:</strong> Skriv dine negative overbevisninger om dig selv ned, og spørg dig selv, om de virkelig er sande.</li>
+        <li><strong>Affirmationer:</strong> Erstat begrænsende overbevisninger med positive, styrkende affirmationer. Gentag disse dagligt.</li>
+        <li><strong>Visualisering:</strong> Forestil dig, hvordan dit liv ser ud, når du lever uden de gamle overbevisninger. Visualiser dine drømme og mål som allerede virkelighed.</li>
+        <li><strong>Tilgivelse:</strong> Ofte er vores overbevisninger knyttet til gamle, utilgivne oplevelser. Arbejde med tilgivelse kan hjælpe med at opløse energiblokeringer.</li>
+    </ul>
+
+    <h2>Brug tankernes kraft i hverdagen</h2>
+    <p>For at udnytte kraften i dine tanker og overbevisninger effektivt er det vigtigt aktivt at observere og styre dem i din daglige tilværelse. Her er nogle tips:</p>
+    <ul>
+        <li><strong>Vær opmærksom:</strong> Læg mærke til de tanker, du dagligt tænker. Er de positive og støttende eller snarere negative og begrænsende?</li>
+        <li><strong>Styrk din selvtillid:</strong> For at reducere indflydelsen fra negative tanker, opbyg et stærkt fundament af selvtilid. Tro på dine evner.</li>
+        <li><strong>Positivt miljø:</strong> Omring dig med mennesker og energier, der løfter dig og støtter dig, i stedet for at trække dig ned.</li>
+        <li><strong>Ændr dit sprog:</strong> Vær opmærksom på sproget, du bruger, og hvordan du taler til dig selv. Positivt sprog tiltrækker positiv energi.</li>
+        <li>En veninde sagde engang til mig, at hun foretrækker ordet "tip" eller "idé" frem for "råd" eller "forslag", fordi ordet "slå" er indbygget i de sidste, og at slå ikke ligefrem er noget positivt, ved vi jo alle.</li>
+    </ul>
+
+    <h2>Konklusion</h2>
+    <p>Kraften i dine egne tanker og overbevisninger er uendelig. Ved at lære bevidst at håndtere dine tanker og transformere begrænsende overbevisninger tager du tøjlerne i dit liv og bliver en aktiv skaber af din virkelighed. Energetisk arbejde giver dig værktøjerne til at udfolde denne kraft og maksimere din selvvirkning.</p>
+</section>
+
+
+</body>
+</html>
+
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
