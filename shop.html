@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta Mein Shop | Lilian´s Witchy World</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+/* Globales CSS */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: Garamond, serif; color: white; background-color: #388045; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+
+/* Sterne Hintergrund */
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.star { position: absolute; width: 3px; height: 3px; background-color: white; border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+@keyframes twinkle { 0%,100% {opacity:0;} 50% {opacity:1;} }
+
+/* Hero-Bereich */
+.hero-section { background-image: url('wald2.png'); background-size: cover; background-position: center; height: 400px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); position: relative; }
+.hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
+@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
+.hero-text { font-size: 1.2rem; padding: 10px; }
+.hero-text p { font-size: 1rem; }
+
+h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
+h1 img { max-width: 150px; height: auto; }
+h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: normal; }
+.content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; line-height: 1.6; }
+
+footer { background-color: #0aa667; padding: 20px; text-align: center; color: white; }
+.education-item { background-color: #8B5E3C; color: white; padding: 20px; margin: 10px auto; border-radius: 8px; display: block; width: fit-content; max-width: 100%; }
+
+/* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+</style>
+</head>
+<body>
+
+<!-- Sterne Hintergrund -->
+<div class="stars"></div>
+
+<!-- Hero-Bereich -->
+<div class="hero-section">
+  <div class="hero-text">
+    <h1>Willkommen in meinem Shop</h1>
+    <p>Lasst euch verzaubern und bleibt gespannt auf meine Magie und mein Wirken.</p>
+    <p>Dieser Bereich ist gerade am Entstehen.</p>
+  </div>
+</div>
+
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+        <li><a href="indoor-und-outdoor-angebote-leipzig.html">Meine Indoor- und Outdoor-Angebote in Leipzig</a></li>
+        <li><a href="rosental.html">Angebot im Rosenthal</a></li>  
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Mit sich selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+	 <li><a href="energie.html">Innere Balance</a></li>
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      </ul>
+    </li>
+      <li class="dropdown">
+      <a href="#">Shop</a>
+      <ul class="dropdown-content">
+        <li><a href="shop.html">Mein Shop</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Rezepte</a>
+      <ul class="dropdown-content">
+		  <li><a href="rezepte.html">Warum DIY?</a></li>
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</div>
+	
+	<div class="content-container">
+      
+      
+
+       <ul class="education-list">
+            <li class="education-item">
+                <h3> Willkommen in meinem Shop </h3>
+                <p> Dieser Bereich ist gerade noch mitten im Aufbau. </p>
+                <p> Bleibt gespannt und lasst euch überraschen, was hier bald kommt. </p>
+                <p> Möchtest du auf dem Laufendem bleiben, dann melde dich gerne für meinen Newsletter an. </p>
+                <p> Es wird "witchy". </p>
+            </li>
+
+           
+		
+<div id="language-switcher">
+  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+</div>
+		
+    </div>
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
