@@ -296,6 +296,35 @@ document.addEventListener("DOMContentLoaded", function () {
     starContainer.appendChild(star);
   }
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sliderWrapper = document.querySelector(".slider-wrapper");
+  const slides = document.querySelectorAll(".slider-card");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentIndex = 0;
+
+  function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + 20; // +20 für gap
+    sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) currentIndex--;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < slides.length - 1) currentIndex++;
+    updateSlider();
+  });
+
+  // Optional: responsive resize
+  window.addEventListener("resize", updateSlider);
+});
+</script>
+
+	
   const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
   dropdowns.forEach(dropdownToggle => {
     dropdownToggle.addEventListener('click', e => {
