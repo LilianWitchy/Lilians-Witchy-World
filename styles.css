@@ -202,3 +202,52 @@ footer {
   margin-left: 5px;
   cursor: pointer;
 }
+
+
+.feedback-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-card {
+  background-color: #8B5E3C;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  text-align: left;
+  color: white;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.feedback-slider h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
