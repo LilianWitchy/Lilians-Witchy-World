@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mein Angebot für dich | Lilian´s Witchy World</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+/* Globales CSS */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: Garamond, serif; color: white; background-color: #388045; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+
+/* Sterne Hintergrund */
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.star { position: absolute; width: 3px; height: 3px; background-color: white; border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+@keyframes twinkle { 0%,100% {opacity:0;} 50% {opacity:1;} }
+
+/* Hero-Bereich */
+.hero-section { background-image: url('wald2.png'); background-size: cover; background-position: center; height: 400px; display: flex; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); position: relative; }
+.hero-text { text-align: center; font-size: 30px; max-width: 90%; padding: 20px; background-color: rgba(0,0,0,0.5); border-radius: 10px; }
+@media (max-width: 768px) { .hero-section { font-size: 1.8rem; } }
+.hero-text { font-size: 1.2rem; padding: 10px; }
+.hero-text p { font-size: 1rem; }
+
+h1 { font-size: 2.5em; margin: 20px 0 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
+h1 img { max-width: 150px; height: auto; }
+h2 { font-size: 2em; margin: 40px 0 20px 0; font-weight: normal; }
+.content { max-width: 1000px; margin: auto; padding: 0 20px 40px 20px; text-align: left; line-height: 1.6; }
+
+footer { background-color: #0aa667; padding: 20px; text-align: center; color: white; }
+.education-item { background-color: #8B5E3C; color: white; padding: 20px; margin: 10px auto; border-radius: 8px; display: block; width: fit-content; max-width: 100%; }
+
+/* Navigation */
+.navbar { background-color: #0aa667; padding: 10px 20px; position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; font-size: 28px; color: white; cursor: pointer; flex-direction: column; }
+.menu-toggle span { height: 3px; width: 25px; background-color: white; margin: 5px 0; border-radius: 2px; }
+.navmenu { list-style: none; padding: 0; margin: 0; display: flex; }
+.navmenu li { margin-right: 30px; position: relative; }
+.navmenu a { text-decoration: none; color: white; font-size: 18px; padding: 10px; display: block; }
+.navmenu a:hover { background-color: #b0d5ac; border-radius: 5px; }
+
+/* Dropdown-Menü */
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #0aa667; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; list-style: none; padding: 0; }
+.dropdown-content li a { color: white; padding: 10px; text-decoration: none; }
+.dropdown-content li a:hover { background-color: #f1f1f1; color: #660082; }
+.navmenu li:hover .dropdown-content { display: block; }
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .menu-toggle { display: flex; margin-left: auto; }
+  .navmenu { flex-direction: column; width: 100%; display: none; margin-top: 10px; }
+  .navmenu.show { display: flex; } /* Menü anzeigen, wenn Klasse "show" */
+  .navmenu li { width: 100%; margin: 0; }
+  .navmenu li:hover .dropdown-content { position: static; box-shadow: none; }
+  .dropdown-content { background-color: #0aa667; }
+}
+
+/* Haupt-Content */
+.content { position: relative; z-index: 1; padding-bottom: 100px; }
+
+</style>
+</head>
+<body>
+
+<!-- Sterne Hintergrund -->
+<div class="stars"></div>
+
+<!-- Hero-Bereich -->
+<div class="hero-section">
+  <div class="hero-text">
+    <h1>energetische Klangheilung – Fernbehandlung über Zoom</h1>
+  </div>
+</div>
+
+<!-- Navigationsleiste mit Dropdown-Menüs -->
+<div class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navmenu" id="navmenu">
+    <li class="dropdown">
+      <a href="index.html">Startseite</a>
+      <ul class="dropdown-content">
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+        <li><a href="meinemission.html">Meine Mission</a></li>
+       <li><a href="angebot.html">Mein Angebot für dich</a></li>    
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Mit sich selbst in Verbindung kommen</a>
+      <ul class="dropdown-content">
+	 <li><a href="energie.html">Innere Balance</a></li>
+        <li><a href="basics.html">Die Basics</a></li>
+        <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Bücher</a>
+      <ul class="dropdown-content">
+        <li><a href="meinebücher.html">Meine Bücher</a></li>
+        <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+        <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+      </ul>
+    </li>
+	     <li class="dropdown">
+      <a href="#">Shop</a>
+      <ul class="dropdown-content">
+        <li><a href="shop.html">Mein Shop</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#">Rezepte</a>
+      <ul class="dropdown-content">
+		  <li><a href="rezepte.html">Warum DIY?</a></li>
+        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+        <li><a href="haare.html">Haarprodukte</a></li>
+        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+        <li><a href="#">Räuchermischungen</a></li>
+        <li><a href="#">Naturheilkunde</a></li>
+        <li><a href="#">Salben & Balsam</a></li>
+      </ul>
+    </li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="agb.html">AGB</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</div>
+	
+	<div class="content-container">
+      
+      
+
+       <ul class="education-list">
+            <li class="education-item">
+                <h3> Klangheilung als Fernbehandlung über Zoom </h3>
+<p>Seit vielen Jahren begleiten mich die Themen Klänge, Energien,</p> 
+<p>Frequenzen und die sanfte Unterstützung von Lösungsprozessen durch</p>
+ <p>Klang auf meinem persönlichen Weg. In dieser Zeit durfte ich immer tiefer</p>
+ <p>erfahren, wie fein Schwingungen wirken können – auf körperlicher,</p> <p>seelischer und energetischer Ebene.</p>
+<p>Um mein Wissen zu vertiefen, aufzufrischen und auch mit einem</p> 
+<p>entsprechenden Nachweis zu untermauern, habe ich zusätzlich einen </p>
+<p>Workshop im Bereich Klangarbeit und energetische Anwendungen besucht.</p>
+<p>Aus dieser Erfahrung heraus darf ich dir ab sofort über meine Webseite </p>
+<p>eine Klangheilung als Fernbehandlung über Zoom anbieten – achtsam, </p>
+<p>individuell und mit viel Einfühlungsvermögen.</p>
+ </li>
+
+
+ <li class="education-item">
+                <h3>    Ablauf der Klangheilung (30 Minuten)</h3>
+        
+<p>Die Sitzung findet als Einzeltermin über Zoom statt und dauert 30 Minuten.</p>
+<p>Während der Behandlung arbeite ich je nach Bedarf mit:</p>
+      <p> - einer Stimmgabel und/ oder</p>
+      <p> - einer Klangschale</p>
+<p>Zur energetischen Begleitung nutze ich ein Körperbild mit Energie- bzw. Reikipunkten.</p> 
+<p>Ich arbeite sowohl an den Punkten, die in Zusammenhang mit deinen geschilderten </p>
+<p>Beschwerden stehen, als auch intuitiv mit den Bereichen, zu denen ich während der </p>
+<p>Sitzung geführt werde.</p>
+<p>Jede Sitzung ist ganz individuell auf dich und dein aktuelles Thema abgestimmt.</p>  
+<p>Meine Arbeitsweise ist achtsam, ruhig und von Vertrauen getragen.</p>
+<p>Zum Ende jeder Sitzung erhältst du von mir zusätzlich energetische Impulse und</p> <p>alltagstaugliche, sanfte Hinweise, wie du den Lösungsprozess deiner Beschwerden und </p>
+<p>dein persönliches Wohlbefinden auch nach der Sitzung weiter unterstützen kannst.</p>
+               
+            </li>
+
+
+           
+            
+           <li class="education-item">
+                <h3> Vorbereitung vor dem Termin </h3>
+            
+<p> Für eine einfühlsame Einstimmung auf dich und dein Anliegen bitte ich dich vorab um:</p>
+      <p> - ein Foto der betroffenen Körperstelle(n) per E-Mail (freiwillig, aber hilfreich)</p>
+      <p>  - eine kurze schriftliche Beschreibung deiner Beschwerden und Symptome</p>
+<p> So kann ich mich bereits vor unserem Termin ganz in Ruhe energetisch auf dich einstimmen.</p>
+              
+            </li>
+
+
+         
+           <li class="education-item">
+                <h3> Optionale Zusatzleistung: Individuelle Kräuterempfehlung</h3>
+            
+<p> Wenn du möchtest, erstelle ich dir zusätzlich gerne eine individuelle Kräuterempfehlung,</p>
+      <p>abgestimmt auf deine Beschwerden und zur sanften Begleitung </p><p>deines Wohlbefindens. Kräuter können das Lösen deiner Beschwerden positiv unterstützen.</p>
+      <p>Diese Zusatzleistung ist nicht im Preis der Klangheilung enthalten und</p>
+       <p>wird separat dazu gebucht und berechnet.</p>
+              
+       </li>
+
+
+   <li class="education-item">
+                <h3>Dein Wertschätzungsbeitrag für meine Arbeit:</h3>
+ <p>Klangheilung (30 Minuten, Fernbehandlung über Zoom): 57 €</p>
+ <p>Individuelle Kräuterempfehlung zusätzlich: 25 €</p>
+ <p>Warum 57 €?</p>
+ <p>Der Preis von 57 € ist bewusst gewählt und trägt eine eigene energetische  Bedeutung.</p>
+ <p>Die 5 steht für Veränderung, Bewegung und das Lösen alter Muster.</p>
+ <p>Die 7 symbolisiert Intuition, Tiefe und spirituelle Entwicklung.</p>
+ <p>Gemeinsam ergeben sie die 12, die wiederum zur 3 wird – einer Zahl, die für Leichtigkeit, Ausdruck und Herzöffnung steht.</p>
+ <p>Diese Zahlenenergie spiegelt die Qualität der Klangheilung wider: </p>  <p> sanfte Veränderung, innere Bewegung und unterstützende Begleitung auf deinem persönlichen Weg.</p>
+ </li>
+
+
+<h3>Wichtiger Hinweis</h3>
+<p> Ich gebe keine Heil-, Erfolgs- oder Wunderversprechen.</p>
+<p> Energetische Arbeit und Klangheilung werden von jedem Menschen unterschiedlich wahrgenommen. </p>
+<p> Es gibt Menschen, die sehr offen und empfänglich dafür sind </p>
+<p> und positive Veränderungen spüren, und es gibt Menschen, bei denen diese Arbeit keine spürbare Wirkung zeigt.</p>
+<p> Die Klangheilung versteht sich als energetische Begleitung und Unterstützung, ersetzt jedoch keine medizinische, psychotherapeutische oder heilpraktische Behandlung. </p>
+<p> Bei gesundheitlichen Beschwerden sollte immer auch ärztlicher oder therapeutischer Rat eingeholt werden.</p>
+ </li>
+
+ </div>
+<script>
+// Menü umschalten (mobil)
+function toggleMenu() {
+  const menu = document.getElementById("navmenu");
+  menu.classList.toggle("show");
+}
+
+// Sterne beim Laden erzeugen & Dropdowns mobil
+document.addEventListener("DOMContentLoaded", function () {
+  let starContainer = document.querySelector(".stars");
+  for (let i = 0; i < 50; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    starContainer.appendChild(star);
+  }
+
+  const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+  dropdowns.forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
