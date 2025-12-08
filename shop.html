@@ -2,10 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta Mein Shop | Lilian´s Witchy World</title>
+<title>Mein Shop | Lilian´s Witchy World</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-	
 <style>
 /* Globales CSS */
 *, *::before, *::after { box-sizing: border-box; }
@@ -58,9 +57,47 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
   .dropdown-content { background-color: #0aa667; }
 }
 
-/* Haupt-Content */
-.content { position: relative; z-index: 1; padding-bottom: 100px; }
-
+/* Feedback Slider */
+.feedback-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+.slider-card {
+  background-color: #8B5E3C;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  text-align: left;
+  color: white;
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.feedback-slider h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 </style>
 </head>
 <body>
@@ -90,13 +127,13 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
         <li><a href="about.html">Über mich</a></li>
         <li><a href="weiterbildung.html">Weiterbildungen</a></li>
         <li><a href="meinemission.html">Meine Mission</a></li>
-		  <li><a href="angebot.html">Mein Angebot an dich</a></li>  
+        <li><a href="angebot.html">Mein Angebot an dich</a></li>  
       </ul>
     </li>
     <li class="dropdown">
       <a href="#">Mit sich selbst in Verbindung kommen</a>
       <ul class="dropdown-content">
-	 <li><a href="energie.html">Innere Balance</a></li>
+        <li><a href="energie.html">Innere Balance</a></li>
         <li><a href="basics.html">Die Basics</a></li>
         <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
         <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
@@ -110,7 +147,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
         <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
       </ul>
     </li>
-      <li class="dropdown">
+    <li class="dropdown">
       <a href="#">Shop</a>
       <ul class="dropdown-content">
         <li><a href="shop.html">Mein Shop</a></li>
@@ -119,7 +156,7 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     <li class="dropdown">
       <a href="#">Rezepte</a>
       <ul class="dropdown-content">
-		  <li><a href="rezepte.html">Warum DIY?</a></li>
+        <li><a href="rezepte.html">Warum DIY?</a></li>
         <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
         <li><a href="haare.html">Haarprodukte</a></li>
         <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
@@ -133,150 +170,106 @@ footer { background-color: #0aa667; padding: 20px; text-align: center; color: wh
     <li><a href="impressum.html">Impressum</a></li>
   </ul>
 </div>
-	
-	<div class="content-container">
-      
-      
 
-      <ul class="education-list">
+<div class="content-container">
+
+  <ul class="education-list">
     <li class="education-item">
-        <h3>Willkommen in meinem Shop</h3>
-        <p>Endlich ist es so weit. Jetzt kannst du dir endlich etwas von meiner Witchy-World auch nach Hause holen.</p>
-        <p>Bleib gespannt und lass dich überraschen, was hier alles zauberhaftes kommt.</p>
-        <p>Möchtest du auf dem Laufendem bleiben, dann melde dich gerne für meinen Newsletter an.</p>
-        <p>Es wird "witchy".</p>
-		<p>Wenn du etwas kaufen möchtest, klicke einfach auf das Bild.</p>
-		<p>Entdecke weitere Begleitungen/Sessions in meinem Angebotsbereich im Menü.</p>
+      <h3>Willkommen in meinem Shop</h3>
+      <p>Endlich ist es so weit. Jetzt kannst du dir endlich etwas von meiner Witchy-World auch nach Hause holen.</p>
+      <p>Bleib gespannt und lass dich überraschen, was hier alles zauberhaftes kommt.</p>
+      <p>Möchtest du auf dem Laufendem bleiben, dann melde dich gerne für meinen Newsletter an.</p>
+      <p>Es wird "witchy".</p>
+      <p>Wenn du etwas kaufen möchtest, klicke einfach auf das Bild.</p>
+      <p>Entdecke weitere Begleitungen/Sessions in meinem Angebotsbereich im Menü.</p>
     </li>
 
     <li class="education-item">
-        <p>Und hier ist es. Das Erste Kräuter-Steckbriefe-Set von mir.</p>
-        <a href="https://buy.stripe.com/eVqdR91Ly0jO4tUgUy8og09" target="_blank">
-            <img class="about-image" src="beispiel.JPG" alt="Beispiel Steckbriefe">
-        </a>
-        <p><strong>In diesem Set findest du 12 meiner liebsten Heilkräuter:</strong> Eisenkraut, Schafgarbe, Lavendel, Brennnessel, Rosmarin, Salbei, Beifuß, Waldmeister, Minze, Spitzwegerich, Thymian und Oregano.</p>
-        <p>Ursprünglich sollte daraus ein Buch entstehen – doch ich habe gemerkt, dass die Fülle an Wissen und Informationen viel besser in kompakten <em>Steckbrief-Sets</em> aufgehoben ist.</p>
-        <p>So kannst du dir gezielt Kräuterwissen aneignen, ohne dich durch dicke Bücher wühlen zu müssen.</p>
-        <p>Jeder Steckbrief umfasst 5–7 Seiten pro Heilkraut und voller wertvoller Informationen zu einem einzelnen Kraut, unter anderem zu:</p>
-        <ul>
-            <li>Aussehen & Bestimmungsmerkmale</li>
-            <li>Standort, Anbau & Pflege</li>
-            <li>Inhaltsstoffe & Nährstoffe</li>
-            <li>Wirkungen & Anwendungsgebiete</li>
-            <li>Spirituelle Bedeutungen</li>
-            <li>Wechselwirkungen & mögliche Risiken</li>
-            <li>Rezepte & praktische Tipps aus meiner Erfahrung</li>
-        </ul>
-        <p>Dieses Set enthält <strong>geballtes Kräuterwissen</strong> aus vielen Jahren intensiver Recherche, bereits angefangener Kräuterpädagogik-Ausbildung und eigener Praxis im Anpflanzen und Sammeln. Ich habe außerdem all das hineingepackt, was ich persönlich in vielen Büchern oft vermisst habe – damit du direkt und praktisch mit den Kräutern arbeiten kannst.</p>
-        <p>Es besteht aus drei PDF-Dateien, damit es trotz der Fülle an Wissen übersichtlich bleibt.</p>
-        <p><strong>Preis:</strong> Du erhältst das komplette Set „Meine liebsten Heilkräuter“ (ca. 80–90 Seiten PDF) für nur <strong>30,- €</strong>.</p>
-        <p>Tauche ein in die Welt der Kräuter und sichere dir dein Steckbrief-Set noch heute!</p>
+      <p>Und hier ist es. Das Erste Kräuter-Steckbriefe-Set von mir.</p>
+      <a href="https://buy.stripe.com/eVqdR91Ly0jO4tUgUy8og09" target="_blank">
+        <img class="about-image" src="beispiel.JPG" alt="Beispiel Steckbriefe">
+      </a>
+      <p><strong>In diesem Set findest du 12 meiner liebsten Heilkräuter:</strong> Eisenkraut, Schafgarbe, Lavendel, Brennnessel, Rosmarin, Salbei, Beifuß, Waldmeister, Minze, Spitzwegerich, Thymian und Oregano.</p>
+      <p>Ursprünglich sollte daraus ein Buch entstehen – doch ich habe gemerkt, dass die Fülle an Wissen und Informationen viel besser in kompakten <em>Steckbrief-Sets</em> aufgehoben ist.</p>
+      <p>So kannst du dir gezielt Kräuterwissen aneignen, ohne dich durch dicke Bücher wühlen zu müssen.</p>
+      <p>Jeder Steckbrief umfasst 5–7 Seiten pro Heilkraut und voller wertvoller Informationen zu einem einzelnen Kraut, unter anderem zu:</p>
+      <ul>
+        <li>Aussehen & Bestimmungsmerkmale</li>
+        <li>Standort, Anbau & Pflege</li>
+        <li>Inhaltsstoffe & Nährstoffe</li>
+        <li>Wirkungen & Anwendungsgebiete</li>
+        <li>Spirituelle Bedeutungen</li>
+        <li>Wechselwirkungen & mögliche Risiken</li>
+        <li>Rezepte & praktische Tipps aus meiner Erfahrung</li>
+      </ul>
+      <p>Dieses Set enthält <strong>geballtes Kräuterwissen</strong> aus vielen Jahren intensiver Recherche, bereits angefangener Kräuterpädagogik-Ausbildung und eigener Praxis im Anpflanzen und Sammeln. Ich habe außerdem all das hineingepackt, was ich persönlich in vielen Büchern oft vermisst habe – damit du direkt und praktisch mit den Kräutern arbeiten kannst.</p>
+      <p>Es besteht aus drei PDF-Dateien, damit es trotz der Fülle an Wissen übersichtlich bleibt.</p>
+      <p><strong>Preis:</strong> Du erhältst das komplette Set „Meine liebsten Heilkräuter“ (ca. 80–90 Seiten PDF) für nur <strong>30,- €</strong>.</p>
+      <p>Tauche ein in die Welt der Kräuter und sichere dir dein Steckbrief-Set noch heute!</p>
     </li>
 
-		   <ul class="education-list">
     <li class="education-item">
-        <h3> Klangheilung & individuelle Kräuterbegleitung</h3>
-       <p>Erlebe eine sanfte, energetische Begleitung, die dein Wohlbefinden unterstützt. In der Klangheilung arbeite ich intuitiv mit Stimmgabeln oder Klangschalen, um Blockaden zu lösen und deine Energie ins Gleichgewicht zu bringen – bequem über Zoom.</p>
-<p>Optional kannst du eine individuelle Kräuterempfehlung hinzubuchen, die speziell auf deine Bedürfnisse abgestimmt ist und die Wirkung der Heilung unterstützt.</p>
-<p>Am Ende jeder Sitzung gebe ich dir kleine, praktische Impulse, wie du die Wirkung weiter begleiten kannst.</p>
-<a href="https://lilians-witchy-world.com/angebot.html" target="_blank"> Mehr Informationen und Details findest du auf der folgenden Seite.</a>
+      <h3>Klangheilung & individuelle Kräuterbegleitung</h3>
+      <p>Erlebe eine sanfte, energetische Begleitung, die dein Wohlbefinden unterstützt. In der Klangheilung arbeite ich intuitiv mit Stimmgabeln oder Klangschalen, um Blockaden zu lösen und deine Energie ins Gleichgewicht zu bringen – bequem über Zoom.</p>
+      <p>Optional kannst du eine individuelle Kräuterempfehlung hinzubuchen, die speziell auf deine Bedürfnisse abgestimmt ist und die Wirkung der Heilung unterstützt.</p>
+      <p>Am Ende jeder Sitzung gebe ich dir kleine, praktische Impulse, wie du die Wirkung weiter begleiten kannst.</p>
+      <a href="https://lilians-witchy-world.com/angebot.html" target="_blank">Mehr Informationen und Details findest du auf der folgenden Seite.</a>
     </li>
 
-<li class="education-item">
-        <p>Meine Bücher:</p>
-
-	
-
-        <!-- Container für die drei Bilder nebeneinander -->
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-
-            <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
-                <a href="https://buy.stripe.com/28E8wP0Huc2w5xY33I8og0a" target="_blank">
-                    <img src="baldur1.png" alt="Traumreisen mit Baldur – Band 1" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
-                </a>
-                <p>Traumreisen mit Baldur – Band 1 – Einschlafgeschichten für 4–9 Jährige</p>
-            </div>
-
-            <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
-                <a href="https://buy.stripe.com/3cIeVdbm8eaEf8yeMq8og0b" target="_blank">
-                    <img src="baldur2.png" alt="Traumreisen mit Baldur – Band 2" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
-                </a>
-                <p>Traumreisen mit Baldur – Band 2 – Einschlafgeschichten für 4–9 Jährige</p>
-            </div>
-
-            <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
-                <a href="https://buy.stripe.com/aFafZh75SgiMd0qeMq8og0c" target="_blank">
-                    <img src="traumrerw.png" alt="Achtsame und bewusste Traumreisen für Erwachsene" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
-                </a>
-                <p>Achtsame und bewusste Traumreisen für Erwachsene – Finde deinen Weg zu innerer Ruhe, Heilung und Transformation.</p>
-            </div>
-
+    <li class="education-item">
+      <p>Meine Bücher:</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+        <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
+          <a href="https://buy.stripe.com/28E8wP0Huc2w5xY33I8og0a" target="_blank">
+            <img src="baldur1.png" alt="Traumreisen mit Baldur – Band 1" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
+          </a>
+          <p>Traumreisen mit Baldur – Band 1 – Einschlafgeschichten für 4–9 Jährige</p>
         </div>
+
+        <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
+          <a href="https://buy.stripe.com/3cIeVdbm8eaEf8yeMq8og0b" target="_blank">
+            <img src="baldur2.png" alt="Traumreisen mit Baldur – Band 2" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
+          </a>
+          <p>Traumreisen mit Baldur – Band 2 – Einschlafgeschichten für 4–9 Jährige</p>
+        </div>
+
+        <div style="background-color:#8B5E3C; padding:15px; border-radius:8px; text-align:center; max-width:300px; flex:1;">
+          <a href="https://buy.stripe.com/aFafZh75SgiMd0qeMq8og0c" target="_blank">
+            <img src="traumrerw.png" alt="Achtsame und bewusste Traumreisen für Erwachsene" style="max-width:100%; height:auto; border-radius:8px; cursor:pointer;">
+          </a>
+          <p>Achtsame und bewusste Traumreisen für Erwachsene – Finde deinen Weg zu innerer Ruhe, Heilung und Transformation.</p>
+        </div>
+      </div>
     </li>
 
     <li class="education-item">
-        <p>Das nächste Steckbrief-Set mit 13 weiteren Pflanzen folgt in Kürze.</p>
-        <p>Auch das wird voller vieler wichtiger Informationen und Rezepten.</p>
-        <p>Bleibt gespannt.</p>
+      <p>Das nächste Steckbrief-Set mit 13 weiteren Pflanzen folgt in Kürze.</p>
+      <p>Auch das wird voller vieler wichtiger Informationen und Rezepten.</p>
+      <p>Bleibt gespannt.</p>
     </li>
-</ul>
-		
-<div class="book">		  
-   <p>Weiteres folgt in Kürze.</p>
-</div>
+  </ul>
 
-
-<div class="feedback-slider">
-  <h2>Rückmeldungen & Resonanzen</h2>
-  
-  <div class="slider-wrapper">
-    
-    <!-- Block 1 -->
-    <div class="slider-card">
-      <p class="name-country">Claudia</p>
-      <p class="test-hint">Produkttest – kostenfrei & unverbindlich</p>
-      <p class="feedback-text">„Ich habe die Ringelblumensalbe einfach Mal bei meiner kleinen Tochter getestet. Sie verträgt sonst gar nichts. Bekommt immer einen fetten Ausschlag.“</p>
-		<p class="feedback-text">„Doch ich kenne Lilian persönlich und weiß, dass sie bei ihren Produkten nur natürliche Zutaten nutzt, wie Kräuter und Bienenwachs.“</p>
-		<p class="feedback-text">„Kein Gedöns oder KrimsKrams! Und die Salbe hat meiner kleinen Maus noch besser geholfen, als erhofft.“</p>
-		<p class="feedback-text">„Auch bei Wehwechen oder Stürzen hat sie das Aua schnell wieder heile gemacht.“</p>
-    </div>
-
-    <!-- Block 2 -->
-    <div class="slider-card">
-      <p class="name-country">Manuela </p>
-      <p class="test-hint">Buchkauf - Traumreisen mit Baldur Band 1</p>
-      <p class="feedback-text">„Die Geschichten sind mit Herzblut geschrieben. Man merkt richtig, wie viel Liebe darin steckt.“</p>
-		<p class="feedback-text">„Ich habe das Buch meinem Enkel zu Weihnachten geschenkt, damals gab es das nur bei Amazon und seit dem ist es sein absolutes Lieblingsbuch.“</p>
-		<p class="feedback-text">„Er hat es sogar als Lieblingsbuch beim Freundebuch eines Schulkameraden eingetragen. Habe ich Lilian direkt ein Foto geschickt.“</p>
-		<p class="feedback-text">„Ich habe selbst auch Hunde und muss die Baldurbücher unbedingt auch für mich kaufen.“</p>
-    </div>
-
-    <!-- Block 3 -->
-    <div class="slider-card">
-      <p class="name-country">Anja</p>
-      <p class="test-hint">Produkttest&Klangheilung – kostenfrei & unverbindlich</p>
-      <p class="feedback-text">„Unsere Rettung. Eins meiner Kinder wurde von einem Hund gebissen. Mitten ins Bein. Lilian hat ganz selbstbewusst und mit Feingefühl ein paar mal die Stimmgabel aufgelegt.“</p>
-		<p class="feedback-text">„Das war TOTAL VERRÜCKT! Der Biss schien sofort zu heilen. Wenig später machte sie noch ihre selbstgemachte Ringelblumensalbe drauf. Am nächstem Tag war kaum noch etwas vom Vorfall zu sehen.“</p>
-   <p class="feedback-text">„Ich danke dir von Herzen. Auch wenn ich nicht verstehe, wie das möglich war.  “</p>
-		
-	</div>
-
+  <div class="book">		  
+     <p>Weiteres folgt in Kürze.</p>
   </div>
 
-  <!-- Slider Navigation -->
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
-
-		  
-
-<div id="language-switcher">
-  <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
-  <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
-  <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
-</div>
-		
+  <div class="feedback-slider">
+    <h2>Rückmeldungen & Resonanzen</h2>
+    <div class="slider-wrapper">
+      <!-- Hier kannst du die Slider-Cards einfügen wie zuvor -->
     </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <div id="language-switcher">
+    <a href="/"><img src="defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
+
+</div>
+
 <script>
 // Menü umschalten (mobil)
 function toggleMenu() {
@@ -284,8 +277,8 @@ function toggleMenu() {
   menu.classList.toggle("show");
 }
 
-// Sterne beim Laden erzeugen & Dropdowns mobil
 document.addEventListener("DOMContentLoaded", function () {
+  // Sterne erzeugen
   let starContainer = document.querySelector(".stars");
   for (let i = 0; i < 50; i++) {
     let star = document.createElement("div");
@@ -296,8 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
     starContainer.appendChild(star);
   }
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
+  // Slider
   const sliderWrapper = document.querySelector(".slider-wrapper");
   const slides = document.querySelectorAll(".slider-card");
   const prevBtn = document.querySelector(".prev");
@@ -305,6 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentIndex = 0;
 
   function updateSlider() {
+    if(slides.length === 0) return;
     const slideWidth = slides[0].offsetWidth + 20; // +20 für gap
     sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
@@ -319,12 +312,9 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSlider();
   });
 
-  // Optional: responsive resize
   window.addEventListener("resize", updateSlider);
-});
-</script>
 
-	
+  // Dropdown mobile
   const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
   dropdowns.forEach(dropdownToggle => {
     dropdownToggle.addEventListener('click', e => {
@@ -338,3 +328,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
